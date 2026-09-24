@@ -1,8 +1,9 @@
-from truck_classifier import TruckClassifier
-#!/usr/bin/env python3
-import argparse
-import sys
 import time
+_PROCESS_START = time.time()
+from truck_classifier import TruckClassifier
+import argparse
+import os
+import sys
 from pathlib import Path
 import subprocess
 import yaml
@@ -39,6 +40,11 @@ from counter import VehicleCounter
 from output import Annotator, export_csv
 from interval_aggregator import aggregate_intervals
 from goods_crops import GoodsCropManager, GOODS_VEHICLE_NATIVE_CLASSES
+from run_timer import RunTimer, write_report, safe_name, RUNS_LOG_DIR
+
+TIMER = RunTimer(start=_PROCESS_START)
+TIMER.add("startup.imports", time.time() - _PROCESS_START)
+
 
 def load_config(path):
     with open(path, 'r') as f:
@@ -60,6 +66,8 @@ def main():
     parser.add_argument("--config", type=str, default=None,
                         help="Path to custom vehicle count config YAML.")
     args = parser.parse_args()
+    TIMER.reset_lap()
+    TIMER.meta["video"] = str(Path(args.video).resolve())
 
     if args.config:
         config_path = Path(args.config)
@@ -101,13 +109,17 @@ def main():
         bt_path = Path(config_path).parent / "custom_bytetrack.yaml"
         with open(bt_path, 'w') as f:
             yaml.dump(bt_config, f)
+    TIMER.meta["config"] = str(config_path)
+    TIMER.lap("setup.config_load")
 
     output_dir = Path(config["output"]["results_dir"])
     ensure_dir(output_dir)
-    
+    TIMER.meta["output_dir"] = str(output_dir.resolve())
+
     setup_logger(output_dir / config["logging"]["filename"], config["logging"]["level"], "uvh_test")
     import logging
     logger = logging.getLogger("uvh_test.main")
+    TIMER.lap("setup.logger")
 
     video_path = Path(args.video)
     logger.info(f"Processing video: {video_path}")
@@ -126,13 +138,17 @@ def main():
             logger.info(f"Loaded dynamic ROI for camera: {vid_basename} from camera_rois.json")
         else:
             logger.warning(f"No entry found for {vid_basename} in camera_rois.json. Using default config ROI.")
-    
+    TIMER.lap("setup.roi_load")
+
     detector = VehicleDetector(
         model_path=config["model"]["yolo_weights"],
         device=config["model"]["device"],
         conf_thres=config["model"]["confidence"],
         imgsz=config["model"]["imgsz"]
     )
+    TIMER.meta["model"] = config["model"]["yolo_weights"]
+    TIMER.meta["device"] = config["model"]["device"]
+    TIMER.lap("setup.model_load")
 
     filt = DetectionFilter(
         min_area=config["filters"]["min_box_area"],
@@ -149,7 +165,8 @@ def main():
         logger.info(f"Restricting detection to classes: {allowed_class_names} -> ids {detect_class_ids}")
 
     tracker = VehicleTracker(min_track_frames=config["tracker"]["min_track_frames"])
-    
+    TIMER.lap("setup.filter_tracker_init")
+
     bus_subclassifier = None
     truck_classifier = None
     disable_subclassifiers = config.get("disable_subclassifiers", False)
@@ -167,17 +184,24 @@ def main():
             logger.info("Initialized TruckClassifier for live classification.")
     else:
         logger.info("Subclassifiers disabled via config.")
+    TIMER.lap("setup.subclassifiers_load")
 
     counter = VehicleCounter(
         line_points=config["roi"]["counting_line"],
         count_direction=config["roi"]["count_direction"]
     )
     counter.set_class_names(detector.class_names)
-    
+    TIMER.lap("setup.counter_init")
+
     ffprobe_bin = SCRIPTS_DIR.parent / "tools/ffprobe"
     video_info = probe_video(video_path, ffprobe_bin)
     width, height, fps = video_info.width, video_info.height, video_info.fps
     if not fps or fps <= 0: fps = 20.0
+    TIMER.meta["resolution"] = f"{width}x{height}"
+    TIMER.meta["video_fps"] = round(fps, 3)
+    TIMER.meta["video_duration_s"] = round(video_info.duration_seconds, 1)
+    TIMER.meta["video_frame_count"] = video_info.frame_count
+    TIMER.lap("setup.video_probe")
 
     processing_cfg = config.get("processing", {})
     processing_fps = processing_cfg.get("processing_fps", 15)
@@ -229,63 +253,86 @@ def main():
     else:
         from video_utils import VideoStreamReader
         reader_ctx = VideoStreamReader(video_path)
+    TIMER.meta["decoder"] = type(reader_ctx).__name__
+    TIMER.lap("setup.reader_annotator_init")
 
+    frames_decoded = 0
+    loop_start = time.perf_counter()
     with reader_ctx as reader:
-        read_start = time.time()
         time_per_frame = 1.0 / processing_fps if processing_fps > 0 else 0
         next_process_time = 0.0
 
         from tqdm import tqdm
-        for frame_idx, frame in tqdm(reader.frames(start_frame=start_frame), desc="Processing frames", unit="frames"):
+        frame_iter = iter(tqdm(reader.frames(start_frame=start_frame), desc="Processing frames", unit="frames"))
+        while True:
+            # Every read frame is decoded, including ones skipped by processing_fps.
+            with TIMER.stage("frame_loop.decode"):
+                nxt = next(frame_iter, None)
+            if nxt is None:
+                break
+            frame_idx, frame = nxt
+            frames_decoded += 1
+
             frame_time = (frame_idx - start_frame) / fps
             if processing_fps > 0 and frame_time < next_process_time - 1e-5:
                 continue
-            
+
             next_process_time += time_per_frame
             total_frames += 1
 
-            tracked_results = detector.model.track(
-                source=frame,
-                persist=True,
-                tracker=str(Path(config_path).parent / "custom_bytetrack.yaml") if "track_buffer" in config.get("tracker", {}) else config["model"]["tracker"],
-                verbose=False,
-                imgsz=config["model"]["imgsz"],
-                device=config["model"]["device"],
-                conf=config["model"]["confidence"],
-                classes=detect_class_ids
-            )
-            
+            with TIMER.stage("frame_loop.detect_track"):
+                tracked_results = detector.model.track(
+                    source=frame,
+                    persist=True,
+                    tracker=str(Path(config_path).parent / "custom_bytetrack.yaml") if "track_buffer" in config.get("tracker", {}) else config["model"]["tracker"],
+                    verbose=False,
+                    imgsz=config["model"]["imgsz"],
+                    device=config["model"]["device"],
+                    conf=config["model"]["confidence"],
+                    classes=detect_class_ids
+                )
+
             result = tracked_results[0]
-            filtered_boxes, _ = filt.filter_boxes(result.boxes)
-            
-            if filtered_boxes is not None and len(filtered_boxes) > 0:
-                active_tracks = tracker.update(frame_idx, filtered_boxes)
-            else:
-                active_tracks = []
-                
-            for tid, state, box in active_tracks:
-                stable_class = state.get_stable_class(detector.class_names)
-                if stable_class in ["Truck", "Three-wheeler"]:
-                    conf = state.conf_history[-1] if state.conf_history else 0.0
-                    w, h = box[2] - box[0], box[3] - box[1]
-                    if conf > getattr(state, "best_conf", 0.0) and w > 20 and h > 20:
-                        state.best_conf = conf
-                        x1, y1, x2, y2 = (int(round(v)) for v in box)
-                        state.best_crop = frame[max(0, y1):y2, max(0, x1):x2].copy()
-            
-            newly_counted = counter.update(frame_idx, active_tracks, frame=frame, bus_classifier=bus_subclassifier, truck_classifier=truck_classifier)
+            speed = getattr(result, "speed", None) or {}
+            for k in ("preprocess", "inference", "postprocess"):
+                if speed.get(k) is not None:
+                    TIMER.add(f"frame_loop.detect_track.yolo_{k}", speed[k] / 1000.0)
+
+            with TIMER.stage("frame_loop.filter"):
+                filtered_boxes, _ = filt.filter_boxes(result.boxes)
+
+            with TIMER.stage("frame_loop.track_update"):
+                if filtered_boxes is not None and len(filtered_boxes) > 0:
+                    active_tracks = tracker.update(frame_idx, filtered_boxes)
+                else:
+                    active_tracks = []
+
+                for tid, state, box in active_tracks:
+                    stable_class = state.get_stable_class(detector.class_names)
+                    if stable_class in ["Truck", "Three-wheeler"]:
+                        conf = state.conf_history[-1] if state.conf_history else 0.0
+                        w, h = box[2] - box[0], box[3] - box[1]
+                        if conf > getattr(state, "best_conf", 0.0) and w > 20 and h > 20:
+                            state.best_conf = conf
+                            x1, y1, x2, y2 = (int(round(v)) for v in box)
+                            state.best_crop = frame[max(0, y1):y2, max(0, x1):x2].copy()
+
+            with TIMER.stage("frame_loop.count_and_classify"):
+                newly_counted = counter.update(frame_idx, active_tracks, frame=frame, bus_classifier=bus_subclassifier, truck_classifier=truck_classifier)
             for nc in newly_counted:
                 nc["frame"] = frame_idx
                 records.append(nc)
                 logger.debug(f"frame={frame_idx} COUNTED track_id={nc['track_id']} class={nc['class']}")
 
             if goods_crop_manager:
-                for tid, state, box in active_tracks:
-                    stable_class = state.get_stable_class(detector.class_names)
-                    conf = state.conf_history[-1] if state.conf_history else 0.0
-                    goods_crop_manager.consider(tid, stable_class, box, conf, frame_idx, frame)
+                with TIMER.stage("frame_loop.goods_crops"):
+                    for tid, state, box in active_tracks:
+                        stable_class = state.get_stable_class(detector.class_names)
+                        conf = state.conf_history[-1] if state.conf_history else 0.0
+                        goods_crop_manager.consider(tid, stable_class, box, conf, frame_idx, frame)
 
             if annotator:
+                annotate_t0 = time.perf_counter()
                 annotator.draw_line(frame, config["roi"]["counting_line"][0], config["roi"]["counting_line"][1])
                 for tid, state, box in active_tracks:
                     stable_class = state.get_stable_class(detector.class_names)
@@ -302,13 +349,35 @@ def main():
                 h, w = frame.shape[:2]
                 cv2.putText(frame, f"TOTAL: {total_count}", (w - 300, h - 30), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
                 annotator.write_frame(frame)
-                
+                TIMER.add("frame_loop.annotate", time.perf_counter() - annotate_t0)
+
             if max_duration_minutes > 0 and (total_frames / fps) >= (max_duration_minutes * 60):
                 logger.info(f"HARD STOP at {max_duration_minutes} minutes reached.")
                 break
 
+    loop_secs = time.perf_counter() - loop_start
+    TIMER.add("frame_loop", loop_secs)
+    accounted = sum(v[0] for k, v in TIMER.stages.items() if k.startswith("frame_loop.") and k.count(".") == 1)
+    TIMER.add("frame_loop.other_overhead", max(0.0, loop_secs - accounted), calls=0)
+    dt_secs = TIMER.seconds("frame_loop.detect_track")
+    yolo_secs = sum(TIMER.seconds(f"frame_loop.detect_track.yolo_{k}") for k in ("preprocess", "inference", "postprocess"))
+    if yolo_secs > 0:
+        TIMER.add("frame_loop.detect_track.bytetrack_and_overhead", max(0.0, dt_secs - yolo_secs), calls=0)
+
+    video_secs_covered = frames_decoded / fps if fps else 0
+    TIMER.meta["frames_decoded"] = frames_decoded
+    TIMER.meta["frames_processed"] = total_frames
+    TIMER.meta["processing_fps_target"] = processing_fps
+    TIMER.meta["video_seconds_covered"] = round(video_secs_covered, 1)
+    if loop_secs > 0:
+        TIMER.meta["decode_fps"] = round(frames_decoded / max(TIMER.seconds("frame_loop.decode"), 1e-9), 1)
+        TIMER.meta["loop_processed_fps"] = round(total_frames / loop_secs, 2)
+        TIMER.meta["realtime_factor"] = f"{video_secs_covered / loop_secs:.2f}x (video seconds per wall second in frame loop)"
+
+    TIMER.reset_lap()
     if annotator:
         annotator.close()
+    TIMER.lap("output.annotator_close")
 
     # Written before goods-crop export so tracking results are never lost
     # even if crop writing fails (e.g. disk/serialization error) -- Layer 2
@@ -333,6 +402,7 @@ def main():
                 ),
             }) + "\n")
     logger.info(f"Wrote {tracks_jsonl_path}")
+    TIMER.lap("output.tracks_jsonl")
 
     if goods_crop_manager:
         try:
@@ -340,6 +410,7 @@ def main():
             logger.info(f"Wrote goods-vehicle crops for {len(written)} track(s) under {output_dir / 'goods_tracks'}")
         except Exception:
             logger.exception("Goods-vehicle crop export failed -- tracks.jsonl above is unaffected")
+        TIMER.lap("output.goods_crops_export")
 
     logger.info("Processing complete. Final Counts:")
     
@@ -363,10 +434,14 @@ def main():
     print(f"annotation: {str(has_anno).lower()} - if true link to {anno_path}")
     print("ERRORS: 0\n")
     print("STATUS: PASS\n")
-        
+    TIMER.meta["total_counted"] = total_final
+    TIMER.meta["tracks_total"] = len(tracker.tracks)
+    TIMER.reset_lap()
+
     records_csv_path = output_dir / "records.csv"
     export_csv(records, records_csv_path)
     logger.info(f"Wrote {len(records)} counting records to {records_csv_path}")
+    TIMER.lap("output.records_csv")
 
     # Generate interval counts (dynamic, all classes from model, no grouping)
     try:
@@ -386,6 +461,7 @@ def main():
             )
     except Exception as e:
         logger.error(f"Failed to generate dynamic interval counts: {e}")
+    TIMER.lap("output.interval_counts")
 
     # Generate 3-class legacy interval counts if needed
     try:
@@ -399,6 +475,28 @@ def main():
             subprocess.run(cmd, check=True)
     except Exception as e:
         logger.error(f"Failed to generate 3-class interval counts: {e}")
+    TIMER.lap("output.interval_counts_3class")
+
+
+def write_timing(status):
+    """Always writes <output_dir>/timing.json; the orchestrator merges it into
+    its own per-file log. Standalone runs also get a log under logs/runs/standalone/."""
+    data = TIMER.to_dict(status)
+    out = TIMER.meta.get("output_dir")
+    if out:
+        (Path(out) / "timing.json").write_text(json.dumps(data, indent=2, default=str))
+    if not os.environ.get("MVSA_ORCHESTRATED"):
+        video_name = Path(TIMER.meta.get("video", "unknown")).name
+        started = data["started_at"].replace(":", "").replace("-", "").replace("T", "_")
+        base = RUNS_LOG_DIR / "standalone" / f"{started}__{safe_name(Path(video_name).stem)}"
+        print(write_report(base, data, f"Counting pipeline | {video_name}"))
+        print(f"Timing log: {base}.log")
+
 
 if __name__ == "__main__":
-    main()
+    _status = "FAILED"
+    try:
+        main()
+        _status = "OK"
+    finally:
+        write_timing(_status)
