@@ -41,9 +41,17 @@ from output import Annotator, export_csv
 from interval_aggregator import aggregate_intervals
 from goods_crops import GoodsCropManager, GOODS_VEHICLE_NATIVE_CLASSES
 from run_timer import RunTimer, write_report, safe_name, RUNS_LOG_DIR
+from frame_pipeline import FramePipeline, FrameSampler, apply_tracker, build_tracker
+from nvdec_reader import NvdecVideoReader
+from contextlib import closing
+from functools import partial
 
 TIMER = RunTimer(start=_PROCESS_START)
 TIMER.add("startup.imports", time.time() - _PROCESS_START)
+
+
+def _predict_one(model, kwargs, frame):
+    return model.predict(source=frame, **kwargs)[0]
 
 
 def load_config(path):
@@ -65,6 +73,11 @@ def main():
                         help="Process only this many minutes (overrides processing.max_duration_minutes, 0 for all).")
     parser.add_argument("--config", type=str, default=None,
                         help="Path to custom vehicle count config YAML.")
+    parser.add_argument("--decoder", choices=["opencv", "nvdec", "dali"], default=None,
+                        help="Video decoder (overrides processing.decoder).")
+    parser.add_argument("--detect_workers", type=int, default=None,
+                        help="Parallel detection threads, each with its own model (0 = inline model.track). "
+                             "Overrides processing.detect_workers.")
     args = parser.parse_args()
     TIMER.reset_lap()
     TIMER.meta["video"] = str(Path(args.video).resolve())
@@ -239,64 +252,75 @@ def main():
 
     total_frames = 0
     records = []
+    TIMER.lap("setup.annotator_goods_init")
 
-    use_dali = args.use_dali or config.get("processing", {}).get("use_dali", False)
-    if use_dali:
+    decoder = args.decoder or str(processing_cfg.get("decoder", "opencv")).lower()
+    if args.use_dali or processing_cfg.get("use_dali", False):
+        decoder = "dali"
+    reader_ctx = None
+    if decoder == "dali":
         try:
             from dali_reader import DALIVideoStreamReader
             reader_ctx = DALIVideoStreamReader(video_path)
             logger.info("Using NVIDIA DALI GPU hardware video decoder (NVDEC)")
         except Exception as e:
             logger.warning(f"Failed to initialize DALI reader ({e}), falling back to VideoStreamReader")
-            from video_utils import VideoStreamReader
-            reader_ctx = VideoStreamReader(video_path)
-    else:
+    elif decoder == "nvdec":
+        reader_ctx = NvdecVideoReader(video_path, width, height,
+                                      ffmpeg_bin=processing_cfg.get("ffmpeg_bin", "ffmpeg"),
+                                      gpu_id=int(processing_cfg.get("nvdec_gpu", 0)))
+        logger.info("Using ffmpeg NVDEC GPU hardware video decoder")
+    if reader_ctx is None:
         from video_utils import VideoStreamReader
         reader_ctx = VideoStreamReader(video_path)
     TIMER.meta["decoder"] = type(reader_ctx).__name__
-    TIMER.lap("setup.reader_annotator_init")
+    TIMER.lap("setup.reader_init")
 
-    frames_decoded = 0
+    tracker_yaml = str(Path(config_path).parent / "custom_bytetrack.yaml") if "track_buffer" in config.get("tracker", {}) else config["model"]["tracker"]
+    predict_kwargs = dict(
+        verbose=False,
+        imgsz=config["model"]["imgsz"],
+        device=config["model"]["device"],
+        # model.track() substitutes 0.1 for a falsy conf; mirror it so both paths match.
+        conf=config["model"]["confidence"] or 0.1,
+        classes=detect_class_ids,
+    )
+    detect_workers = args.detect_workers if args.detect_workers is not None else int(processing_cfg.get("detect_workers", 2))
+    pipelined_tracker = build_tracker(tracker_yaml, config["model"]["device"]) if detect_workers > 0 else None
+    if detect_workers > 0 and pipelined_tracker is None:
+        logger.warning("Tracker config needs model.track() hooks (ReID / custom tracker); running detection inline.")
+        detect_workers = 0
+    predict_fns = []
+    if detect_workers > 0:
+        from ultralytics import YOLO
+        models = [detector.model] + [YOLO(config["model"]["yolo_weights"], task="detect")
+                                     for _ in range(detect_workers - 1)]
+        predict_fns = [partial(_predict_one, m, predict_kwargs) for m in models]
+    prefetch_frames = int(processing_cfg.get("prefetch_frames", 16))
+    TIMER.meta["detect_workers"] = detect_workers
+    TIMER.meta["prefetch_frames"] = prefetch_frames
+    TIMER.lap("setup.detect_workers_load")
+
+    sampler = FrameSampler(fps, processing_fps, start_frame)
     loop_start = time.perf_counter()
-    with reader_ctx as reader:
-        time_per_frame = 1.0 / processing_fps if processing_fps > 0 else 0
-        next_process_time = 0.0
-
+    # closing() exits first, so worker threads stop before the reader is released.
+    with reader_ctx as reader, closing(FramePipeline(
+            reader.frames(start_frame=start_frame, keep=sampler.keep),
+            max_inflight=prefetch_frames, predict_fns=predict_fns)) as pipeline:
         from tqdm import tqdm
-        frame_iter = iter(tqdm(reader.frames(start_frame=start_frame), desc="Processing frames", unit="frames"))
-        while True:
-            # Every read frame is decoded, including ones skipped by processing_fps.
-            with TIMER.stage("frame_loop.decode"):
-                nxt = next(frame_iter, None)
-            if nxt is None:
-                break
-            frame_idx, frame = nxt
-            frames_decoded += 1
-
-            frame_time = (frame_idx - start_frame) / fps
-            if processing_fps > 0 and frame_time < next_process_time - 1e-5:
-                continue
-
-            next_process_time += time_per_frame
+        for frame_idx, frame, result in tqdm(pipeline, desc="Processing frames", unit="frames"):
             total_frames += 1
 
-            with TIMER.stage("frame_loop.detect_track"):
-                tracked_results = detector.model.track(
-                    source=frame,
-                    persist=True,
-                    tracker=str(Path(config_path).parent / "custom_bytetrack.yaml") if "track_buffer" in config.get("tracker", {}) else config["model"]["tracker"],
-                    verbose=False,
-                    imgsz=config["model"]["imgsz"],
-                    device=config["model"]["device"],
-                    conf=config["model"]["confidence"],
-                    classes=detect_class_ids
-                )
-
-            result = tracked_results[0]
-            speed = getattr(result, "speed", None) or {}
-            for k in ("preprocess", "inference", "postprocess"):
-                if speed.get(k) is not None:
-                    TIMER.add(f"frame_loop.detect_track.yolo_{k}", speed[k] / 1000.0)
+            if result is None:
+                with TIMER.stage("frame_loop.detect_track"):
+                    result = detector.model.track(source=frame, persist=True, tracker=tracker_yaml, **predict_kwargs)[0]
+                speed = getattr(result, "speed", None) or {}
+                for k in ("preprocess", "inference", "postprocess"):
+                    if speed.get(k) is not None:
+                        TIMER.add(f"frame_loop.detect_track.yolo_{k}", speed[k] / 1000.0)
+            else:
+                with TIMER.stage("frame_loop.track"):
+                    result = apply_tracker(pipelined_tracker, result)
 
             with TIMER.stage("frame_loop.filter"):
                 filtered_boxes, _ = filt.filter_boxes(result.boxes)
@@ -357,6 +381,7 @@ def main():
 
     loop_secs = time.perf_counter() - loop_start
     TIMER.add("frame_loop", loop_secs)
+    TIMER.add("frame_loop.wait_for_pipeline", pipeline.wait_s, calls=pipeline.frames_yielded)
     accounted = sum(v[0] for k, v in TIMER.stages.items() if k.startswith("frame_loop.") and k.count(".") == 1)
     TIMER.add("frame_loop.other_overhead", max(0.0, loop_secs - accounted), calls=0)
     dt_secs = TIMER.seconds("frame_loop.detect_track")
@@ -364,13 +389,21 @@ def main():
     if yolo_secs > 0:
         TIMER.add("frame_loop.detect_track.bytetrack_and_overhead", max(0.0, dt_secs - yolo_secs), calls=0)
 
+    # Background stages run concurrently with frame_loop, so they overlap its time.
+    frames_decoded = getattr(reader_ctx, "frames_decoded", None) or pipeline.frames_yielded
+    TIMER.add("background.decode", pipeline.decode_busy_s, calls=frames_decoded)
+    if predict_fns:
+        TIMER.add("background.detect", pipeline.detect_busy_s, calls=pipeline.frames_detected)
+        for k, v in pipeline.yolo_speed_s.items():
+            TIMER.add(f"background.detect.yolo_{k}", v, calls=pipeline.frames_detected)
+
     video_secs_covered = frames_decoded / fps if fps else 0
     TIMER.meta["frames_decoded"] = frames_decoded
     TIMER.meta["frames_processed"] = total_frames
     TIMER.meta["processing_fps_target"] = processing_fps
     TIMER.meta["video_seconds_covered"] = round(video_secs_covered, 1)
     if loop_secs > 0:
-        TIMER.meta["decode_fps"] = round(frames_decoded / max(TIMER.seconds("frame_loop.decode"), 1e-9), 1)
+        TIMER.meta["decode_fps"] = round(frames_decoded / max(pipeline.decode_busy_s, 1e-9), 1)
         TIMER.meta["loop_processed_fps"] = round(total_frames / loop_secs, 2)
         TIMER.meta["realtime_factor"] = f"{video_secs_covered / loop_secs:.2f}x (video seconds per wall second in frame loop)"
 

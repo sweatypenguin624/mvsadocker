@@ -147,7 +147,7 @@ class VideoStreamReader:
         self.height = int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         self.frame_count = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
-    def frames(self, start_frame: int = 0) -> Iterator[Tuple[int, np.ndarray]]:
+    def frames(self, start_frame: int = 0, keep=None) -> Iterator[Tuple[int, np.ndarray]]:
         """Yield ``(frame_idx, frame_bgr)`` starting at ``start_frame``.
 
         Seeking on HEVC streams remuxed with ``-c:v copy`` is only
@@ -155,15 +155,24 @@ class VideoStreamReader:
         compensates by decoding forward from the nearest keyframe, so the
         returned frame index is still correct, it just costs extra decode
         time proportional to the GOP size.
+
+        ``keep(frame_idx) -> bool`` drops frames without the YUV->BGR
+        conversion: read() is exactly grab()+retrieve(), and every frame is
+        still decoded, so kept frames are pixel-identical.
         """
         if start_frame > 0:
             self.cap.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
         idx = start_frame
+        self.frames_decoded = 0
         while True:
-            ok, frame = self.cap.read()
-            if not ok:
+            if not self.cap.grab():
                 break
-            yield idx, frame
+            self.frames_decoded += 1
+            if keep is None or keep(idx):
+                ok, frame = self.cap.retrieve()
+                if not ok:
+                    break
+                yield idx, frame
             idx += 1
 
     def release(self) -> None:

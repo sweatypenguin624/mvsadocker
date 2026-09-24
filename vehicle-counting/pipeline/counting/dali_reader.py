@@ -39,7 +39,7 @@ class DALIVideoStreamReader:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
 
-    def frames(self, start_frame: int = 0) -> Iterator[Tuple[int, np.ndarray]]:
+    def frames(self, start_frame: int = 0, keep=None) -> Iterator[Tuple[int, np.ndarray]]:
         if not HAS_DALI:
             raise RuntimeError("NVIDIA DALI is not installed in the environment.")
 
@@ -67,7 +67,7 @@ class DALIVideoStreamReader:
         while True:
             try:
                 out = self.pipe.run()
-                if frame_idx < start_frame:
+                if frame_idx < start_frame or (keep is not None and not keep(frame_idx)):
                     frame_idx += 1
                     continue
                 # out[0] is TensorListGPU, as_cpu().as_array() gives (1, 1, H, W, 3) in RGB
