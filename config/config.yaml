@@ -1,0 +1,197 @@
+# MVSA pipeline configuration.
+#
+# This is the ONLY place pedestrian-ROI coordinates, model thresholds, and
+# face-quality thresholds should be defined. Every script reads from this
+# file (via scripts/config_loader.py) instead of hard-coding values.
+#
+# All relative paths below are resolved against the MVSA project root, i.e.
+# the parent of this config/ directory (normally ~/mvsa).
+#
+# Run everything from the project root:
+#   cd ~/mvsa
+#   source env/bin/activate
+#   python scripts/main.py demographics-test --run-name actual_08-09
+
+video:
+  # Path to the source video. If this ends in .dav, the pipeline will
+  # automatically remux it to .mp4 (stream copy, no re-encode) next to the
+  # source file the first time it's needed, then reuse that .mp4 afterward.
+  path: "videos/actual_test/08.00.00-09.00.00.mp4"
+  # Nominal capture FPS. Used for all frame-index -> timestamp math. If this
+  # disagrees with what ffprobe measures, a warning is logged but the config
+  # value is still used (CCTV encoders sometimes report a slightly different
+  # container-level frame rate than the true capture rate).
+  fps: 20
+  # Wall-clock time of frame 0. DAV filenames only encode time-of-day
+  # (e.g. "08.00.00-09.00.00"), not the date, so the date must be set here
+  # explicitly. Update this to match the actual recording date before running.
+  start_datetime: "2026-07-28 08:00:00"
+
+model:
+  yolo_weights: "models/yolo11x.pt"
+  # "0" = first CUDA device as selected externally via CUDA_VISIBLE_DEVICES.
+  # Do not hard-code a GPU UUID here.
+  device: "0"
+  confidence: 0.35
+  imgsz: 1280
+  person_class_id: 0
+  # Custom ByteTrack tuning (see config/tracking/pedestrian_bytetrack.yaml
+  # for why): raises track_buffer from Ultralytics' default 30 frames to 60
+  # so a person briefly occluded (most commonly mounting/dismounting a
+  # two-wheeler right at the ROI edge) keeps their original track ID
+  # instead of ByteTrack dropping it and minting a new one -- the single
+  # biggest source of the short, unreliable track fragments analyzed in
+  # peds_18_kamaripet_police_station_cam_5_20260728_1208. Resolved against
+  # project_root by pipeline.py's _build_detector, so this path is
+  # cwd-independent.
+  tracker: "config/tracking/pedestrian_bytetrack.yaml"
+
+# Pedestrian ROI polygon, in the coordinate space of reference_width x
+# reference_height (native camera resolution). The pipeline always maps
+# ROI-membership tests to the bottom-center ("feet") point of the person
+# bounding box, scaled to the actual frame size if it differs.
+roi:
+  reference_width: 1920
+  reference_height: 1080
+  polygon:
+    - [0, 340]
+    - [180, 275]
+    - [410, 225]
+    - [545, 260]
+    - [430, 400]
+    - [280, 560]
+    - [140, 740]
+    - [0, 880]
+
+# Rider/vehicle association filtering (see scripts/rider_filter.py).
+# This is a geometric heuristic, NOT a reliable rider classifier. Enabled
+# (with exclude_riders_from_count: true) after confirming via the Cam1 pilot
+# that motorcyclists/cyclists were being detected as plain "person" and
+# counted as pedestrians whenever they crossed the ROI -- spot-check
+# tracks.csv's rider_status column against tracked.mp4 before trusting this
+# blindly on a new camera; thresholds may need per-camera tuning.
+rider_filter:
+  enabled: true
+  vehicle_class_ids: [1, 2, 3, 5, 7]   # COCO: bicycle, car, motorcycle, bus, truck
+  uncertain_overlap_ratio: 0.15
+  rider_overlap_ratio: 0.4
+  # If true, tracks whose final rider_status == "rider" are excluded from
+  # hourly_pedestrian_counts.csv and track_demographics.csv. If false
+  # (default), rider_status is reported but does not affect counting.
+  exclude_riders_from_count: true
+  # If true, tracks whose final rider_status == "uncertain" are ALSO
+  # excluded -- only tracks confidently classified "pedestrian" count.
+  # "uncertain" tracks are still reported in classification_summary.json
+  # either way, just not counted as a confirmed pedestrian entry.
+  require_confident_pedestrian: true
+  # A track's final rider/pedestrian verdict is a majority vote over every
+  # frame it was seen (aggregate_track_rider_status in rider_filter.py).
+  # That's unreliable for a track seen fewer than this many frames -- a
+  # single frame's overlap-ratio reading decides the whole track, with no
+  # other frames to average out a momentary miss (most often the rider's
+  # own body occluding their vehicle from the detector, e.g.
+  # mid-mount/dismount). Below this frame count, a "pedestrian" verdict is
+  # only trusted if EVERY frame's overlap ratio also stayed at or below
+  # short_track_max_clean_ratio; otherwise it's downgraded to "uncertain".
+  # Longer tracks are unaffected -- enough frames already average this out.
+  min_frames_for_confident_pedestrian: 5
+  # See min_frames_for_confident_pedestrian above. Must be <=
+  # uncertain_overlap_ratio; 0.05 was chosen (vs. 0.15) to only flag tracks
+  # that showed *some* measurable vehicle proximity, not tracks with zero
+  # vehicle overlap the whole time (those stay confidently "pedestrian"
+  # regardless of track length).
+  short_track_max_clean_ratio: 0.05
+  # Overlap with a vehicle that's been sitting within
+  # parked_vehicle_max_drift_px of the same spot for at least this long no
+  # longer counts as rider evidence (see scripts/vehicle_motion.py). Without
+  # this, a pedestrian standing or walking next to a permanently-parked
+  # two-wheeler (very common outside shops) reads identically to someone
+  # riding one -- confirmed against peds_18_kamaripet_police_station_cam_5:
+  # people visibly standing beside a stationary row of parked bikes were
+  # being excluded as "rider"/"uncertain". 6s is long enough that a vehicle
+  # genuinely stopped in traffic (e.g. a red light) is unlikely to trip it;
+  # set to 0 to disable this check entirely.
+  parked_vehicle_stationary_seconds: 6.0
+  parked_vehicle_max_drift_px: 20.0
+
+demographics:
+  enabled: true
+  # Analyze approximately every Nth frame a counted track is visible for.
+  sample_interval: 10
+  insightface_model_name: "buffalo_l"
+  # Where InsightFace stores/looks for its downloaded ONNX models.
+  insightface_root: "models/insightface"
+  # "cpu" (default, safest -- see requirements-demographics.txt) or "cuda".
+  device: "cuda"
+  det_size: [640, 640]
+  # Minimum number of usable (quality-passed) face samples required before
+  # a track gets a non-"unknown" gender/age result.
+  min_valid_samples: 1
+
+# Whole-body ("clothing/silhouette") demographic estimator -- runs
+# independently of demographics: (see scripts/body_attributes.py for full
+# provenance/verification notes). Where InsightFace needs a resolved face,
+# this only needs the person's full bounding-box crop, so it is the primary
+# demographic signal on cameras like this one where faces rarely resolve.
+body_attributes:
+  enabled: true
+  model_path: "models/person_attribute/person_attribute.onnx"
+  # "cpu" or "cuda". Safe to run alongside demographics.device: "cuda" --
+  # both are onnxruntime sessions on the same already-installed
+  # onnxruntime-gpu runtime, not two separately-installed CUDA-using
+  # libraries (see README Section 5's GPU note for the risk that warning
+  # is actually about).
+  device: "cuda"
+  input_width: 192
+  input_height: 256
+  gender_threshold: 0.5
+  min_crop_width: 15
+  min_crop_height: 40
+
+face_quality:
+  min_face_width: 20
+  min_face_height: 20
+  min_face_confidence: 0.5
+  min_sharpness: 60.0
+  check_brightness: true
+  min_brightness: 30.0
+  max_brightness: 225.0
+
+output:
+  results_dir: "results"
+  save_annotated_video: true
+  # PRIVACY: leave false unless you specifically need a handful of crops to
+  # tune face_quality thresholds. Capped by max_debug_crops regardless.
+  save_debug_face_crops: true
+  max_debug_crops: 100
+  video_codec: "mp4v"
+  # Minimum face_quality score required before gender/age_group text is
+  # drawn on the annotated video for a track.
+  show_demographics_min_quality: 0.4
+
+# Pedestrian movement-direction classification (scripts/movement_direction.py).
+# Only takes effect for a camera whose config/roi/roi_by_camera.yaml entry
+# has a "movement_axis" calibration (opt-in per camera, same as ROI itself)
+# -- --camera-key runs without one simply skip direction classification and
+# write no hourly_pedestrian_direction_counts.csv, same as before this
+# feature existed.
+movement:
+  min_displacement_fraction_of_frame_diagonal: 0.015
+
+checkpoint:
+  interval_frames: 500
+  filename: "checkpoint.json"
+
+logging:
+  level: "DEBUG"
+  filename: "run.log"
+
+demographics_test:
+  max_tracks: 20
+  # Extra frames processed after max_tracks is reached, so those tracks get
+  # a chance to accumulate more than one demographic sample.
+  tail_frames: 300
+
+tools:
+  ffmpeg: "tools/ffmpeg"
+  ffprobe: "tools/ffprobe"

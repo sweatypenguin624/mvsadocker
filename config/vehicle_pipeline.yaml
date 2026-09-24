@@ -1,0 +1,75 @@
+# Batch/orchestration configuration for the multi-video VEHICLE-counting
+# validation pipeline (CVC survey). Mirrors config/pipeline.yaml (the
+# pedestrian batch pipeline) exactly in shape, but points at a different
+# Drive folder, uses separate queue/work directories so the two pipelines'
+# in-flight state never collides, and wires in the vehicle engine config
+# (config/vehicle_config.yaml) instead of the pedestrian one.
+#
+# All relative paths below are resolved against the MVSA project root (the
+# parent of this config/ directory, normally ~/mvsa).
+
+rclone:
+  binary: "tools/rclone"
+  config: "config/rclone.conf"
+  remote: "googledrive:"
+  shared_with_me: true
+  timeout_seconds: 3600
+  max_retries: 3
+  retry_backoff_seconds: 10
+
+drive:
+  # CVC = "Classified Vehicle Count", 24hr coverage across 9 road segments --
+  # the most directly vehicle-count-shaped of the three vehicle survey types
+  # (CVC/TMC/TVC) found under the same Drive root as the Peds survey. TMC
+  # (turning-movement) and TVC (7-day continuous) were left out of this batch
+  # deliberately -- see conversation notes -- add them as separate
+  # drive.base_path values / separate pipeline configs later if needed.
+  base_path: "Data Corp /DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC"
+  video_extensions: [".dav", ".mp4"]
+  # Most CVC sites pair a primary camera with a "... Backup" folder recording
+  # the same view a second time (e.g. "Cam 1" + "Cam 2 - Backup"). Excluded
+  # so the batch spends its budget on distinct viewpoints, not duplicates.
+  exclude_camera_pattern: "backup"
+
+selection:
+  # Same 10-20 validation-batch cap as the Peds pipeline -- this is a pilot
+  # run to validate the vehicle-counting engine on real footage, not a bulk
+  # ingest of the ~593GB CVC folder.
+  target_video_count: 15
+  preferred_hours: [8, 17, 12, 9, 16, 13, 10, 18, 11, 14, 15, 7, 19, 20]
+  min_size_mb: 100
+
+tools:
+  ffmpeg: "tools/ffmpeg"
+  ffprobe: "tools/ffprobe"
+
+paths:
+  # Separate from the Peds pipeline's queue/ and work/ so the two pipelines'
+  # candidates.csv/manifest.csv and in-flight downloads never collide or get
+  # overwritten by each other.
+  queue_dir: "queue/vehicle"
+  work_downloads: "work/vehicle_downloads"
+  work_converted: "work/vehicle_converted"
+  work_temporary: "work/vehicle_temporary"
+  results_dir: "results"
+  logs_dir: "logs"
+
+# Base single-video vehicle-counting engine config reused, untouched, for
+# every video in the batch (scripts/vehicle_batch_pipeline.py loads this and
+# overrides only video.path/start_datetime per video, same pattern as the
+# pedestrian batch pipeline's engine_config).
+engine_config: "config/vehicle_config.yaml"
+
+processing:
+  # Kept in sync with config/vehicle_config.yaml's output.save_annotated_video
+  # -- controls whether this batch orchestrator looks for tracked.mp4 to link
+  # into results/vehicle_annotated/ after each run.
+  save_annotated_video: false
+  # Vehicle counting has no resume/checkpoint support (see README section
+  # 20.3) and each source video can be 1-2GB, so there is no reason to keep
+  # the downloaded .dav or converted .mp4 around once a video has been
+  # successfully processed -- results (CSVs/JSON/annotated mp4, all much
+  # smaller than source footage) are what's worth keeping. This is what
+  # keeps peak disk usage bounded to roughly one video's worth at a time
+  # instead of accumulating the whole batch.
+  cleanup_after_processing: true

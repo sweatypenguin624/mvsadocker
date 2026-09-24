@@ -1,0 +1,1003 @@
+[2026-08-22 04:51:48] Starting batch vehicle counting runner...
+[2026-08-22 04:51:48] Limiting processing to the first 1 videos.
+[2026-08-22 04:51:48] Found 1 MP4 videos.
+[2026-08-22 04:51:48] [1/1] STARTING: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+[2026-08-22 04:51:48]   -> OUTPUT: /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040
+2026-08-22 04:51:53 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+2026-08-22 04:51:53 [INFO] uvh_test.detector: Loading YOLO model from models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+Traceback (most recent call last):
+  File "/storage/users/oauser/mvsa/scripts/vehicle_counting/Vclassification/main.py", line 286, in <module>
+    main()
+  File "/storage/users/oauser/mvsa/scripts/vehicle_counting/Vclassification/main.py", line 95, in main
+    detector = VehicleDetector(
+  File "/storage/users/oauser/mvsa/scripts/vehicle_counting/Vclassification/detector.py", line 17, in __init__
+    self.model = YOLO(self.model_path)
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/ultralytics/models/yolo/model.py", line 82, in __init__
+    super().__init__(model=model, task=task, verbose=verbose)
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/ultralytics/engine/model.py", line 133, in __init__
+    self._load(model, task=task)
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/ultralytics/engine/model.py", line 249, in _load
+    self.model, self.ckpt = load_checkpoint(weights)
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/ultralytics/nn/tasks.py", line 1902, in load_checkpoint
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/ultralytics/nn/tasks.py", line 1801, in torch_safe_load
+    ckpt = _load()
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/ultralytics/nn/tasks.py", line 1792, in _load
+    return torch_load(file, map_location="cpu")
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/ultralytics/utils/patches.py", line 181, in torch_load
+    return torch.load(*args, **kwargs)
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/torch/serialization.py", line 997, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/torch/serialization.py", line 444, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/torch/serialization.py", line 425, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt'
+[2026-08-22 04:51:56] [1/1] FAILED: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4 in 8.13s
+[2026-08-22 04:51:56]   -> ERROR: Pipeline returned non-zero exit code: 1
+[2026-08-22 04:51:56] =====================================
+[2026-08-22 04:51:56] BATCH PROCESSING COMPLETE
+[2026-08-22 04:51:56] TOTAL:     1
+[2026-08-22 04:51:56] COMPLETED: 0
+[2026-08-22 04:51:56] FAILED:    1
+[2026-08-22 04:51:56] SKIPPED:   0
+[2026-08-22 04:51:56] =====================================
+[2026-08-22 04:53:50] Starting batch vehicle counting runner...
+[2026-08-22 04:53:50] Limiting processing to the first 1 videos.
+[2026-08-22 04:53:50] Found 1 MP4 videos.
+[2026-08-22 04:53:50] [1/1] STARTING: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+[2026-08-22 04:53:50]   -> OUTPUT: /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040
+2026-08-22 04:53:52 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+2026-08-22 04:53:52 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+2026-08-22 04:53:53 [INFO] uvh_test.detector: Loaded 14 classes.
+Traceback (most recent call last):
+  File "/storage/users/oauser/mvsa/scripts/vehicle_counting/Vclassification/main.py", line 290, in <module>
+    main()
+  File "/storage/users/oauser/mvsa/scripts/vehicle_counting/Vclassification/main.py", line 123, in main
+    video_info = probe_video(video_path, ffprobe_bin)
+  File "/storage/users/oauser/mvsa/scripts/video_utils.py", line 71, in probe_video
+    raise FileNotFoundError(f"ffprobe binary not found: {ffprobe_bin}")
+FileNotFoundError: ffprobe binary not found: tools/ffprobe
+[2026-08-22 04:53:54] [1/1] FAILED: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4 in 3.32s
+[2026-08-22 04:53:54]   -> ERROR: Pipeline returned non-zero exit code: 1
+[2026-08-22 04:53:54] =====================================
+[2026-08-22 04:53:54] BATCH PROCESSING COMPLETE
+[2026-08-22 04:53:54] TOTAL:     1
+[2026-08-22 04:53:54] COMPLETED: 0
+[2026-08-22 04:53:54] FAILED:    1
+[2026-08-22 04:53:54] SKIPPED:   0
+[2026-08-22 04:53:54] =====================================
+[2026-08-22 04:54:09] Starting batch vehicle counting runner...
+[2026-08-22 04:54:09] Limiting processing to the first 1 videos.
+[2026-08-22 04:54:09] Found 1 MP4 videos.
+[2026-08-22 04:54:09] [1/1] STARTING: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+[2026-08-22 04:54:09]   -> OUTPUT: /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040
+2026-08-22 04:54:11 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+2026-08-22 04:54:11 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+2026-08-22 04:54:11 [INFO] uvh_test.detector: Loaded 14 classes.
+Traceback (most recent call last):
+  File "/storage/users/oauser/mvsa/scripts/vehicle_counting/Vclassification/main.py", line 290, in <module>
+    main()
+  File "/storage/users/oauser/mvsa/scripts/vehicle_counting/Vclassification/main.py", line 123, in main
+    video_info = probe_video(video_path, ffprobe_bin)
+  File "/storage/users/oauser/mvsa/scripts/video_utils.py", line 71, in probe_video
+    raise FileNotFoundError(f"ffprobe binary not found: {ffprobe_bin}")
+FileNotFoundError: ffprobe binary not found: tools/ffprobe
+[2026-08-22 04:54:12] [1/1] FAILED: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4 in 2.83s
+[2026-08-22 04:54:12]   -> ERROR: Pipeline returned non-zero exit code: 1
+[2026-08-22 04:54:12] =====================================
+[2026-08-22 04:54:12] BATCH PROCESSING COMPLETE
+[2026-08-22 04:54:12] TOTAL:     1
+[2026-08-22 04:54:12] COMPLETED: 0
+[2026-08-22 04:54:12] FAILED:    1
+[2026-08-22 04:54:12] SKIPPED:   0
+[2026-08-22 04:54:12] =====================================
+[2026-08-22 04:55:48] Starting batch vehicle counting runner...
+[2026-08-22 04:55:48] Limiting processing to the first 1 videos.
+[2026-08-22 04:55:48] Found 1 MP4 videos.
+[2026-08-22 04:55:48] [1/1] STARTING: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+[2026-08-22 04:55:48]   -> OUTPUT: /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040
+2026-08-22 04:55:50 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+2026-08-22 04:55:50 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+2026-08-22 04:55:51 [INFO] uvh_test.detector: Loaded 14 classes.
+2026-08-22 04:55:54 [WARNING] uvh_test.main: OCR failed to extract time from first frame. Using config default.
+2026-08-22 04:56:02 [INFO] uvh_test.main: Processed 100 frames... Count: 0
+2026-08-22 04:56:06 [INFO] uvh_test.main: Processed 200 frames... Count: 0
+2026-08-22 04:56:10 [INFO] uvh_test.main: Processed 300 frames... Count: 0
+2026-08-22 04:56:14 [INFO] uvh_test.main: Processed 400 frames... Count: 0
+2026-08-22 04:56:18 [INFO] uvh_test.main: Processed 500 frames... Count: 0
+2026-08-22 04:56:22 [INFO] uvh_test.main: Processed 600 frames... Count: 0
+2026-08-22 04:56:26 [INFO] uvh_test.main: Processed 700 frames... Count: 0
+2026-08-22 04:56:29 [INFO] uvh_test.main: Processed 800 frames... Count: 0
+2026-08-22 04:56:34 [INFO] uvh_test.main: Processed 900 frames... Count: 0
+2026-08-22 04:56:38 [INFO] uvh_test.main: Processed 1000 frames... Count: 0
+2026-08-22 04:56:42 [INFO] uvh_test.main: Processed 1100 frames... Count: 0
+2026-08-22 04:56:46 [INFO] uvh_test.main: Processed 1200 frames... Count: 0
+2026-08-22 04:56:50 [INFO] uvh_test.main: Processed 1300 frames... Count: 0
+2026-08-22 04:56:54 [INFO] uvh_test.main: Processed 1400 frames... Count: 0
+2026-08-22 04:56:58 [INFO] uvh_test.main: Processed 1500 frames... Count: 0
+2026-08-22 04:57:02 [INFO] uvh_test.main: Processed 1600 frames... Count: 0
+2026-08-22 04:57:06 [INFO] uvh_test.main: Processed 1700 frames... Count: 0
+2026-08-22 04:57:10 [INFO] uvh_test.main: Processed 1800 frames... Count: 0
+2026-08-22 04:57:14 [INFO] uvh_test.main: Processed 1900 frames... Count: 0
+2026-08-22 04:57:18 [INFO] uvh_test.main: Processed 2000 frames... Count: 0
+2026-08-22 04:57:23 [INFO] uvh_test.main: Processed 2100 frames... Count: 0
+2026-08-22 04:57:27 [INFO] uvh_test.main: Processed 2200 frames... Count: 0
+2026-08-22 04:57:31 [INFO] uvh_test.main: Processed 2300 frames... Count: 0
+2026-08-22 04:57:35 [INFO] uvh_test.main: Processed 2400 frames... Count: 0
+2026-08-22 04:57:39 [INFO] uvh_test.main: Processed 2500 frames... Count: 0
+2026-08-22 04:57:43 [INFO] uvh_test.main: Processed 2600 frames... Count: 0
+2026-08-22 04:57:47 [INFO] uvh_test.main: Processed 2700 frames... Count: 0
+2026-08-22 04:57:51 [INFO] uvh_test.main: Processed 2800 frames... Count: 0
+2026-08-22 04:57:55 [INFO] uvh_test.main: Processed 2900 frames... Count: 0
+2026-08-22 04:57:59 [INFO] uvh_test.main: Processed 3000 frames... Count: 0
+2026-08-22 04:58:03 [INFO] uvh_test.main: Processed 3100 frames... Count: 0
+2026-08-22 04:58:07 [INFO] uvh_test.main: Processed 3200 frames... Count: 0
+2026-08-22 04:58:11 [INFO] uvh_test.main: Processed 3300 frames... Count: 0
+2026-08-22 04:58:15 [INFO] uvh_test.main: Processed 3400 frames... Count: 0
+2026-08-22 04:58:19 [INFO] uvh_test.main: Processed 3500 frames... Count: 0
+2026-08-22 04:58:23 [INFO] uvh_test.main: Processed 3600 frames... Count: 0
+2026-08-22 04:58:27 [INFO] uvh_test.main: Processed 3700 frames... Count: 0
+2026-08-22 04:58:31 [INFO] uvh_test.main: Processed 3800 frames... Count: 0
+2026-08-22 04:58:35 [INFO] uvh_test.main: Processed 3900 frames... Count: 0
+2026-08-22 04:58:39 [INFO] uvh_test.main: Processed 4000 frames... Count: 0
+2026-08-22 04:58:43 [INFO] uvh_test.main: Processed 4100 frames... Count: 0
+2026-08-22 04:58:47 [INFO] uvh_test.main: Processed 4200 frames... Count: 0
+2026-08-22 04:58:51 [INFO] uvh_test.main: Processed 4300 frames... Count: 0
+2026-08-22 04:58:55 [INFO] uvh_test.main: Processed 4400 frames... Count: 0
+2026-08-22 04:58:59 [INFO] uvh_test.main: Processed 4500 frames... Count: 0
+2026-08-22 04:59:03 [INFO] uvh_test.main: Processed 4600 frames... Count: 0
+2026-08-22 04:59:07 [INFO] uvh_test.main: Processed 4700 frames... Count: 0
+2026-08-22 04:59:11 [INFO] uvh_test.main: Processed 4800 frames... Count: 0
+2026-08-22 04:59:15 [INFO] uvh_test.main: Processed 4900 frames... Count: 0
+2026-08-22 04:59:20 [INFO] uvh_test.main: Processed 5000 frames... Count: 0
+2026-08-22 04:59:23 [INFO] uvh_test.main: Processed 5100 frames... Count: 0
+2026-08-22 04:59:28 [INFO] uvh_test.main: Processed 5200 frames... Count: 0
+2026-08-22 04:59:32 [INFO] uvh_test.main: Processed 5300 frames... Count: 0
+2026-08-22 04:59:36 [INFO] uvh_test.main: Processed 5400 frames... Count: 0
+2026-08-22 04:59:39 [INFO] uvh_test.main: Processed 5500 frames... Count: 0
+2026-08-22 04:59:43 [INFO] uvh_test.main: Processed 5600 frames... Count: 0
+2026-08-22 04:59:47 [INFO] uvh_test.main: Processed 5700 frames... Count: 0
+2026-08-22 04:59:51 [INFO] uvh_test.main: Processed 5800 frames... Count: 0
+2026-08-22 04:59:55 [INFO] uvh_test.main: Processed 5900 frames... Count: 0
+2026-08-22 04:59:59 [INFO] uvh_test.main: Processed 6000 frames... Count: 0
+2026-08-22 05:00:03 [INFO] uvh_test.main: Processed 6100 frames... Count: 0
+2026-08-22 05:00:07 [INFO] uvh_test.main: Processed 6200 frames... Count: 0
+2026-08-22 05:00:12 [INFO] uvh_test.main: Processed 6300 frames... Count: 0
+2026-08-22 05:00:16 [INFO] uvh_test.main: Processed 6400 frames... Count: 0
+2026-08-22 05:00:20 [INFO] uvh_test.main: Processed 6500 frames... Count: 0
+2026-08-22 05:00:24 [INFO] uvh_test.main: Processed 6600 frames... Count: 0
+2026-08-22 05:00:29 [INFO] uvh_test.main: Processed 6700 frames... Count: 0
+2026-08-22 05:00:33 [INFO] uvh_test.main: Processed 6800 frames... Count: 0
+2026-08-22 05:00:37 [INFO] uvh_test.main: Processed 6900 frames... Count: 0
+2026-08-22 05:00:42 [INFO] uvh_test.main: Processed 7000 frames... Count: 0
+2026-08-22 05:00:47 [INFO] uvh_test.main: Processed 7100 frames... Count: 0
+2026-08-22 05:00:51 [INFO] uvh_test.main: Processed 7200 frames... Count: 0
+2026-08-22 05:00:56 [INFO] uvh_test.main: Processed 7300 frames... Count: 0
+2026-08-22 05:01:00 [INFO] uvh_test.main: Processed 7400 frames... Count: 0
+2026-08-22 05:01:05 [INFO] uvh_test.main: Processed 7500 frames... Count: 0
+2026-08-22 05:01:09 [INFO] uvh_test.main: Processed 7600 frames... Count: 0
+2026-08-22 05:01:13 [INFO] uvh_test.main: Processed 7700 frames... Count: 0
+2026-08-22 05:01:17 [INFO] uvh_test.main: Processed 7800 frames... Count: 0
+2026-08-22 05:01:21 [INFO] uvh_test.main: Processed 7900 frames... Count: 0
+2026-08-22 05:01:25 [INFO] uvh_test.main: Processed 8000 frames... Count: 0
+2026-08-22 05:01:29 [INFO] uvh_test.main: Processed 8100 frames... Count: 0
+2026-08-22 05:01:33 [INFO] uvh_test.main: Processed 8200 frames... Count: 0
+2026-08-22 05:01:38 [INFO] uvh_test.main: Processed 8300 frames... Count: 0
+2026-08-22 05:01:42 [INFO] uvh_test.main: Processed 8400 frames... Count: 0
+2026-08-22 05:01:46 [INFO] uvh_test.main: Processed 8500 frames... Count: 0
+2026-08-22 05:01:50 [INFO] uvh_test.main: Processed 8600 frames... Count: 0
+2026-08-22 05:01:54 [INFO] uvh_test.main: Processed 8700 frames... Count: 0
+2026-08-22 05:01:58 [INFO] uvh_test.main: Processed 8800 frames... Count: 0
+2026-08-22 05:02:02 [INFO] uvh_test.main: Processed 8900 frames... Count: 0
+2026-08-22 05:02:06 [INFO] uvh_test.main: Processed 9000 frames... Count: 0
+2026-08-22 05:02:10 [INFO] uvh_test.main: Processed 9100 frames... Count: 0
+2026-08-22 05:02:14 [INFO] uvh_test.main: Processed 9200 frames... Count: 0
+2026-08-22 05:02:18 [INFO] uvh_test.main: Processed 9300 frames... Count: 0
+2026-08-22 05:02:22 [INFO] uvh_test.main: Processed 9400 frames... Count: 0
+2026-08-22 05:02:26 [INFO] uvh_test.main: Processed 9500 frames... Count: 0
+[2026-08-22 12:24:42] Starting batch vehicle counting runner...
+[2026-08-22 12:24:42] Found 98 MP4 videos.
+[2026-08-22 12:24:42] ============================================================
+[2026-08-22 12:24:42] PROCESSING VIDEO [1/98]
+[2026-08-22 12:24:42] INPUT:
+[2026-08-22 12:24:42] /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+[2026-08-22 12:24:42] OUTPUT:
+[2026-08-22 12:24:42] /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040
+[2026-08-22 12:24:42] START TIME:
+[2026-08-22 12:24:42] 2026-08-22 12:24:42
+[2026-08-22 12:24:42] ============================================================
+2026-08-22 12:24:46 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+2026-08-22 12:24:46 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+2026-08-22 12:24:47 [INFO] uvh_test.detector: Loaded 14 classes.
+2026-08-22 12:24:50 [INFO] uvh_test.main: OCR extracted start time from first frame: 20:36:00
+2026-08-22 12:24:57 [INFO] uvh_test.main: Processed 100 frames... Count: 0
+2026-08-22 12:25:01 [INFO] uvh_test.main: Processed 200 frames... Count: 0
+2026-08-22 12:25:05 [INFO] uvh_test.main: Processed 300 frames... Count: 0
+2026-08-22 12:25:09 [INFO] uvh_test.main: Processed 400 frames... Count: 0
+2026-08-22 12:25:13 [INFO] uvh_test.main: Processed 500 frames... Count: 0
+2026-08-22 12:25:17 [INFO] uvh_test.main: Processed 600 frames... Count: 0
+2026-08-22 12:25:20 [INFO] uvh_test.main: Processed 700 frames... Count: 0
+2026-08-22 12:25:24 [INFO] uvh_test.main: Processed 800 frames... Count: 0
+2026-08-22 12:25:28 [INFO] uvh_test.main: Processed 900 frames... Count: 0
+2026-08-22 12:25:32 [INFO] uvh_test.main: Processed 1000 frames... Count: 0
+2026-08-22 12:25:36 [INFO] uvh_test.main: Processed 1100 frames... Count: 0
+2026-08-22 12:25:40 [INFO] uvh_test.main: Processed 1200 frames... Count: 0
+2026-08-22 12:25:44 [INFO] uvh_test.main: Processed 1300 frames... Count: 0
+2026-08-22 12:25:48 [INFO] uvh_test.main: Processed 1400 frames... Count: 0
+2026-08-22 12:25:52 [INFO] uvh_test.main: Processed 1500 frames... Count: 0
+2026-08-22 12:25:56 [INFO] uvh_test.main: Processed 1600 frames... Count: 0
+2026-08-22 12:26:00 [INFO] uvh_test.main: Processed 1700 frames... Count: 0
+2026-08-22 12:26:03 [INFO] uvh_test.main: Processed 1800 frames... Count: 0
+2026-08-22 12:26:07 [INFO] uvh_test.main: Processed 1900 frames... Count: 0
+2026-08-22 12:26:11 [INFO] uvh_test.main: Processed 2000 frames... Count: 0
+2026-08-22 12:26:15 [INFO] uvh_test.main: Processed 2100 frames... Count: 0
+2026-08-22 12:26:19 [INFO] uvh_test.main: Processed 2200 frames... Count: 0
+2026-08-22 12:26:23 [INFO] uvh_test.main: Processed 2300 frames... Count: 0
+2026-08-22 12:26:27 [INFO] uvh_test.main: Processed 2400 frames... Count: 0
+2026-08-22 12:26:31 [INFO] uvh_test.main: Processed 2500 frames... Count: 0
+2026-08-22 12:26:35 [INFO] uvh_test.main: Processed 2600 frames... Count: 0
+2026-08-22 12:26:39 [INFO] uvh_test.main: Processed 2700 frames... Count: 0
+2026-08-22 12:26:42 [INFO] uvh_test.main: Processed 2800 frames... Count: 0
+2026-08-22 12:26:47 [INFO] uvh_test.main: Processed 2900 frames... Count: 0
+2026-08-22 12:26:51 [INFO] uvh_test.main: Processed 3000 frames... Count: 0
+2026-08-22 12:26:55 [INFO] uvh_test.main: Processed 3100 frames... Count: 0
+2026-08-22 12:26:59 [INFO] uvh_test.main: Processed 3200 frames... Count: 0
+2026-08-22 12:27:02 [INFO] uvh_test.main: Processed 3300 frames... Count: 0
+2026-08-22 12:27:06 [INFO] uvh_test.main: Processed 3400 frames... Count: 0
+2026-08-22 12:27:10 [INFO] uvh_test.main: Processed 3500 frames... Count: 0
+2026-08-22 12:27:14 [INFO] uvh_test.main: Processed 3600 frames... Count: 0
+2026-08-22 12:27:18 [INFO] uvh_test.main: Processed 3700 frames... Count: 0
+2026-08-22 12:27:21 [INFO] uvh_test.main: Processed 3800 frames... Count: 0
+2026-08-22 12:27:25 [INFO] uvh_test.main: Processed 3900 frames... Count: 0
+2026-08-22 12:27:29 [INFO] uvh_test.main: Processed 4000 frames... Count: 0
+2026-08-22 12:27:33 [INFO] uvh_test.main: Processed 4100 frames... Count: 0
+2026-08-22 12:27:37 [INFO] uvh_test.main: Processed 4200 frames... Count: 0
+2026-08-22 12:27:40 [INFO] uvh_test.main: Processed 4300 frames... Count: 0
+2026-08-22 12:27:44 [INFO] uvh_test.main: Processed 4400 frames... Count: 0
+2026-08-22 12:27:48 [INFO] uvh_test.main: Processed 4500 frames... Count: 0
+2026-08-22 12:27:52 [INFO] uvh_test.main: Processed 4600 frames... Count: 0
+2026-08-22 12:27:56 [INFO] uvh_test.main: Processed 4700 frames... Count: 0
+2026-08-22 12:28:00 [INFO] uvh_test.main: Processed 4800 frames... Count: 0
+2026-08-22 12:28:04 [INFO] uvh_test.main: Processed 4900 frames... Count: 0
+2026-08-22 12:28:08 [INFO] uvh_test.main: Processed 5000 frames... Count: 0
+2026-08-22 12:28:11 [INFO] uvh_test.main: Processed 5100 frames... Count: 0
+2026-08-22 12:28:16 [INFO] uvh_test.main: Processed 5200 frames... Count: 0
+2026-08-22 12:28:19 [INFO] uvh_test.main: Processed 5300 frames... Count: 0
+2026-08-22 12:28:23 [INFO] uvh_test.main: Processed 5400 frames... Count: 0
+2026-08-22 12:28:27 [INFO] uvh_test.main: Processed 5500 frames... Count: 0
+2026-08-22 12:28:30 [INFO] uvh_test.main: Processed 5600 frames... Count: 0
+2026-08-22 12:28:34 [INFO] uvh_test.main: Processed 5700 frames... Count: 0
+2026-08-22 12:28:38 [INFO] uvh_test.main: Processed 5800 frames... Count: 0
+2026-08-22 12:28:42 [INFO] uvh_test.main: Processed 5900 frames... Count: 0
+2026-08-22 12:28:46 [INFO] uvh_test.main: Processed 6000 frames... Count: 0
+2026-08-22 12:28:50 [INFO] uvh_test.main: Processed 6100 frames... Count: 0
+2026-08-22 12:28:53 [INFO] uvh_test.main: Processed 6200 frames... Count: 0
+2026-08-22 12:28:57 [INFO] uvh_test.main: Processed 6300 frames... Count: 0
+2026-08-22 12:29:01 [INFO] uvh_test.main: Processed 6400 frames... Count: 0
+2026-08-22 12:29:05 [INFO] uvh_test.main: Processed 6500 frames... Count: 0
+2026-08-22 12:29:09 [INFO] uvh_test.main: Processed 6600 frames... Count: 0
+2026-08-22 12:29:13 [INFO] uvh_test.main: Processed 6700 frames... Count: 0
+2026-08-22 12:29:17 [INFO] uvh_test.main: Processed 6800 frames... Count: 0
+2026-08-22 12:29:21 [INFO] uvh_test.main: Processed 6900 frames... Count: 0
+2026-08-22 12:29:25 [INFO] uvh_test.main: Processed 7000 frames... Count: 0
+2026-08-22 12:29:29 [INFO] uvh_test.main: Processed 7100 frames... Count: 0
+2026-08-22 12:29:33 [INFO] uvh_test.main: Processed 7200 frames... Count: 0
+2026-08-22 12:29:37 [INFO] uvh_test.main: Processed 7300 frames... Count: 0
+2026-08-22 12:29:41 [INFO] uvh_test.main: Processed 7400 frames... Count: 0
+2026-08-22 12:29:45 [INFO] uvh_test.main: Processed 7500 frames... Count: 0
+2026-08-22 12:29:49 [INFO] uvh_test.main: Processed 7600 frames... Count: 0
+2026-08-22 12:29:52 [INFO] uvh_test.main: Processed 7700 frames... Count: 0
+2026-08-22 12:29:56 [INFO] uvh_test.main: Processed 7800 frames... Count: 0
+2026-08-22 12:30:00 [INFO] uvh_test.main: Processed 7900 frames... Count: 0
+2026-08-22 12:30:04 [INFO] uvh_test.main: Processed 8000 frames... Count: 0
+2026-08-22 12:30:08 [INFO] uvh_test.main: Processed 8100 frames... Count: 0
+2026-08-22 12:30:11 [INFO] uvh_test.main: Processed 8200 frames... Count: 0
+2026-08-22 12:30:15 [INFO] uvh_test.main: Processed 8300 frames... Count: 0
+2026-08-22 12:30:19 [INFO] uvh_test.main: Processed 8400 frames... Count: 0
+2026-08-22 12:30:23 [INFO] uvh_test.main: Processed 8500 frames... Count: 0
+2026-08-22 12:30:27 [INFO] uvh_test.main: Processed 8600 frames... Count: 0
+2026-08-22 12:30:31 [INFO] uvh_test.main: Processed 8700 frames... Count: 0
+2026-08-22 12:30:34 [INFO] uvh_test.main: Processed 8800 frames... Count: 0
+2026-08-22 12:30:38 [INFO] uvh_test.main: Processed 8900 frames... Count: 0
+2026-08-22 12:30:42 [INFO] uvh_test.main: Processed 9000 frames... Count: 0
+2026-08-22 12:30:46 [INFO] uvh_test.main: Processed 9100 frames... Count: 0
+2026-08-22 12:30:49 [INFO] uvh_test.main: Processed 9200 frames... Count: 0
+2026-08-22 12:30:53 [INFO] uvh_test.main: Processed 9300 frames... Count: 0
+2026-08-22 12:30:57 [INFO] uvh_test.main: Processed 9400 frames... Count: 0
+2026-08-22 12:31:01 [INFO] uvh_test.main: Processed 9500 frames... Count: 0
+2026-08-22 12:31:04 [INFO] uvh_test.main: Processed 9600 frames... Count: 0
+2026-08-22 12:31:08 [INFO] uvh_test.main: Processed 9700 frames... Count: 0
+2026-08-22 12:31:12 [INFO] uvh_test.main: Processed 9800 frames... Count: 0
+2026-08-22 12:31:15 [INFO] uvh_test.main: Processed 9900 frames... Count: 0
+2026-08-22 12:31:19 [INFO] uvh_test.main: Processed 10000 frames... Count: 0
+2026-08-22 12:31:23 [INFO] uvh_test.main: Processed 10100 frames... Count: 0
+2026-08-22 12:31:27 [INFO] uvh_test.main: Processed 10200 frames... Count: 0
+2026-08-22 12:31:31 [INFO] uvh_test.main: Processed 10300 frames... Count: 0
+2026-08-22 12:31:35 [INFO] uvh_test.main: Processed 10400 frames... Count: 0
+2026-08-22 12:31:39 [INFO] uvh_test.main: Processed 10500 frames... Count: 0
+2026-08-22 12:31:42 [INFO] uvh_test.main: Processed 10600 frames... Count: 0
+2026-08-22 12:31:46 [INFO] uvh_test.main: Processed 10700 frames... Count: 0
+2026-08-22 12:31:50 [INFO] uvh_test.main: Processed 10800 frames... Count: 0
+2026-08-22 12:31:54 [INFO] uvh_test.main: Processed 10900 frames... Count: 0
+2026-08-22 12:31:58 [INFO] uvh_test.main: Processed 11000 frames... Count: 0
+2026-08-22 12:32:02 [INFO] uvh_test.main: Processed 11100 frames... Count: 0
+2026-08-22 12:32:06 [INFO] uvh_test.main: Processed 11200 frames... Count: 0
+2026-08-22 12:32:10 [INFO] uvh_test.main: Processed 11300 frames... Count: 0
+2026-08-22 12:32:13 [INFO] uvh_test.main: Processed 11400 frames... Count: 0
+2026-08-22 12:32:17 [INFO] uvh_test.main: Processed 11500 frames... Count: 0
+2026-08-22 12:32:22 [INFO] uvh_test.main: Processed 11600 frames... Count: 0
+2026-08-22 12:32:25 [INFO] uvh_test.main: Processed 11700 frames... Count: 0
+2026-08-22 12:32:29 [INFO] uvh_test.main: Processed 11800 frames... Count: 0
+2026-08-22 12:32:33 [INFO] uvh_test.main: Processed 11900 frames... Count: 0
+2026-08-22 12:32:37 [INFO] uvh_test.main: Processed 12000 frames... Count: 0
+2026-08-22 12:32:41 [INFO] uvh_test.main: Processed 12100 frames... Count: 0
+2026-08-22 12:32:45 [INFO] uvh_test.main: Processed 12200 frames... Count: 0
+2026-08-22 12:32:48 [INFO] uvh_test.main: Processed 12300 frames... Count: 0
+2026-08-22 12:32:52 [INFO] uvh_test.main: Processed 12400 frames... Count: 0
+2026-08-22 12:32:56 [INFO] uvh_test.main: Processed 12500 frames... Count: 0
+2026-08-22 12:33:00 [INFO] uvh_test.main: Processed 12600 frames... Count: 0
+2026-08-22 12:33:04 [INFO] uvh_test.main: Processed 12700 frames... Count: 0
+2026-08-22 12:33:08 [INFO] uvh_test.main: Processed 12800 frames... Count: 0
+2026-08-22 12:33:12 [INFO] uvh_test.main: Processed 12900 frames... Count: 0
+2026-08-22 12:33:16 [INFO] uvh_test.main: Processed 13000 frames... Count: 0
+2026-08-22 12:33:20 [INFO] uvh_test.main: Processed 13100 frames... Count: 0
+2026-08-22 12:33:23 [INFO] uvh_test.main: Processed 13200 frames... Count: 0
+2026-08-22 12:33:27 [INFO] uvh_test.main: Processed 13300 frames... Count: 0
+2026-08-22 12:33:31 [INFO] uvh_test.main: Processed 13400 frames... Count: 0
+2026-08-22 12:33:35 [INFO] uvh_test.main: Processed 13500 frames... Count: 0
+2026-08-22 12:33:39 [INFO] uvh_test.main: Processed 13600 frames... Count: 1
+2026-08-22 12:33:43 [INFO] uvh_test.main: Processed 13700 frames... Count: 1
+2026-08-22 12:33:46 [INFO] uvh_test.main: Processed 13800 frames... Count: 1
+2026-08-22 12:33:50 [INFO] uvh_test.main: Processed 13900 frames... Count: 1
+2026-08-22 12:33:54 [INFO] uvh_test.main: Processed 14000 frames... Count: 1
+2026-08-22 12:33:58 [INFO] uvh_test.main: Processed 14100 frames... Count: 1
+2026-08-22 12:34:02 [INFO] uvh_test.main: Processed 14200 frames... Count: 1
+2026-08-22 12:34:05 [INFO] uvh_test.main: Processed 14300 frames... Count: 1
+2026-08-22 12:34:09 [INFO] uvh_test.main: Processed 14400 frames... Count: 1
+2026-08-22 12:34:13 [INFO] uvh_test.main: Processed 14500 frames... Count: 1
+2026-08-22 12:34:17 [INFO] uvh_test.main: Processed 14600 frames... Count: 1
+2026-08-22 12:34:21 [INFO] uvh_test.main: Processed 14700 frames... Count: 1
+2026-08-22 12:34:25 [INFO] uvh_test.main: Processed 14800 frames... Count: 1
+2026-08-22 12:34:28 [INFO] uvh_test.main: Processed 14900 frames... Count: 1
+2026-08-22 12:34:32 [INFO] uvh_test.main: Processed 15000 frames... Count: 1
+2026-08-22 12:34:36 [INFO] uvh_test.main: Processed 15100 frames... Count: 1
+2026-08-22 12:34:40 [INFO] uvh_test.main: Processed 15200 frames... Count: 1
+2026-08-22 12:34:43 [INFO] uvh_test.main: Processed 15300 frames... Count: 1
+2026-08-22 12:34:47 [INFO] uvh_test.main: Processed 15400 frames... Count: 1
+2026-08-22 12:34:51 [INFO] uvh_test.main: Processed 15500 frames... Count: 1
+2026-08-22 12:34:55 [INFO] uvh_test.main: Processed 15600 frames... Count: 1
+2026-08-22 12:34:59 [INFO] uvh_test.main: Processed 15700 frames... Count: 1
+2026-08-22 12:35:03 [INFO] uvh_test.main: Processed 15800 frames... Count: 1
+2026-08-22 12:35:07 [INFO] uvh_test.main: Processed 15900 frames... Count: 1
+2026-08-22 12:35:10 [INFO] uvh_test.main: Processed 16000 frames... Count: 1
+2026-08-22 12:35:14 [INFO] uvh_test.main: Processed 16100 frames... Count: 1
+2026-08-22 12:35:18 [INFO] uvh_test.main: Processed 16200 frames... Count: 1
+2026-08-22 12:35:22 [INFO] uvh_test.main: Processed 16300 frames... Count: 1
+2026-08-22 12:35:25 [INFO] uvh_test.main: Processed 16400 frames... Count: 1
+2026-08-22 12:35:29 [INFO] uvh_test.main: Processed 16500 frames... Count: 1
+2026-08-22 12:35:33 [INFO] uvh_test.main: Processed 16600 frames... Count: 1
+2026-08-22 12:35:36 [INFO] uvh_test.main: Processed 16700 frames... Count: 1
+2026-08-22 12:35:40 [INFO] uvh_test.main: Processed 16800 frames... Count: 1
+2026-08-22 12:35:44 [INFO] uvh_test.main: Processed 16900 frames... Count: 1
+2026-08-22 12:35:47 [INFO] uvh_test.main: Processed 17000 frames... Count: 1
+2026-08-22 12:35:51 [INFO] uvh_test.main: Processed 17100 frames... Count: 1
+2026-08-22 12:35:54 [INFO] uvh_test.main: Processed 17200 frames... Count: 1
+2026-08-22 12:35:58 [INFO] uvh_test.main: Processed 17300 frames... Count: 1
+2026-08-22 12:36:02 [INFO] uvh_test.main: Processed 17400 frames... Count: 1
+2026-08-22 12:36:06 [INFO] uvh_test.main: Processed 17500 frames... Count: 1
+2026-08-22 12:36:10 [INFO] uvh_test.main: Processed 17600 frames... Count: 1
+2026-08-22 12:36:13 [INFO] uvh_test.main: Processed 17700 frames... Count: 1
+2026-08-22 12:36:17 [INFO] uvh_test.main: Processed 17800 frames... Count: 1
+2026-08-22 12:36:21 [INFO] uvh_test.main: Processed 17900 frames... Count: 1
+2026-08-22 12:36:25 [INFO] uvh_test.main: Processed 18000 frames... Count: 1
+2026-08-22 12:36:28 [INFO] uvh_test.main: Processed 18100 frames... Count: 1
+2026-08-22 12:36:32 [INFO] uvh_test.main: Processed 18200 frames... Count: 1
+2026-08-22 12:36:36 [INFO] uvh_test.main: Processed 18300 frames... Count: 1
+2026-08-22 12:36:40 [INFO] uvh_test.main: Processed 18400 frames... Count: 1
+2026-08-22 12:36:44 [INFO] uvh_test.main: Processed 18500 frames... Count: 1
+2026-08-22 12:36:47 [INFO] uvh_test.main: Processed 18600 frames... Count: 1
+2026-08-22 12:36:51 [INFO] uvh_test.main: Processed 18700 frames... Count: 1
+2026-08-22 12:36:55 [INFO] uvh_test.main: Processed 18800 frames... Count: 1
+2026-08-22 12:36:59 [INFO] uvh_test.main: Processed 18900 frames... Count: 1
+2026-08-22 12:37:02 [INFO] uvh_test.main: Processed 19000 frames... Count: 1
+2026-08-22 12:37:06 [INFO] uvh_test.main: Processed 19100 frames... Count: 1
+2026-08-22 12:37:09 [INFO] uvh_test.main: Processed 19200 frames... Count: 1
+2026-08-22 12:37:13 [INFO] uvh_test.main: Processed 19300 frames... Count: 1
+2026-08-22 12:37:16 [INFO] uvh_test.main: Processed 19400 frames... Count: 1
+[2026-08-22 12:39:34] Starting batch vehicle counting runner...
+[2026-08-22 12:39:34] Found 98 MP4 videos.
+[2026-08-22 12:39:34] ============================================================
+[2026-08-22 12:39:34] [1/98] STARTING
+[2026-08-22 12:39:34] Video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+[2026-08-22 12:39:34] Processing FPS: 15
+[2026-08-22 12:39:34] Early detection check: first 10,000 processed frames
+[2026-08-22 12:39:34] OUTPUT:
+[2026-08-22 12:39:34] /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040
+[2026-08-22 12:39:34] START TIME:
+[2026-08-22 12:39:34] 2026-08-22 12:39:34
+[2026-08-22 12:39:34] ============================================================
+2026-08-22 12:39:36 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+2026-08-22 12:39:36 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+2026-08-22 12:39:36 [INFO] uvh_test.detector: Loaded 14 classes.
+2026-08-22 12:39:39 [INFO] uvh_test.main: OCR extracted start time from first frame: 20:36:00
+2026-08-22 12:39:45 [INFO] uvh_test.main: Processed 100 frames... Count: 0
+2026-08-22 12:39:50 [INFO] uvh_test.main: Processed 200 frames... Count: 0
+2026-08-22 12:39:54 [INFO] uvh_test.main: Processed 300 frames... Count: 0
+2026-08-22 12:39:59 [INFO] uvh_test.main: Processed 400 frames... Count: 0
+2026-08-22 12:40:03 [INFO] uvh_test.main: Processed 500 frames... Count: 0
+2026-08-22 12:40:07 [INFO] uvh_test.main: Processed 600 frames... Count: 0
+2026-08-22 12:40:11 [INFO] uvh_test.main: Processed 700 frames... Count: 0
+2026-08-22 12:40:15 [INFO] uvh_test.main: Processed 800 frames... Count: 0
+2026-08-22 12:40:20 [INFO] uvh_test.main: Processed 900 frames... Count: 0
+2026-08-22 12:40:24 [INFO] uvh_test.main: Processed 1000 frames... Count: 0
+2026-08-22 12:40:28 [INFO] uvh_test.main: Processed 1100 frames... Count: 0
+2026-08-22 12:40:33 [INFO] uvh_test.main: Processed 1200 frames... Count: 0
+2026-08-22 12:40:37 [INFO] uvh_test.main: Processed 1300 frames... Count: 0
+2026-08-22 12:40:41 [INFO] uvh_test.main: Processed 1400 frames... Count: 0
+2026-08-22 12:40:45 [INFO] uvh_test.main: Processed 1500 frames... Count: 0
+2026-08-22 12:40:49 [INFO] uvh_test.main: Processed 1600 frames... Count: 0
+2026-08-22 12:40:54 [INFO] uvh_test.main: Processed 1700 frames... Count: 0
+2026-08-22 12:40:58 [INFO] uvh_test.main: Processed 1800 frames... Count: 0
+2026-08-22 12:41:03 [INFO] uvh_test.main: Processed 1900 frames... Count: 0
+2026-08-22 12:41:07 [INFO] uvh_test.main: Processed 2000 frames... Count: 0
+2026-08-22 12:41:11 [INFO] uvh_test.main: Processed 2100 frames... Count: 0
+2026-08-22 12:41:15 [INFO] uvh_test.main: Processed 2200 frames... Count: 0
+2026-08-22 12:41:20 [INFO] uvh_test.main: Processed 2300 frames... Count: 0
+2026-08-22 12:41:24 [INFO] uvh_test.main: Processed 2400 frames... Count: 0
+2026-08-22 12:41:28 [INFO] uvh_test.main: Processed 2500 frames... Count: 0
+2026-08-22 12:41:32 [INFO] uvh_test.main: Processed 2600 frames... Count: 0
+2026-08-22 12:41:37 [INFO] uvh_test.main: Processed 2700 frames... Count: 0
+2026-08-22 12:41:41 [INFO] uvh_test.main: Processed 2800 frames... Count: 0
+2026-08-22 12:41:45 [INFO] uvh_test.main: Processed 2900 frames... Count: 0
+2026-08-22 12:41:49 [INFO] uvh_test.main: Processed 3000 frames... Count: 0
+2026-08-22 12:41:53 [INFO] uvh_test.main: Processed 3100 frames... Count: 0
+2026-08-22 12:41:57 [INFO] uvh_test.main: Processed 3200 frames... Count: 0
+2026-08-22 12:42:02 [INFO] uvh_test.main: Processed 3300 frames... Count: 0
+2026-08-22 12:42:06 [INFO] uvh_test.main: Processed 3400 frames... Count: 0
+2026-08-22 12:42:10 [INFO] uvh_test.main: Processed 3500 frames... Count: 0
+2026-08-22 12:42:14 [INFO] uvh_test.main: Processed 3600 frames... Count: 0
+2026-08-22 12:42:19 [INFO] uvh_test.main: Processed 3700 frames... Count: 0
+2026-08-22 12:42:23 [INFO] uvh_test.main: Processed 3800 frames... Count: 0
+2026-08-22 12:42:27 [INFO] uvh_test.main: Processed 3900 frames... Count: 0
+2026-08-22 12:42:31 [INFO] uvh_test.main: Processed 4000 frames... Count: 0
+2026-08-22 12:42:36 [INFO] uvh_test.main: Processed 4100 frames... Count: 0
+2026-08-22 12:42:40 [INFO] uvh_test.main: Processed 4200 frames... Count: 0
+2026-08-22 12:42:44 [INFO] uvh_test.main: Processed 4300 frames... Count: 0
+2026-08-22 12:42:49 [INFO] uvh_test.main: Processed 4400 frames... Count: 0
+2026-08-22 12:42:53 [INFO] uvh_test.main: Processed 4500 frames... Count: 0
+2026-08-22 12:42:58 [INFO] uvh_test.main: Processed 4600 frames... Count: 0
+2026-08-22 12:43:03 [INFO] uvh_test.main: Processed 4700 frames... Count: 0
+2026-08-22 12:43:07 [INFO] uvh_test.main: Processed 4800 frames... Count: 0
+2026-08-22 12:43:12 [INFO] uvh_test.main: Processed 4900 frames... Count: 0
+2026-08-22 12:43:16 [INFO] uvh_test.main: Processed 5000 frames... Count: 0
+2026-08-22 12:43:20 [INFO] uvh_test.main: Processed 5100 frames... Count: 0
+2026-08-22 12:43:24 [INFO] uvh_test.main: Processed 5200 frames... Count: 0
+2026-08-22 12:43:29 [INFO] uvh_test.main: Processed 5300 frames... Count: 0
+2026-08-22 12:43:33 [INFO] uvh_test.main: Processed 5400 frames... Count: 0
+2026-08-22 12:43:38 [INFO] uvh_test.main: Processed 5500 frames... Count: 0
+2026-08-22 12:43:42 [INFO] uvh_test.main: Processed 5600 frames... Count: 0
+2026-08-22 12:43:47 [INFO] uvh_test.main: Processed 5700 frames... Count: 0
+2026-08-22 12:43:51 [INFO] uvh_test.main: Processed 5800 frames... Count: 0
+2026-08-22 12:43:55 [INFO] uvh_test.main: Processed 5900 frames... Count: 0
+2026-08-22 12:43:59 [INFO] uvh_test.main: Processed 6000 frames... Count: 0
+2026-08-22 12:44:04 [INFO] uvh_test.main: Processed 6100 frames... Count: 0
+2026-08-22 12:44:08 [INFO] uvh_test.main: Processed 6200 frames... Count: 0
+2026-08-22 12:44:12 [INFO] uvh_test.main: Processed 6300 frames... Count: 0
+2026-08-22 12:44:16 [INFO] uvh_test.main: Processed 6400 frames... Count: 0
+2026-08-22 12:44:20 [INFO] uvh_test.main: Processed 6500 frames... Count: 0
+2026-08-22 12:44:24 [INFO] uvh_test.main: Processed 6600 frames... Count: 0
+2026-08-22 12:44:28 [INFO] uvh_test.main: Processed 6700 frames... Count: 0
+2026-08-22 12:44:32 [INFO] uvh_test.main: Processed 6800 frames... Count: 0
+2026-08-22 12:44:37 [INFO] uvh_test.main: Processed 6900 frames... Count: 0
+2026-08-22 12:44:41 [INFO] uvh_test.main: Processed 7000 frames... Count: 0
+2026-08-22 12:44:45 [INFO] uvh_test.main: Processed 7100 frames... Count: 0
+2026-08-22 12:44:49 [INFO] uvh_test.main: Processed 7200 frames... Count: 0
+2026-08-22 12:44:53 [INFO] uvh_test.main: Processed 7300 frames... Count: 0
+2026-08-22 12:44:57 [INFO] uvh_test.main: Processed 7400 frames... Count: 0
+2026-08-22 12:45:01 [INFO] uvh_test.main: Processed 7500 frames... Count: 0
+2026-08-22 12:45:05 [INFO] uvh_test.main: Processed 7600 frames... Count: 0
+2026-08-22 12:45:10 [INFO] uvh_test.main: Processed 7700 frames... Count: 0
+2026-08-22 12:45:14 [INFO] uvh_test.main: Processed 7800 frames... Count: 0
+2026-08-22 12:45:18 [INFO] uvh_test.main: Processed 7900 frames... Count: 0
+2026-08-22 12:45:22 [INFO] uvh_test.main: Processed 8000 frames... Count: 0
+2026-08-22 12:45:26 [INFO] uvh_test.main: Processed 8100 frames... Count: 0
+2026-08-22 12:45:31 [INFO] uvh_test.main: Processed 8200 frames... Count: 0
+2026-08-22 12:45:35 [INFO] uvh_test.main: Processed 8300 frames... Count: 0
+2026-08-22 12:45:39 [INFO] uvh_test.main: Processed 8400 frames... Count: 0
+2026-08-22 12:45:44 [INFO] uvh_test.main: Processed 8500 frames... Count: 0
+2026-08-22 12:45:48 [INFO] uvh_test.main: Processed 8600 frames... Count: 0
+2026-08-22 12:45:52 [INFO] uvh_test.main: Processed 8700 frames... Count: 0
+2026-08-22 12:45:57 [INFO] uvh_test.main: Processed 8800 frames... Count: 0
+2026-08-22 12:46:01 [INFO] uvh_test.main: Processed 8900 frames... Count: 0
+2026-08-22 12:46:05 [INFO] uvh_test.main: Processed 9000 frames... Count: 0
+2026-08-22 12:46:09 [INFO] uvh_test.main: Processed 9100 frames... Count: 0
+2026-08-22 12:46:13 [INFO] uvh_test.main: Processed 9200 frames... Count: 0
+2026-08-22 12:46:18 [INFO] uvh_test.main: Processed 9300 frames... Count: 0
+2026-08-22 12:46:22 [INFO] uvh_test.main: Processed 9400 frames... Count: 0
+2026-08-22 12:46:26 [INFO] uvh_test.main: Processed 9500 frames... Count: 0
+2026-08-22 12:46:30 [INFO] uvh_test.main: Processed 9600 frames... Count: 0
+2026-08-22 12:46:35 [INFO] uvh_test.main: Processed 9700 frames... Count: 0
+2026-08-22 12:46:39 [INFO] uvh_test.main: Processed 9800 frames... Count: 0
+2026-08-22 12:46:43 [INFO] uvh_test.main: Processed 9900 frames... Count: 0
+2026-08-22 12:46:47 [INFO] uvh_test.main: Processed 10000 frames... Count: 0
+2026-08-22 12:46:51 [INFO] uvh_test.main: Processed 10100 frames... Count: 0
+2026-08-22 12:46:56 [INFO] uvh_test.main: Processed 10200 frames... Count: 0
+2026-08-22 12:47:00 [INFO] uvh_test.main: Processed 10300 frames... Count: 0
+2026-08-22 12:47:04 [INFO] uvh_test.main: Processed 10400 frames... Count: 0
+2026-08-22 12:47:08 [INFO] uvh_test.main: Processed 10500 frames... Count: 0
+2026-08-22 12:47:12 [INFO] uvh_test.main: Processed 10600 frames... Count: 0
+2026-08-22 12:47:17 [INFO] uvh_test.main: Processed 10700 frames... Count: 0
+2026-08-22 12:47:21 [INFO] uvh_test.main: Processed 10800 frames... Count: 0
+2026-08-22 12:47:25 [INFO] uvh_test.main: Processed 10900 frames... Count: 0
+2026-08-22 12:47:29 [INFO] uvh_test.main: Processed 11000 frames... Count: 0
+2026-08-22 12:47:34 [INFO] uvh_test.main: Processed 11100 frames... Count: 0
+2026-08-22 12:47:38 [INFO] uvh_test.main: Processed 11200 frames... Count: 0
+2026-08-22 12:47:42 [INFO] uvh_test.main: Processed 11300 frames... Count: 0
+2026-08-22 12:47:46 [INFO] uvh_test.main: Processed 11400 frames... Count: 0
+2026-08-22 12:47:50 [INFO] uvh_test.main: Processed 11500 frames... Count: 0
+2026-08-22 12:47:54 [INFO] uvh_test.main: Processed 11600 frames... Count: 0
+2026-08-22 12:47:58 [INFO] uvh_test.main: Processed 11700 frames... Count: 0
+2026-08-22 12:48:02 [INFO] uvh_test.main: Processed 11800 frames... Count: 0
+2026-08-22 12:48:07 [INFO] uvh_test.main: Processed 11900 frames... Count: 0
+2026-08-22 12:48:11 [INFO] uvh_test.main: Processed 12000 frames... Count: 0
+2026-08-22 12:48:15 [INFO] uvh_test.main: Processed 12100 frames... Count: 0
+2026-08-22 12:48:19 [INFO] uvh_test.main: Processed 12200 frames... Count: 0
+2026-08-22 12:48:23 [INFO] uvh_test.main: Processed 12300 frames... Count: 0
+2026-08-22 12:48:27 [INFO] uvh_test.main: Processed 12400 frames... Count: 0
+2026-08-22 12:48:31 [INFO] uvh_test.main: Processed 12500 frames... Count: 0
+2026-08-22 12:48:35 [INFO] uvh_test.main: Processed 12600 frames... Count: 0
+2026-08-22 12:48:39 [INFO] uvh_test.main: Processed 12700 frames... Count: 0
+2026-08-22 12:48:43 [INFO] uvh_test.main: Processed 12800 frames... Count: 0
+2026-08-22 12:48:47 [INFO] uvh_test.main: Processed 12900 frames... Count: 0
+2026-08-22 12:48:51 [INFO] uvh_test.main: Processed 13000 frames... Count: 0
+2026-08-22 12:48:55 [INFO] uvh_test.main: Processed 13100 frames... Count: 0
+2026-08-22 12:48:59 [INFO] uvh_test.main: Processed 13200 frames... Count: 0
+2026-08-22 12:49:04 [INFO] uvh_test.main: Processed 13300 frames... Count: 0
+2026-08-22 12:49:08 [INFO] uvh_test.main: Processed 13400 frames... Count: 0
+2026-08-22 12:49:12 [INFO] uvh_test.main: Processed 13500 frames... Count: 0
+2026-08-22 12:49:16 [INFO] uvh_test.main: Processed 13600 frames... Count: 0
+2026-08-22 12:49:20 [INFO] uvh_test.main: Processed 13700 frames... Count: 0
+2026-08-22 12:49:24 [INFO] uvh_test.main: Processed 13800 frames... Count: 0
+2026-08-22 12:49:28 [INFO] uvh_test.main: Processed 13900 frames... Count: 0
+2026-08-22 12:49:33 [INFO] uvh_test.main: Processed 14000 frames... Count: 0
+2026-08-22 12:49:37 [INFO] uvh_test.main: Processed 14100 frames... Count: 0
+2026-08-22 12:49:41 [INFO] uvh_test.main: Processed 14200 frames... Count: 0
+2026-08-22 12:49:45 [INFO] uvh_test.main: Processed 14300 frames... Count: 0
+2026-08-22 12:49:49 [INFO] uvh_test.main: Processed 14400 frames... Count: 0
+2026-08-22 12:49:53 [INFO] uvh_test.main: Processed 14500 frames... Count: 0
+2026-08-22 12:49:56 [INFO] uvh_test.main: Processed 14600 frames... Count: 0
+2026-08-22 12:50:00 [INFO] uvh_test.main: Processed 14700 frames... Count: 0
+2026-08-22 12:50:04 [INFO] uvh_test.main: Processed 14800 frames... Count: 0
+2026-08-22 12:50:08 [INFO] uvh_test.main: Processed 14900 frames... Count: 0
+2026-08-22 12:50:12 [INFO] uvh_test.main: Processed 15000 frames... Count: 0
+2026-08-22 12:50:16 [INFO] uvh_test.main: Processed 15100 frames... Count: 0
+2026-08-22 12:50:20 [INFO] uvh_test.main: Processed 15200 frames... Count: 0
+2026-08-22 12:50:24 [INFO] uvh_test.main: Processed 15300 frames... Count: 0
+2026-08-22 12:50:28 [INFO] uvh_test.main: Processed 15400 frames... Count: 0
+2026-08-22 12:50:32 [INFO] uvh_test.main: Processed 15500 frames... Count: 0
+2026-08-22 12:50:36 [INFO] uvh_test.main: Processed 15600 frames... Count: 0
+2026-08-22 12:50:40 [INFO] uvh_test.main: Processed 15700 frames... Count: 0
+2026-08-22 12:50:44 [INFO] uvh_test.main: Processed 15800 frames... Count: 0
+2026-08-22 12:50:48 [INFO] uvh_test.main: Processed 15900 frames... Count: 0
+2026-08-22 12:50:52 [INFO] uvh_test.main: Processed 16000 frames... Count: 0
+2026-08-22 12:50:56 [INFO] uvh_test.main: Processed 16100 frames... Count: 0
+2026-08-22 12:50:59 [INFO] uvh_test.main: Processed 16200 frames... Count: 0
+2026-08-22 12:51:03 [INFO] uvh_test.main: Processed 16300 frames... Count: 0
+2026-08-22 12:51:07 [INFO] uvh_test.main: Processed 16400 frames... Count: 0
+2026-08-22 12:51:11 [INFO] uvh_test.main: Processed 16500 frames... Count: 0
+2026-08-22 12:51:15 [INFO] uvh_test.main: Processed 16600 frames... Count: 0
+2026-08-22 12:51:19 [INFO] uvh_test.main: Processed 16700 frames... Count: 0
+2026-08-22 12:51:23 [INFO] uvh_test.main: Processed 16800 frames... Count: 0
+2026-08-22 12:51:26 [INFO] uvh_test.main: Processed 16900 frames... Count: 0
+2026-08-22 12:51:31 [INFO] uvh_test.main: Processed 17000 frames... Count: 0
+2026-08-22 12:51:34 [INFO] uvh_test.main: Processed 17100 frames... Count: 0
+2026-08-22 12:51:38 [INFO] uvh_test.main: Processed 17200 frames... Count: 0
+2026-08-22 12:51:42 [INFO] uvh_test.main: Processed 17300 frames... Count: 0
+2026-08-22 12:51:46 [INFO] uvh_test.main: Processed 17400 frames... Count: 0
+2026-08-22 12:51:50 [INFO] uvh_test.main: Processed 17500 frames... Count: 0
+2026-08-22 12:51:54 [INFO] uvh_test.main: Processed 17600 frames... Count: 0
+2026-08-22 12:51:58 [INFO] uvh_test.main: Processed 17700 frames... Count: 0
+2026-08-22 12:52:02 [INFO] uvh_test.main: Processed 17800 frames... Count: 0
+2026-08-22 12:52:06 [INFO] uvh_test.main: Processed 17900 frames... Count: 0
+2026-08-22 12:52:10 [INFO] uvh_test.main: Processed 18000 frames... Count: 0
+2026-08-22 12:52:14 [INFO] uvh_test.main: Processed 18100 frames... Count: 0
+2026-08-22 12:52:18 [INFO] uvh_test.main: Processed 18200 frames... Count: 0
+2026-08-22 12:52:22 [INFO] uvh_test.main: Processed 18300 frames... Count: 0
+2026-08-22 12:52:26 [INFO] uvh_test.main: Processed 18400 frames... Count: 0
+2026-08-22 12:52:30 [INFO] uvh_test.main: Processed 18500 frames... Count: 0
+2026-08-22 12:52:34 [INFO] uvh_test.main: Processed 18600 frames... Count: 0
+2026-08-22 12:52:38 [INFO] uvh_test.main: Processed 18700 frames... Count: 0
+2026-08-22 12:52:42 [INFO] uvh_test.main: Processed 18800 frames... Count: 0
+2026-08-22 12:52:46 [INFO] uvh_test.main: Processed 18900 frames... Count: 0
+2026-08-22 12:52:50 [INFO] uvh_test.main: Processed 19000 frames... Count: 0
+2026-08-22 12:52:54 [INFO] uvh_test.main: Processed 19100 frames... Count: 0
+2026-08-22 12:52:58 [INFO] uvh_test.main: Processed 19200 frames... Count: 0
+2026-08-22 12:53:02 [INFO] uvh_test.main: Processed 19300 frames... Count: 0
+2026-08-22 12:53:06 [INFO] uvh_test.main: Processed 19400 frames... Count: 0
+2026-08-22 12:53:11 [INFO] uvh_test.main: Processed 19500 frames... Count: 0
+2026-08-22 12:53:15 [INFO] uvh_test.main: Processed 19600 frames... Count: 0
+2026-08-22 12:53:19 [INFO] uvh_test.main: Processed 19700 frames... Count: 0
+2026-08-22 12:53:24 [INFO] uvh_test.main: Processed 19800 frames... Count: 0
+2026-08-22 12:53:28 [INFO] uvh_test.main: Processed 19900 frames... Count: 0
+2026-08-22 12:53:32 [INFO] uvh_test.main: Processed 20000 frames... Count: 0
+2026-08-22 12:53:36 [INFO] uvh_test.main: Processed 20100 frames... Count: 0
+2026-08-22 12:53:40 [INFO] uvh_test.main: Processed 20200 frames... Count: 0
+2026-08-22 12:53:44 [INFO] uvh_test.main: Processed 20300 frames... Count: 0
+2026-08-22 12:53:48 [INFO] uvh_test.main: Processed 20400 frames... Count: 0
+2026-08-22 12:53:53 [INFO] uvh_test.main: Processed 20500 frames... Count: 0
+2026-08-22 12:53:56 [INFO] uvh_test.main: Processed 20600 frames... Count: 0
+2026-08-22 12:54:00 [INFO] uvh_test.main: Processed 20700 frames... Count: 0
+2026-08-22 12:54:05 [INFO] uvh_test.main: Processed 20800 frames... Count: 0
+2026-08-22 12:54:09 [INFO] uvh_test.main: Processed 20900 frames... Count: 0
+2026-08-22 12:54:13 [INFO] uvh_test.main: Processed 21000 frames... Count: 0
+2026-08-22 12:54:17 [INFO] uvh_test.main: Processed 21100 frames... Count: 0
+2026-08-22 12:54:21 [INFO] uvh_test.main: Processed 21200 frames... Count: 0
+2026-08-22 12:54:25 [INFO] uvh_test.main: Processed 21300 frames... Count: 0
+2026-08-22 12:54:29 [INFO] uvh_test.main: Processed 21400 frames... Count: 0
+2026-08-22 12:54:33 [INFO] uvh_test.main: Processed 21500 frames... Count: 0
+2026-08-22 12:54:37 [INFO] uvh_test.main: Processed 21600 frames... Count: 0
+2026-08-22 12:54:41 [INFO] uvh_test.main: Processed 21700 frames... Count: 0
+2026-08-22 12:54:45 [INFO] uvh_test.main: Processed 21800 frames... Count: 0
+2026-08-22 12:54:49 [INFO] uvh_test.main: Processed 21900 frames... Count: 0
+2026-08-22 12:54:53 [INFO] uvh_test.main: Processed 22000 frames... Count: 0
+2026-08-22 12:54:57 [INFO] uvh_test.main: Processed 22100 frames... Count: 0
+2026-08-22 12:55:02 [INFO] uvh_test.main: Processed 22200 frames... Count: 0
+2026-08-22 12:55:06 [INFO] uvh_test.main: Processed 22300 frames... Count: 0
+2026-08-22 12:55:10 [INFO] uvh_test.main: Processed 22400 frames... Count: 0
+2026-08-22 12:55:14 [INFO] uvh_test.main: Processed 22500 frames... Count: 0
+2026-08-22 12:55:18 [INFO] uvh_test.main: Processed 22600 frames... Count: 0
+2026-08-22 12:55:22 [INFO] uvh_test.main: Processed 22700 frames... Count: 0
+2026-08-22 12:55:26 [INFO] uvh_test.main: Processed 22800 frames... Count: 0
+2026-08-22 12:55:30 [INFO] uvh_test.main: Processed 22900 frames... Count: 0
+2026-08-22 12:55:34 [INFO] uvh_test.main: Processed 23000 frames... Count: 0
+2026-08-22 12:55:38 [INFO] uvh_test.main: Processed 23100 frames... Count: 0
+2026-08-22 12:55:42 [INFO] uvh_test.main: Processed 23200 frames... Count: 0
+2026-08-22 12:55:46 [INFO] uvh_test.main: Processed 23300 frames... Count: 0
+2026-08-22 12:55:50 [INFO] uvh_test.main: Processed 23400 frames... Count: 0
+2026-08-22 12:55:54 [INFO] uvh_test.main: Processed 23500 frames... Count: 0
+2026-08-22 12:55:58 [INFO] uvh_test.main: Processed 23600 frames... Count: 0
+2026-08-22 12:56:02 [INFO] uvh_test.main: Processed 23700 frames... Count: 0
+2026-08-22 12:56:06 [INFO] uvh_test.main: Processed 23800 frames... Count: 0
+2026-08-22 12:56:10 [INFO] uvh_test.main: Processed 23900 frames... Count: 0
+2026-08-22 12:56:14 [INFO] uvh_test.main: Processed 24000 frames... Count: 0
+2026-08-22 12:56:18 [INFO] uvh_test.main: Processed 24100 frames... Count: 0
+2026-08-22 12:56:23 [INFO] uvh_test.main: Processed 24200 frames... Count: 0
+2026-08-22 12:56:27 [INFO] uvh_test.main: Processed 24300 frames... Count: 0
+2026-08-22 12:56:31 [INFO] uvh_test.main: Processed 24400 frames... Count: 0
+2026-08-22 12:56:35 [INFO] uvh_test.main: Processed 24500 frames... Count: 0
+2026-08-22 12:56:39 [INFO] uvh_test.main: Processed 24600 frames... Count: 0
+2026-08-22 12:56:43 [INFO] uvh_test.main: Processed 24700 frames... Count: 0
+2026-08-22 12:56:47 [INFO] uvh_test.main: Processed 24800 frames... Count: 0
+2026-08-22 12:56:51 [INFO] uvh_test.main: Processed 24900 frames... Count: 0
+2026-08-22 12:56:55 [INFO] uvh_test.main: Processed 25000 frames... Count: 0
+2026-08-22 12:56:59 [INFO] uvh_test.main: Processed 25100 frames... Count: 0
+2026-08-22 12:57:03 [INFO] uvh_test.main: Processed 25200 frames... Count: 0
+2026-08-22 12:57:07 [INFO] uvh_test.main: Processed 25300 frames... Count: 0
+2026-08-22 12:57:11 [INFO] uvh_test.main: Processed 25400 frames... Count: 0
+2026-08-22 12:57:15 [INFO] uvh_test.main: Processed 25500 frames... Count: 0
+2026-08-22 12:57:19 [INFO] uvh_test.main: Processed 25600 frames... Count: 0
+2026-08-22 12:57:23 [INFO] uvh_test.main: Processed 25700 frames... Count: 0
+2026-08-22 12:57:27 [INFO] uvh_test.main: Processed 25800 frames... Count: 0
+2026-08-22 12:57:32 [INFO] uvh_test.main: Processed 25900 frames... Count: 0
+2026-08-22 12:57:36 [INFO] uvh_test.main: Processed 26000 frames... Count: 0
+2026-08-22 12:57:40 [INFO] uvh_test.main: Processed 26100 frames... Count: 0
+2026-08-22 12:57:44 [INFO] uvh_test.main: Processed 26200 frames... Count: 0
+2026-08-22 12:57:48 [INFO] uvh_test.main: Processed 26300 frames... Count: 0
+2026-08-22 12:57:52 [INFO] uvh_test.main: Processed 26400 frames... Count: 0
+2026-08-22 12:57:57 [INFO] uvh_test.main: Processed 26500 frames... Count: 0
+2026-08-22 12:58:01 [INFO] uvh_test.main: Processed 26600 frames... Count: 0
+2026-08-22 12:58:05 [INFO] uvh_test.main: Processed 26700 frames... Count: 0
+2026-08-22 12:58:09 [INFO] uvh_test.main: Processed 26800 frames... Count: 0
+2026-08-22 12:58:13 [INFO] uvh_test.main: Processed 26900 frames... Count: 0
+2026-08-22 12:58:17 [INFO] uvh_test.main: Processed 27000 frames... Count: 0
+2026-08-22 12:58:21 [INFO] uvh_test.main: Processed 27100 frames... Count: 0
+2026-08-22 12:58:25 [INFO] uvh_test.main: Processed 27200 frames... Count: 0
+2026-08-22 12:58:30 [INFO] uvh_test.main: Processed 27300 frames... Count: 0
+2026-08-22 12:58:34 [INFO] uvh_test.main: Processed 27400 frames... Count: 0
+2026-08-22 12:58:38 [INFO] uvh_test.main: Processed 27500 frames... Count: 0
+2026-08-22 12:58:42 [INFO] uvh_test.main: Processed 27600 frames... Count: 0
+2026-08-22 12:58:46 [INFO] uvh_test.main: Processed 27700 frames... Count: 0
+2026-08-22 12:58:50 [INFO] uvh_test.main: Processed 27800 frames... Count: 0
+2026-08-22 12:58:54 [INFO] uvh_test.main: Processed 27900 frames... Count: 0
+2026-08-22 12:58:58 [INFO] uvh_test.main: Processed 28000 frames... Count: 0
+2026-08-22 12:59:02 [INFO] uvh_test.main: Processed 28100 frames... Count: 0
+EARLY CHECK: 2500/10000 | valid detections: 3720
+EARLY CHECK: 5000/10000 | valid detections: 7096
+EARLY CHECK: 7500/10000 | valid detections: 10513
+EARLY CHECK: 10000/10000 | valid detections: 13933
+EARLY CHECK PASSED
+Valid detections: 13933
+→ CONTINUING FULL PROCESSING
+
+==================================================
+FINAL SUMMARY
+{
+  "input_video": "/home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4",
+  "model": "/storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt",
+  "frames_processed": 28175,
+  "processing_time_sec": 1168.1669368743896,
+  "processing_fps": 24.118984291223434,
+  "profiling_sec": {
+    "video_read": 94.27532529830933,
+    "yolo_inference": 668.4115250110626,
+    "filtering_and_logic": 5.916825294494629,
+    "annotation": 398.9973440170288
+  },
+  "filter_stats": {
+    "raw_detections": 32881,
+    "low_conf": 0,
+    "too_small": 0,
+    "invalid_class": 0,
+    "passed_filter": 32881,
+    "tracks_created": 248
+  },
+  "tracks_created": 248,
+  "tracks_confirmed": 224,
+  "tracks_rejected_before_confirmation": 24,
+  "tracks_counted": 0,
+  "duplicate_count_preventions": 0,
+  "count_by_class": {},
+  "interval_counts": {}
+}
+==================================================
+[2026-08-22 12:59:06] [1/98] FAILED: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4 in 1172.06s
+[2026-08-22 12:59:06]   -> ERROR: Pipeline finished but expected output files are missing
+[2026-08-22 12:59:06] ============================================================
+[2026-08-22 12:59:06] [2/98] STARTING
+[2026-08-22 12:59:06] Video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-24/20260724_015035_tp00046.mp4
+[2026-08-22 12:59:06] Processing FPS: 15
+[2026-08-22 12:59:06] Early detection check: first 10,000 processed frames
+[2026-08-22 12:59:06] OUTPUT:
+[2026-08-22 12:59:06] /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-24/20260724_015035_tp00046
+[2026-08-22 12:59:06] START TIME:
+[2026-08-22 12:59:06] 2026-08-22 12:59:06
+[2026-08-22 12:59:06] ============================================================
+2026-08-22 12:59:08 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-24/20260724_015035_tp00046.mp4
+2026-08-22 12:59:08 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+2026-08-22 12:59:08 [INFO] uvh_test.detector: Loaded 14 classes.
+2026-08-22 12:59:11 [INFO] uvh_test.main: OCR extracted start time from first frame: 01:50:35
+2026-08-22 12:59:17 [INFO] uvh_test.main: Processed 100 frames... Count: 0
+2026-08-22 12:59:20 [INFO] uvh_test.main: Processed 200 frames... Count: 0
+2026-08-22 12:59:24 [INFO] uvh_test.main: Processed 300 frames... Count: 0
+2026-08-22 12:59:28 [INFO] uvh_test.main: Processed 400 frames... Count: 0
+2026-08-22 12:59:31 [INFO] uvh_test.main: Processed 500 frames... Count: 0
+2026-08-22 12:59:35 [INFO] uvh_test.main: Processed 600 frames... Count: 0
+2026-08-22 12:59:38 [INFO] uvh_test.main: Processed 700 frames... Count: 0
+2026-08-22 12:59:42 [INFO] uvh_test.main: Processed 800 frames... Count: 0
+2026-08-22 12:59:46 [INFO] uvh_test.main: Processed 900 frames... Count: 0
+2026-08-22 12:59:49 [INFO] uvh_test.main: Processed 1000 frames... Count: 0
+2026-08-22 12:59:53 [INFO] uvh_test.main: Processed 1100 frames... Count: 0
+2026-08-22 12:59:56 [INFO] uvh_test.main: Processed 1200 frames... Count: 0
+2026-08-22 13:00:00 [INFO] uvh_test.main: Processed 1300 frames... Count: 0
+2026-08-22 13:00:04 [INFO] uvh_test.main: Processed 1400 frames... Count: 0
+2026-08-22 13:00:07 [INFO] uvh_test.main: Processed 1500 frames... Count: 0
+2026-08-22 13:00:11 [INFO] uvh_test.main: Processed 1600 frames... Count: 0
+2026-08-22 13:00:14 [INFO] uvh_test.main: Processed 1700 frames... Count: 0
+2026-08-22 13:00:18 [INFO] uvh_test.main: Processed 1800 frames... Count: 0
+2026-08-22 13:00:21 [INFO] uvh_test.main: Processed 1900 frames... Count: 0
+2026-08-22 13:00:25 [INFO] uvh_test.main: Processed 2000 frames... Count: 0
+2026-08-22 13:00:29 [INFO] uvh_test.main: Processed 2100 frames... Count: 0
+2026-08-22 13:00:32 [INFO] uvh_test.main: Processed 2200 frames... Count: 0
+2026-08-22 13:00:36 [INFO] uvh_test.main: Processed 2300 frames... Count: 0
+2026-08-22 13:00:39 [INFO] uvh_test.main: Processed 2400 frames... Count: 0
+2026-08-22 13:00:43 [INFO] uvh_test.main: Processed 2500 frames... Count: 0
+2026-08-22 13:00:46 [INFO] uvh_test.main: Processed 2600 frames... Count: 0
+2026-08-22 13:00:50 [INFO] uvh_test.main: Processed 2700 frames... Count: 0
+2026-08-22 13:00:53 [INFO] uvh_test.main: Processed 2800 frames... Count: 0
+2026-08-22 13:00:57 [INFO] uvh_test.main: Processed 2900 frames... Count: 0
+2026-08-22 13:01:01 [INFO] uvh_test.main: Processed 3000 frames... Count: 0
+2026-08-22 13:01:04 [INFO] uvh_test.main: Processed 3100 frames... Count: 0
+2026-08-22 13:01:08 [INFO] uvh_test.main: Processed 3200 frames... Count: 0
+2026-08-22 13:01:11 [INFO] uvh_test.main: Processed 3300 frames... Count: 0
+2026-08-22 13:01:15 [INFO] uvh_test.main: Processed 3400 frames... Count: 0
+2026-08-22 13:01:19 [INFO] uvh_test.main: Processed 3500 frames... Count: 0
+2026-08-22 13:01:22 [INFO] uvh_test.main: Processed 3600 frames... Count: 0
+2026-08-22 13:01:26 [INFO] uvh_test.main: Processed 3700 frames... Count: 0
+2026-08-22 13:01:29 [INFO] uvh_test.main: Processed 3800 frames... Count: 0
+2026-08-22 13:01:33 [INFO] uvh_test.main: Processed 3900 frames... Count: 0
+2026-08-22 13:01:37 [INFO] uvh_test.main: Processed 4000 frames... Count: 0
+2026-08-22 13:01:40 [INFO] uvh_test.main: Processed 4100 frames... Count: 0
+2026-08-22 13:01:44 [INFO] uvh_test.main: Processed 4200 frames... Count: 0
+2026-08-22 13:01:47 [INFO] uvh_test.main: Processed 4300 frames... Count: 0
+2026-08-22 13:01:51 [INFO] uvh_test.main: Processed 4400 frames... Count: 0
+2026-08-22 13:01:55 [INFO] uvh_test.main: Processed 4500 frames... Count: 0
+2026-08-22 13:01:59 [INFO] uvh_test.main: Processed 4600 frames... Count: 0
+2026-08-22 13:02:02 [INFO] uvh_test.main: Processed 4700 frames... Count: 0
+2026-08-22 13:02:06 [INFO] uvh_test.main: Processed 4800 frames... Count: 0
+2026-08-22 13:02:10 [INFO] uvh_test.main: Processed 4900 frames... Count: 0
+2026-08-22 13:02:14 [INFO] uvh_test.main: Processed 5000 frames... Count: 0
+2026-08-22 13:02:18 [INFO] uvh_test.main: Processed 5100 frames... Count: 0
+2026-08-22 13:02:21 [INFO] uvh_test.main: Processed 5200 frames... Count: 0
+2026-08-22 13:02:25 [INFO] uvh_test.main: Processed 5300 frames... Count: 0
+2026-08-22 13:02:28 [INFO] uvh_test.main: Processed 5400 frames... Count: 0
+2026-08-22 13:02:32 [INFO] uvh_test.main: Processed 5500 frames... Count: 0
+2026-08-22 13:02:36 [INFO] uvh_test.main: Processed 5600 frames... Count: 0
+2026-08-22 13:02:40 [INFO] uvh_test.main: Processed 5700 frames... Count: 0
+2026-08-22 13:02:44 [INFO] uvh_test.main: Processed 5800 frames... Count: 0
+2026-08-22 13:02:47 [INFO] uvh_test.main: Processed 5900 frames... Count: 0
+2026-08-22 13:02:51 [INFO] uvh_test.main: Processed 6000 frames... Count: 0
+2026-08-22 13:02:54 [INFO] uvh_test.main: Processed 6100 frames... Count: 0
+2026-08-22 13:02:58 [INFO] uvh_test.main: Processed 6200 frames... Count: 0
+2026-08-22 13:03:02 [INFO] uvh_test.main: Processed 6300 frames... Count: 0
+2026-08-22 13:03:05 [INFO] uvh_test.main: Processed 6400 frames... Count: 0
+2026-08-22 13:03:09 [INFO] uvh_test.main: Processed 6500 frames... Count: 0
+2026-08-22 13:03:13 [INFO] uvh_test.main: Processed 6600 frames... Count: 0
+2026-08-22 13:03:16 [INFO] uvh_test.main: Processed 6700 frames... Count: 0
+2026-08-22 13:03:20 [INFO] uvh_test.main: Processed 6800 frames... Count: 0
+2026-08-22 13:03:23 [INFO] uvh_test.main: Processed 6900 frames... Count: 0
+2026-08-22 13:03:27 [INFO] uvh_test.main: Processed 7000 frames... Count: 0
+2026-08-22 13:03:31 [INFO] uvh_test.main: Processed 7100 frames... Count: 0
+2026-08-22 13:03:34 [INFO] uvh_test.main: Processed 7200 frames... Count: 0
+2026-08-22 13:03:38 [INFO] uvh_test.main: Processed 7300 frames... Count: 0
+2026-08-22 13:03:42 [INFO] uvh_test.main: Processed 7400 frames... Count: 0
+2026-08-22 13:03:45 [INFO] uvh_test.main: Processed 7500 frames... Count: 0
+2026-08-22 13:03:49 [INFO] uvh_test.main: Processed 7600 frames... Count: 0
+2026-08-22 13:03:53 [INFO] uvh_test.main: Processed 7700 frames... Count: 0
+2026-08-22 13:03:56 [INFO] uvh_test.main: Processed 7800 frames... Count: 0
+2026-08-22 13:04:00 [INFO] uvh_test.main: Processed 7900 frames... Count: 0
+2026-08-22 13:04:04 [INFO] uvh_test.main: Processed 8000 frames... Count: 0
+2026-08-22 13:04:08 [INFO] uvh_test.main: Processed 8100 frames... Count: 0
+2026-08-22 13:04:11 [INFO] uvh_test.main: Processed 8200 frames... Count: 0
+2026-08-22 13:04:15 [INFO] uvh_test.main: Processed 8300 frames... Count: 0
+2026-08-22 13:04:19 [INFO] uvh_test.main: Processed 8400 frames... Count: 0
+2026-08-22 13:04:22 [INFO] uvh_test.main: Processed 8500 frames... Count: 0
+2026-08-22 13:04:26 [INFO] uvh_test.main: Processed 8600 frames... Count: 0
+2026-08-22 13:04:29 [INFO] uvh_test.main: Processed 8700 frames... Count: 0
+2026-08-22 13:04:33 [INFO] uvh_test.main: Processed 8800 frames... Count: 0
+2026-08-22 13:04:37 [INFO] uvh_test.main: Processed 8900 frames... Count: 0
+2026-08-22 13:04:40 [INFO] uvh_test.main: Processed 9000 frames... Count: 0
+2026-08-22 13:04:44 [INFO] uvh_test.main: Processed 9100 frames... Count: 0
+2026-08-22 13:04:48 [INFO] uvh_test.main: Processed 9200 frames... Count: 0
+2026-08-22 13:04:51 [INFO] uvh_test.main: Processed 9300 frames... Count: 0
+2026-08-22 13:04:55 [INFO] uvh_test.main: Processed 9400 frames... Count: 0
+2026-08-22 13:04:59 [INFO] uvh_test.main: Processed 9500 frames... Count: 0
+2026-08-22 13:05:03 [INFO] uvh_test.main: Processed 9600 frames... Count: 0
+2026-08-22 13:05:07 [INFO] uvh_test.main: Processed 9700 frames... Count: 0
+2026-08-22 13:05:11 [INFO] uvh_test.main: Processed 9800 frames... Count: 0
+2026-08-22 13:05:14 [INFO] uvh_test.main: Processed 9900 frames... Count: 0
+2026-08-22 13:05:18 [INFO] uvh_test.main: Processed 10000 frames... Count: 0
+2026-08-22 13:05:21 [INFO] uvh_test.main: Processed 10100 frames... Count: 0
+2026-08-22 13:05:25 [INFO] uvh_test.main: Processed 10200 frames... Count: 0
+2026-08-22 13:05:29 [INFO] uvh_test.main: Processed 10300 frames... Count: 0
+2026-08-22 13:05:32 [INFO] uvh_test.main: Processed 10400 frames... Count: 0
+2026-08-22 13:05:36 [INFO] uvh_test.main: Processed 10500 frames... Count: 0
+2026-08-22 13:05:40 [INFO] uvh_test.main: Processed 10600 frames... Count: 0
+2026-08-22 13:05:43 [INFO] uvh_test.main: Processed 10700 frames... Count: 0
+2026-08-22 13:05:47 [INFO] uvh_test.main: Processed 10800 frames... Count: 0
+2026-08-22 13:05:50 [INFO] uvh_test.main: Processed 10900 frames... Count: 0
+2026-08-22 13:05:54 [INFO] uvh_test.main: Processed 11000 frames... Count: 0
+2026-08-22 13:05:58 [INFO] uvh_test.main: Processed 11100 frames... Count: 0
+[2026-08-22 13:07:33] Starting batch vehicle counting runner...
+[2026-08-22 13:07:33] Found 98 MP4 videos.
+[2026-08-22 13:07:33] ============================================================
+[2026-08-22 13:07:33] [1/98] STARTING
+[2026-08-22 13:07:33] Video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+[2026-08-22 13:07:33] Processing FPS: 15
+[2026-08-22 13:07:33] Early detection check: first 10,000 processed frames
+[2026-08-22 13:07:33] OUTPUT:
+[2026-08-22 13:07:33] /home/users/oauser/mvsa/vehicle-count-output/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040
+[2026-08-22 13:07:33] START TIME:
+[2026-08-22 13:07:33] 2026-08-22 13:07:33
+[2026-08-22 13:07:33] ============================================================
+2026-08-22 13:07:35 [INFO] uvh_test.main: Processing video: /home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 2 - Backup/2026-07-23/20260723_203600_tp00040.mp4
+2026-08-22 13:07:35 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+2026-08-22 13:07:35 [INFO] uvh_test.detector: Loaded 14 classes.
+2026-08-22 13:07:38 [INFO] uvh_test.main: OCR extracted start time from first frame: 20:36:00
+2026-08-22 13:07:44 [INFO] uvh_test.main: Processed 100 frames... Count: 0
+2026-08-22 13:07:48 [INFO] uvh_test.main: Processed 200 frames... Count: 0
+2026-08-22 13:07:53 [INFO] uvh_test.main: Processed 300 frames... Count: 0
+2026-08-22 13:07:57 [INFO] uvh_test.main: Processed 400 frames... Count: 0
+2026-08-22 13:08:02 [INFO] uvh_test.main: Processed 500 frames... Count: 0
+2026-08-22 13:08:06 [INFO] uvh_test.main: Processed 600 frames... Count: 0
+2026-08-22 13:08:10 [INFO] uvh_test.main: Processed 700 frames... Count: 0
+2026-08-22 13:08:14 [INFO] uvh_test.main: Processed 800 frames... Count: 0
+2026-08-22 13:08:19 [INFO] uvh_test.main: Processed 900 frames... Count: 0
+2026-08-22 13:08:23 [INFO] uvh_test.main: Processed 1000 frames... Count: 0
+2026-08-22 13:08:27 [INFO] uvh_test.main: Processed 1100 frames... Count: 0
+2026-08-22 13:08:32 [INFO] uvh_test.main: Processed 1200 frames... Count: 0
+2026-08-22 13:08:36 [INFO] uvh_test.main: Processed 1300 frames... Count: 0
+2026-08-22 13:08:40 [INFO] uvh_test.main: Processed 1400 frames... Count: 0
+2026-08-22 13:08:44 [INFO] uvh_test.main: Processed 1500 frames... Count: 0
+2026-08-22 13:08:48 [INFO] uvh_test.main: Processed 1600 frames... Count: 0
+2026-08-22 13:08:52 [INFO] uvh_test.main: Processed 1700 frames... Count: 0
+2026-08-22 13:08:57 [INFO] uvh_test.main: Processed 1800 frames... Count: 0
+2026-08-22 13:09:01 [INFO] uvh_test.main: Processed 1900 frames... Count: 0
+2026-08-22 13:09:05 [INFO] uvh_test.main: Processed 2000 frames... Count: 0
+2026-08-22 13:09:09 [INFO] uvh_test.main: Processed 2100 frames... Count: 0
+2026-08-22 13:09:14 [INFO] uvh_test.main: Processed 2200 frames... Count: 0
+2026-08-22 13:09:18 [INFO] uvh_test.main: Processed 2300 frames... Count: 0
+2026-08-22 13:09:22 [INFO] uvh_test.main: Processed 2400 frames... Count: 0
+2026-08-22 13:09:26 [INFO] uvh_test.main: Processed 2500 frames... Count: 0
+2026-08-22 13:09:31 [INFO] uvh_test.main: Processed 2600 frames... Count: 0
+2026-08-22 13:09:35 [INFO] uvh_test.main: Processed 2700 frames... Count: 0
+2026-08-22 13:09:39 [INFO] uvh_test.main: Processed 2800 frames... Count: 0
+2026-08-22 13:09:43 [INFO] uvh_test.main: Processed 2900 frames... Count: 0
+2026-08-22 13:09:47 [INFO] uvh_test.main: Processed 3000 frames... Count: 0
+2026-08-22 13:09:51 [INFO] uvh_test.main: Processed 3100 frames... Count: 0
+2026-08-22 13:09:55 [INFO] uvh_test.main: Processed 3200 frames... Count: 0
+2026-08-22 13:10:00 [INFO] uvh_test.main: Processed 3300 frames... Count: 0
+2026-08-22 13:10:04 [INFO] uvh_test.main: Processed 3400 frames... Count: 0
+2026-08-22 13:10:08 [INFO] uvh_test.main: Processed 3500 frames... Count: 0
+2026-08-22 13:10:12 [INFO] uvh_test.main: Processed 3600 frames... Count: 0
+2026-08-22 13:10:16 [INFO] uvh_test.main: Processed 3700 frames... Count: 0
+2026-08-22 13:10:21 [INFO] uvh_test.main: Processed 3800 frames... Count: 0
+2026-08-22 13:10:25 [INFO] uvh_test.main: Processed 3900 frames... Count: 0
+2026-08-22 13:10:29 [INFO] uvh_test.main: Processed 4000 frames... Count: 0
+2026-08-22 13:10:33 [INFO] uvh_test.main: Processed 4100 frames... Count: 0
+2026-08-22 13:10:37 [INFO] uvh_test.main: Processed 4200 frames... Count: 0
+2026-08-22 13:10:41 [INFO] uvh_test.main: Processed 4300 frames... Count: 0
+2026-08-22 13:10:45 [INFO] uvh_test.main: Processed 4400 frames... Count: 0
+2026-08-22 13:10:49 [INFO] uvh_test.main: Processed 4500 frames... Count: 0
+2026-08-22 13:10:53 [INFO] uvh_test.main: Processed 4600 frames... Count: 0
+2026-08-22 13:10:57 [INFO] uvh_test.main: Processed 4700 frames... Count: 0
+2026-08-22 13:11:02 [INFO] uvh_test.main: Processed 4800 frames... Count: 0
+2026-08-22 13:11:06 [INFO] uvh_test.main: Processed 4900 frames... Count: 0
+2026-08-22 13:11:10 [INFO] uvh_test.main: Processed 5000 frames... Count: 0
+2026-08-22 13:11:15 [INFO] uvh_test.main: Processed 5100 frames... Count: 0
+2026-08-22 13:11:19 [INFO] uvh_test.main: Processed 5200 frames... Count: 0
+2026-08-22 13:11:23 [INFO] uvh_test.main: Processed 5300 frames... Count: 0
+2026-08-22 13:11:27 [INFO] uvh_test.main: Processed 5400 frames... Count: 0
+2026-08-22 13:11:32 [INFO] uvh_test.main: Processed 5500 frames... Count: 0
+2026-08-22 13:11:36 [INFO] uvh_test.main: Processed 5600 frames... Count: 0
+2026-08-22 13:11:41 [INFO] uvh_test.main: Processed 5700 frames... Count: 0
+2026-08-22 13:11:45 [INFO] uvh_test.main: Processed 5800 frames... Count: 0
+2026-08-22 13:11:49 [INFO] uvh_test.main: Processed 5900 frames... Count: 0
+2026-08-22 13:11:53 [INFO] uvh_test.main: Processed 6000 frames... Count: 0
+2026-08-22 13:11:57 [INFO] uvh_test.main: Processed 6100 frames... Count: 0
+2026-08-22 13:12:01 [INFO] uvh_test.main: Processed 6200 frames... Count: 0
+2026-08-22 13:12:06 [INFO] uvh_test.main: Processed 6300 frames... Count: 0
+2026-08-22 13:12:10 [INFO] uvh_test.main: Processed 6400 frames... Count: 0
+2026-08-22 13:12:14 [INFO] uvh_test.main: Processed 6500 frames... Count: 0
+2026-08-22 13:12:18 [INFO] uvh_test.main: Processed 6600 frames... Count: 0
+2026-08-22 13:12:22 [INFO] uvh_test.main: Processed 6700 frames... Count: 0
+2026-08-22 13:12:26 [INFO] uvh_test.main: Processed 6800 frames... Count: 0
+2026-08-22 13:12:30 [INFO] uvh_test.main: Processed 6900 frames... Count: 0
+2026-08-22 13:12:34 [INFO] uvh_test.main: Processed 7000 frames... Count: 0
+2026-08-22 13:12:39 [INFO] uvh_test.main: Processed 7100 frames... Count: 0
+2026-08-22 13:12:43 [INFO] uvh_test.main: Processed 7200 frames... Count: 0
+2026-08-22 13:12:47 [INFO] uvh_test.main: Processed 7300 frames... Count: 0
+2026-08-22 13:12:51 [INFO] uvh_test.main: Processed 7400 frames... Count: 0
+2026-08-22 13:12:55 [INFO] uvh_test.main: Processed 7500 frames... Count: 0
+2026-08-22 13:12:59 [INFO] uvh_test.main: Processed 7600 frames... Count: 0
+2026-08-22 13:13:03 [INFO] uvh_test.main: Processed 7700 frames... Count: 0
+2026-08-22 13:13:08 [INFO] uvh_test.main: Processed 7800 frames... Count: 0
+2026-08-22 13:13:12 [INFO] uvh_test.main: Processed 7900 frames... Count: 0
+2026-08-22 13:13:16 [INFO] uvh_test.main: Processed 8000 frames... Count: 0
+2026-08-22 13:13:20 [INFO] uvh_test.main: Processed 8100 frames... Count: 0
+2026-08-22 13:13:24 [INFO] uvh_test.main: Processed 8200 frames... Count: 0
+2026-08-22 13:13:28 [INFO] uvh_test.main: Processed 8300 frames... Count: 0
+2026-08-22 13:13:33 [INFO] uvh_test.main: Processed 8400 frames... Count: 0
+2026-08-22 13:13:37 [INFO] uvh_test.main: Processed 8500 frames... Count: 0
+2026-08-22 13:13:41 [INFO] uvh_test.main: Processed 8600 frames... Count: 0
+2026-08-22 13:13:46 [INFO] uvh_test.main: Processed 8700 frames... Count: 0
+2026-08-22 13:13:50 [INFO] uvh_test.main: Processed 8800 frames... Count: 0
+2026-08-22 13:13:54 [INFO] uvh_test.main: Processed 8900 frames... Count: 0
+2026-08-22 13:13:59 [INFO] uvh_test.main: Processed 9000 frames... Count: 0
+2026-08-22 13:14:03 [INFO] uvh_test.main: Processed 9100 frames... Count: 0
+2026-08-22 13:14:07 [INFO] uvh_test.main: Processed 9200 frames... Count: 0
+2026-08-22 13:14:11 [INFO] uvh_test.main: Processed 9300 frames... Count: 0
+2026-08-22 13:14:15 [INFO] uvh_test.main: Processed 9400 frames... Count: 0
+2026-08-22 13:14:19 [INFO] uvh_test.main: Processed 9500 frames... Count: 0
+2026-08-22 13:14:24 [INFO] uvh_test.main: Processed 9600 frames... Count: 0
+2026-08-22 13:14:28 [INFO] uvh_test.main: Processed 9700 frames... Count: 0
+2026-08-22 13:14:32 [INFO] uvh_test.main: Processed 9800 frames... Count: 0
+2026-08-22 13:14:36 [INFO] uvh_test.main: Processed 9900 frames... Count: 0
+2026-08-22 13:14:41 [INFO] uvh_test.main: Processed 10000 frames... Count: 0
+2026-08-22 13:14:45 [INFO] uvh_test.main: Processed 10100 frames... Count: 0
+2026-08-22 13:14:50 [INFO] uvh_test.main: Processed 10200 frames... Count: 0
+2026-08-22 13:14:54 [INFO] uvh_test.main: Processed 10300 frames... Count: 0
+2026-08-22 13:15:00 [INFO] uvh_test.main: Processed 10400 frames... Count: 0
+2026-08-22 13:15:04 [INFO] uvh_test.main: Processed 10500 frames... Count: 0
+2026-08-22 13:15:09 [INFO] uvh_test.main: Processed 10600 frames... Count: 0
+2026-08-22 13:15:14 [INFO] uvh_test.main: Processed 10700 frames... Count: 0
+2026-08-22 13:15:18 [INFO] uvh_test.main: Processed 10800 frames... Count: 0
+2026-08-22 13:15:22 [INFO] uvh_test.main: Processed 10900 frames... Count: 0
+2026-08-22 13:15:26 [INFO] uvh_test.main: Processed 11000 frames... Count: 0
+2026-08-22 13:15:30 [INFO] uvh_test.main: Processed 11100 frames... Count: 0
+2026-08-22 13:15:34 [INFO] uvh_test.main: Processed 11200 frames... Count: 0
+2026-08-22 13:15:38 [INFO] uvh_test.main: Processed 11300 frames... Count: 0
+2026-08-22 13:15:42 [INFO] uvh_test.main: Processed 11400 frames... Count: 0
+2026-08-22 13:15:46 [INFO] uvh_test.main: Processed 11500 frames... Count: 0
+2026-08-22 13:15:50 [INFO] uvh_test.main: Processed 11600 frames... Count: 0
+2026-08-22 13:15:55 [INFO] uvh_test.main: Processed 11700 frames... Count: 0

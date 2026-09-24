@@ -1,0 +1,32 @@
+
+# Large ML models / weights
+*.pt
+*.pth
+*.onnx
+*.engine
+*.weights
+*.safetensors
+
+# Bundled binaries
+tools/rclone
+tools/ffmpeg
+tools/ffmpeg_bin/
+rclone
+
+# FFmpeg build artifacts
+local/ffmpeg/
+
+# Google OAuth credentials
+token.json
+credentials.json
+client_secret.json
+client_secret_*.json
+config/rclone.conf
+tools/ffprobe
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key

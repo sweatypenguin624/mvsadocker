@@ -1,0 +1,72 @@
+# ─────────────────────────────────────────────
+# Data / video / datasets
+# ─────────────────────────────────────────────
+data/
+dataset/
+Data Corp - Dataset/
+videos/
+Cam 1 - EB/
+work/
+scratch/
+results/
+realrun/
+queue/
+vehicle-count-output/
+input/
+cache/
+runs/
+
+# Large / temporary environments
+env.broken_py36/
+env-labelstudio/
+env-trucks/
+ytedu/
+cargo/
+.venv/
+
+# Source / large external projects
+surrealdb-src/
+open-notebook/
+models/
+
+# Python cache / generated files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Logs
+logs/
+*.log
+
+# Secrets / credentials
+.labelstudio_token
+.env
+.env.*
+*.pem
+*.key
+
+# Old / unnecessary model files
+yolo11m.pt
+yolo11n.pt
+yolo26m.pt
+yolo26n-reid.onnx
+yolo26s.pt
+
+# Git / editor
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Docker
+Dockerfile*
+.dockerignore
+
+# Misc temporary / backup files
+*.bak
+*.backup
+*.tmp
+*~

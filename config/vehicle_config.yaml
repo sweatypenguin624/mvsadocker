@@ -1,0 +1,68 @@
+# Vehicle-counting pilot configuration.
+#
+# Separate from config/config.yaml on purpose -- that file is the pedestrian
+# demographics pipeline's single source of truth, and this pilot is a new,
+# independent subsystem (scripts/vehicle_counting/), not a mode of it.
+# See scripts/vehicle_counting/vehicle_classes.py for exactly which of the
+# requested vehicle categories this pilot can count today (stock YOLO/COCO
+# classes only: bicycle, motorcycle, car, bus) vs. which are pending a
+# fine-tuned model (Slow Vehicle, Goods Vehicle, FARM VEHICLE, EMERGENCY
+# VEHICLE, E-RICKSAW, AUTO RICKSAW, and any bus-subtype/taxi/EV breakdown).
+#
+# Run from the project root:
+#   cd ~/mvsa
+#   source env/bin/activate
+#   python scripts/vehicle_counting/vehicle_counter.py \
+#       --config config/vehicle_config.yaml --run-name vehicle_pilot_cam1 \
+#       --video work/converted/some_video.mp4 \
+#       --start-datetime "2026-07-28 08:00:00"
+
+video:
+  path: "videos/actual_test/08.00.00-09.00.00.mp4"
+  fps: 20
+  start_datetime: "2026-07-28 08:00:00"
+
+model:
+  yolo_weights: "models/yolo11x.pt"
+  device: "0"
+  confidence: 0.35
+  imgsz: 1280
+  tracker: "bytetrack.yaml"
+
+# Counting-line ROI, in the coordinate space of reference_width x
+# reference_height (native camera resolution). A vehicle is counted exactly
+# once, the first frame its bounding box's bottom-center point falls inside
+# this polygon -- same rule as the pedestrian ROI in config/config.yaml (see
+# scripts/roi.py, reused here unmodified).
+#
+# PLACEHOLDER: this polygon covers most of a 1920x1080 frame so the pilot
+# runs out of the box, but it has NOT been tuned to any camera's actual road
+# geometry. Draw a real counting line/region for the target camera (e.g.
+# with scripts/roieditor.py) before trusting these counts.
+roi:
+  reference_width: 1920
+  reference_height: 1080
+  polygon:
+    - [0, 0]
+    - [1920, 0]
+    - [1920, 1080]
+    - [0, 1080]
+
+output:
+  results_dir: "results"
+  # Writing tracked.mp4 (raw mp4v codec, no compression tuning) dominated
+  # runtime in the first batch run (~55min/video, vs. seconds of actual YOLO
+  # inference) and produced a file larger than the source footage. Disabled
+  # for batch runs across many videos; re-enable per-video (or via a CLI
+  # override) if visually spot-checking a specific run's counts against
+  # footage is needed.
+  save_annotated_video: false
+  video_codec: "mp4v"
+
+logging:
+  level: "INFO"
+  filename: "run.log"
+
+tools:
+  ffmpeg: "tools/ffmpeg"
+  ffprobe: "tools/ffprobe"

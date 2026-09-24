@@ -1,0 +1,76 @@
+filters:
+  min_box_area: 500
+  min_height: 20
+  min_width: 20
+# Representative-crop saving for Goods-Vehicle-shaped tracks (Truck, LCV,
+# tempo-traveller), for Layer 2 (scripts/traffic_layer2/) subclassification.
+# See pipeline/counting/goods_crops.py. Additive -- off by default so
+# existing runs are unaffected unless explicitly enabled.
+goods_crops:
+  enabled: true
+  max_per_track: 5
+intervals:
+  duration_minutes: 15
+  enabled: true
+  video_start_time: 09:00:00
+logging:
+  filename: run.log
+  level: DEBUG
+model:
+  confidence: 0.35
+  device: cuda
+  imgsz: 1280
+  tracker: botsort.yaml
+  yolo_weights: models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.pt
+ocr:
+  enabled: true
+  frequency_frames: 30
+  max_frames: 500
+  timestamp_roi:
+  - 0
+  - 60
+  - 0
+  - 800
+output:
+  debug_mode: false
+  results_dir: results/botsort_benchmark
+  save_annotated_video: true
+  live_stream: false
+  video_codec: mp4v
+
+processing:
+  early_detection_check: true
+  early_detection_frames: 10000
+  early_detection_min_detections: 1
+  max_duration_minutes: 5
+  max_frames: 4500
+  processing_fps: 30
+roi:
+  count_direction: BOTH
+  counting_line:
+    - - 1911
+      - 949
+    - - 1142
+      - 237
+    
+  reference_height: 1080
+  reference_width: 1920
+  road_polygon:
+  - - 0
+    - 0
+  - - 1920
+    - 0
+  - - 1920
+    - 1080
+  - - 0
+    - 1080
+tracker:
+  match_thresh: 0.8
+  min_track_frames: 3
+  new_track_thresh: 0.5
+  track_buffer: 120
+  track_high_thresh: 0.4
+  track_low_thresh: 0.1
+
+# Set to true to disable both Bus and Truck subclassifiers during a run
+disable_subclassifiers: false

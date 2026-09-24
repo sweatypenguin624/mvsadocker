@@ -1,0 +1,48 @@
+# Layer 2 Goods Vehicle sub-taxonomy + the official MAV definition.
+#
+# Kept as its own file (not inline in layer2_config.yaml) so the
+# traffic-survey team can hand-edit the MAV threshold without touching
+# pipeline/model configuration -- see Layer 2 spec section 11: "the exact
+# definition of MAV must be configurable ... do not allow the model to infer
+# an undefined meaning".
+
+# The 8 final Layer 2 subclasses (spec section 2). layer2_pipeline.py never
+# emits a label outside this set plus the configured uncertain labels below.
+subclasses:
+  - "Goods 3 Wheeler"
+  - "Mini LCV"
+  - "LCV"
+  - "2 Axle Truck"
+  - "3 Axle Truck"
+  - "MAV"
+  - "Tractor"
+  - "Tractor Trolley"
+
+# MAV (Multi-Axle Vehicle) definition. Axle count is inferred by
+# layer2_classifiers.py::HeavyTruckConfigClassifier from wheel/undercarriage
+# evidence (spec section 9) or the heuristic fallback, never hard-coded per
+# vehicle -- but the THRESHOLD that turns "N axles" into the MAV label is a
+# survey-specification decision, not a modeling one, so it lives here.
+#
+# EDIT THIS if the project's official traffic-survey spec defines MAV
+# differently (e.g. axle count >= 4 is a common convention, kept as the
+# default here since no project-specific override has been supplied yet --
+# confirm with the survey spec before trusting counts downstream).
+mav_definition:
+  min_axle_count: 4
+  # Any heavy truck whose inferred axle count falls below 2 is invalid
+  # evidence (a 2-axle floor -- nothing narrower than a car has fewer),
+  # clamped rather than propagated as a raw model artifact.
+  min_valid_axle_count: 2
+
+# Uncertain-case policy (spec sections 10, 15, 21-22).
+uncertain:
+  # Internal label used whenever a Heavy Truck's axle configuration can't be
+  # determined confidently (bad viewpoint, low confidence spread across
+  # classes, insufficient frames).
+  heavy_truck_label: "Uncertain Heavy Truck"
+  # If true, "Uncertain ..." tracks are excluded from
+  # aggregated_counts.total_goods_vehicles (spec section 22: "unless
+  # uncertain/unknown objects are deliberately kept outside the official
+  # total"). If false, they're counted in the total under their own row.
+  exclude_uncertain_from_total: true

@@ -1,0 +1,192 @@
+2026-08-17 15:04:14 [WARNING] mvsa: Dependency check: torch version is 2.3.0+cu121, expected 2.1.0+cu118 (the cluster's working environment). If this run is on the research server, verify nothing (e.g. pip installing insightface without --no-deps) upgraded it.
+2026-08-17 15:04:16 [WARNING] mvsa: Dependency check: torchvision version is 0.18.0+cu121, expected 0.16.0+cu118 (the cluster's working environment). If this run is on the research server, verify nothing (e.g. pip installing insightface without --no-deps) upgraded it.
+2026-08-17 15:04:16 [INFO] mvsa: Dependency check: numpy 1.26.1 OK
+2026-08-17 15:04:16 [INFO] mvsa: Starting mode=detect run_name=peds_18_kamaripet_police_station_cam_1_20260728_0800 video=/storage/users/oauser/mvsa/work/converted/peds_18_kamaripet_police_station_cam_1_20260728_0800.mp4 (1920x1080, ~71994 frames, 25.0 fps)
+2026-08-17 15:04:18 [INFO] mvsa: Loaded YOLO model yolo11x.pt (device=0, imgsz=1280, conf=0.35, classes=[0, 1, 2, 3, 5, 7], tracker=/storage/users/oauser/mvsa/config/tracking/pedestrian_bytetrack.yaml)
+2026-08-17 15:04:42 [INFO] mvsa: Checkpoint saved at frame 500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:05:03 [INFO] mvsa: Checkpoint saved at frame 1000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:05:25 [INFO] mvsa: Checkpoint saved at frame 1500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:05:46 [INFO] mvsa: Checkpoint saved at frame 2000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:05:46 [INFO] mvsa: Progress: frame 2000/71994, counted=57, elapsed=87.3s
+2026-08-17 15:06:07 [INFO] mvsa: Checkpoint saved at frame 2500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:06:27 [INFO] mvsa: Checkpoint saved at frame 3000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:06:48 [INFO] mvsa: Checkpoint saved at frame 3500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:07:09 [INFO] mvsa: Checkpoint saved at frame 4000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:07:09 [INFO] mvsa: Progress: frame 4000/71994, counted=97, elapsed=171.2s
+2026-08-17 15:07:30 [INFO] mvsa: Checkpoint saved at frame 4500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:07:51 [INFO] mvsa: Checkpoint saved at frame 5000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:08:11 [INFO] mvsa: Checkpoint saved at frame 5500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:08:31 [INFO] mvsa: Checkpoint saved at frame 6000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:08:31 [INFO] mvsa: Progress: frame 6000/71994, counted=136, elapsed=252.8s
+2026-08-17 15:08:51 [INFO] mvsa: Checkpoint saved at frame 6500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:09:12 [INFO] mvsa: Checkpoint saved at frame 7000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:09:33 [INFO] mvsa: Checkpoint saved at frame 7500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:09:54 [INFO] mvsa: Checkpoint saved at frame 8000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:09:54 [INFO] mvsa: Progress: frame 8000/71994, counted=166, elapsed=336.0s
+2026-08-17 15:10:14 [INFO] mvsa: Checkpoint saved at frame 8500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:10:35 [INFO] mvsa: Checkpoint saved at frame 9000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:10:55 [INFO] mvsa: Checkpoint saved at frame 9500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:11:15 [INFO] mvsa: Checkpoint saved at frame 10000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:11:15 [INFO] mvsa: Progress: frame 10000/71994, counted=201, elapsed=417.2s
+2026-08-17 15:11:36 [INFO] mvsa: Checkpoint saved at frame 10500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:11:57 [INFO] mvsa: Checkpoint saved at frame 11000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:12:17 [INFO] mvsa: Checkpoint saved at frame 11500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:12:38 [INFO] mvsa: Checkpoint saved at frame 12000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:12:38 [INFO] mvsa: Progress: frame 12000/71994, counted=233, elapsed=500.2s
+2026-08-17 15:12:59 [INFO] mvsa: Checkpoint saved at frame 12500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:13:20 [INFO] mvsa: Checkpoint saved at frame 13000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:13:40 [INFO] mvsa: Checkpoint saved at frame 13500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:14:01 [INFO] mvsa: Checkpoint saved at frame 14000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:14:01 [INFO] mvsa: Progress: frame 14000/71994, counted=252, elapsed=582.5s
+2026-08-17 15:14:21 [INFO] mvsa: Checkpoint saved at frame 14500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:14:42 [INFO] mvsa: Checkpoint saved at frame 15000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:15:03 [INFO] mvsa: Checkpoint saved at frame 15500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:15:23 [INFO] mvsa: Checkpoint saved at frame 16000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:15:23 [INFO] mvsa: Progress: frame 16000/71994, counted=304, elapsed=665.2s
+2026-08-17 15:15:44 [INFO] mvsa: Checkpoint saved at frame 16500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:16:05 [INFO] mvsa: Checkpoint saved at frame 17000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:16:25 [INFO] mvsa: Checkpoint saved at frame 17500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:16:45 [INFO] mvsa: Checkpoint saved at frame 18000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:16:45 [INFO] mvsa: Progress: frame 18000/71994, counted=341, elapsed=747.2s
+2026-08-17 15:17:06 [INFO] mvsa: Checkpoint saved at frame 18500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:17:27 [INFO] mvsa: Checkpoint saved at frame 19000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:17:48 [INFO] mvsa: Checkpoint saved at frame 19500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:18:09 [INFO] mvsa: Checkpoint saved at frame 20000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:18:09 [INFO] mvsa: Progress: frame 20000/71994, counted=390, elapsed=830.7s
+2026-08-17 15:18:30 [INFO] mvsa: Checkpoint saved at frame 20500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:18:51 [INFO] mvsa: Checkpoint saved at frame 21000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:19:13 [INFO] mvsa: Checkpoint saved at frame 21500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:19:34 [INFO] mvsa: Checkpoint saved at frame 22000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:19:34 [INFO] mvsa: Progress: frame 22000/71994, counted=427, elapsed=915.8s
+2026-08-17 15:19:56 [INFO] mvsa: Checkpoint saved at frame 22500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:20:17 [INFO] mvsa: Checkpoint saved at frame 23000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:20:37 [INFO] mvsa: Checkpoint saved at frame 23500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:20:58 [INFO] mvsa: Checkpoint saved at frame 24000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:20:58 [INFO] mvsa: Progress: frame 24000/71994, counted=454, elapsed=999.8s
+2026-08-17 15:21:19 [INFO] mvsa: Checkpoint saved at frame 24500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:21:39 [INFO] mvsa: Checkpoint saved at frame 25000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:21:59 [INFO] mvsa: Checkpoint saved at frame 25500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:22:19 [INFO] mvsa: Checkpoint saved at frame 26000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:22:19 [INFO] mvsa: Progress: frame 26000/71994, counted=475, elapsed=1080.8s
+2026-08-17 15:22:39 [INFO] mvsa: Checkpoint saved at frame 26500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:23:00 [INFO] mvsa: Checkpoint saved at frame 27000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:23:21 [INFO] mvsa: Checkpoint saved at frame 27500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:23:42 [INFO] mvsa: Checkpoint saved at frame 28000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:23:42 [INFO] mvsa: Progress: frame 28000/71994, counted=529, elapsed=1163.5s
+2026-08-17 15:24:03 [INFO] mvsa: Checkpoint saved at frame 28500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:24:24 [INFO] mvsa: Checkpoint saved at frame 29000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:24:45 [INFO] mvsa: Checkpoint saved at frame 29500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:25:07 [INFO] mvsa: Checkpoint saved at frame 30000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:25:07 [INFO] mvsa: Progress: frame 30000/71994, counted=565, elapsed=1248.8s
+2026-08-17 15:25:28 [INFO] mvsa: Checkpoint saved at frame 30500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:25:50 [INFO] mvsa: Checkpoint saved at frame 31000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:26:11 [INFO] mvsa: Checkpoint saved at frame 31500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:26:32 [INFO] mvsa: Checkpoint saved at frame 32000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:26:32 [INFO] mvsa: Progress: frame 32000/71994, counted=610, elapsed=1334.2s
+2026-08-17 15:26:54 [INFO] mvsa: Checkpoint saved at frame 32500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:27:16 [INFO] mvsa: Checkpoint saved at frame 33000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:27:37 [INFO] mvsa: Checkpoint saved at frame 33500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:28:00 [INFO] mvsa: Checkpoint saved at frame 34000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:28:00 [INFO] mvsa: Progress: frame 34000/71994, counted=643, elapsed=1421.5s
+2026-08-17 15:28:22 [INFO] mvsa: Checkpoint saved at frame 34500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:28:44 [INFO] mvsa: Checkpoint saved at frame 35000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:29:07 [INFO] mvsa: Checkpoint saved at frame 35500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:29:28 [INFO] mvsa: Checkpoint saved at frame 36000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:29:28 [INFO] mvsa: Progress: frame 36000/71994, counted=693, elapsed=1509.6s
+2026-08-17 15:29:49 [INFO] mvsa: Checkpoint saved at frame 36500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:30:10 [INFO] mvsa: Checkpoint saved at frame 37000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:30:32 [INFO] mvsa: Checkpoint saved at frame 37500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:30:53 [INFO] mvsa: Checkpoint saved at frame 38000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:30:53 [INFO] mvsa: Progress: frame 38000/71994, counted=737, elapsed=1595.2s
+2026-08-17 15:31:15 [INFO] mvsa: Checkpoint saved at frame 38500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:31:37 [INFO] mvsa: Checkpoint saved at frame 39000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:31:59 [INFO] mvsa: Checkpoint saved at frame 39500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:32:21 [INFO] mvsa: Checkpoint saved at frame 40000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:32:21 [INFO] mvsa: Progress: frame 40000/71994, counted=773, elapsed=1683.2s
+2026-08-17 15:32:44 [INFO] mvsa: Checkpoint saved at frame 40500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:33:06 [INFO] mvsa: Checkpoint saved at frame 41000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:33:28 [INFO] mvsa: Checkpoint saved at frame 41500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:33:50 [INFO] mvsa: Checkpoint saved at frame 42000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:33:50 [INFO] mvsa: Progress: frame 42000/71994, counted=804, elapsed=1772.1s
+2026-08-17 15:34:12 [INFO] mvsa: Checkpoint saved at frame 42500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:34:34 [INFO] mvsa: Checkpoint saved at frame 43000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:34:56 [INFO] mvsa: Checkpoint saved at frame 43500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:35:18 [INFO] mvsa: Checkpoint saved at frame 44000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:35:18 [INFO] mvsa: Progress: frame 44000/71994, counted=822, elapsed=1859.6s
+2026-08-17 15:35:40 [INFO] mvsa: Checkpoint saved at frame 44500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:36:02 [INFO] mvsa: Checkpoint saved at frame 45000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:36:24 [INFO] mvsa: Checkpoint saved at frame 45500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:36:46 [INFO] mvsa: Checkpoint saved at frame 46000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:36:46 [INFO] mvsa: Progress: frame 46000/71994, counted=847, elapsed=1947.7s
+2026-08-17 15:37:09 [INFO] mvsa: Checkpoint saved at frame 46500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:37:30 [INFO] mvsa: Checkpoint saved at frame 47000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:37:53 [INFO] mvsa: Checkpoint saved at frame 47500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:38:15 [INFO] mvsa: Checkpoint saved at frame 48000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:38:15 [INFO] mvsa: Progress: frame 48000/71994, counted=896, elapsed=2037.0s
+2026-08-17 15:38:38 [INFO] mvsa: Checkpoint saved at frame 48500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:39:00 [INFO] mvsa: Checkpoint saved at frame 49000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:39:21 [INFO] mvsa: Checkpoint saved at frame 49500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:39:43 [INFO] mvsa: Checkpoint saved at frame 50000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:39:43 [INFO] mvsa: Progress: frame 50000/71994, counted=947, elapsed=2125.1s
+2026-08-17 15:40:05 [INFO] mvsa: Checkpoint saved at frame 50500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:40:27 [INFO] mvsa: Checkpoint saved at frame 51000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:40:50 [INFO] mvsa: Checkpoint saved at frame 51500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:41:12 [INFO] mvsa: Checkpoint saved at frame 52000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:41:12 [INFO] mvsa: Progress: frame 52000/71994, counted=963, elapsed=2213.6s
+2026-08-17 15:41:34 [INFO] mvsa: Checkpoint saved at frame 52500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:41:57 [INFO] mvsa: Checkpoint saved at frame 53000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:42:20 [INFO] mvsa: Checkpoint saved at frame 53500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:42:43 [INFO] mvsa: Checkpoint saved at frame 54000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:42:43 [INFO] mvsa: Progress: frame 54000/71994, counted=1017, elapsed=2304.6s
+2026-08-17 15:43:06 [INFO] mvsa: Checkpoint saved at frame 54500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:43:28 [INFO] mvsa: Checkpoint saved at frame 55000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:43:51 [INFO] mvsa: Checkpoint saved at frame 55500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:44:13 [INFO] mvsa: Checkpoint saved at frame 56000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:44:13 [INFO] mvsa: Progress: frame 56000/71994, counted=1084, elapsed=2394.3s
+2026-08-17 15:44:34 [INFO] mvsa: Checkpoint saved at frame 56500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:44:56 [INFO] mvsa: Checkpoint saved at frame 57000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:45:19 [INFO] mvsa: Checkpoint saved at frame 57500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:45:42 [INFO] mvsa: Checkpoint saved at frame 58000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:45:42 [INFO] mvsa: Progress: frame 58000/71994, counted=1117, elapsed=2483.9s
+2026-08-17 15:46:05 [INFO] mvsa: Checkpoint saved at frame 58500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:46:27 [INFO] mvsa: Checkpoint saved at frame 59000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:46:51 [INFO] mvsa: Checkpoint saved at frame 59500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:47:13 [INFO] mvsa: Checkpoint saved at frame 60000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:47:13 [INFO] mvsa: Progress: frame 60000/71994, counted=1168, elapsed=2574.7s
+2026-08-17 15:47:35 [INFO] mvsa: Checkpoint saved at frame 60500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:47:59 [INFO] mvsa: Checkpoint saved at frame 61000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:48:22 [INFO] mvsa: Checkpoint saved at frame 61500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:48:44 [INFO] mvsa: Checkpoint saved at frame 62000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:48:44 [INFO] mvsa: Progress: frame 62000/71994, counted=1220, elapsed=2666.0s
+2026-08-17 15:49:07 [INFO] mvsa: Checkpoint saved at frame 62500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:49:29 [INFO] mvsa: Checkpoint saved at frame 63000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:49:51 [INFO] mvsa: Checkpoint saved at frame 63500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:50:14 [INFO] mvsa: Checkpoint saved at frame 64000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:50:14 [INFO] mvsa: Progress: frame 64000/71994, counted=1276, elapsed=2755.5s
+2026-08-17 15:50:37 [INFO] mvsa: Checkpoint saved at frame 64500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:51:00 [INFO] mvsa: Checkpoint saved at frame 65000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:51:23 [INFO] mvsa: Checkpoint saved at frame 65500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:51:47 [INFO] mvsa: Checkpoint saved at frame 66000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:51:47 [INFO] mvsa: Progress: frame 66000/71994, counted=1330, elapsed=2848.3s
+2026-08-17 15:52:09 [INFO] mvsa: Checkpoint saved at frame 66500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:52:32 [INFO] mvsa: Checkpoint saved at frame 67000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:52:55 [INFO] mvsa: Checkpoint saved at frame 67500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:53:17 [INFO] mvsa: Checkpoint saved at frame 68000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:53:17 [INFO] mvsa: Progress: frame 68000/71994, counted=1369, elapsed=2939.1s
+2026-08-17 15:53:40 [INFO] mvsa: Checkpoint saved at frame 68500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:54:03 [INFO] mvsa: Checkpoint saved at frame 69000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:54:26 [INFO] mvsa: Checkpoint saved at frame 69500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:54:49 [INFO] mvsa: Checkpoint saved at frame 70000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:54:49 [INFO] mvsa: Progress: frame 70000/71994, counted=1414, elapsed=3030.8s
+2026-08-17 15:55:13 [INFO] mvsa: Checkpoint saved at frame 70500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:55:36 [INFO] mvsa: Checkpoint saved at frame 71000 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:55:58 [INFO] mvsa: Checkpoint saved at frame 71500 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:56:20 [INFO] mvsa: Checkpoint saved at frame 71993 -> /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/checkpoint.json
+2026-08-17 15:56:20 [INFO] mvsa: Finished mode=detect: 71994 frames processed in 3121.9s, 1453 pedestrians counted
+2026-08-17 15:56:20 [INFO] mvsa: Rider filtering excluded 1219 of 1453 counted tracks from the pedestrian count (excluded statuses: ['rider', 'uncertain'])
+2026-08-17 15:56:20 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/classification_summary.json
+2026-08-17 15:56:20 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/hourly_pedestrian_counts.csv
+2026-08-17 15:56:20 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/tracks.csv
+2026-08-17 15:56:21 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/track_positions.json
+2026-08-17 15:56:21 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_18_kamaripet_police_station_cam_1_20260728_0800/run_summary.json
+{"run_name": "peds_18_kamaripet_police_station_cam_1_20260728_0800", "mode": "detect", "video_path": "/storage/users/oauser/mvsa/work/converted/peds_18_kamaripet_police_station_cam_1_20260728_0800.mp4", "video_info": {"width": 1920, "height": 1080, "fps": 25.0, "frame_count": 71994}, "config_fps_used": 25.0, "start_datetime": "2026-07-28 08:00:00", "total_pedestrian_entries": 234, "total_tracks_observed": 7088, "rider_filtering_enabled": true, "demographics_enabled": false, "movement_direction_enabled": false, "movement_direction_breakdown": null, "elapsed_seconds": 3121.933195590973, "generated_at": "2026-08-17T15:56:21.530553"}

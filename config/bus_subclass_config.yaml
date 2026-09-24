@@ -1,0 +1,50 @@
+# Bus subclass config for scripts/vehicle_subtype_classifier/bus_subclass_classifier.py
+#
+# Only applies to frames Step 1 already labeled "Bus" or "Mini-bus" (UVH-26
+# native classes). 5 subclasses (confirmed with user 2026-08-28, collapsing
+# "Private Bus" and "City Bus" into one bucket -- see reasoning in
+# bus_subclass_classifier.py's module docstring):
+#   School Bus, BRT Bus, Mini Bus, Private Bus or City Bus, Other Bus
+
+# HSV ranges (OpenCV convention: H in [0,179], S/V in [0,255]) for the two
+# liveries this pipeline can actually detect with a color heuristic alone
+# (no OCR/logo detection -- see docstring for why Private/City can't be
+# split further right now).
+school_bus_yellow:
+  hue_min: 18
+  hue_max: 34
+  sat_min: 90
+  val_min: 90
+
+brt_blue:
+  hue_min: 100
+  hue_max: 130
+  sat_min: 60
+  val_min: 50
+
+# Minimum fraction of bbox pixels matching a livery's HSV range for that
+# livery to be considered "present" at all.
+color_ratio_threshold: 0.30
+# A candidate color must beat the other candidate by at least this factor
+# to win outright (e.g. yellow=0.35, blue=0.10 -> yellow wins comfortably;
+# yellow=0.35, blue=0.30 -> too close, falls to "Other Bus" as ambiguous).
+dominance_margin: 1.5
+
+# Below this mean V (brightness), the crop is treated as too dark to trust
+# any color evidence at all (night footage, IR camera, heavy underexposure)
+# -- straight to Other Bus rather than guessing. NOT based on saturation:
+# a plain white/silver bus is legitimately low-saturation and must still
+# fall through to the Private Bus or City Bus default, not get swept into
+# Other Bus just for lacking a dominant hue.
+min_mean_brightness: 35
+
+# Crops smaller than this (bbox width * height, in pixels) are considered
+# too small to extract a reliable color signal from.
+min_bbox_area_px: 900  # e.g. 30x30
+
+confidence:
+  mini_bus_from_native_class: 0.90
+  color_dominant: 0.75
+  color_default_bucket: 0.55
+  other_bus_low_signal: 0.30
+  other_bus_ambiguous: 0.40

@@ -1,0 +1,62 @@
+2026-08-16T16:39:56+00:00 === processing cvc_10_savadatti_road_cam_1_20260723_0800 (drive_path=Data Corp /DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 1/2026-07-23/08.00.00-09.00.00[R][0@0][0].dav) ===
+2026-08-16T16:39:56+00:00 stage=download start
+2026-08-16T16:39:56+00:00 Download attempt 1/3: googledrive:Data Corp /DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 10 - Savadatti Road/Cam 1/2026-07-23/08.00.00-09.00.00[R][0@0][0].dav -> /storage/users/oauser/mvsa/work/vehicle_downloads/cvc_10_savadatti_road_cam_1_20260723_0800.dav
+2026-08-16T16:40:19+00:00 Downloaded 1879151701 bytes -> /storage/users/oauser/mvsa/work/vehicle_downloads/cvc_10_savadatti_road_cam_1_20260723_0800.dav
+2026-08-16T16:40:19+00:00 stage=download ok
+2026-08-16T16:40:19+00:00 stage=convert start
+2026-08-16T16:40:19+00:00 Remuxing /storage/users/oauser/mvsa/work/vehicle_downloads/cvc_10_savadatti_road_cam_1_20260723_0800.dav -> /storage/users/oauser/mvsa/work/vehicle_converted/cvc_10_savadatti_road_cam_1_20260723_0800.mp4
+2026-08-16T16:40:23+00:00 Converted: /storage/users/oauser/mvsa/work/vehicle_converted/cvc_10_savadatti_road_cam_1_20260723_0800.mp4 (1875726523 bytes)
+2026-08-16T16:40:23+00:00 stage=convert ok
+2026-08-16T16:40:23+00:00 cleanup: removed source .dav /storage/users/oauser/mvsa/work/vehicle_downloads/cvc_10_savadatti_road_cam_1_20260723_0800.dav
+2026-08-16T16:40:23+00:00 stage=process start
+
+$ /storage/users/oauser/mvsa/env/bin/python /storage/users/oauser/mvsa/scripts/vehicle_counting/vehicle_counter.py --config /storage/users/oauser/mvsa/config/vehicle_config.yaml --run-name cvc_10_savadatti_road_cam_1_20260723_0800 --video /storage/users/oauser/mvsa/work/vehicle_converted/cvc_10_savadatti_road_cam_1_20260723_0800.mp4 --start-datetime 2026-07-23 08:00:00
+2026-08-16 09:40:25 [WARNING] mvsa.vehicle_counting: Dependency check: torch version is 2.3.0+cu121, expected 2.1.0+cu118 (the cluster's working environment). If this run is on the research server, verify nothing (e.g. pip installing insightface without --no-deps) upgraded it.
+2026-08-16 09:40:26 [WARNING] mvsa.vehicle_counting: Dependency check: torchvision version is 0.18.0+cu121, expected 0.16.0+cu118 (the cluster's working environment). If this run is on the research server, verify nothing (e.g. pip installing insightface without --no-deps) upgraded it.
+2026-08-16 09:40:26 [INFO] mvsa.vehicle_counting: Dependency check: numpy 1.26.1 OK
+2026-08-16 09:40:26 [INFO] mvsa.vehicle_counting: Starting vehicle count run_name=cvc_10_savadatti_road_cam_1_20260723_0800 video=/storage/users/oauser/mvsa/work/vehicle_converted/cvc_10_savadatti_road_cam_1_20260723_0800.mp4 (1920x1080, ~71495 frames, 25.0 fps), classes={1: 'BICYCLE', 3: 'MOTORCYCLE', 2: 'CAR', 5: 'BUS'}
+2026-08-16 09:41:38 [INFO] mvsa.vehicle_counting: Progress: frame 2000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 7, 'CAR': 4, 'BUS': 1}, elapsed=70.5s
+2026-08-16 09:42:50 [INFO] mvsa.vehicle_counting: Progress: frame 4000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 12, 'CAR': 6, 'BUS': 4}, elapsed=142.1s
+2026-08-16 09:44:05 [INFO] mvsa.vehicle_counting: Progress: frame 6000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 15, 'CAR': 8, 'BUS': 5}, elapsed=217.4s
+2026-08-16 09:45:28 [INFO] mvsa.vehicle_counting: Progress: frame 8000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 19, 'CAR': 11, 'BUS': 7}, elapsed=300.0s
+2026-08-16 09:47:03 [INFO] mvsa.vehicle_counting: Progress: frame 10000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 31, 'CAR': 19, 'BUS': 8}, elapsed=394.9s
+2026-08-16 09:48:48 [INFO] mvsa.vehicle_counting: Progress: frame 12000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 61, 'CAR': 23, 'BUS': 11}, elapsed=500.5s
+2026-08-16 09:50:39 [INFO] mvsa.vehicle_counting: Progress: frame 14000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 101, 'CAR': 24, 'BUS': 12}, elapsed=611.8s
+2026-08-16 09:52:06 [INFO] mvsa.vehicle_counting: Progress: frame 16000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 109, 'CAR': 29, 'BUS': 15}, elapsed=698.5s
+2026-08-16 09:53:34 [INFO] mvsa.vehicle_counting: Progress: frame 18000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 109, 'CAR': 32, 'BUS': 17}, elapsed=785.8s
+2026-08-16 09:55:01 [INFO] mvsa.vehicle_counting: Progress: frame 20000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 120, 'CAR': 36, 'BUS': 19}, elapsed=873.2s
+2026-08-16 09:56:21 [INFO] mvsa.vehicle_counting: Progress: frame 22000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 124, 'CAR': 37, 'BUS': 21}, elapsed=953.7s
+2026-08-16 09:57:44 [INFO] mvsa.vehicle_counting: Progress: frame 24000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 150, 'CAR': 42, 'BUS': 21}, elapsed=1036.6s
+2026-08-16 09:59:13 [INFO] mvsa.vehicle_counting: Progress: frame 26000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 157, 'CAR': 47, 'BUS': 22}, elapsed=1124.8s
+2026-08-16 10:00:33 [INFO] mvsa.vehicle_counting: Progress: frame 28000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 169, 'CAR': 51, 'BUS': 23}, elapsed=1205.0s
+2026-08-16 10:02:07 [INFO] mvsa.vehicle_counting: Progress: frame 30000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 199, 'CAR': 53, 'BUS': 25}, elapsed=1298.9s
+2026-08-16 10:03:36 [INFO] mvsa.vehicle_counting: Progress: frame 32000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 224, 'CAR': 59, 'BUS': 28}, elapsed=1388.6s
+2026-08-16 10:05:09 [INFO] mvsa.vehicle_counting: Progress: frame 34000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 249, 'CAR': 63, 'BUS': 31}, elapsed=1481.4s
+2026-08-16 10:06:38 [INFO] mvsa.vehicle_counting: Progress: frame 36000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 270, 'CAR': 68, 'BUS': 32}, elapsed=1570.2s
+2026-08-16 10:08:09 [INFO] mvsa.vehicle_counting: Progress: frame 38000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 293, 'CAR': 75, 'BUS': 36}, elapsed=1661.4s
+2026-08-16 10:09:44 [INFO] mvsa.vehicle_counting: Progress: frame 40000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 306, 'CAR': 77, 'BUS': 37}, elapsed=1756.4s
+2026-08-16 10:11:15 [INFO] mvsa.vehicle_counting: Progress: frame 42000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 325, 'CAR': 79, 'BUS': 37}, elapsed=1846.9s
+2026-08-16 10:12:52 [INFO] mvsa.vehicle_counting: Progress: frame 44000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 331, 'CAR': 92, 'BUS': 39}, elapsed=1944.2s
+2026-08-16 10:14:27 [INFO] mvsa.vehicle_counting: Progress: frame 46000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 358, 'CAR': 98, 'BUS': 43}, elapsed=2039.0s
+2026-08-16 10:16:02 [INFO] mvsa.vehicle_counting: Progress: frame 48000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 383, 'CAR': 105, 'BUS': 45}, elapsed=2134.5s
+2026-08-16 10:17:41 [INFO] mvsa.vehicle_counting: Progress: frame 50000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 397, 'CAR': 113, 'BUS': 49}, elapsed=2233.6s
+2026-08-16 10:19:25 [INFO] mvsa.vehicle_counting: Progress: frame 52000/71495, counts={'BICYCLE': 0, 'MOTORCYCLE': 424, 'CAR': 119, 'BUS': 50}, elapsed=2337.7s
+2026-08-16 10:21:15 [INFO] mvsa.vehicle_counting: Progress: frame 54000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 454, 'CAR': 125, 'BUS': 53}, elapsed=2447.2s
+2026-08-16 10:22:55 [INFO] mvsa.vehicle_counting: Progress: frame 56000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 487, 'CAR': 130, 'BUS': 56}, elapsed=2546.8s
+2026-08-16 10:24:39 [INFO] mvsa.vehicle_counting: Progress: frame 58000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 523, 'CAR': 144, 'BUS': 56}, elapsed=2651.7s
+2026-08-16 10:26:23 [INFO] mvsa.vehicle_counting: Progress: frame 60000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 542, 'CAR': 150, 'BUS': 56}, elapsed=2754.8s
+2026-08-16 10:28:16 [INFO] mvsa.vehicle_counting: Progress: frame 62000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 565, 'CAR': 159, 'BUS': 57}, elapsed=2867.8s
+2026-08-16 10:30:32 [INFO] mvsa.vehicle_counting: Progress: frame 64000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 592, 'CAR': 166, 'BUS': 57}, elapsed=3004.7s
+2026-08-16 10:31:44 [INFO] mvsa.vehicle_counting: Progress: frame 66000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 617, 'CAR': 173, 'BUS': 60}, elapsed=3075.9s
+2026-08-16 10:32:54 [INFO] mvsa.vehicle_counting: Progress: frame 68000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 635, 'CAR': 179, 'BUS': 60}, elapsed=3146.7s
+2026-08-16 10:34:05 [INFO] mvsa.vehicle_counting: Progress: frame 70000/71495, counts={'BICYCLE': 3, 'MOTORCYCLE': 667, 'CAR': 184, 'BUS': 64}, elapsed=3217.5s
+2026-08-16 10:34:58 [INFO] mvsa.vehicle_counting: Finished: 71495 frames processed in 3270.5s, counts={'BICYCLE': 4, 'MOTORCYCLE': 679, 'CAR': 186, 'BUS': 64}
+2026-08-16 10:34:58 [INFO] mvsa.vehicle_counting: Wrote /storage/users/oauser/mvsa/results/cvc_10_savadatti_road_cam_1_20260723_0800/hourly_vehicle_counts.csv
+2026-08-16 10:34:58 [INFO] mvsa.vehicle_counting: Wrote /storage/users/oauser/mvsa/results/cvc_10_savadatti_road_cam_1_20260723_0800/vehicle_tracks.csv
+2026-08-16 10:34:58 [INFO] mvsa.vehicle_counting: Wrote /storage/users/oauser/mvsa/results/cvc_10_savadatti_road_cam_1_20260723_0800/run_summary.json
+2026-08-16 10:34:58 [INFO] mvsa.vehicle_counting: Run complete. Summary: {'run_name': 'cvc_10_savadatti_road_cam_1_20260723_0800', 'video_path': '/storage/users/oauser/mvsa/work/vehicle_converted/cvc_10_savadatti_road_cam_1_20260723_0800.mp4', 'video_info': {'width': 1920, 'height': 1080, 'fps': 25.0, 'frame_count': 71495}, 'config_fps_used': 25.0, 'start_datetime': '2026-07-23 08:00:00', 'total_vehicle_entries': 933, 'total_tracks_observed': 933, 'counts_by_bucket': {'MOTORCYCLE': 679, 'BUS': 64, 'CAR': 186, 'BICYCLE': 4}, 'class_coverage': {'detected_buckets': ['BICYCLE', 'MOTORCYCLE', 'CAR', 'BUS'], 'requested_label_status': {'TAXI': 'CAR', 'Slow Vehicle': 'pending_fine_tune', 'School Bus': 'BUS', 'Private Bus': 'BUS', 'Mini Bus': 'BUS', 'KSRTC Bus': 'BUS', 'Goods Vehicle': 'pending_fine_tune', 'FARM VEHICLE': 'pending_fine_tune', 'evCAR': 'CAR', 'EMERGENCY VEHICLE': 'pending_fine_tune', 'E-RICKSAW': 'pending_fine_tune', 'City Bus': 'BUS', 'CAR': 'CAR', 'BRTS Bus': 'BUS', 'AUTO RICKSAW': 'pending_fine_tune', '2 WHEELER': 'MOTORCYCLE + BICYCLE (tracked separately)'}, 'pending_fine_tune': ['Slow Vehicle', 'Goods Vehicle', 'FARM VEHICLE', 'EMERGENCY VEHICLE', 'E-RICKSAW', 'AUTO RICKSAW']}, 'elapsed_seconds': 3270.5283584594727, 'generated_at': '2026-08-16T10:34:58.774292'}
+Done. Results written to: /storage/users/oauser/mvsa/results/cvc_10_savadatti_road_cam_1_20260723_0800
+{"run_name": "cvc_10_savadatti_road_cam_1_20260723_0800", "video_path": "/storage/users/oauser/mvsa/work/vehicle_converted/cvc_10_savadatti_road_cam_1_20260723_0800.mp4", "video_info": {"width": 1920, "height": 1080, "fps": 25.0, "frame_count": 71495}, "config_fps_used": 25.0, "start_datetime": "2026-07-23 08:00:00", "total_vehicle_entries": 933, "total_tracks_observed": 933, "counts_by_bucket": {"MOTORCYCLE": 679, "BUS": 64, "CAR": 186, "BICYCLE": 4}, "class_coverage": {"detected_buckets": ["BICYCLE", "MOTORCYCLE", "CAR", "BUS"], "requested_label_status": {"TAXI": "CAR", "Slow Vehicle": "pending_fine_tune", "School Bus": "BUS", "Private Bus": "BUS", "Mini Bus": "BUS", "KSRTC Bus": "BUS", "Goods Vehicle": "pending_fine_tune", "FARM VEHICLE": "pending_fine_tune", "evCAR": "CAR", "EMERGENCY VEHICLE": "pending_fine_tune", "E-RICKSAW": "pending_fine_tune", "City Bus": "BUS", "CAR": "CAR", "BRTS Bus": "BUS", "AUTO RICKSAW": "pending_fine_tune", "2 WHEELER": "MOTORCYCLE + BICYCLE (tracked separately)"}, "pending_fine_tune": ["Slow Vehicle", "Goods Vehicle", "FARM VEHICLE", "EMERGENCY VEHICLE", "E-RICKSAW", "AUTO RICKSAW"]}, "elapsed_seconds": 3270.5283584594727, "generated_at": "2026-08-16T10:34:58.774292"}
+2026-08-16T17:35:00+00:00 stage=process ok
+2026-08-16T17:35:00+00:00 results taxonomy populated
+2026-08-16T17:35:00+00:00 cleanup: removed converted .mp4 /storage/users/oauser/mvsa/work/vehicle_converted/cvc_10_savadatti_road_cam_1_20260723_0800.mp4

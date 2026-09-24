@@ -1,0 +1,807 @@
+2026-08-30 01:21:36 [INFO] uvh_test.main: Processing video: work/converted/tvc5_gokul_rd_cam1_20260716_0900-0945.mp4
+2026-08-30 01:21:36 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.pt
+2026-08-30 01:21:36 [INFO] uvh_test.detector: Loaded 14 classes.
+2026-08-30 01:21:36 [INFO] uvh_test.main: Restricting detection to classes: ['Two-wheeler', 'Three-wheeler', 'Hatchback', 'Sedan', 'SUV', 'MUV', 'Van'] -> ids [7, 6, 0, 1, 2, 3, 12]
+2026-08-30 01:21:36 [INFO] uvh_test.counter: VehicleCounter initialized: line=[1911.0, 949.0] -> [1142.0, 237.0], direction=BOTH
+2026-08-30 01:21:41 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=69 tid=3 dir=A_TO_B
+2026-08-30 01:21:41 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=70 tid=3 dir=A_TO_B
+2026-08-30 01:21:41 [INFO] uvh_test.counter: COUNTED: frame=70 tid=3 class=Two-wheeler
+2026-08-30 01:21:41 [INFO] uvh_test.counter: COUNT: frame=70 tid=3 class=Two-wheeler direction=A_TO_B track_age=4 point=(1668.9, 598.3)
+2026-08-30 01:21:47 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=270 tid=5 dir=A_TO_B
+2026-08-30 01:21:47 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=271 tid=5 dir=A_TO_B
+2026-08-30 01:21:47 [INFO] uvh_test.counter: COUNTED: frame=271 tid=5 class=Two-wheeler
+2026-08-30 01:21:47 [INFO] uvh_test.counter: COUNT: frame=271 tid=5 class=Two-wheeler direction=A_TO_B track_age=31 point=(1323.5, 374.8)
+2026-08-30 01:21:50 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=350 tid=6 dir=A_TO_B
+2026-08-30 01:21:50 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=351 tid=6 dir=A_TO_B
+2026-08-30 01:21:50 [INFO] uvh_test.counter: COUNTED: frame=351 tid=6 class=Two-wheeler
+2026-08-30 01:21:50 [INFO] uvh_test.counter: COUNT: frame=351 tid=6 class=Two-wheeler direction=A_TO_B track_age=35 point=(1328.7, 379.9)
+2026-08-30 01:21:53 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=445 tid=9 dir=A_TO_B
+2026-08-30 01:21:53 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=446 tid=9 dir=A_TO_B
+2026-08-30 01:21:53 [INFO] uvh_test.counter: COUNTED: frame=446 tid=9 class=SUV
+2026-08-30 01:21:53 [INFO] uvh_test.counter: COUNT: frame=446 tid=9 class=SUV direction=A_TO_B track_age=30 point=(1354.9, 385.4)
+2026-08-30 01:21:59 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=652 tid=14 dir=A_TO_B
+2026-08-30 01:21:59 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=653 tid=14 dir=A_TO_B
+2026-08-30 01:21:59 [INFO] uvh_test.counter: COUNTED: frame=653 tid=14 class=Two-wheeler
+2026-08-30 01:21:59 [INFO] uvh_test.counter: COUNT: frame=653 tid=14 class=Two-wheeler direction=A_TO_B track_age=38 point=(1336.1, 383.2)
+2026-08-30 01:22:01 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=704 tid=18 dir=A_TO_B
+2026-08-30 01:22:01 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=705 tid=18 dir=A_TO_B
+2026-08-30 01:22:01 [INFO] uvh_test.counter: COUNTED: frame=705 tid=18 class=Two-wheeler
+2026-08-30 01:22:01 [INFO] uvh_test.counter: COUNT: frame=705 tid=18 class=Two-wheeler direction=A_TO_B track_age=5 point=(1681.2, 607.8)
+2026-08-30 01:22:01 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=709 tid=15 dir=A_TO_B
+2026-08-30 01:22:01 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=710 tid=15 dir=A_TO_B
+2026-08-30 01:22:01 [INFO] uvh_test.counter: COUNTED: frame=710 tid=15 class=Two-wheeler
+2026-08-30 01:22:01 [INFO] uvh_test.counter: COUNT: frame=710 tid=15 class=Two-wheeler direction=A_TO_B track_age=23 point=(1379.3, 410.3)
+2026-08-30 01:22:01 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=719 tid=24 dir=A_TO_B
+2026-08-30 01:22:01 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=720 tid=24 dir=A_TO_B
+2026-08-30 01:22:01 [INFO] uvh_test.counter: COUNTED: frame=720 tid=24 class=Sedan
+2026-08-30 01:22:01 [INFO] uvh_test.counter: COUNT: frame=720 tid=24 class=Sedan direction=A_TO_B track_age=4 point=(1533.2, 523.0)
+2026-08-30 01:22:06 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=884 tid=43 dir=A_TO_B
+2026-08-30 01:22:06 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=885 tid=43 dir=A_TO_B
+2026-08-30 01:22:06 [INFO] uvh_test.counter: COUNTED: frame=885 tid=43 class=SUV
+2026-08-30 01:22:06 [INFO] uvh_test.counter: COUNT: frame=885 tid=43 class=SUV direction=A_TO_B track_age=6 point=(1469.7, 481.8)
+2026-08-30 01:22:07 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=893 tid=35 dir=A_TO_B
+2026-08-30 01:22:07 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=894 tid=35 dir=A_TO_B
+2026-08-30 01:22:07 [INFO] uvh_test.counter: REJECTED: frame=894 tid=35 as fragment of recent crossing (dist=118.9, bbox_max=267.1).
+2026-08-30 01:22:08 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=932 tid=50 dir=A_TO_B
+2026-08-30 01:22:08 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=933 tid=50 dir=A_TO_B
+2026-08-30 01:22:08 [INFO] uvh_test.counter: COUNTED: frame=933 tid=50 class=Two-wheeler
+2026-08-30 01:22:08 [INFO] uvh_test.counter: COUNT: frame=933 tid=50 class=Two-wheeler direction=A_TO_B track_age=22 point=(1386.5, 413.3)
+2026-08-30 01:22:09 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=959 tid=51 dir=A_TO_B
+2026-08-30 01:22:09 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=960 tid=51 dir=A_TO_B
+2026-08-30 01:22:09 [INFO] uvh_test.counter: COUNTED: frame=960 tid=51 class=Two-wheeler
+2026-08-30 01:22:09 [INFO] uvh_test.counter: COUNT: frame=960 tid=51 class=Two-wheeler direction=A_TO_B track_age=35 point=(1321.0, 378.1)
+2026-08-30 01:22:15 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1146 tid=53 dir=A_TO_B
+2026-08-30 01:22:15 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=1147 tid=53 dir=A_TO_B
+2026-08-30 01:22:15 [INFO] uvh_test.counter: COUNTED: frame=1147 tid=53 class=Two-wheeler
+2026-08-30 01:22:15 [INFO] uvh_test.counter: COUNT: frame=1147 tid=53 class=Two-wheeler direction=A_TO_B track_age=32 point=(1329.9, 383.9)
+2026-08-30 01:22:23 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1403 tid=56 dir=A_TO_B
+2026-08-30 01:22:23 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=1404 tid=56 dir=A_TO_B
+2026-08-30 01:22:23 [INFO] uvh_test.counter: COUNTED: frame=1404 tid=56 class=Hatchback
+2026-08-30 01:22:23 [INFO] uvh_test.counter: COUNT: frame=1404 tid=56 class=Hatchback direction=A_TO_B track_age=5 point=(1645.4, 557.2)
+2026-08-30 01:22:30 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1635 tid=70 dir=A_TO_B
+2026-08-30 01:22:30 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=1636 tid=70 dir=A_TO_B
+2026-08-30 01:22:30 [INFO] uvh_test.counter: COUNTED: frame=1636 tid=70 class=Two-wheeler
+2026-08-30 01:22:30 [INFO] uvh_test.counter: COUNT: frame=1636 tid=70 class=Two-wheeler direction=A_TO_B track_age=6 point=(1677.3, 616.3)
+2026-08-30 01:22:31 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1645 tid=73 dir=A_TO_B
+2026-08-30 01:22:31 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=1646 tid=73 dir=A_TO_B
+2026-08-30 01:22:31 [INFO] uvh_test.counter: COUNTED: frame=1646 tid=73 class=SUV
+2026-08-30 01:22:31 [INFO] uvh_test.counter: COUNT: frame=1646 tid=73 class=SUV direction=A_TO_B track_age=9 point=(1473.5, 464.8)
+2026-08-30 01:22:35 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1780 tid=78 dir=A_TO_B
+2026-08-30 01:22:35 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1780 tid=79 dir=A_TO_B
+2026-08-30 01:22:35 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=1781 tid=79 dir=A_TO_B
+2026-08-30 01:22:35 [INFO] uvh_test.counter: COUNTED: frame=1781 tid=79 class=Hatchback
+2026-08-30 01:22:35 [INFO] uvh_test.counter: COUNT: frame=1781 tid=79 class=Hatchback direction=A_TO_B track_age=8 point=(1617.6, 567.6)
+2026-08-30 01:22:39 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1878 tid=81 dir=A_TO_B
+2026-08-30 01:22:39 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=1879 tid=81 dir=A_TO_B
+2026-08-30 01:22:39 [INFO] uvh_test.counter: COUNTED: frame=1879 tid=81 class=Two-wheeler
+2026-08-30 01:22:39 [INFO] uvh_test.counter: COUNT: frame=1879 tid=81 class=Two-wheeler direction=A_TO_B track_age=26 point=(1368.5, 409.3)
+2026-08-30 01:22:41 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=1920 tid=85 dir=A_TO_B
+2026-08-30 01:22:41 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=1921 tid=85 dir=A_TO_B
+2026-08-30 01:22:41 [INFO] uvh_test.counter: COUNTED: frame=1921 tid=85 class=MUV
+2026-08-30 01:22:41 [INFO] uvh_test.counter: COUNT: frame=1921 tid=85 class=MUV direction=A_TO_B track_age=44 point=(1320.2, 381.6)
+2026-08-30 01:22:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=2011 tid=93 dir=A_TO_B
+2026-08-30 01:22:45 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=2012 tid=93 dir=A_TO_B
+2026-08-30 01:22:45 [INFO] uvh_test.counter: COUNTED: frame=2012 tid=93 class=MUV
+2026-08-30 01:22:45 [INFO] uvh_test.counter: COUNT: frame=2012 tid=93 class=MUV direction=A_TO_B track_age=5 point=(1671.4, 611.1)
+2026-08-30 01:22:50 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=2163 tid=99 dir=A_TO_B
+2026-08-30 01:22:50 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=2164 tid=99 dir=A_TO_B
+2026-08-30 01:22:50 [INFO] uvh_test.counter: COUNTED: frame=2164 tid=99 class=Two-wheeler
+2026-08-30 01:22:50 [INFO] uvh_test.counter: COUNT: frame=2164 tid=99 class=Two-wheeler direction=A_TO_B track_age=21 point=(1462.6, 445.6)
+2026-08-30 01:22:54 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=2242 tid=102 dir=A_TO_B
+2026-08-30 01:22:54 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=2243 tid=102 dir=A_TO_B
+2026-08-30 01:22:54 [INFO] uvh_test.counter: COUNTED: frame=2243 tid=102 class=Two-wheeler
+2026-08-30 01:22:54 [INFO] uvh_test.counter: COUNT: frame=2243 tid=102 class=Two-wheeler direction=A_TO_B track_age=5 point=(1684.2, 669.7)
+2026-08-30 01:23:01 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=2423 tid=108 dir=A_TO_B
+2026-08-30 01:23:01 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=2424 tid=108 dir=A_TO_B
+2026-08-30 01:23:01 [INFO] uvh_test.counter: COUNTED: frame=2424 tid=108 class=Two-wheeler
+2026-08-30 01:23:01 [INFO] uvh_test.counter: COUNT: frame=2424 tid=108 class=Two-wheeler direction=A_TO_B track_age=21 point=(1404.2, 405.8)
+2026-08-30 01:23:25 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=3078 tid=115 dir=A_TO_B
+2026-08-30 01:23:25 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=3079 tid=115 dir=A_TO_B
+2026-08-30 01:23:25 [INFO] uvh_test.counter: COUNTED: frame=3079 tid=115 class=Two-wheeler
+2026-08-30 01:23:25 [INFO] uvh_test.counter: COUNT: frame=3079 tid=115 class=Two-wheeler direction=A_TO_B track_age=27 point=(1354.5, 388.5)
+2026-08-30 01:23:26 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=3098 tid=116 dir=A_TO_B
+2026-08-30 01:23:27 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=3099 tid=116 dir=A_TO_B
+2026-08-30 01:23:27 [INFO] uvh_test.counter: COUNTED: frame=3099 tid=116 class=Two-wheeler
+2026-08-30 01:23:27 [INFO] uvh_test.counter: COUNT: frame=3099 tid=116 class=Two-wheeler direction=A_TO_B track_age=33 point=(1390.2, 417.2)
+2026-08-30 01:23:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=3552 tid=121 dir=A_TO_B
+2026-08-30 01:23:45 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=3553 tid=121 dir=A_TO_B
+2026-08-30 01:23:45 [INFO] uvh_test.counter: COUNTED: frame=3553 tid=121 class=Two-wheeler
+2026-08-30 01:23:45 [INFO] uvh_test.counter: COUNT: frame=3553 tid=121 class=Two-wheeler direction=A_TO_B track_age=25 point=(1342.8, 375.1)
+2026-08-30 01:23:50 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=3686 tid=122 dir=A_TO_B
+2026-08-30 01:23:50 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=3687 tid=122 dir=A_TO_B
+2026-08-30 01:23:50 [INFO] uvh_test.counter: COUNTED: frame=3687 tid=122 class=Two-wheeler
+2026-08-30 01:23:50 [INFO] uvh_test.counter: COUNT: frame=3687 tid=122 class=Two-wheeler direction=A_TO_B track_age=21 point=(1405.5, 410.4)
+2026-08-30 01:23:59 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=3904 tid=124 dir=A_TO_B
+2026-08-30 01:23:59 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=3905 tid=124 dir=A_TO_B
+2026-08-30 01:23:59 [INFO] uvh_test.counter: COUNTED: frame=3905 tid=124 class=Two-wheeler
+2026-08-30 01:23:59 [INFO] uvh_test.counter: COUNT: frame=3905 tid=124 class=Two-wheeler direction=A_TO_B track_age=19 point=(1353.2, 380.8)
+2026-08-30 01:24:02 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=3976 tid=125 dir=A_TO_B
+2026-08-30 01:24:02 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=3977 tid=125 dir=A_TO_B
+2026-08-30 01:24:02 [INFO] uvh_test.counter: COUNTED: frame=3977 tid=125 class=Two-wheeler
+2026-08-30 01:24:02 [INFO] uvh_test.counter: COUNT: frame=3977 tid=125 class=Two-wheeler direction=A_TO_B track_age=34 point=(1351.2, 382.4)
+2026-08-30 01:24:08 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4123 tid=130 dir=A_TO_B
+2026-08-30 01:24:08 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4124 tid=130 dir=A_TO_B
+2026-08-30 01:24:09 [INFO] uvh_test.counter: COUNTED: frame=4124 tid=130 class=Two-wheeler
+2026-08-30 01:24:09 [INFO] uvh_test.counter: COUNT: frame=4124 tid=130 class=Two-wheeler direction=A_TO_B track_age=8 point=(1438.3, 445.4)
+2026-08-30 01:24:17 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4321 tid=131 dir=A_TO_B
+2026-08-30 01:24:17 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4322 tid=131 dir=A_TO_B
+2026-08-30 01:24:17 [INFO] uvh_test.counter: COUNTED: frame=4322 tid=131 class=Two-wheeler
+2026-08-30 01:24:17 [INFO] uvh_test.counter: COUNT: frame=4322 tid=131 class=Two-wheeler direction=A_TO_B track_age=19 point=(1375.4, 406.8)
+2026-08-30 01:24:28 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4563 tid=134 dir=A_TO_B
+2026-08-30 01:24:28 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4564 tid=134 dir=A_TO_B
+2026-08-30 01:24:28 [INFO] uvh_test.counter: COUNTED: frame=4564 tid=134 class=Two-wheeler
+2026-08-30 01:24:28 [INFO] uvh_test.counter: COUNT: frame=4564 tid=134 class=Two-wheeler direction=A_TO_B track_age=22 point=(1376.1, 391.6)
+2026-08-30 01:24:33 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4680 tid=133 dir=A_TO_B
+2026-08-30 01:24:33 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4681 tid=133 dir=A_TO_B
+2026-08-30 01:24:33 [INFO] uvh_test.counter: COUNTED: frame=4681 tid=133 class=Two-wheeler
+2026-08-30 01:24:33 [INFO] uvh_test.counter: COUNT: frame=4681 tid=133 class=Two-wheeler direction=A_TO_B track_age=142 point=(1314.2, 367.5)
+2026-08-30 01:24:38 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4766 tid=140 dir=A_TO_B
+2026-08-30 01:24:38 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4766 tid=141 dir=A_TO_B
+2026-08-30 01:24:38 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4767 tid=137 dir=A_TO_B
+2026-08-30 01:24:38 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4767 tid=140 dir=A_TO_B
+2026-08-30 01:24:38 [INFO] uvh_test.counter: COUNTED: frame=4767 tid=140 class=Three-wheeler
+2026-08-30 01:24:38 [INFO] uvh_test.counter: COUNT: frame=4767 tid=140 class=Three-wheeler direction=A_TO_B track_age=4 point=(1658.1, 690.6)
+2026-08-30 01:24:38 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4768 tid=137 dir=A_TO_B
+2026-08-30 01:24:38 [INFO] uvh_test.counter: REJECTED: frame=4768 tid=137 as fragment of recent crossing (dist=103.6, bbox_max=295.3).
+2026-08-30 01:24:39 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4791 tid=138 dir=A_TO_B
+2026-08-30 01:24:39 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4792 tid=138 dir=A_TO_B
+2026-08-30 01:24:39 [INFO] uvh_test.counter: COUNTED: frame=4792 tid=138 class=Two-wheeler
+2026-08-30 01:24:39 [INFO] uvh_test.counter: COUNT: frame=4792 tid=138 class=Two-wheeler direction=A_TO_B track_age=29 point=(1364.2, 394.2)
+2026-08-30 01:24:41 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4830 tid=146 dir=A_TO_B
+2026-08-30 01:24:41 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4831 tid=146 dir=A_TO_B
+2026-08-30 01:24:41 [INFO] uvh_test.counter: COUNTED: frame=4831 tid=146 class=Two-wheeler
+2026-08-30 01:24:41 [INFO] uvh_test.counter: COUNT: frame=4831 tid=146 class=Two-wheeler direction=A_TO_B track_age=6 point=(1686.7, 642.7)
+2026-08-30 01:24:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=4890 tid=148 dir=A_TO_B
+2026-08-30 01:24:45 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=4891 tid=148 dir=A_TO_B
+2026-08-30 01:24:45 [INFO] uvh_test.counter: COUNTED: frame=4891 tid=148 class=Two-wheeler
+2026-08-30 01:24:45 [INFO] uvh_test.counter: COUNT: frame=4891 tid=148 class=Two-wheeler direction=A_TO_B track_age=37 point=(1339.6, 383.7)
+2026-08-30 01:24:53 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5022 tid=149 dir=A_TO_B
+2026-08-30 01:24:53 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5023 tid=149 dir=A_TO_B
+2026-08-30 01:24:53 [INFO] uvh_test.counter: COUNTED: frame=5023 tid=149 class=Two-wheeler
+2026-08-30 01:24:53 [INFO] uvh_test.counter: COUNT: frame=5023 tid=149 class=Two-wheeler direction=A_TO_B track_age=37 point=(1333.6, 375.9)
+2026-08-30 01:25:07 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5233 tid=152 dir=A_TO_B
+2026-08-30 01:25:07 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5234 tid=152 dir=A_TO_B
+2026-08-30 01:25:07 [INFO] uvh_test.counter: COUNTED: frame=5234 tid=152 class=Two-wheeler
+2026-08-30 01:25:07 [INFO] uvh_test.counter: COUNT: frame=5234 tid=152 class=Two-wheeler direction=A_TO_B track_age=37 point=(1323.8, 373.8)
+[h264 @ 0x55755d56c240] cabac decode of qscale diff failed at 109 12
+[h264 @ 0x55755d56c240] error while decoding MB 109 12, bytestream 253538
+[h264 @ 0x55755d56c240] Frame num change from 0 to 1
+[h264 @ 0x55755d56c240] decode_slice_header error
+[h264 @ 0x55755d56c240] Frame num change from 0 to 2
+[h264 @ 0x55755d56c240] decode_slice_header error
+[h264 @ 0x557563dcc140] Frame num change from 8 to 9
+[h264 @ 0x557563dcc140] decode_slice_header error
+2026-08-30 01:25:13 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5332 tid=153 dir=A_TO_B
+2026-08-30 01:25:13 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5333 tid=153 dir=A_TO_B
+2026-08-30 01:25:13 [INFO] uvh_test.counter: COUNTED: frame=5333 tid=153 class=Two-wheeler
+2026-08-30 01:25:13 [INFO] uvh_test.counter: COUNT: frame=5333 tid=153 class=Two-wheeler direction=A_TO_B track_age=21 point=(1354.1, 391.5)
+2026-08-30 01:25:29 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5631 tid=154 dir=A_TO_B
+2026-08-30 01:25:29 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5632 tid=154 dir=A_TO_B
+2026-08-30 01:25:29 [INFO] uvh_test.counter: COUNTED: frame=5632 tid=154 class=Two-wheeler
+2026-08-30 01:25:29 [INFO] uvh_test.counter: COUNT: frame=5632 tid=154 class=Two-wheeler direction=A_TO_B track_age=32 point=(1349.0, 379.3)
+2026-08-30 01:25:33 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5679 tid=155 dir=A_TO_B
+2026-08-30 01:25:33 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5680 tid=155 dir=A_TO_B
+2026-08-30 01:25:33 [INFO] uvh_test.counter: COUNTED: frame=5680 tid=155 class=Two-wheeler
+2026-08-30 01:25:33 [INFO] uvh_test.counter: COUNT: frame=5680 tid=155 class=Two-wheeler direction=A_TO_B track_age=23 point=(1375.3, 385.6)
+2026-08-30 01:25:36 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5750 tid=156 dir=A_TO_B
+2026-08-30 01:25:36 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5751 tid=156 dir=A_TO_B
+2026-08-30 01:25:36 [INFO] uvh_test.counter: COUNTED: frame=5751 tid=156 class=Two-wheeler
+2026-08-30 01:25:36 [INFO] uvh_test.counter: COUNT: frame=5751 tid=156 class=Two-wheeler direction=A_TO_B track_age=28 point=(1330.7, 374.3)
+2026-08-30 01:25:39 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5798 tid=157 dir=A_TO_B
+2026-08-30 01:25:39 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5799 tid=157 dir=A_TO_B
+2026-08-30 01:25:39 [INFO] uvh_test.counter: COUNTED: frame=5799 tid=157 class=Two-wheeler
+2026-08-30 01:25:39 [INFO] uvh_test.counter: COUNT: frame=5799 tid=157 class=Two-wheeler direction=A_TO_B track_age=43 point=(1321.3, 375.0)
+2026-08-30 01:25:40 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5814 tid=159 dir=A_TO_B
+2026-08-30 01:25:40 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5815 tid=159 dir=A_TO_B
+2026-08-30 01:25:40 [INFO] uvh_test.counter: COUNTED: frame=5815 tid=159 class=Two-wheeler
+2026-08-30 01:25:40 [INFO] uvh_test.counter: COUNT: frame=5815 tid=159 class=Two-wheeler direction=A_TO_B track_age=21 point=(1397.4, 409.6)
+2026-08-30 01:25:48 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=5898 tid=162 dir=A_TO_B
+2026-08-30 01:25:48 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=5899 tid=162 dir=A_TO_B
+2026-08-30 01:25:48 [INFO] uvh_test.counter: COUNTED: frame=5899 tid=162 class=Two-wheeler
+2026-08-30 01:25:48 [INFO] uvh_test.counter: COUNT: frame=5899 tid=162 class=Two-wheeler direction=A_TO_B track_age=21 point=(1418.4, 433.4)
+2026-08-30 01:25:59 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=6141 tid=168 dir=A_TO_B
+2026-08-30 01:25:59 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=6142 tid=168 dir=A_TO_B
+2026-08-30 01:25:59 [INFO] uvh_test.counter: COUNTED: frame=6142 tid=168 class=Two-wheeler
+2026-08-30 01:25:59 [INFO] uvh_test.counter: COUNT: frame=6142 tid=168 class=Two-wheeler direction=A_TO_B track_age=31 point=(1345.0, 382.2)
+2026-08-30 01:26:00 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=6178 tid=169 dir=A_TO_B
+2026-08-30 01:26:00 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=6179 tid=169 dir=A_TO_B
+2026-08-30 01:26:00 [INFO] uvh_test.counter: COUNTED: frame=6179 tid=169 class=Two-wheeler
+2026-08-30 01:26:00 [INFO] uvh_test.counter: COUNT: frame=6179 tid=169 class=Two-wheeler direction=A_TO_B track_age=28 point=(1350.7, 381.5)
+2026-08-30 01:26:20 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=6332 tid=172 dir=A_TO_B
+2026-08-30 01:26:20 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=6333 tid=172 dir=A_TO_B
+2026-08-30 01:26:20 [INFO] uvh_test.counter: COUNTED: frame=6333 tid=172 class=Two-wheeler
+2026-08-30 01:26:20 [INFO] uvh_test.counter: COUNT: frame=6333 tid=172 class=Two-wheeler direction=A_TO_B track_age=22 point=(1404.2, 413.9)
+2026-08-30 01:26:30 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=6534 tid=173 dir=A_TO_B
+2026-08-30 01:26:30 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=6535 tid=173 dir=A_TO_B
+2026-08-30 01:26:30 [INFO] uvh_test.counter: COUNTED: frame=6535 tid=173 class=Two-wheeler
+2026-08-30 01:26:30 [INFO] uvh_test.counter: COUNT: frame=6535 tid=173 class=Two-wheeler direction=A_TO_B track_age=29 point=(1364.7, 386.9)
+2026-08-30 01:26:52 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=6860 tid=176 dir=A_TO_B
+2026-08-30 01:26:52 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=6861 tid=176 dir=A_TO_B
+2026-08-30 01:26:52 [INFO] uvh_test.counter: COUNTED: frame=6861 tid=176 class=Two-wheeler
+2026-08-30 01:26:52 [INFO] uvh_test.counter: COUNT: frame=6861 tid=176 class=Two-wheeler direction=A_TO_B track_age=29 point=(1323.8, 372.5)
+2026-08-30 01:27:02 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7028 tid=178 dir=A_TO_B
+2026-08-30 01:27:02 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=7029 tid=178 dir=A_TO_B
+2026-08-30 01:27:02 [INFO] uvh_test.counter: COUNTED: frame=7029 tid=178 class=Two-wheeler
+2026-08-30 01:27:02 [INFO] uvh_test.counter: COUNT: frame=7029 tid=178 class=Two-wheeler direction=A_TO_B track_age=23 point=(1409.2, 412.9)
+2026-08-30 01:27:02 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7031 tid=179 dir=A_TO_B
+2026-08-30 01:27:02 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=7032 tid=179 dir=A_TO_B
+2026-08-30 01:27:02 [INFO] uvh_test.counter: COUNTED: frame=7032 tid=179 class=Three-wheeler
+2026-08-30 01:27:02 [INFO] uvh_test.counter: COUNT: frame=7032 tid=179 class=Three-wheeler direction=A_TO_B track_age=5 point=(1621.0, 661.6)
+2026-08-30 01:27:07 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7052 tid=187 dir=A_TO_B
+2026-08-30 01:27:07 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=7053 tid=187 dir=A_TO_B
+2026-08-30 01:27:07 [INFO] uvh_test.counter: COUNTED: frame=7053 tid=187 class=Sedan
+2026-08-30 01:27:07 [INFO] uvh_test.counter: COUNT: frame=7053 tid=187 class=Sedan direction=A_TO_B track_age=8 point=(1481.2, 464.8)
+2026-08-30 01:27:28 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7222 tid=198 dir=A_TO_B
+2026-08-30 01:27:28 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=7223 tid=198 dir=A_TO_B
+2026-08-30 01:27:28 [INFO] uvh_test.counter: COUNTED: frame=7223 tid=198 class=Two-wheeler
+2026-08-30 01:27:28 [INFO] uvh_test.counter: COUNT: frame=7223 tid=198 class=Two-wheeler direction=A_TO_B track_age=34 point=(1315.2, 370.3)
+[h264 @ 0x557563111f00] left block unavailable for requested intra mode
+[h264 @ 0x557563111f00] error while decoding MB 0 18, bytestream 237643
+2026-08-30 01:27:42 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7549 tid=199 dir=A_TO_B
+2026-08-30 01:27:42 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=7550 tid=199 dir=A_TO_B
+2026-08-30 01:27:42 [INFO] uvh_test.counter: COUNTED: frame=7550 tid=199 class=Two-wheeler
+2026-08-30 01:27:42 [INFO] uvh_test.counter: COUNT: frame=7550 tid=199 class=Two-wheeler direction=A_TO_B track_age=27 point=(1358.6, 367.5)
+2026-08-30 01:27:46 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7601 tid=207 dir=A_TO_B
+2026-08-30 01:27:46 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7602 tid=206 dir=A_TO_B
+2026-08-30 01:27:46 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=7602 tid=207 dir=A_TO_B
+2026-08-30 01:27:46 [INFO] uvh_test.counter: COUNTED: frame=7602 tid=207 class=SUV
+2026-08-30 01:27:46 [INFO] uvh_test.counter: COUNT: frame=7602 tid=207 class=SUV direction=A_TO_B track_age=7 point=(1579.1, 551.6)
+2026-08-30 01:28:28 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=7820 tid=213 dir=A_TO_B
+2026-08-30 01:28:28 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=7821 tid=213 dir=A_TO_B
+2026-08-30 01:28:28 [INFO] uvh_test.counter: COUNTED: frame=7821 tid=213 class=Two-wheeler
+2026-08-30 01:28:28 [INFO] uvh_test.counter: COUNT: frame=7821 tid=213 class=Two-wheeler direction=A_TO_B track_age=28 point=(1375.1, 393.1)
+2026-08-30 01:28:48 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8005 tid=217 dir=A_TO_B
+2026-08-30 01:28:48 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8006 tid=217 dir=A_TO_B
+2026-08-30 01:28:48 [INFO] uvh_test.counter: COUNTED: frame=8006 tid=217 class=Two-wheeler
+2026-08-30 01:28:48 [INFO] uvh_test.counter: COUNT: frame=8006 tid=217 class=Two-wheeler direction=A_TO_B track_age=38 point=(1325.5, 375.6)
+2026-08-30 01:28:48 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8017 tid=220 dir=A_TO_B
+2026-08-30 01:28:48 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8018 tid=220 dir=A_TO_B
+2026-08-30 01:28:48 [INFO] uvh_test.counter: REJECTED: frame=8018 tid=220 as fragment of recent crossing (dist=67.2, bbox_max=128.2).
+2026-08-30 01:28:54 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8202 tid=230 dir=A_TO_B
+2026-08-30 01:28:54 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8203 tid=230 dir=A_TO_B
+2026-08-30 01:28:54 [INFO] uvh_test.counter: COUNTED: frame=8203 tid=230 class=SUV
+2026-08-30 01:28:54 [INFO] uvh_test.counter: COUNT: frame=8203 tid=230 class=SUV direction=A_TO_B track_age=15 point=(1404.4, 396.1)
+2026-08-30 01:28:55 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8253 tid=232 dir=A_TO_B
+2026-08-30 01:28:55 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8254 tid=232 dir=A_TO_B
+2026-08-30 01:28:55 [INFO] uvh_test.counter: COUNTED: frame=8254 tid=232 class=Two-wheeler
+2026-08-30 01:28:55 [INFO] uvh_test.counter: COUNT: frame=8254 tid=232 class=Two-wheeler direction=A_TO_B track_age=7 point=(1633.2, 586.7)
+2026-08-30 01:29:00 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8400 tid=233 dir=A_TO_B
+2026-08-30 01:29:00 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8401 tid=233 dir=A_TO_B
+2026-08-30 01:29:00 [INFO] uvh_test.counter: COUNTED: frame=8401 tid=233 class=Two-wheeler
+2026-08-30 01:29:00 [INFO] uvh_test.counter: COUNT: frame=8401 tid=233 class=Two-wheeler direction=A_TO_B track_age=23 point=(1362.0, 394.9)
+2026-08-30 01:29:04 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8515 tid=244 dir=A_TO_B
+2026-08-30 01:29:04 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8516 tid=244 dir=A_TO_B
+2026-08-30 01:29:04 [INFO] uvh_test.counter: COUNTED: frame=8516 tid=244 class=Two-wheeler
+2026-08-30 01:29:04 [INFO] uvh_test.counter: COUNT: frame=8516 tid=244 class=Two-wheeler direction=A_TO_B track_age=3 point=(1654.4, 544.0)
+2026-08-30 01:29:04 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8523 tid=246 dir=A_TO_B
+2026-08-30 01:29:05 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8524 tid=246 dir=A_TO_B
+2026-08-30 01:29:05 [INFO] uvh_test.counter: COUNTED: frame=8524 tid=246 class=Three-wheeler
+2026-08-30 01:29:05 [INFO] uvh_test.counter: COUNT: frame=8524 tid=246 class=Three-wheeler direction=A_TO_B track_age=11 point=(1429.2, 442.2)
+2026-08-30 01:29:08 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8624 tid=250 dir=A_TO_B
+2026-08-30 01:29:08 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8625 tid=250 dir=A_TO_B
+2026-08-30 01:29:08 [INFO] uvh_test.counter: COUNTED: frame=8625 tid=250 class=Two-wheeler
+2026-08-30 01:29:08 [INFO] uvh_test.counter: COUNT: frame=8625 tid=250 class=Two-wheeler direction=A_TO_B track_age=37 point=(1323.2, 371.6)
+2026-08-30 01:29:10 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8681 tid=251 dir=A_TO_B
+2026-08-30 01:29:10 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8682 tid=251 dir=A_TO_B
+2026-08-30 01:29:10 [INFO] uvh_test.counter: COUNTED: frame=8682 tid=251 class=Two-wheeler
+2026-08-30 01:29:10 [INFO] uvh_test.counter: COUNT: frame=8682 tid=251 class=Two-wheeler direction=A_TO_B track_age=22 point=(1418.8, 420.5)
+2026-08-30 01:29:11 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8693 tid=252 dir=A_TO_B
+2026-08-30 01:29:11 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8694 tid=252 dir=A_TO_B
+2026-08-30 01:29:11 [INFO] uvh_test.counter: REJECTED: frame=8694 tid=252 as fragment of recent crossing (dist=68.5, bbox_max=117.6).
+2026-08-30 01:29:11 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8715 tid=253 dir=A_TO_B
+2026-08-30 01:29:11 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8716 tid=253 dir=A_TO_B
+2026-08-30 01:29:11 [INFO] uvh_test.counter: COUNTED: frame=8716 tid=253 class=Two-wheeler
+2026-08-30 01:29:11 [INFO] uvh_test.counter: COUNT: frame=8716 tid=253 class=Two-wheeler direction=A_TO_B track_age=29 point=(1345.8, 383.7)
+2026-08-30 01:29:12 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8732 tid=258 dir=A_TO_B
+2026-08-30 01:29:12 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8733 tid=258 dir=A_TO_B
+2026-08-30 01:29:12 [INFO] uvh_test.counter: COUNTED: frame=8733 tid=258 class=Three-wheeler
+2026-08-30 01:29:12 [INFO] uvh_test.counter: COUNT: frame=8733 tid=258 class=Three-wheeler direction=A_TO_B track_age=23 point=(1406.5, 417.8)
+2026-08-30 01:29:16 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=8821 tid=267 dir=A_TO_B
+2026-08-30 01:29:16 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=8822 tid=267 dir=A_TO_B
+2026-08-30 01:29:16 [INFO] uvh_test.counter: COUNTED: frame=8822 tid=267 class=Two-wheeler
+2026-08-30 01:29:16 [INFO] uvh_test.counter: COUNT: frame=8822 tid=267 class=Two-wheeler direction=A_TO_B track_age=25 point=(1384.9, 392.1)
+2026-08-30 01:29:25 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9084 tid=270 dir=A_TO_B
+2026-08-30 01:29:25 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9085 tid=270 dir=A_TO_B
+2026-08-30 01:29:25 [INFO] uvh_test.counter: COUNTED: frame=9085 tid=270 class=Two-wheeler
+2026-08-30 01:29:25 [INFO] uvh_test.counter: COUNT: frame=9085 tid=270 class=Two-wheeler direction=A_TO_B track_age=31 point=(1355.3, 389.0)
+2026-08-30 01:29:26 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9102 tid=274 dir=A_TO_B
+2026-08-30 01:29:26 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9103 tid=274 dir=A_TO_B
+2026-08-30 01:29:26 [INFO] uvh_test.counter: COUNTED: frame=9103 tid=274 class=Two-wheeler
+2026-08-30 01:29:26 [INFO] uvh_test.counter: COUNT: frame=9103 tid=274 class=Two-wheeler direction=A_TO_B track_age=8 point=(1464.6, 421.8)
+2026-08-30 01:29:26 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9107 tid=275 dir=A_TO_B
+2026-08-30 01:29:26 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9107 tid=278 dir=A_TO_B
+2026-08-30 01:29:26 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9108 tid=278 dir=A_TO_B
+2026-08-30 01:29:26 [INFO] uvh_test.counter: COUNTED: frame=9108 tid=278 class=SUV
+2026-08-30 01:29:26 [INFO] uvh_test.counter: COUNT: frame=9108 tid=278 class=SUV direction=A_TO_B track_age=4 point=(1660.2, 592.9)
+2026-08-30 01:29:32 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9278 tid=281 dir=A_TO_B
+2026-08-30 01:29:32 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9279 tid=281 dir=A_TO_B
+2026-08-30 01:29:32 [INFO] uvh_test.counter: COUNTED: frame=9279 tid=281 class=Two-wheeler
+2026-08-30 01:29:32 [INFO] uvh_test.counter: COUNT: frame=9279 tid=281 class=Two-wheeler direction=A_TO_B track_age=11 point=(1555.7, 551.9)
+2026-08-30 01:29:33 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9312 tid=284 dir=A_TO_B
+2026-08-30 01:29:33 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9313 tid=284 dir=A_TO_B
+2026-08-30 01:29:33 [INFO] uvh_test.counter: COUNTED: frame=9313 tid=284 class=Two-wheeler
+2026-08-30 01:29:33 [INFO] uvh_test.counter: COUNT: frame=9313 tid=284 class=Two-wheeler direction=A_TO_B track_age=29 point=(1340.3, 377.3)
+2026-08-30 01:29:39 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9483 tid=286 dir=A_TO_B
+2026-08-30 01:29:39 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9484 tid=286 dir=A_TO_B
+2026-08-30 01:29:39 [INFO] uvh_test.counter: COUNTED: frame=9484 tid=286 class=Two-wheeler
+2026-08-30 01:29:39 [INFO] uvh_test.counter: COUNT: frame=9484 tid=286 class=Two-wheeler direction=A_TO_B track_age=22 point=(1456.2, 453.9)
+2026-08-30 01:29:40 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9496 tid=287 dir=A_TO_B
+2026-08-30 01:29:40 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9497 tid=287 dir=A_TO_B
+2026-08-30 01:29:40 [INFO] uvh_test.counter: COUNTED: frame=9497 tid=287 class=Two-wheeler
+2026-08-30 01:29:40 [INFO] uvh_test.counter: COUNT: frame=9497 tid=287 class=Two-wheeler direction=A_TO_B track_age=30 point=(1337.6, 387.0)
+2026-08-30 01:29:49 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9748 tid=288 dir=A_TO_B
+2026-08-30 01:29:49 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9749 tid=288 dir=A_TO_B
+2026-08-30 01:29:49 [INFO] uvh_test.counter: COUNTED: frame=9749 tid=288 class=Two-wheeler
+2026-08-30 01:29:49 [INFO] uvh_test.counter: COUNT: frame=9749 tid=288 class=Two-wheeler direction=A_TO_B track_age=28 point=(1347.6, 376.9)
+2026-08-30 01:29:53 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9862 tid=293 dir=A_TO_B
+2026-08-30 01:29:53 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9863 tid=293 dir=A_TO_B
+2026-08-30 01:29:53 [INFO] uvh_test.counter: COUNTED: frame=9863 tid=293 class=Two-wheeler
+2026-08-30 01:29:53 [INFO] uvh_test.counter: COUNT: frame=9863 tid=293 class=Two-wheeler direction=A_TO_B track_age=26 point=(1323.1, 355.0)
+2026-08-30 01:29:53 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9865 tid=298 dir=A_TO_B
+2026-08-30 01:29:53 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9866 tid=298 dir=A_TO_B
+2026-08-30 01:29:53 [INFO] uvh_test.counter: COUNTED: frame=9866 tid=298 class=Sedan
+2026-08-30 01:29:53 [INFO] uvh_test.counter: COUNT: frame=9866 tid=298 class=Sedan direction=A_TO_B track_age=8 point=(1502.6, 499.4)
+2026-08-30 01:29:56 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9957 tid=304 dir=A_TO_B
+2026-08-30 01:29:57 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9958 tid=304 dir=A_TO_B
+2026-08-30 01:29:57 [INFO] uvh_test.counter: COUNTED: frame=9958 tid=304 class=Two-wheeler
+2026-08-30 01:29:57 [INFO] uvh_test.counter: COUNT: frame=9958 tid=304 class=Two-wheeler direction=A_TO_B track_age=5 point=(1623.4, 613.5)
+2026-08-30 01:29:57 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=9960 tid=302 dir=A_TO_B
+2026-08-30 01:29:57 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=9961 tid=302 dir=A_TO_B
+2026-08-30 01:29:57 [INFO] uvh_test.counter: COUNTED: frame=9961 tid=302 class=Two-wheeler
+2026-08-30 01:29:57 [INFO] uvh_test.counter: COUNT: frame=9961 tid=302 class=Two-wheeler direction=A_TO_B track_age=30 point=(1364.9, 391.6)
+2026-08-30 01:30:02 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10096 tid=306 dir=A_TO_B
+2026-08-30 01:30:02 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10097 tid=306 dir=A_TO_B
+2026-08-30 01:30:02 [INFO] uvh_test.counter: COUNTED: frame=10097 tid=306 class=Two-wheeler
+2026-08-30 01:30:02 [INFO] uvh_test.counter: COUNT: frame=10097 tid=306 class=Two-wheeler direction=A_TO_B track_age=22 point=(1382.5, 388.9)
+2026-08-30 01:30:09 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10287 tid=321 dir=A_TO_B
+2026-08-30 01:30:09 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10288 tid=321 dir=A_TO_B
+2026-08-30 01:30:09 [INFO] uvh_test.counter: COUNTED: frame=10288 tid=321 class=Three-wheeler
+2026-08-30 01:30:09 [INFO] uvh_test.counter: COUNT: frame=10288 tid=321 class=Three-wheeler direction=A_TO_B track_age=7 point=(1364.3, 397.4)
+2026-08-30 01:30:09 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10300 tid=317 dir=A_TO_B
+2026-08-30 01:30:09 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10301 tid=317 dir=A_TO_B
+2026-08-30 01:30:09 [INFO] uvh_test.counter: COUNTED: frame=10301 tid=317 class=Two-wheeler
+2026-08-30 01:30:09 [INFO] uvh_test.counter: COUNT: frame=10301 tid=317 class=Two-wheeler direction=A_TO_B track_age=28 point=(1403.3, 420.7)
+2026-08-30 01:30:09 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10309 tid=323 dir=A_TO_B
+2026-08-30 01:30:10 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10310 tid=323 dir=A_TO_B
+2026-08-30 01:30:10 [INFO] uvh_test.counter: COUNTED: frame=10310 tid=323 class=Two-wheeler
+2026-08-30 01:30:10 [INFO] uvh_test.counter: COUNT: frame=10310 tid=323 class=Two-wheeler direction=A_TO_B track_age=4 point=(1667.4, 604.5)
+2026-08-30 01:30:10 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10317 tid=324 dir=A_TO_B
+2026-08-30 01:30:10 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10318 tid=324 dir=A_TO_B
+2026-08-30 01:30:10 [INFO] uvh_test.counter: COUNTED: frame=10318 tid=324 class=MUV
+2026-08-30 01:30:10 [INFO] uvh_test.counter: COUNT: frame=10318 tid=324 class=MUV direction=A_TO_B track_age=8 point=(1482.9, 497.5)
+2026-08-30 01:30:20 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10608 tid=331 dir=A_TO_B
+2026-08-30 01:30:20 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10608 tid=333 dir=A_TO_B
+2026-08-30 01:30:20 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10609 tid=331 dir=A_TO_B
+2026-08-30 01:30:20 [INFO] uvh_test.counter: COUNTED: frame=10609 tid=331 class=Three-wheeler
+2026-08-30 01:30:20 [INFO] uvh_test.counter: COUNT: frame=10609 tid=331 class=Three-wheeler direction=A_TO_B track_age=9 point=(1647.2, 597.5)
+2026-08-30 01:30:27 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10804 tid=345 dir=A_TO_B
+2026-08-30 01:30:27 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10805 tid=345 dir=A_TO_B
+2026-08-30 01:30:27 [INFO] uvh_test.counter: COUNTED: frame=10805 tid=345 class=SUV
+2026-08-30 01:30:27 [INFO] uvh_test.counter: COUNT: frame=10805 tid=345 class=SUV direction=A_TO_B track_age=10 point=(1460.0, 446.8)
+[h264 @ 0x557563111f00] left block unavailable for requested intra mode
+[h264 @ 0x557563111f00] error while decoding MB 0 26, bytestream 113338
+[h264 @ 0x557563111f00] Frame num change from 0 to 1
+[h264 @ 0x557563111f00] decode_slice_header error
+[h264 @ 0x557563137f80] cabac decode of qscale diff failed at 64 8
+[h264 @ 0x557563137f80] error while decoding MB 64 8, bytestream 162980
+[h264 @ 0x557563137f80] Frame num change from 3 to 4
+[h264 @ 0x557563137f80] decode_slice_header error
+2026-08-30 01:30:31 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10922 tid=351 dir=A_TO_B
+2026-08-30 01:30:31 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10923 tid=351 dir=A_TO_B
+2026-08-30 01:30:31 [INFO] uvh_test.counter: COUNTED: frame=10923 tid=351 class=Two-wheeler
+2026-08-30 01:30:31 [INFO] uvh_test.counter: COUNT: frame=10923 tid=351 class=Two-wheeler direction=A_TO_B track_age=18 point=(1398.9, 404.3)
+2026-08-30 01:30:33 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=10972 tid=352 dir=A_TO_B
+2026-08-30 01:30:33 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=10973 tid=352 dir=A_TO_B
+2026-08-30 01:30:33 [INFO] uvh_test.counter: COUNTED: frame=10973 tid=352 class=Two-wheeler
+2026-08-30 01:30:33 [INFO] uvh_test.counter: COUNT: frame=10973 tid=352 class=Two-wheeler direction=A_TO_B track_age=24 point=(1364.0, 382.4)
+2026-08-30 01:30:37 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11086 tid=360 dir=A_TO_B
+2026-08-30 01:30:37 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11087 tid=360 dir=A_TO_B
+2026-08-30 01:30:37 [INFO] uvh_test.counter: COUNTED: frame=11087 tid=360 class=SUV
+2026-08-30 01:30:37 [INFO] uvh_test.counter: COUNT: frame=11087 tid=360 class=SUV direction=A_TO_B track_age=4 point=(1495.7, 464.3)
+2026-08-30 01:30:42 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11231 tid=372 dir=A_TO_B
+2026-08-30 01:30:42 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11232 tid=372 dir=A_TO_B
+2026-08-30 01:30:42 [INFO] uvh_test.counter: COUNTED: frame=11232 tid=372 class=Two-wheeler
+2026-08-30 01:30:42 [INFO] uvh_test.counter: COUNT: frame=11232 tid=372 class=Two-wheeler direction=A_TO_B track_age=7 point=(1518.6, 484.0)
+2026-08-30 01:30:44 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11274 tid=376 dir=A_TO_B
+2026-08-30 01:30:44 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11274 tid=377 dir=A_TO_B
+2026-08-30 01:30:44 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11274 tid=380 dir=A_TO_B
+2026-08-30 01:30:44 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11275 tid=376 dir=A_TO_B
+2026-08-30 01:30:44 [INFO] uvh_test.counter: COUNTED: frame=11275 tid=376 class=Sedan
+2026-08-30 01:30:44 [INFO] uvh_test.counter: COUNT: frame=11275 tid=376 class=Sedan direction=A_TO_B track_age=8 point=(1616.6, 635.6)
+2026-08-30 01:30:44 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11275 tid=377 dir=A_TO_B
+2026-08-30 01:30:44 [INFO] uvh_test.counter: REJECTED: frame=11275 tid=377 as fragment of recent crossing (dist=67.2, bbox_max=458.9).
+2026-08-30 01:30:44 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11275 tid=380 dir=A_TO_B
+2026-08-30 01:30:44 [INFO] uvh_test.counter: REJECTED: frame=11275 tid=380 as fragment of recent crossing (dist=14.9, bbox_max=308.8).
+2026-08-30 01:30:44 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11276 tid=378 dir=A_TO_B
+2026-08-30 01:30:52 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11510 tid=382 dir=A_TO_B
+2026-08-30 01:30:52 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11511 tid=382 dir=A_TO_B
+2026-08-30 01:30:52 [INFO] uvh_test.counter: COUNTED: frame=11511 tid=382 class=Two-wheeler
+2026-08-30 01:30:52 [INFO] uvh_test.counter: COUNT: frame=11511 tid=382 class=Two-wheeler direction=A_TO_B track_age=43 point=(1318.7, 370.6)
+2026-08-30 01:30:52 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11516 tid=384 dir=A_TO_B
+2026-08-30 01:30:53 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11517 tid=384 dir=A_TO_B
+2026-08-30 01:30:53 [INFO] uvh_test.counter: REJECTED: frame=11517 tid=384 as fragment of recent crossing (dist=43.7, bbox_max=125.9).
+2026-08-30 01:30:53 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11524 tid=385 dir=A_TO_B
+2026-08-30 01:30:53 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11525 tid=385 dir=A_TO_B
+2026-08-30 01:30:53 [INFO] uvh_test.counter: COUNTED: frame=11525 tid=385 class=Two-wheeler
+2026-08-30 01:30:53 [INFO] uvh_test.counter: COUNT: frame=11525 tid=385 class=Two-wheeler direction=A_TO_B track_age=14 point=(1529.7, 475.0)
+2026-08-30 01:30:56 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11622 tid=388 dir=A_TO_B
+2026-08-30 01:30:56 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11623 tid=388 dir=A_TO_B
+2026-08-30 01:30:56 [INFO] uvh_test.counter: COUNTED: frame=11623 tid=388 class=Two-wheeler
+2026-08-30 01:30:56 [INFO] uvh_test.counter: COUNT: frame=11623 tid=388 class=Two-wheeler direction=A_TO_B track_age=5 point=(1660.4, 638.1)
+2026-08-30 01:30:57 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11644 tid=391 dir=A_TO_B
+2026-08-30 01:30:57 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11645 tid=391 dir=A_TO_B
+2026-08-30 01:30:57 [INFO] uvh_test.counter: COUNTED: frame=11645 tid=391 class=Two-wheeler
+2026-08-30 01:30:57 [INFO] uvh_test.counter: COUNT: frame=11645 tid=391 class=Two-wheeler direction=A_TO_B track_age=19 point=(1629.6, 580.8)
+2026-08-30 01:30:57 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11645 tid=399 dir=A_TO_B
+2026-08-30 01:30:57 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11646 tid=399 dir=A_TO_B
+2026-08-30 01:30:57 [INFO] uvh_test.counter: COUNTED: frame=11646 tid=399 class=Three-wheeler
+2026-08-30 01:30:57 [INFO] uvh_test.counter: COUNT: frame=11646 tid=399 class=Three-wheeler direction=A_TO_B track_age=15 point=(1449.4, 463.3)
+2026-08-30 01:30:58 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=11661 tid=400 dir=A_TO_B
+2026-08-30 01:30:58 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=11662 tid=400 dir=A_TO_B
+2026-08-30 01:30:58 [INFO] uvh_test.counter: COUNTED: frame=11662 tid=400 class=Two-wheeler
+2026-08-30 01:30:58 [INFO] uvh_test.counter: COUNT: frame=11662 tid=400 class=Two-wheeler direction=A_TO_B track_age=30 point=(1377.4, 413.6)
+2026-08-30 01:31:20 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12318 tid=414 dir=A_TO_B
+2026-08-30 01:31:20 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12319 tid=414 dir=A_TO_B
+2026-08-30 01:31:20 [INFO] uvh_test.counter: COUNTED: frame=12319 tid=414 class=Two-wheeler
+2026-08-30 01:31:20 [INFO] uvh_test.counter: COUNT: frame=12319 tid=414 class=Two-wheeler direction=A_TO_B track_age=39 point=(1318.1, 376.9)
+2026-08-30 01:31:22 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12370 tid=416 dir=A_TO_B
+2026-08-30 01:31:22 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12371 tid=416 dir=A_TO_B
+2026-08-30 01:31:22 [INFO] uvh_test.counter: COUNTED: frame=12371 tid=416 class=Two-wheeler
+2026-08-30 01:31:22 [INFO] uvh_test.counter: COUNT: frame=12371 tid=416 class=Two-wheeler direction=A_TO_B track_age=18 point=(1447.8, 448.7)
+2026-08-30 01:31:22 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12375 tid=415 dir=A_TO_B
+2026-08-30 01:31:22 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12376 tid=415 dir=A_TO_B
+2026-08-30 01:31:22 [INFO] uvh_test.counter: REJECTED: frame=12376 tid=415 as fragment of recent crossing (dist=117.8, bbox_max=122.9).
+2026-08-30 01:31:25 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12429 tid=420 dir=A_TO_B
+2026-08-30 01:31:25 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12429 tid=421 dir=A_TO_B
+2026-08-30 01:31:25 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12430 tid=420 dir=A_TO_B
+2026-08-30 01:31:25 [INFO] uvh_test.counter: COUNTED: frame=12430 tid=420 class=Sedan
+2026-08-30 01:31:25 [INFO] uvh_test.counter: COUNT: frame=12430 tid=420 class=Sedan direction=A_TO_B track_age=7 point=(1615.5, 561.4)
+2026-08-30 01:31:25 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12431 tid=422 dir=A_TO_B
+2026-08-30 01:31:25 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12432 tid=422 dir=A_TO_B
+2026-08-30 01:31:25 [INFO] uvh_test.counter: REJECTED: frame=12432 tid=422 as fragment of recent crossing (dist=67.2, bbox_max=234.0).
+[h264 @ 0x55756308de80] cabac decode of qscale diff failed at 3 15
+[h264 @ 0x55756308de80] error while decoding MB 3 15, bytestream 32327
+[h264 @ 0x55756308de80] Frame num change from 11 to 12
+[h264 @ 0x55756308de80] decode_slice_header error
+[h264 @ 0x55756313f340] Frame num change from 13 to 14
+[h264 @ 0x55756313f340] decode_slice_header error
+2026-08-30 01:31:30 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12569 tid=427 dir=A_TO_B
+2026-08-30 01:31:30 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12570 tid=427 dir=A_TO_B
+2026-08-30 01:31:30 [INFO] uvh_test.counter: COUNTED: frame=12570 tid=427 class=Two-wheeler
+2026-08-30 01:31:30 [INFO] uvh_test.counter: COUNT: frame=12570 tid=427 class=Two-wheeler direction=A_TO_B track_age=5 point=(1661.2, 626.4)
+2026-08-30 01:31:33 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12645 tid=432 dir=A_TO_B
+2026-08-30 01:31:33 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12646 tid=432 dir=A_TO_B
+2026-08-30 01:31:33 [INFO] uvh_test.counter: COUNTED: frame=12646 tid=432 class=Two-wheeler
+2026-08-30 01:31:33 [INFO] uvh_test.counter: COUNT: frame=12646 tid=432 class=Two-wheeler direction=A_TO_B track_age=21 point=(1409.1, 431.8)
+2026-08-30 01:31:35 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12700 tid=433 dir=A_TO_B
+2026-08-30 01:31:35 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12701 tid=433 dir=A_TO_B
+2026-08-30 01:31:35 [INFO] uvh_test.counter: COUNTED: frame=12701 tid=433 class=Two-wheeler
+2026-08-30 01:31:35 [INFO] uvh_test.counter: COUNT: frame=12701 tid=433 class=Two-wheeler direction=A_TO_B track_age=20 point=(1418.0, 416.9)
+2026-08-30 01:31:43 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12921 tid=439 dir=A_TO_B
+2026-08-30 01:31:43 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12922 tid=439 dir=A_TO_B
+2026-08-30 01:31:43 [INFO] uvh_test.counter: COUNTED: frame=12922 tid=439 class=Two-wheeler
+2026-08-30 01:31:43 [INFO] uvh_test.counter: COUNT: frame=12922 tid=439 class=Two-wheeler direction=A_TO_B track_age=5 point=(1666.5, 587.3)
+2026-08-30 01:31:46 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=12998 tid=440 dir=A_TO_B
+2026-08-30 01:31:46 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=12999 tid=440 dir=A_TO_B
+2026-08-30 01:31:46 [INFO] uvh_test.counter: COUNTED: frame=12999 tid=440 class=Two-wheeler
+2026-08-30 01:31:46 [INFO] uvh_test.counter: COUNT: frame=12999 tid=440 class=Two-wheeler direction=A_TO_B track_age=31 point=(1327.3, 374.2)
+2026-08-30 01:31:49 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13072 tid=441 dir=A_TO_B
+2026-08-30 01:31:49 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13073 tid=441 dir=A_TO_B
+2026-08-30 01:31:49 [INFO] uvh_test.counter: COUNTED: frame=13073 tid=441 class=Two-wheeler
+2026-08-30 01:31:49 [INFO] uvh_test.counter: COUNT: frame=13073 tid=441 class=Two-wheeler direction=A_TO_B track_age=28 point=(1359.0, 406.0)
+2026-08-30 01:31:56 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13267 tid=443 dir=A_TO_B
+2026-08-30 01:31:56 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13268 tid=443 dir=A_TO_B
+2026-08-30 01:31:56 [INFO] uvh_test.counter: COUNTED: frame=13268 tid=443 class=Sedan
+2026-08-30 01:31:56 [INFO] uvh_test.counter: COUNT: frame=13268 tid=443 class=Sedan direction=A_TO_B track_age=36 point=(1365.8, 416.7)
+2026-08-30 01:31:57 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13284 tid=447 dir=A_TO_B
+2026-08-30 01:31:57 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13285 tid=447 dir=A_TO_B
+2026-08-30 01:31:57 [INFO] uvh_test.counter: COUNTED: frame=13285 tid=447 class=Two-wheeler
+2026-08-30 01:31:57 [INFO] uvh_test.counter: COUNT: frame=13285 tid=447 class=Two-wheeler direction=A_TO_B track_age=37 point=(1326.6, 378.5)
+2026-08-30 01:31:57 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13290 tid=452 dir=A_TO_B
+2026-08-30 01:31:57 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13291 tid=452 dir=A_TO_B
+2026-08-30 01:31:57 [INFO] uvh_test.counter: REJECTED: frame=13291 tid=452 as fragment of recent crossing (dist=139.6, bbox_max=140.4).
+2026-08-30 01:31:59 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13331 tid=458 dir=A_TO_B
+2026-08-30 01:31:59 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13332 tid=458 dir=A_TO_B
+2026-08-30 01:31:59 [INFO] uvh_test.counter: COUNTED: frame=13332 tid=458 class=Two-wheeler
+2026-08-30 01:31:59 [INFO] uvh_test.counter: COUNT: frame=13332 tid=458 class=Two-wheeler direction=A_TO_B track_age=28 point=(1340.7, 388.8)
+[h264 @ 0x5575637cd340] cabac decode of qscale diff failed at 51 17
+[h264 @ 0x5575637cd340] error while decoding MB 51 17, bytestream 177932
+[h264 @ 0x5575637cd340] Frame num change from 12 to 14
+[h264 @ 0x5575637cd340] decode_slice_header error
+2026-08-30 01:32:08 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13589 tid=466 dir=A_TO_B
+2026-08-30 01:32:08 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13590 tid=466 dir=A_TO_B
+2026-08-30 01:32:08 [INFO] uvh_test.counter: COUNTED: frame=13590 tid=466 class=Two-wheeler
+2026-08-30 01:32:08 [INFO] uvh_test.counter: COUNT: frame=13590 tid=466 class=Two-wheeler direction=A_TO_B track_age=25 point=(1397.9, 423.2)
+2026-08-30 01:32:09 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13631 tid=467 dir=A_TO_B
+2026-08-30 01:32:09 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13632 tid=467 dir=A_TO_B
+2026-08-30 01:32:09 [INFO] uvh_test.counter: COUNTED: frame=13632 tid=467 class=Two-wheeler
+2026-08-30 01:32:09 [INFO] uvh_test.counter: COUNT: frame=13632 tid=467 class=Two-wheeler direction=A_TO_B track_age=33 point=(1342.5, 384.9)
+2026-08-30 01:32:10 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13659 tid=469 dir=A_TO_B
+2026-08-30 01:32:10 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13660 tid=469 dir=A_TO_B
+2026-08-30 01:32:10 [INFO] uvh_test.counter: COUNTED: frame=13660 tid=469 class=Two-wheeler
+2026-08-30 01:32:10 [INFO] uvh_test.counter: COUNT: frame=13660 tid=469 class=Two-wheeler direction=A_TO_B track_age=18 point=(1427.4, 437.7)
+2026-08-30 01:32:11 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13663 tid=468 dir=A_TO_B
+2026-08-30 01:32:11 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13664 tid=468 dir=A_TO_B
+2026-08-30 01:32:11 [INFO] uvh_test.counter: REJECTED: frame=13664 tid=468 as fragment of recent crossing (dist=92.1, bbox_max=117.2).
+2026-08-30 01:32:16 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13810 tid=477 dir=A_TO_B
+2026-08-30 01:32:16 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13810 tid=478 dir=A_TO_B
+2026-08-30 01:32:16 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13811 tid=478 dir=A_TO_B
+2026-08-30 01:32:16 [INFO] uvh_test.counter: COUNTED: frame=13811 tid=478 class=SUV
+2026-08-30 01:32:16 [INFO] uvh_test.counter: COUNT: frame=13811 tid=478 class=SUV direction=A_TO_B track_age=5 point=(1631.1, 562.5)
+2026-08-30 01:32:20 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13930 tid=483 dir=A_TO_B
+2026-08-30 01:32:20 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13931 tid=483 dir=A_TO_B
+2026-08-30 01:32:20 [INFO] uvh_test.counter: COUNTED: frame=13931 tid=483 class=Two-wheeler
+2026-08-30 01:32:20 [INFO] uvh_test.counter: COUNT: frame=13931 tid=483 class=Two-wheeler direction=A_TO_B track_age=38 point=(1334.6, 375.9)
+2026-08-30 01:32:21 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13935 tid=485 dir=A_TO_B
+2026-08-30 01:32:21 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13936 tid=485 dir=A_TO_B
+2026-08-30 01:32:21 [INFO] uvh_test.counter: REJECTED: frame=13936 tid=485 as fragment of recent crossing (dist=93.5, bbox_max=168.4).
+2026-08-30 01:32:21 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13952 tid=495 dir=A_TO_B
+2026-08-30 01:32:21 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13953 tid=495 dir=A_TO_B
+2026-08-30 01:32:21 [INFO] uvh_test.counter: COUNTED: frame=13953 tid=495 class=Three-wheeler
+2026-08-30 01:32:21 [INFO] uvh_test.counter: COUNT: frame=13953 tid=495 class=Three-wheeler direction=A_TO_B track_age=4 point=(1448.5, 451.4)
+2026-08-30 01:32:23 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=13994 tid=499 dir=A_TO_B
+2026-08-30 01:32:23 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=13995 tid=499 dir=A_TO_B
+2026-08-30 01:32:23 [INFO] uvh_test.counter: COUNTED: frame=13995 tid=499 class=Two-wheeler
+2026-08-30 01:32:23 [INFO] uvh_test.counter: COUNT: frame=13995 tid=499 class=Two-wheeler direction=A_TO_B track_age=4 point=(1654.7, 617.9)
+2026-08-30 01:32:26 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14058 tid=513 dir=A_TO_B
+2026-08-30 01:32:26 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14059 tid=513 dir=A_TO_B
+2026-08-30 01:32:26 [INFO] uvh_test.counter: COUNTED: frame=14059 tid=513 class=Sedan
+2026-08-30 01:32:26 [INFO] uvh_test.counter: COUNT: frame=14059 tid=513 class=Sedan direction=A_TO_B track_age=7 point=(1623.4, 641.7)
+2026-08-30 01:32:30 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14184 tid=526 dir=A_TO_B
+2026-08-30 01:32:30 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14184 tid=528 dir=A_TO_B
+2026-08-30 01:32:30 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14185 tid=527 dir=A_TO_B
+2026-08-30 01:32:30 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14185 tid=528 dir=A_TO_B
+2026-08-30 01:32:30 [INFO] uvh_test.counter: COUNTED: frame=14185 tid=528 class=SUV
+2026-08-30 01:32:30 [INFO] uvh_test.counter: COUNT: frame=14185 tid=528 class=SUV direction=A_TO_B track_age=3 point=(1597.7, 537.7)
+[h264 @ 0x557563137f80] Frame num change from 7 to 13
+[h264 @ 0x557563137f80] decode_slice_header error
+2026-08-30 01:32:33 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14262 tid=531 dir=A_TO_B
+2026-08-30 01:32:33 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14263 tid=530 dir=A_TO_B
+2026-08-30 01:32:33 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14263 tid=531 dir=A_TO_B
+2026-08-30 01:32:33 [INFO] uvh_test.counter: COUNTED: frame=14263 tid=531 class=Sedan
+2026-08-30 01:32:33 [INFO] uvh_test.counter: COUNT: frame=14263 tid=531 class=Sedan direction=A_TO_B track_age=3 point=(1622.5, 570.1)
+2026-08-30 01:32:33 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14264 tid=530 dir=A_TO_B
+2026-08-30 01:32:33 [INFO] uvh_test.counter: COUNTED: frame=14264 tid=530 class=Two-wheeler
+2026-08-30 01:32:33 [INFO] uvh_test.counter: COUNT: frame=14264 tid=530 class=Two-wheeler direction=A_TO_B track_age=16 point=(1426.5, 401.2)
+2026-08-30 01:32:37 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14366 tid=535 dir=A_TO_B
+2026-08-30 01:32:37 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14367 tid=535 dir=A_TO_B
+2026-08-30 01:32:37 [INFO] uvh_test.counter: COUNTED: frame=14367 tid=535 class=Two-wheeler
+2026-08-30 01:32:37 [INFO] uvh_test.counter: COUNT: frame=14367 tid=535 class=Two-wheeler direction=A_TO_B track_age=23 point=(1338.4, 377.8)
+2026-08-30 01:32:46 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14667 tid=537 dir=A_TO_B
+2026-08-30 01:32:46 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14668 tid=537 dir=A_TO_B
+2026-08-30 01:32:46 [INFO] uvh_test.counter: COUNTED: frame=14668 tid=537 class=Two-wheeler
+2026-08-30 01:32:46 [INFO] uvh_test.counter: COUNT: frame=14668 tid=537 class=Two-wheeler direction=A_TO_B track_age=20 point=(1387.7, 395.4)
+2026-08-30 01:32:50 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14772 tid=539 dir=A_TO_B
+2026-08-30 01:32:50 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14773 tid=539 dir=A_TO_B
+2026-08-30 01:32:50 [INFO] uvh_test.counter: COUNTED: frame=14773 tid=539 class=Two-wheeler
+2026-08-30 01:32:50 [INFO] uvh_test.counter: COUNT: frame=14773 tid=539 class=Two-wheeler direction=A_TO_B track_age=22 point=(1373.4, 374.1)
+2026-08-30 01:32:56 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=14967 tid=540 dir=A_TO_B
+2026-08-30 01:32:56 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=14968 tid=540 dir=A_TO_B
+2026-08-30 01:32:56 [INFO] uvh_test.counter: COUNTED: frame=14968 tid=540 class=Two-wheeler
+2026-08-30 01:32:56 [INFO] uvh_test.counter: COUNT: frame=14968 tid=540 class=Two-wheeler direction=A_TO_B track_age=20 point=(1353.9, 377.9)
+[h264 @ 0x5575631c0640] error while decoding MB 34 54, bytestream -24
+[h264 @ 0x5575631c0640] Frame num change from 1 to 2
+[h264 @ 0x5575631c0640] decode_slice_header error
+2026-08-30 01:33:04 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=15199 tid=546 dir=A_TO_B
+2026-08-30 01:33:04 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=15200 tid=546 dir=A_TO_B
+2026-08-30 01:33:04 [INFO] uvh_test.counter: COUNTED: frame=15200 tid=546 class=Hatchback
+2026-08-30 01:33:04 [INFO] uvh_test.counter: COUNT: frame=15200 tid=546 class=Hatchback direction=A_TO_B track_age=10 point=(1526.8, 486.2)
+2026-08-30 01:33:05 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=15211 tid=541 dir=A_TO_B
+2026-08-30 01:33:05 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=15212 tid=541 dir=A_TO_B
+2026-08-30 01:33:05 [INFO] uvh_test.counter: COUNTED: frame=15212 tid=541 class=Two-wheeler
+2026-08-30 01:33:05 [INFO] uvh_test.counter: COUNT: frame=15212 tid=541 class=Two-wheeler direction=A_TO_B track_age=34 point=(1339.8, 379.4)
+[h264 @ 0x557563c4c080] left block unavailable for requested intra4x4 mode -1
+[h264 @ 0x557563c4c080] error while decoding MB 0 49, bytestream 18722
+[h264 @ 0x557563c4c080] Frame num change from 1 to 2
+[h264 @ 0x557563c4c080] decode_slice_header error
+[h264 @ 0x557563dcc140] cabac decode of qscale diff failed at 33 38
+[h264 @ 0x557563dcc140] error while decoding MB 33 38, bytestream 133947
+[h264 @ 0x557563dcc140] Frame num change from 3 to 4
+[h264 @ 0x557563dcc140] decode_slice_header error
+2026-08-30 01:33:10 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=15353 tid=552 dir=A_TO_B
+2026-08-30 01:33:10 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=15354 tid=552 dir=A_TO_B
+2026-08-30 01:33:10 [INFO] uvh_test.counter: COUNTED: frame=15354 tid=552 class=Two-wheeler
+2026-08-30 01:33:10 [INFO] uvh_test.counter: COUNT: frame=15354 tid=552 class=Two-wheeler direction=A_TO_B track_age=119 point=(1361.6, 395.3)
+2026-08-30 01:33:16 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=15545 tid=557 dir=A_TO_B
+2026-08-30 01:33:16 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=15545 tid=558 dir=A_TO_B
+2026-08-30 01:33:16 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=15546 tid=557 dir=A_TO_B
+2026-08-30 01:33:16 [INFO] uvh_test.counter: COUNTED: frame=15546 tid=557 class=MUV
+2026-08-30 01:33:16 [INFO] uvh_test.counter: COUNT: frame=15546 tid=557 class=MUV direction=A_TO_B track_age=5 point=(1639.1, 578.5)
+2026-08-30 01:33:16 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=15546 tid=558 dir=A_TO_B
+2026-08-30 01:33:16 [INFO] uvh_test.counter: REJECTED: frame=15546 tid=558 as fragment of recent crossing (dist=114.7, bbox_max=449.1).
+2026-08-30 01:33:20 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=15654 tid=562 dir=A_TO_B
+2026-08-30 01:33:20 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=15655 tid=562 dir=A_TO_B
+2026-08-30 01:33:20 [INFO] uvh_test.counter: COUNTED: frame=15655 tid=562 class=Two-wheeler
+2026-08-30 01:33:20 [INFO] uvh_test.counter: COUNT: frame=15655 tid=562 class=Two-wheeler direction=A_TO_B track_age=28 point=(1342.3, 386.6)
+2026-08-30 01:33:23 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=15726 tid=568 dir=A_TO_B
+2026-08-30 01:33:23 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=15728 tid=568 dir=A_TO_B
+2026-08-30 01:33:23 [INFO] uvh_test.counter: COUNTED: frame=15728 tid=568 class=Sedan
+2026-08-30 01:33:23 [INFO] uvh_test.counter: COUNT: frame=15728 tid=568 class=Sedan direction=A_TO_B track_age=9 point=(1500.6, 435.9)
+2026-08-30 01:33:32 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=16002 tid=573 dir=A_TO_B
+2026-08-30 01:33:32 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=16003 tid=573 dir=A_TO_B
+2026-08-30 01:33:32 [INFO] uvh_test.counter: COUNTED: frame=16003 tid=573 class=Two-wheeler
+2026-08-30 01:33:32 [INFO] uvh_test.counter: COUNT: frame=16003 tid=573 class=Two-wheeler direction=A_TO_B track_age=40 point=(1339.6, 385.0)
+2026-08-30 01:33:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=16387 tid=577 dir=A_TO_B
+2026-08-30 01:33:45 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=16388 tid=577 dir=A_TO_B
+2026-08-30 01:33:45 [INFO] uvh_test.counter: COUNTED: frame=16388 tid=577 class=Two-wheeler
+2026-08-30 01:33:45 [INFO] uvh_test.counter: COUNT: frame=16388 tid=577 class=Two-wheeler direction=A_TO_B track_age=22 point=(1376.4, 391.9)
+2026-08-30 01:33:47 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=16439 tid=582 dir=A_TO_B
+2026-08-30 01:33:47 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=16440 tid=582 dir=A_TO_B
+2026-08-30 01:33:47 [INFO] uvh_test.counter: COUNTED: frame=16440 tid=582 class=Two-wheeler
+2026-08-30 01:33:47 [INFO] uvh_test.counter: COUNT: frame=16440 tid=582 class=Two-wheeler direction=A_TO_B track_age=4 point=(1669.9, 599.2)
+2026-08-30 01:33:49 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=16493 tid=584 dir=A_TO_B
+2026-08-30 01:33:49 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=16494 tid=584 dir=A_TO_B
+2026-08-30 01:33:49 [INFO] uvh_test.counter: COUNTED: frame=16494 tid=584 class=Two-wheeler
+2026-08-30 01:33:49 [INFO] uvh_test.counter: COUNT: frame=16494 tid=584 class=Two-wheeler direction=A_TO_B track_age=25 point=(1402.4, 412.1)
+2026-08-30 01:33:50 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=16514 tid=589 dir=A_TO_B
+2026-08-30 01:33:50 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=16515 tid=589 dir=A_TO_B
+2026-08-30 01:33:50 [INFO] uvh_test.counter: COUNTED: frame=16515 tid=589 class=Two-wheeler
+2026-08-30 01:33:50 [INFO] uvh_test.counter: COUNT: frame=16515 tid=589 class=Two-wheeler direction=A_TO_B track_age=3 point=(1648.6, 549.0)
+2026-08-30 01:33:52 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=16572 tid=590 dir=A_TO_B
+2026-08-30 01:33:52 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=16573 tid=590 dir=A_TO_B
+2026-08-30 01:33:52 [INFO] uvh_test.counter: COUNTED: frame=16573 tid=590 class=Two-wheeler
+2026-08-30 01:33:52 [INFO] uvh_test.counter: COUNT: frame=16573 tid=590 class=Two-wheeler direction=A_TO_B track_age=47 point=(1324.3, 372.3)
+2026-08-30 01:33:56 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=16684 tid=592 dir=A_TO_B
+2026-08-30 01:33:56 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=16685 tid=592 dir=A_TO_B
+2026-08-30 01:33:56 [INFO] uvh_test.counter: COUNTED: frame=16685 tid=592 class=Two-wheeler
+2026-08-30 01:33:56 [INFO] uvh_test.counter: COUNT: frame=16685 tid=592 class=Two-wheeler direction=A_TO_B track_age=15 point=(1457.6, 436.6)
+2026-08-30 01:34:10 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=17088 tid=598 dir=A_TO_B
+2026-08-30 01:34:10 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=17089 tid=598 dir=A_TO_B
+2026-08-30 01:34:10 [INFO] uvh_test.counter: COUNTED: frame=17089 tid=598 class=Two-wheeler
+2026-08-30 01:34:10 [INFO] uvh_test.counter: COUNT: frame=17089 tid=598 class=Two-wheeler direction=A_TO_B track_age=5 point=(1601.6, 582.8)
+2026-08-30 01:34:14 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=17227 tid=603 dir=A_TO_B
+2026-08-30 01:34:16 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=17266 tid=609 dir=A_TO_B
+2026-08-30 01:34:16 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=17267 tid=609 dir=A_TO_B
+2026-08-30 01:34:16 [INFO] uvh_test.counter: COUNTED: frame=17267 tid=609 class=Hatchback
+2026-08-30 01:34:16 [INFO] uvh_test.counter: COUNT: frame=17267 tid=609 class=Hatchback direction=A_TO_B track_age=4 point=(1485.7, 450.8)
+2026-08-30 01:34:16 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=17278 tid=615 dir=A_TO_B
+2026-08-30 01:34:16 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=17279 tid=615 dir=A_TO_B
+2026-08-30 01:34:16 [INFO] uvh_test.counter: COUNTED: frame=17279 tid=615 class=SUV
+2026-08-30 01:34:16 [INFO] uvh_test.counter: COUNT: frame=17279 tid=615 class=SUV direction=A_TO_B track_age=9 point=(1383.5, 386.3)
+2026-08-30 01:34:27 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=17597 tid=619 dir=A_TO_B
+2026-08-30 01:34:27 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=17598 tid=619 dir=A_TO_B
+2026-08-30 01:34:27 [INFO] uvh_test.counter: COUNTED: frame=17598 tid=619 class=Two-wheeler
+2026-08-30 01:34:27 [INFO] uvh_test.counter: COUNT: frame=17598 tid=619 class=Two-wheeler direction=A_TO_B track_age=24 point=(1341.4, 381.1)
+2026-08-30 01:34:31 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=17718 tid=628 dir=A_TO_B
+2026-08-30 01:34:31 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=17719 tid=628 dir=A_TO_B
+2026-08-30 01:34:31 [INFO] uvh_test.counter: COUNTED: frame=17719 tid=628 class=Two-wheeler
+2026-08-30 01:34:31 [INFO] uvh_test.counter: COUNT: frame=17719 tid=628 class=Two-wheeler direction=A_TO_B track_age=8 point=(1434.7, 438.1)
+2026-08-30 01:34:39 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=17929 tid=629 dir=A_TO_B
+2026-08-30 01:34:39 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=17930 tid=629 dir=A_TO_B
+2026-08-30 01:34:39 [INFO] uvh_test.counter: COUNTED: frame=17930 tid=629 class=Two-wheeler
+2026-08-30 01:34:39 [INFO] uvh_test.counter: COUNT: frame=17930 tid=629 class=Two-wheeler direction=A_TO_B track_age=39 point=(1325.2, 373.4)
+2026-08-30 01:34:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18100 tid=633 dir=A_TO_B
+2026-08-30 01:34:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18100 tid=634 dir=A_TO_B
+2026-08-30 01:34:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18101 tid=632 dir=A_TO_B
+2026-08-30 01:34:45 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18101 tid=633 dir=A_TO_B
+2026-08-30 01:34:45 [INFO] uvh_test.counter: COUNTED: frame=18101 tid=633 class=SUV
+2026-08-30 01:34:45 [INFO] uvh_test.counter: COUNT: frame=18101 tid=633 class=SUV direction=A_TO_B track_age=4 point=(1627.6, 579.1)
+2026-08-30 01:34:45 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18101 tid=634 dir=A_TO_B
+2026-08-30 01:34:45 [INFO] uvh_test.counter: REJECTED: frame=18101 tid=634 as fragment of recent crossing (dist=119.8, bbox_max=459.0).
+2026-08-30 01:34:47 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18160 tid=640 dir=A_TO_B
+2026-08-30 01:34:47 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18161 tid=640 dir=A_TO_B
+2026-08-30 01:34:47 [INFO] uvh_test.counter: COUNTED: frame=18161 tid=640 class=MUV
+2026-08-30 01:34:47 [INFO] uvh_test.counter: COUNT: frame=18161 tid=640 class=MUV direction=A_TO_B track_age=17 point=(1469.1, 459.9)
+2026-08-30 01:34:47 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18166 tid=641 dir=A_TO_B
+2026-08-30 01:34:47 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18167 tid=641 dir=A_TO_B
+2026-08-30 01:34:47 [INFO] uvh_test.counter: COUNTED: frame=18167 tid=641 class=Two-wheeler
+2026-08-30 01:34:47 [INFO] uvh_test.counter: COUNT: frame=18167 tid=641 class=Two-wheeler direction=A_TO_B track_age=13 point=(1335.0, 376.9)
+2026-08-30 01:34:51 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18264 tid=646 dir=A_TO_B
+2026-08-30 01:34:51 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18265 tid=647 dir=A_TO_B
+2026-08-30 01:34:51 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18266 tid=647 dir=A_TO_B
+2026-08-30 01:34:51 [INFO] uvh_test.counter: COUNTED: frame=18266 tid=647 class=MUV
+2026-08-30 01:34:51 [INFO] uvh_test.counter: COUNT: frame=18266 tid=647 class=MUV direction=A_TO_B track_age=6 point=(1514.9, 458.9)
+2026-08-30 01:34:53 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18313 tid=650 dir=A_TO_B
+2026-08-30 01:34:53 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18314 tid=650 dir=A_TO_B
+2026-08-30 01:34:53 [INFO] uvh_test.counter: COUNTED: frame=18314 tid=650 class=Two-wheeler
+2026-08-30 01:34:53 [INFO] uvh_test.counter: COUNT: frame=18314 tid=650 class=Two-wheeler direction=A_TO_B track_age=31 point=(1307.1, 362.8)
+2026-08-30 01:34:55 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18378 tid=652 dir=A_TO_B
+2026-08-30 01:34:55 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18379 tid=652 dir=A_TO_B
+2026-08-30 01:34:55 [INFO] uvh_test.counter: COUNTED: frame=18379 tid=652 class=Two-wheeler
+2026-08-30 01:34:55 [INFO] uvh_test.counter: COUNT: frame=18379 tid=652 class=Two-wheeler direction=A_TO_B track_age=42 point=(1312.6, 364.3)
+2026-08-30 01:34:58 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18438 tid=662 dir=A_TO_B
+2026-08-30 01:34:58 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18439 tid=661 dir=A_TO_B
+2026-08-30 01:34:58 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18439 tid=662 dir=A_TO_B
+2026-08-30 01:34:58 [INFO] uvh_test.counter: COUNTED: frame=18439 tid=662 class=MUV
+2026-08-30 01:34:58 [INFO] uvh_test.counter: COUNT: frame=18439 tid=662 class=MUV direction=A_TO_B track_age=4 point=(1706.3, 603.3)
+2026-08-30 01:34:59 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18473 tid=656 dir=A_TO_B
+2026-08-30 01:34:59 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18474 tid=656 dir=A_TO_B
+2026-08-30 01:34:59 [INFO] uvh_test.counter: COUNTED: frame=18474 tid=656 class=Two-wheeler
+2026-08-30 01:34:59 [INFO] uvh_test.counter: COUNT: frame=18474 tid=656 class=Two-wheeler direction=A_TO_B track_age=108 point=(1406.0, 437.1)
+2026-08-30 01:35:00 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18496 tid=665 dir=A_TO_B
+2026-08-30 01:35:00 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18497 tid=665 dir=A_TO_B
+2026-08-30 01:35:00 [INFO] uvh_test.counter: COUNTED: frame=18497 tid=665 class=Two-wheeler
+2026-08-30 01:35:00 [INFO] uvh_test.counter: COUNT: frame=18497 tid=665 class=Two-wheeler direction=A_TO_B track_age=40 point=(1330.1, 392.2)
+2026-08-30 01:35:11 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=18780 tid=684 dir=A_TO_B
+2026-08-30 01:35:11 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=18781 tid=684 dir=A_TO_B
+2026-08-30 01:35:11 [INFO] uvh_test.counter: COUNTED: frame=18781 tid=684 class=Three-wheeler
+2026-08-30 01:35:11 [INFO] uvh_test.counter: COUNT: frame=18781 tid=684 class=Three-wheeler direction=A_TO_B track_age=8 point=(1401.5, 429.6)
+2026-08-30 01:35:19 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=19038 tid=685 dir=A_TO_B
+2026-08-30 01:35:19 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=19039 tid=685 dir=A_TO_B
+2026-08-30 01:35:19 [INFO] uvh_test.counter: COUNTED: frame=19039 tid=685 class=Two-wheeler
+2026-08-30 01:35:19 [INFO] uvh_test.counter: COUNT: frame=19039 tid=685 class=Two-wheeler direction=A_TO_B track_age=29 point=(1347.8, 396.1)
+2026-08-30 01:35:21 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=19075 tid=687 dir=A_TO_B
+2026-08-30 01:35:21 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=19076 tid=687 dir=A_TO_B
+2026-08-30 01:35:21 [INFO] uvh_test.counter: COUNTED: frame=19076 tid=687 class=Two-wheeler
+2026-08-30 01:35:21 [INFO] uvh_test.counter: COUNT: frame=19076 tid=687 class=Two-wheeler direction=A_TO_B track_age=25 point=(1367.0, 388.1)
+2026-08-30 01:35:23 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=19132 tid=689 dir=A_TO_B
+2026-08-30 01:35:23 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=19133 tid=689 dir=A_TO_B
+2026-08-30 01:35:23 [INFO] uvh_test.counter: COUNTED: frame=19133 tid=689 class=Two-wheeler
+2026-08-30 01:35:23 [INFO] uvh_test.counter: COUNT: frame=19133 tid=689 class=Two-wheeler direction=A_TO_B track_age=18 point=(1360.2, 391.3)
+2026-08-30 01:35:31 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=19336 tid=692 dir=A_TO_B
+2026-08-30 01:35:31 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=19337 tid=692 dir=A_TO_B
+2026-08-30 01:35:31 [INFO] uvh_test.counter: COUNTED: frame=19337 tid=692 class=SUV
+2026-08-30 01:35:31 [INFO] uvh_test.counter: COUNT: frame=19337 tid=692 class=SUV direction=A_TO_B track_age=20 point=(1330.3, 376.7)
+2026-08-30 01:35:46 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=19757 tid=706 dir=A_TO_B
+2026-08-30 01:35:46 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=19758 tid=706 dir=A_TO_B
+2026-08-30 01:35:46 [INFO] uvh_test.counter: COUNTED: frame=19758 tid=706 class=Two-wheeler
+2026-08-30 01:35:46 [INFO] uvh_test.counter: COUNT: frame=19758 tid=706 class=Two-wheeler direction=A_TO_B track_age=31 point=(1349.0, 373.8)
+2026-08-30 01:36:04 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=20292 tid=708 dir=A_TO_B
+2026-08-30 01:36:04 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=20293 tid=708 dir=A_TO_B
+2026-08-30 01:36:04 [INFO] uvh_test.counter: COUNTED: frame=20293 tid=708 class=Two-wheeler
+2026-08-30 01:36:04 [INFO] uvh_test.counter: COUNT: frame=20293 tid=708 class=Two-wheeler direction=A_TO_B track_age=31 point=(1355.3, 390.1)
+2026-08-30 01:36:08 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=20424 tid=711 dir=A_TO_B
+2026-08-30 01:36:08 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=20425 tid=711 dir=A_TO_B
+2026-08-30 01:36:08 [INFO] uvh_test.counter: COUNTED: frame=20425 tid=711 class=Two-wheeler
+2026-08-30 01:36:08 [INFO] uvh_test.counter: COUNT: frame=20425 tid=711 class=Two-wheeler direction=A_TO_B track_age=17 point=(1441.6, 425.1)
+2026-08-30 01:36:09 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=20437 tid=712 dir=A_TO_B
+2026-08-30 01:36:09 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=20438 tid=712 dir=A_TO_B
+2026-08-30 01:36:09 [INFO] uvh_test.counter: REJECTED: frame=20438 tid=712 as fragment of recent crossing (dist=107.1, bbox_max=120.4).
+2026-08-30 01:36:11 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=20511 tid=715 dir=A_TO_B
+2026-08-30 01:36:11 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=20512 tid=715 dir=A_TO_B
+2026-08-30 01:36:11 [INFO] uvh_test.counter: COUNTED: frame=20512 tid=715 class=Two-wheeler
+2026-08-30 01:36:11 [INFO] uvh_test.counter: COUNT: frame=20512 tid=715 class=Two-wheeler direction=A_TO_B track_age=26 point=(1364.6, 396.5)
+2026-08-30 01:36:25 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=20913 tid=725 dir=A_TO_B
+2026-08-30 01:36:25 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=20914 tid=725 dir=A_TO_B
+2026-08-30 01:36:25 [INFO] uvh_test.counter: COUNTED: frame=20914 tid=725 class=Three-wheeler
+2026-08-30 01:36:25 [INFO] uvh_test.counter: COUNT: frame=20914 tid=725 class=Three-wheeler direction=A_TO_B track_age=31 point=(1334.1, 391.9)
+2026-08-30 01:36:26 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=20952 tid=721 dir=A_TO_B
+2026-08-30 01:36:26 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=20953 tid=721 dir=A_TO_B
+2026-08-30 01:36:26 [INFO] uvh_test.counter: COUNTED: frame=20953 tid=721 class=Two-wheeler
+2026-08-30 01:36:26 [INFO] uvh_test.counter: COUNT: frame=20953 tid=721 class=Two-wheeler direction=A_TO_B track_age=83 point=(1364.4, 399.5)
+2026-08-30 01:36:35 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21206 tid=730 dir=A_TO_B
+2026-08-30 01:36:35 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21207 tid=730 dir=A_TO_B
+2026-08-30 01:36:35 [INFO] uvh_test.counter: COUNTED: frame=21207 tid=730 class=Two-wheeler
+2026-08-30 01:36:35 [INFO] uvh_test.counter: COUNT: frame=21207 tid=730 class=Two-wheeler direction=A_TO_B track_age=27 point=(1389.7, 407.8)
+2026-08-30 01:36:38 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21269 tid=738 dir=A_TO_B
+2026-08-30 01:36:38 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21270 tid=738 dir=A_TO_B
+2026-08-30 01:36:38 [INFO] uvh_test.counter: COUNTED: frame=21270 tid=738 class=Two-wheeler
+2026-08-30 01:36:38 [INFO] uvh_test.counter: COUNT: frame=21270 tid=738 class=Two-wheeler direction=A_TO_B track_age=8 point=(1503.0, 479.0)
+2026-08-30 01:36:43 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21408 tid=739 dir=A_TO_B
+2026-08-30 01:36:43 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21409 tid=739 dir=A_TO_B
+2026-08-30 01:36:43 [INFO] uvh_test.counter: COUNTED: frame=21409 tid=739 class=Three-wheeler
+2026-08-30 01:36:43 [INFO] uvh_test.counter: COUNT: frame=21409 tid=739 class=Three-wheeler direction=A_TO_B track_age=28 point=(1398.4, 416.2)
+2026-08-30 01:36:45 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21457 tid=747 dir=A_TO_B
+2026-08-30 01:36:45 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21458 tid=747 dir=A_TO_B
+2026-08-30 01:36:45 [INFO] uvh_test.counter: COUNTED: frame=21458 tid=747 class=Two-wheeler
+2026-08-30 01:36:45 [INFO] uvh_test.counter: COUNT: frame=21458 tid=747 class=Two-wheeler direction=A_TO_B track_age=34 point=(1327.7, 375.0)
+2026-08-30 01:36:48 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21533 tid=748 dir=A_TO_B
+2026-08-30 01:36:48 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21534 tid=748 dir=A_TO_B
+2026-08-30 01:36:48 [INFO] uvh_test.counter: COUNTED: frame=21534 tid=748 class=Two-wheeler
+2026-08-30 01:36:48 [INFO] uvh_test.counter: COUNT: frame=21534 tid=748 class=Two-wheeler direction=A_TO_B track_age=25 point=(1373.0, 396.9)
+2026-08-30 01:36:55 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21744 tid=756 dir=A_TO_B
+2026-08-30 01:36:55 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21746 tid=756 dir=A_TO_B
+2026-08-30 01:36:55 [INFO] uvh_test.counter: COUNTED: frame=21746 tid=756 class=Sedan
+2026-08-30 01:36:55 [INFO] uvh_test.counter: COUNT: frame=21746 tid=756 class=Sedan direction=A_TO_B track_age=11 point=(1451.7, 430.2)
+2026-08-30 01:36:56 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21756 tid=758 dir=A_TO_B
+2026-08-30 01:36:56 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21757 tid=758 dir=A_TO_B
+2026-08-30 01:36:56 [INFO] uvh_test.counter: COUNTED: frame=21757 tid=758 class=Two-wheeler
+2026-08-30 01:36:56 [INFO] uvh_test.counter: COUNT: frame=21757 tid=758 class=Two-wheeler direction=A_TO_B track_age=5 point=(1674.7, 626.4)
+2026-08-30 01:36:58 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=21825 tid=762 dir=A_TO_B
+2026-08-30 01:36:58 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=21826 tid=762 dir=A_TO_B
+2026-08-30 01:36:58 [INFO] uvh_test.counter: COUNTED: frame=21826 tid=762 class=SUV
+2026-08-30 01:36:58 [INFO] uvh_test.counter: COUNT: frame=21826 tid=762 class=SUV direction=A_TO_B track_age=15 point=(1459.5, 471.9)
+2026-08-30 01:37:06 [INFO] uvh_test.counter: CROSSING_CANDIDATE: frame=22057 tid=771 dir=A_TO_B
+2026-08-30 01:37:06 [INFO] uvh_test.counter: CROSSING_CONFIRMED: frame=22058 tid=771 dir=A_TO_B
+2026-08-30 01:37:06 [INFO] uvh_test.counter: COUNTED: frame=22058 tid=771 class=Two-wheeler
+2026-08-30 01:37:06 [INFO] uvh_test.counter: COUNT: frame=22058 tid=771 class=Two-wheeler direction=A_TO_B track_age=38 point=(1320.0, 377.7)
+2026-08-30 01:37:20 [INFO] uvh_test.main: HARD STOP at 15 minutes reached.
+2026-08-30 01:37:20 [INFO] uvh_test.main: Wrote results/vc_2w3w4w_0900_0915/tracks.jsonl
+2026-08-30 01:37:20 [INFO] uvh_test.main: Processing complete. Final Counts:
+2026-08-30 01:37:20 [INFO] uvh_test.main: Two-wheeler: 127
+2026-08-30 01:37:20 [INFO] uvh_test.main: SUV: 14
+2026-08-30 01:37:20 [INFO] uvh_test.main: Sedan: 10
+2026-08-30 01:37:20 [INFO] uvh_test.main: Hatchback: 4
+2026-08-30 01:37:20 [INFO] uvh_test.main: MUV: 7
+2026-08-30 01:37:20 [INFO] uvh_test.main: Three-wheeler: 11
+VideoWriter initialized at: /storage/users/oauser/mvsa/results/vc_2w3w4w_0900_0915/annotated.mp4

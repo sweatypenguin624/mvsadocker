@@ -1,0 +1,149 @@
+import sys
+import os
+import subprocess
+import time
+import queue
+import threading
+from ingest.manifest import IngestManifest
+from ingest.downloader import Downloader
+
+def run_command(cmd, desc):
+    print(f"\n[{threading.current_thread().name}] --- {desc} ---")
+    print(f"[{threading.current_thread().name}] Running: {' '.join(cmd)}")
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"[{threading.current_thread().name}] ERROR in {desc}:\n{result.stderr}")
+    return result.returncode == 0
+
+def download_and_remux_worker(download_queue, inference_queue, manifest):
+    downloader = Downloader()
+    base_dir = "historical-processor/data/videos/historical"
+    
+    while True:
+        item = download_queue.get()
+        if item is None:
+            break
+            
+        file_id = item['file_id']
+        gdrive_path = item['gdrive_path']
+        date = item['date']
+        filename = item['filename']
+        timestamp = filename.replace('.dav', '')
+        
+        local_dir = os.path.join(base_dir, date)
+        local_dav = os.path.join(local_dir, filename)
+        local_mp4 = local_dav + ".mp4"
+        
+        # 1. Download
+        manifest.update_status(file_id, "DOWNLOADING")
+        if not downloader.download_file(gdrive_path, local_dav):
+            manifest.update_status(file_id, "FAILED", error="Download failed")
+            download_queue.task_done()
+            continue
+            
+        # 2. Remux
+        manifest.update_status(file_id, "DOWNLOADED", local_path=local_dav)
+        remux_cmd = ['tools/ffmpeg_bin/ffmpeg', '-y', '-i', local_dav, '-c', 'copy', local_mp4]
+        if not run_command(remux_cmd, f"Remuxing {filename}"):
+            manifest.update_status(file_id, "FAILED", error="Remux failed")
+            download_queue.task_done()
+            continue
+            
+        # 3. Pass to inference
+        item['local_dav'] = local_dav
+        item['local_mp4'] = local_mp4
+        item['timestamp'] = timestamp
+        inference_queue.put(item)
+        download_queue.task_done()
+
+inference_init_lock = threading.Lock()
+
+def inference_worker(inference_queue, manifest):
+    while True:
+        item = inference_queue.get()
+        if item is None:
+            break
+            
+        file_id = item['file_id']
+        date = item['date']
+        filename = item['filename']
+        timestamp = item['timestamp']
+        local_dav = item['local_dav']
+        local_mp4 = item['local_mp4']
+        
+        start_time_part = timestamp.split('-')[0]
+        start_time_formatted = start_time_part.replace('.', ':')
+        
+        output_dir = f'historical-processor/output/{date}/{timestamp}'
+        os.makedirs(output_dir, exist_ok=True)
+            
+        # Inference
+        inference_cmd = [
+            sys.executable, 'vehicle-counting/pipeline/counting/main.py',
+            '--video', local_mp4,
+            '--output_dir', output_dir,
+            '--no_annotation',
+            '--start_time', start_time_formatted
+        ]
+        
+        if not run_command(inference_cmd, f"Inference {filename}"):
+            manifest.update_status(file_id, "FAILED", error="Inference failed")
+        else:
+            manifest.update_status(file_id, "COMPLETED")
+            print(f"\n[{threading.current_thread().name}] SUCCESS: Completed {filename}")
+            
+        # Cleanup
+        if os.path.exists(local_dav):
+            os.remove(local_dav)
+        if os.path.exists(local_mp4):
+            os.remove(local_mp4)
+            
+        inference_queue.task_done()
+
+def main():
+    manifest = IngestManifest()
+    
+    download_queue = queue.Queue(maxsize=20)
+    inference_queue = queue.Queue(maxsize=10)
+    
+    # Start thread pools
+    dl_threads = []
+    for i in range(4):
+        t = threading.Thread(target=download_and_remux_worker, args=(download_queue, inference_queue, manifest), name=f"DL-Worker-{i}")
+        t.daemon = True
+        t.start()
+        dl_threads.append(t)
+        
+    inf_threads = []
+    for i in range(2):
+        t = threading.Thread(target=inference_worker, args=(inference_queue, manifest), name=f"INF-Worker-{i}")
+        t.daemon = True
+        t.start()
+        inf_threads.append(t)
+        
+    print("Starting Orchestrator Loop...")
+    
+    # Fix previously stuck
+    for status in ["DOWNLOADING", "DOWNLOADED", "QUEUED"]:
+        for item in manifest.get_by_status(status):
+            manifest.update_status(item['file_id'], "DISCOVERED")
+        
+    while True:
+        if download_queue.qsize() < 10:
+            batch = manifest.get_pending_batch(batch_size=5)
+            if not batch:
+                if download_queue.qsize() == 0 and inference_queue.qsize() == 0:
+                    print("\nAll files processed! Pipeline complete.")
+                    break
+                else:
+                    time.sleep(5)
+                    continue
+                    
+            for item in batch:
+                manifest.update_status(item['file_id'], "QUEUED")
+                download_queue.put(item)
+                
+        time.sleep(1)
+
+if __name__ == '__main__':
+    main()

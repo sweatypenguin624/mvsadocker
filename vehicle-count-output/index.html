@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteTrack Counting Line Calibration Tool</title>
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --panel-bg: #131b2e;
+            --border-color: #243049;
+            --accent: #0ea5e9;
+            --accent-glow: rgba(14, 165, 233, 0.35);
+            --p1-color: #10b981;
+            --p2-color: #ef4444;
+            --line-color: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--panel-bg);
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+        .header h1 { font-size: 20px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+        .instructions { font-size: 13px; color: var(--text-muted); }
+
+        .cam-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .cam-btn {
+            background: #1e293b;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .cam-btn:hover { background: #334155; color: #fff; }
+        .cam-btn.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: #38bdf8;
+            box-shadow: 0 0 14px var(--accent-glow);
+        }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .canvas-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .canvas-container {
+            position: relative;
+            background: #000;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: crosshair;
+        }
+
+        canvas {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .card-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .coord-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-family: monospace;
+            background: #0b1120;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #1e293b;
+        }
+        .p1-tag { color: var(--p1-color); font-weight: bold; }
+        .p2-tag { color: var(--p2-color); font-weight: bold; }
+
+        .btn-group {
+            display: flex;
+            gap: 8px;
+        }
+        .btn {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .btn-danger { background: #dc2626; color: white; }
+        .btn-danger:hover { background: #b91c1c; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #0284c7; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-success:hover { background: #059669; }
+
+        pre {
+            background: #070b14;
+            border: 1px solid #1e293b;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+            font-size: 12px;
+            color: #38bdf8;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .status-msg {
+            font-size: 12px;
+            text-align: center;
+            padding: 6px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status-success { background: #064e3b; color: #a7f3d0; display: block; }
+        .status-error { background: #7f1d1d; color: #fecaca; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h1>�� ByteTrack Counting Line Calibration</h1>
+            <div class="instructions">Click anywhere on the road to place <strong>Point 1 (Green)</strong> and <strong>Point 2 (Red)</strong> across the traffic flow.</div>
+        </div>
+        <div id="saveNotification" class="status-msg"></div>
+    </div>
+
+    <div class="cam-selector">
+        <button class="cam-btn active" onclick="switchCamera('tvc5_cam2_wb', 'TVC 5 Cam 2 – WB (Gokul Rd Near Airport)', 'frames/tvc5_cam2_wb.jpg', this)">
+            📷 Cam 1: TVC 5 - WB (Gokul Rd)
+        </button>
+        <button class="cam-btn" onclick="switchCamera('tvc1_cam1_nb', 'TVC 1 Cam 1 – NB (Agriculture College)', 'frames/tvc1_cam1_nb.jpg', this)">
+            📷 Cam 2: TVC 1 - NB (Agriculture College)
+        </button>
+        <button class="cam-btn" onclick="switchCamera('tvc1_cam2_sb', 'TVC 1 Cam 2 – SB (Agriculture College)', 'frames/tvc1_cam2_sb.jpg', this)">
+            📷 Cam 3: TVC 1 - SB (Agriculture College)
+        </button>
+    </div>
+
+    <div class="main-layout">
+        <div class="canvas-card">
+            <div class="canvas-container">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="card">
+                <div class="card-title">Coordinates (1920 × 1080)</div>
+                <div class="coord-row">
+                    <span class="p1-tag">● P1 (Start):</span>
+                    <span id="coordP1">Click canvas to set</span>
+                </div>
+                <div class="coord-row">
+                    <span class="p2-tag">● P2 (End):</span>
+                    <span id="coordP2">Click canvas to set</span>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-danger" onclick="resetLine()">Clear Points</button>
+                    <button class="btn btn-primary" onclick="copyYaml()">Copy YAML</button>
+                </div>
+                <button class="btn btn-success" onclick="saveLineToConfig()">💾 Save To Camera Config</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Generated Config Snippet</div>
+                <pre id="yamlOutput"># Click 2 points on the road to generate</pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+
+        let currentCam = 'tvc5_cam2_wb';
+        let currentTitle = 'TVC 5 Cam 2 – WB (Gokul Rd Near Airport)';
+        let camPoints = {
+            'tvc5_cam2_wb': [[1911, 949], [1142, 237]],
+            'tvc1_cam1_nb': [],
+            'tvc1_cam2_sb': []
+        };
+
+        // Try restoring from localStorage
+        const saved = localStorage.getItem('mvsa_cam_lines');
+        if (saved) {
+            try { camPoints = Object.assign(camPoints, JSON.parse(saved)); } catch(e){}
+        }
+
+        img.onload = function() {
+            canvas.width = img.naturalWidth || 1920;
+            canvas.height = img.naturalHeight || 1080;
+            render();
+            updateOutput();
+        };
+
+        function switchCamera(camKey, title, imagePath, btn) {
+            currentCam = camKey;
+            currentTitle = title;
+            document.querySelectorAll('.cam-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            img.src = imagePath + '?t=' + new Date().getTime();
+        }
+
+        canvas.addEventListener('mousedown', function(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+
+            const x = Math.round((e.clientX - rect.left) * scaleX);
+            const y = Math.round((e.clientY - rect.top) * scaleY);
+
+            let pts = camPoints[currentCam] || [];
+            if (pts.length >= 2) {
+                pts = [[x, y]];
+            } else {
+                pts.push([x, y]);
+            }
+            camPoints[currentCam] = pts;
+            localStorage.setItem('mvsa_cam_lines', JSON.stringify(camPoints));
+
+            render();
+            updateOutput();
+        });
+
+        function resetLine() {
+            camPoints[currentCam] = [];
+            localStorage.setItem('mvsa_cam_lines', JSON.stringify(camPoints));
+            render();
+            updateOutput();
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            const pts = camPoints[currentCam] || [];
+
+            // Draw connecting line
+            if (pts.length === 2) {
+                ctx.strokeStyle = '#38bdf8';
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(pts[0][0], pts[0][1]);
+                ctx.lineTo(pts[1][0], pts[1][1]);
+                ctx.stroke();
+
+                // Draw dashed direction perpendicular indicator
+                const midX = (pts[0][0] + pts[1][0]) / 2;
+                const midY = (pts[0][1] + pts[1][1]) / 2;
+                const dx = pts[1][0] - pts[0][0];
+                const dy = pts[1][1] - pts[0][1];
+                const len = Math.sqrt(dx*dx + dy*dy);
+                if (len > 0) {
+                    const nx = -dy / len * 40;
+                    const ny = dx / len * 40;
+                    ctx.setLineDash([6, 6]);
+                    ctx.strokeStyle = '#facc15';
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.moveTo(midX - nx, midY - ny);
+                    ctx.lineTo(midX + nx, midY + ny);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                }
+            }
+
+            // Draw points
+            pts.forEach((p, idx) => {
+                const color = idx === 0 ? '#10b981' : '#ef4444';
+                const label = idx === 0 ? 'P1 Start' : 'P2 End';
+
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(p[0], p[1], 9, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+
+                ctx.font = 'bold 16px -apple-system, sans-serif';
+                ctx.fillStyle = '#ffffff';
+                ctx.shadowColor = 'black';
+                ctx.shadowBlur = 6;
+                ctx.fillText(label + ` [${p[0]}, ${p[1]}]`, p[0] + 14, p[1] + 5);
+                ctx.shadowBlur = 0;
+            });
+        }
+
+        function updateOutput() {
+            const pts = camPoints[currentCam] || [];
+            document.getElementById('coordP1').innerText = pts[0] ? `[${pts[0][0]}, ${pts[0][1]}]` : 'Not set';
+            document.getElementById('coordP2').innerText = pts[1] ? `[${pts[1][0]}, ${pts[1][1]}]` : 'Not set';
+
+            if (pts.length === 2) {
+                const yaml = `roi:
+  count_direction: BOTH
+  counting_line:
+  - - ${pts[0][0]}
+    - ${pts[0][1]}
+  - - ${pts[1][0]}
+    - ${pts[1][1]}
+  reference_height: 1080
+  reference_width: 1920`;
+                document.getElementById('yamlOutput').innerText = yaml;
+            } else {
+                document.getElementById('yamlOutput').innerText = `# Select 2 points on ${currentTitle} to generate config`;
+            }
+        }
+
+        function copyYaml() {
+            const text = document.getElementById('yamlOutput').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification("YAML copied to clipboard!", true);
+            });
+        }
+
+        function showNotification(msg, isSuccess) {
+            const el = document.getElementById('saveNotification');
+            el.innerText = msg;
+            el.className = 'status-msg ' + (isSuccess ? 'status-success' : 'status-error');
+            setTimeout(() => { el.style.display = 'none'; }, 3500);
+        }
+
+        function saveLineToConfig() {
+            const pts = camPoints[currentCam] || [];
+            if (pts.length !== 2) {
+                alert("Please click 2 points across the road first.");
+                return;
+            }
+            fetch('/save_line', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    camera: currentCam,
+                    points: pts
+                })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showNotification(`Saved line for ${currentCam} directly to config!`, true);
+                } else {
+                    showNotification(`Saved locally. Copy the YAML snippet into config.`, true);
+                }
+            })
+            .catch(() => {
+                showNotification(`Line stored locally! Copy YAML to apply to config.`, true);
+            });
+        }
+
+        // Initialize first camera
+        switchCamera('tvc5_cam2_wb', 'TVC 5 Cam 2 – WB (Gokul Rd Near Airport)', 'frames/tvc5_cam2_wb.jpg', document.querySelector('.cam-btn'));
+    </script>
+</body>
+</html>

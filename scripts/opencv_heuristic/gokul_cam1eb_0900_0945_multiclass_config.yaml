@@ -1,0 +1,13 @@
+mode: single_video
+input_video: work/converted/tvc5_gokul_rd_cam1_20260716_0900-0945.mp4
+output_dir: results/vehicle_counts/gokul_rd_cam1eb_20260716_0900_0945
+camera_name: gokul_rd_cam1_eb
+detector_model: results/uvh26_training/vehiclenet_y26s/weights/best.pt
+device: cuda:0
+detection_confidence: 0.35
+imgsz: 960
+save_best_frame_crops: false
+start_offset_seconds: 0.0
+duration_seconds: null
+video_start_times:
+  tvc5_gokul_rd_cam1_20260716_0900-0945.mp4: "2026-07-16T09:00:00"

@@ -1,0 +1,73 @@
+# Example config for run_production.py. Copy this file, edit the paths, and run:
+#   env/bin/python scripts/opencv_heuristic/run_production.py --config <your_copy>.yaml
+
+# "folder"       -- process every video under input_folder (one camera's worth of footage).
+# "single_video" -- process exactly one video. Use this for a quick test run, e.g. on a
+#                    single 15-minute clip, before pointing at a whole folder.
+mode: folder
+
+# Required when mode: folder. Scanned recursively for files matching video_globs.
+input_folder: videos/actual_test
+
+# Required when mode: single_video. Ignored when mode: folder.
+# input_video: videos/actual_test/15min_test_clip.mp4
+
+output_dir: results/bus_color/production_run
+
+# Camera identity used in every log row and output filename.
+# - Set explicitly here to force one name for every video this run touches.
+# - Leave unset (null) to derive it per-video from the video's containing folder name
+#   (see video_discovery.py) -- the expected layout is one folder per camera.
+camera_name: null
+
+video_globs: ["*.mp4", "*.dav", "*.avi", "*.mkv"]
+
+# Detector. This pipeline is multi-class: it counts every group in config.py's
+# VEHICLE_GROUPS (two_wheeler, auto_rickshaw, four_wheeler, bus, truck) in one pass, with
+# a color-classification second layer for buses only. That needs a detector whose class
+# names actually cover those groups -- in practice, a UVH-26 fine-tune:
+#
+#   results/uvh26_training/vehiclenet_y26s/weights/best.pt
+#
+# (see uvh26_download.py / uvh26_prepare.py / uvh26_train.py for how it was produced).
+# UVH-26 is an India-specific traffic-camera dataset (IISc) with 14 vehicle classes --
+# Hatchback/Sedan/SUV/MUV/Bus/Truck/Three-wheeler/Two-wheeler/LCV/Mini-bus/Tempo-
+# traveller/Bicycle/Van/Others -- see config.py: VEHICLE_GROUPS for how these map onto
+# the 5 counted groups. A plain COCO model (e.g. "yolo26s.pt") only has a generic 'bus'
+# class and can't do multi-class counting at all -- run_production.py will raise if none
+# of VEHICLE_GROUPS' class names are found in the detector.
+detector_model: results/uvh26_training/vehiclenet_y26s/weights/best.pt
+tracker_config: botsort.yaml   # BoT-SORT only; do not swap in bytetrack/sort/ocsort/deepsort
+
+device: null    # null = auto (cuda:0 if available, else cpu)
+
+# Minimum detection confidence to accept a box. null = PipelineConfig default
+# (config.py: DETECTION_CONFIDENCE, currently 0.25); 0.35 worked well in testing.
+detection_confidence: 0.35
+
+# Must match the detector's training resolution or accuracy silently degrades. The
+# UVH-26 fine-tune above was trained at 960 (see uvh26_train.py). null = ultralytics
+# default (640).
+imgsz: 960
+
+# Write each track's winning crop to <output_dir>/best_frames/ for visual audit (see
+# production_review.py). null = PipelineConfig default (on). Set false for a counts-only
+# run -- no per-track image files, only the CSVs.
+save_best_frame_crops: true
+
+interval_minutes: null       # null = PipelineConfig default (config.py: INTERVAL_MINUTES, 15)
+
+# Process only a slice of each video -- straight off the source file, no need to
+# pre-cut/re-encode a separate clip (re-encoding 1080p video in software is itself slow
+# and pointless when this does the same job for free). Handy for a quick test window,
+# e.g. just 9:00-9:15 out of a 45-minute file: start_offset_seconds: 0, duration_seconds: 900.
+start_offset_seconds: 0.0
+duration_seconds: null       # null = process to the end of each video
+
+# Per-filename override when a video's inferred start time is wrong (e.g. the
+# "HH.MM.SS-HH.MM.SS" filename pattern borrows the file's mtime for the date, which is
+# wrong if the file was copied/moved after recording). Keys are filenames (not full
+# paths), values are ISO datetimes.
+video_start_times: {}
+# video_start_times:
+#   "08.00.00-09.00.00.mp4": "2026-07-20T08:00:00"

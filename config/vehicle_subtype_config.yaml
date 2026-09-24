@@ -1,0 +1,52 @@
+# Step 1 config for scripts/vehicle_subtype_classifier/ -- per-frame
+# classification into UVH-26's native 14 vehicle-subtype classes.
+#
+# Not to be confused with config/layer1_class_mapping.yaml, which maps
+# these same 14 native classes DOWN into Layer 1's broad buckets (Car,
+# 2-Wheeler, Auto, ...). This pipeline does the opposite: it keeps the
+# native 14 classes as the final output, no bucketing.
+
+model:
+  # YOLOv11-S weights (smaller/faster than the YOLOv11-X Layer 1 uses --
+  # deliberate choice for this pipeline, see scripts/vehicle_subtype_classifier/INPUT_REQUIREMENTS.md).
+  path: models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.pt
+  device: cuda:0
+  confidence: 0.25
+  imgsz: 640
+  # 0.45/True mirrors Layer 1's fix for one physical vehicle producing
+  # multiple overlapping boxes (see config/layer1_config.yaml and
+  # project_layer1_pipeline memory) -- same detector, same failure mode.
+  iou: 0.45
+  agnostic_nms: true
+
+# Native class names this model was trained on, in the exact case the
+# weights' own model.names uses (verified in config/layer1_class_mapping.yaml
+# -- "bicycle" and "tempo-traveller" are lowercase in the real weights even
+# though models/UVH-26/uvh_classes.txt capitalizes them). Kept here so the
+# runner can validate the loaded model's own names against expectation
+# before processing any frames, rather than silently trusting them.
+expected_classes:
+  - Hatchback
+  - Sedan
+  - SUV
+  - MUV
+  - Bus
+  - Truck
+  - Three-wheeler
+  - Two-wheeler
+  - LCV
+  - Mini-bus
+  - tempo-traveller
+  - bicycle
+  - Van
+  - Others
+
+# Class assigned to a frame when the model returns zero detections above
+# `confidence` -- kept distinct from the native "Others" class so the
+# summary report can tell "model said Others" apart from "model found
+# nothing in this frame at all" (the latter usually means a bad crop).
+no_detection_label: "Unclassified"
+
+output:
+  results_filename: subtype_results.jsonl
+  summary_filename: subtype_summary.json

@@ -1,0 +1,119 @@
+# Layer 1 (broad detection/tracking/counting) pipeline configuration.
+#
+# Separate from config/config.yaml (pedestrian pipeline) and
+# config/vehicle_config.yaml (vehicle pilot) on purpose, same convention as
+# both of those files establish: each pipeline owns its own config surface.
+#
+# Layer 1 runs TWO YOLO models per frame (see scripts/traffic_layer1/detector.py):
+#   - UVH-26 (models.uvh26)  -- all vehicle-shaped classes, domain-tuned.
+#   - stock COCO (models.person) -- person only, for Pedestrian, since
+#     UVH-26 was never trained to detect people.
+# Native class names from both are mapped to Layer 1's broad taxonomy via
+# config/layer1_class_mapping.yaml (class_mapping_path below).
+#
+# Run from the project root:
+#   cd ~/mvsa && source env/bin/activate
+#   python scripts/traffic_layer1/run.py \
+#       --config config/layer1_config.yaml \
+#       --input videos/actual_test/08.00.00-09.00.00.mp4 \
+#       --output results/layer1_run1 \
+#       --start-datetime "2026-07-28 08:00:00" \
+#       --camera-key peds_10_kle_technological_university__cam_1
+
+video:
+  path: "videos/actual_test/08.00.00-09.00.00.mp4"
+  fps: 20
+  start_datetime: "2026-07-28 08:00:00"
+
+# iou / agnostic_nms (per model, both optional -- default iou=0.45,
+# agnostic_nms=true if omitted): NMS tuning found necessary during Layer 1's
+# first accuracy check against real CVC footage. UVH-26 was observed
+# emitting (a) several overlapping same-class boxes tiled along one large
+# vehicle close to the camera, and (b) two overlapping boxes under
+# DIFFERENT classes for the same physical object (e.g. Bus + Goods Vehicle
+# on one bus) -- Ultralytics' own default (iou=0.7, agnostic_nms=false)
+# only suppresses same-class boxes above a high overlap threshold, so
+# neither case was caught. agnostic_nms=true makes NMS compete across all
+# classes, not just within one; the lower iou threshold makes same-class
+# suppression more aggressive. See scripts/detector.py::PersonDetector.
+models:
+  uvh26:
+    yolo_weights: "models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt"
+    device: "0"
+    imgsz: 1280
+    tracker: "bytetrack.yaml"
+    iou: 0.45
+    agnostic_nms: true
+  person:
+    yolo_weights: "models/yolo11x.pt"
+    device: "0"
+    imgsz: 1280
+    tracker: "bytetrack.yaml"
+    # COCO class id this detector instance is restricted to (person=0).
+    class_id: 0
+    iou: 0.45
+    agnostic_nms: true
+
+# Detection confidence thresholds. `default` is used as the floor passed to
+# both YOLO models (Ultralytics only supports one global conf per .track()
+# call); `per_bucket` overrides are then applied in taxonomy.py/tracker.py
+# AFTER a raw detection is mapped to its broad bucket, so a class-specific
+# threshold can be higher than the floor but never lower.
+confidence:
+  default: 0.30
+  per_bucket: {}
+
+class_mapping_path: "config/layer1_class_mapping.yaml"
+
+# Counting ROI (polygon-entry, same rule as the pedestrian pipeline and the
+# vehicle pilot -- see scripts/roi.py). When --camera-key is passed to
+# run.py, the polygon (and movement_axis, if calibrated) is looked up from
+# roi_by_camera_path instead of the static fallback below -- see
+# scripts/pedestrian_counter.py::load_camera_roi for the precedent this
+# mirrors. The inline polygon here is only a fallback for ad-hoc runs
+# against a video with no calibrated camera_key.
+roi:
+  roi_by_camera_path: "config/roi/roi_by_camera.yaml"
+  reference_width: 1920
+  reference_height: 1080
+  polygon:
+    - [0, 0]
+    - [1920, 0]
+    - [1920, 1080]
+    - [0, 1080]
+
+# Direction classification (scripts/movement_direction.py) -- opt-in per
+# camera via roi_by_camera.yaml's movement_axis entry, same as the
+# pedestrian pipeline's config/config.yaml `movement:` section.
+direction:
+  min_displacement_fraction_of_frame_diagonal: 0.015
+
+aggregation:
+  time_bucket_minutes: 60
+
+# Representative-crop saving for future Layer 2 (fine-grained subtype
+# classification). Only tracks whose voted class is in target_classes get
+# crops written; max_per_track bounds how many frames per track are kept
+# (never "hundreds of duplicate frames" per the spec).
+crops:
+  enabled: false
+  max_per_track: 5
+  # "Goods Vehicle" added so Layer 2 (scripts/traffic_layer2/) has
+  # representative crops to classify -- additive only, does not change
+  # existing Bus-crop behavior.
+  target_classes: ["Bus", "Goods Vehicle"]
+
+output:
+  results_dir: "results"
+  save_annotated_video: false
+  debug_mode: false
+  video_codec: "mp4v"
+
+logging:
+  level: "INFO"
+  filename: "run.log"
+  progress_interval_frames: 2000
+
+tools:
+  ffmpeg: "tools/ffmpeg"
+  ffprobe: "tools/ffprobe"

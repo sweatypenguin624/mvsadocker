@@ -1,0 +1,285 @@
+=> Database and media directory: /home/users/oauser/.local/share/label-studio
+=> Static URL is set to: /static/
+=> Database and media directory: /home/users/oauser/.local/share/label-studio
+=> Static URL is set to: /static/
+Read environment variables from: /home/users/oauser/.local/share/label-studio/.env
+get 'SECRET_KEY' casted as '<class 'str'>' with default ''
+Starting new HTTPS connection (1): pypi.org:443
+https://pypi.org:443 "GET /pypi/label-studio/json HTTP/1.1" 200 40454
+╔════════════════════════════════╗                                              
+║Update available 1.15.0 → 1.23.0║                                              
+║Run pip install -U label-studio ║                                              
+╚════════════════════════════════╝                                              
+
+/storage/users/oauser/mvsa/env-labelstudio/lib64/python3.9/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.19). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/storage/users/oauser/mvsa/env-labelstudio/lib64/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/storage/users/oauser/mvsa/env-labelstudio/lib64/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+User abhaydev2832@gmail.com already exists
+August 17, 2026 - 20:29:29
+Django version 4.2.30, using settings 'label_studio.core.settings.label_studio'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+
+[2026-08-17 20:29:39,249] [django.server::log_message::212] [INFO] "GET / HTTP/1.1" 302 0
+[2026-08-17 20:29:39,249] [django.server::log_message::212] [INFO] "GET / HTTP/1.1" 302 0
+[2026-08-17 20:29:39,276] [django.request::log_response::246] [WARNING] Not Found: /data/local-files/
+[2026-08-17 20:29:39,276] [django.request::log_response::246] [WARNING] Not Found: /data/local-files/
+[2026-08-17 20:29:39,277] [django.server::log_message::212] [WARNING] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 404 0
+[2026-08-17 20:29:39,277] [django.server::log_message::212] [WARNING] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 404 0
+[2026-08-17 20:29:55,767] [django.server::log_message::212] [INFO] "POST /api/storages/localfiles HTTP/1.1" 201 371
+[2026-08-17 20:29:55,767] [django.server::log_message::212] [INFO] "POST /api/storages/localfiles HTTP/1.1" 201 371
+[2026-08-17 20:30:03,602] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 20:30:03,602] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 20:30:03,647] [django.server::log_message::212] [INFO] "GET /user/login/ HTTP/1.1" 200 11151
+[2026-08-17 20:30:03,647] [django.server::log_message::212] [INFO] "GET /user/login/ HTTP/1.1" 200 11151
+[2026-08-17 20:30:03,881] [django.server::log_message::212] [INFO] "POST /user/login/ HTTP/1.1" 302 0
+[2026-08-17 20:30:03,881] [django.server::log_message::212] [INFO] "POST /user/login/ HTTP/1.1" 302 0
+[2026-08-17 20:30:03,914] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 20:30:03,914] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 20:30:09,650] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 20:30:09,650] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 21:28:35,660] [django.server::log_message::212] [INFO] "GET / HTTP/1.1" 302 0
+[2026-08-17 21:28:35,660] [django.server::log_message::212] [INFO] "GET / HTTP/1.1" 302 0
+[2026-08-17 21:28:36,211] [django.server::log_message::212] [INFO] "GET /user/login/ HTTP/1.1" 200 11151
+[2026-08-17 21:28:36,211] [django.server::log_message::212] [INFO] "GET /user/login/ HTTP/1.1" 200 11151
+[2026-08-17 21:28:36,742] [django.server::log_message::212] [INFO] "GET /static/css/main.03e0d1342adf.css HTTP/1.1" 200 15925
+[2026-08-17 21:28:36,742] [django.server::log_message::212] [INFO] "GET /static/css/main.03e0d1342adf.css HTTP/1.1" 200 15925
+[2026-08-17 21:28:36,743] [django.server::log_message::212] [INFO] "GET /react-app/main.css?v=df34d5 HTTP/1.1" 200 97894
+[2026-08-17 21:28:36,743] [django.server::log_message::212] [INFO] "GET /react-app/main.css?v=df34d5 HTTP/1.1" 200 97894
+[2026-08-17 21:28:39,375] [django.server::log_message::212] [INFO] "GET /static/css/fonts.hellix.ad84997f14b9.css HTTP/1.1" 200 366
+[2026-08-17 21:28:39,375] [django.server::log_message::212] [INFO] "GET /static/css/fonts.hellix.ad84997f14b9.css HTTP/1.1" 200 366
+[2026-08-17 21:28:39,377] [django.server::log_message::212] [INFO] "GET /static/css/login.f0ad478bae25.css HTTP/1.1" 200 6155
+[2026-08-17 21:28:39,377] [django.server::log_message::212] [INFO] "GET /static/css/login.f0ad478bae25.css HTTP/1.1" 200 6155
+[2026-08-17 21:28:39,588] [django.server::log_message::212] [INFO] "GET /static/icons/logo-black.64a55656e13e.svg HTTP/1.1" 200 9254
+[2026-08-17 21:28:39,588] [django.server::log_message::212] [INFO] "GET /static/icons/logo-black.64a55656e13e.svg HTTP/1.1" 200 9254
+[2026-08-17 21:28:39,590] [django.server::log_message::212] [INFO] "GET /static/images/human_signal_logo.97adf6f9a70c.svg HTTP/1.1" 200 5248
+[2026-08-17 21:28:39,590] [django.server::log_message::212] [INFO] "GET /static/images/human_signal_logo.97adf6f9a70c.svg HTTP/1.1" 200 5248
+[2026-08-17 21:28:41,430] [django.server::log_message::212] [INFO] "GET /static/fonts/Hellix-Regular.ce7e7fc9354f.woff HTTP/1.1" 200 51972
+[2026-08-17 21:28:41,430] [django.server::log_message::212] [INFO] "GET /static/fonts/Hellix-Regular.ce7e7fc9354f.woff HTTP/1.1" 200 51972
+[2026-08-17 21:28:41,432] [django.server::log_message::212] [INFO] "GET /static/images/login-bg.2c7fadf7bd88.svg HTTP/1.1" 200 529
+[2026-08-17 21:28:41,432] [django.server::log_message::212] [INFO] "GET /static/images/login-bg.2c7fadf7bd88.svg HTTP/1.1" 200 529
+[2026-08-17 21:28:41,432] [django.server::log_message::212] [INFO] "GET /static/fonts/Hellix-SemiBold.656fff162b3b.woff HTTP/1.1" 200 52680
+[2026-08-17 21:28:41,432] [django.server::log_message::212] [INFO] "GET /static/fonts/Hellix-SemiBold.656fff162b3b.woff HTTP/1.1" 200 52680
+[2026-08-17 21:28:41,433] [django.server::log_message::212] [INFO] "GET /static/images/heidi-tip.2e3228516929.svg HTTP/1.1" 200 39408
+[2026-08-17 21:28:41,433] [django.server::log_message::212] [INFO] "GET /static/images/heidi-tip.2e3228516929.svg HTTP/1.1" 200 39408
+[2026-08-17 21:28:41,829] [django.server::log_message::212] [INFO] "GET /heidi-tips HTTP/1.1" 200 10362
+[2026-08-17 21:28:41,829] [django.server::log_message::212] [INFO] "GET /heidi-tips HTTP/1.1" 200 10362
+[2026-08-17 21:28:43,259] [django.server::log_message::212] [INFO] "GET /user/signup HTTP/1.1" 200 12899
+[2026-08-17 21:28:43,259] [django.server::log_message::212] [INFO] "GET /user/signup HTTP/1.1" 200 12899
+[2026-08-17 21:28:43,825] [django.server::log_message::212] [INFO] "GET /static/images/favicon.8992b8aa4126.ico HTTP/1.1" 200 15406
+[2026-08-17 21:28:43,825] [django.server::log_message::212] [INFO] "GET /static/images/favicon.8992b8aa4126.ico HTTP/1.1" 200 15406
+[2026-08-17 21:28:44,362] [django.server::log_message::212] [INFO] "GET /static/images/heidi.a59f20dee6eb.png HTTP/1.1" 200 6849
+[2026-08-17 21:28:44,362] [django.server::log_message::212] [INFO] "GET /static/images/heidi.a59f20dee6eb.png HTTP/1.1" 200 6849
+[2026-08-17 21:28:46,404] [django.server::log_message::212] [INFO] "GET /static/images/favicon.8992b8aa4126.ico HTTP/1.1" 200 15406
+[2026-08-17 21:28:46,404] [django.server::log_message::212] [INFO] "GET /static/images/favicon.8992b8aa4126.ico HTTP/1.1" 200 15406
+[2026-08-17 21:29:05,428] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 200 13068
+[2026-08-17 21:29:05,428] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 200 13068
+[2026-08-17 21:29:06,074] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 200 13053
+[2026-08-17 21:29:06,074] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 200 13053
+[2026-08-17 21:29:19,277] [django.server::log_message::212] [INFO] "GET /user/login HTTP/1.1" 200 11151
+[2026-08-17 21:29:19,277] [django.server::log_message::212] [INFO] "GET /user/login HTTP/1.1" 200 11151
+[2026-08-17 21:29:31,662] [django.server::log_message::212] [INFO] "POST /user/login/?next=/projects/ HTTP/1.1" 200 11306
+[2026-08-17 21:29:31,662] [django.server::log_message::212] [INFO] "POST /user/login/?next=/projects/ HTTP/1.1" 200 11306
+[2026-08-17 21:29:40,052] [django.server::log_message::212] [INFO] "POST /user/login/?next=/projects/ HTTP/1.1" 200 11306
+[2026-08-17 21:29:40,052] [django.server::log_message::212] [INFO] "POST /user/login/?next=/projects/ HTTP/1.1" 200 11306
+[2026-08-17 21:31:15,496] [django.server::log_message::212] [INFO] "GET /user/signup HTTP/1.1" 200 12899
+[2026-08-17 21:31:15,496] [django.server::log_message::212] [INFO] "GET /user/signup HTTP/1.1" 200 12899
+[2026-08-17 21:31:32,071] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 200 13060
+[2026-08-17 21:31:32,071] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 200 13060
+[2026-08-17 21:32:05,710] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 302 0
+[2026-08-17 21:32:05,710] [django.server::log_message::212] [INFO] "POST /user/signup/?&next=/projects/ HTTP/1.1" 302 0
+[2026-08-17 21:32:06,180] [django.server::log_message::212] [INFO] "GET /projects/ HTTP/1.1" 200 33143
+[2026-08-17 21:32:06,180] [django.server::log_message::212] [INFO] "GET /projects/ HTTP/1.1" 200 33143
+[2026-08-17 21:32:08,328] [django.server::log_message::212] [INFO] "GET /static/css/uikit.e398ae7b8534.css HTTP/1.1" 200 3867
+[2026-08-17 21:32:08,328] [django.server::log_message::212] [INFO] "GET /static/css/uikit.e398ae7b8534.css HTTP/1.1" 200 3867
+[2026-08-17 21:32:08,331] [django.server::log_message::212] [INFO] "GET /react-app/runtime.js?v=df34d5 HTTP/1.1" 200 6144
+[2026-08-17 21:32:08,331] [django.server::log_message::212] [INFO] "GET /react-app/runtime.js?v=df34d5 HTTP/1.1" 200 6144
+[2026-08-17 21:32:10,100] [django.server::log_message::212] [INFO] "GET /react-app/vendor.js?v=1 HTTP/1.1" 200 267665
+[2026-08-17 21:32:10,100] [django.server::log_message::212] [INFO] "GET /react-app/vendor.js?v=1 HTTP/1.1" 200 267665
+[2026-08-17 21:32:10,101] [django.server::log_message::212] [INFO] "GET /static/js/jquery.min.e6c2415c0ace.js HTTP/1.1" 200 87462
+[2026-08-17 21:32:10,101] [django.server::log_message::212] [INFO] "GET /static/js/jquery.min.e6c2415c0ace.js HTTP/1.1" 200 87462
+[2026-08-17 21:32:10,104] [django.server::log_message::212] [INFO] "GET /react-app/main.js?v=df34d5 HTTP/1.1" 200 1226291
+[2026-08-17 21:32:10,104] [django.server::log_message::212] [INFO] "GET /react-app/main.js?v=df34d5 HTTP/1.1" 200 1226291
+[2026-08-17 21:32:32,131] [django.server::log_message::212] [INFO] "GET /sw.js HTTP/1.1" 200 6086
+[2026-08-17 21:32:32,131] [django.server::log_message::212] [INFO] "GET /sw.js HTTP/1.1" 200 6086
+[2026-08-17 21:32:32,132] [django.server::log_message::212] [INFO] "GET /static/icons/logo.svg HTTP/1.1" 200 9254
+[2026-08-17 21:32:32,132] [django.server::log_message::212] [INFO] "GET /static/icons/logo.svg HTTP/1.1" 200 9254
+[2026-08-17 21:32:32,136] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-SemiBold.ttf HTTP/1.1" 200 40852
+[2026-08-17 21:32:32,136] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-SemiBold.ttf HTTP/1.1" 200 40852
+[2026-08-17 21:32:32,138] [django.server::log_message::212] [INFO] "GET /api/version HTTP/1.1" 200 1031
+[2026-08-17 21:32:32,138] [django.server::log_message::212] [INFO] "GET /api/version HTTP/1.1" 200 1031
+[2026-08-17 21:32:32,150] [django.server::log_message::212] [INFO] "GET /api/projects?page=1&page_size=30&include=id%2Ctitle%2Ccreated_by%2Ccreated_at%2Ccolor%2Cis_published%2Cassignment_settings HTTP/1.1" 200 266
+[2026-08-17 21:32:32,150] [django.server::log_message::212] [INFO] "GET /api/projects?page=1&page_size=30&include=id%2Ctitle%2Ccreated_by%2Ccreated_at%2Ccolor%2Cis_published%2Cassignment_settings HTTP/1.1" 200 266
+[2026-08-17 21:32:32,695] [django.server::log_message::212] [INFO] "GET /projects/ HTTP/1.1" 200 33143
+[2026-08-17 21:32:32,695] [django.server::log_message::212] [INFO] "GET /projects/ HTTP/1.1" 200 33143
+[2026-08-17 21:32:32,712] [django.server::log_message::212] [INFO] "GET /api/projects?ids=1&include=id%2Cdescription%2Cnum_tasks_with_annotations%2Ctask_number%2Cskipped_annotations_number%2Ctotal_annotations_number%2Ctotal_predictions_number%2Cground_truth_number%2Cfinished_task_number&page_size=30 HTTP/1.1" 200 266
+[2026-08-17 21:32:32,712] [django.server::log_message::212] [INFO] "GET /api/projects?ids=1&include=id%2Cdescription%2Cnum_tasks_with_annotations%2Ctask_number%2Cskipped_annotations_number%2Ctotal_annotations_number%2Ctotal_predictions_number%2Cground_truth_number%2Cfinished_task_number&page_size=30 HTTP/1.1" 200 266
+[2026-08-17 21:32:32,736] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-Regular.ttf HTTP/1.1" 200 40584
+[2026-08-17 21:32:32,736] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-Regular.ttf HTTP/1.1" 200 40584
+[2026-08-17 21:33:51,293] [django.server::log_message::212] [INFO] "GET /react-app/531.css HTTP/1.1" 200 21839
+[2026-08-17 21:33:51,293] [django.server::log_message::212] [INFO] "GET /react-app/531.css HTTP/1.1" 200 21839
+[2026-08-17 21:33:51,304] [django.server::log_message::212] [INFO] "GET /react-app/814.css HTTP/1.1" 200 55058
+[2026-08-17 21:33:51,304] [django.server::log_message::212] [INFO] "GET /react-app/814.css HTTP/1.1" 200 55058
+[2026-08-17 21:33:51,309] [django.server::log_message::212] [INFO] "GET /react-app/23.js HTTP/1.1" 200 132126
+[2026-08-17 21:33:51,309] [django.server::log_message::212] [INFO] "GET /react-app/23.js HTTP/1.1" 200 132126
+[2026-08-17 21:33:51,313] [django.server::log_message::212] [INFO] "GET /react-app/531.js HTTP/1.1" 200 264141
+[2026-08-17 21:33:51,313] [django.server::log_message::212] [INFO] "GET /react-app/531.js HTTP/1.1" 200 264141
+[2026-08-17 21:33:51,318] [django.server::log_message::212] [INFO] "GET /react-app/814.js HTTP/1.1" 200 720959
+[2026-08-17 21:33:51,318] [django.server::log_message::212] [INFO] "GET /react-app/814.js HTTP/1.1" 200 720959
+[2026-08-17 21:33:51,320] [django.server::log_message::212] [INFO] "GET /react-app/724.css HTTP/1.1" 200 2020610
+[2026-08-17 21:33:51,320] [django.server::log_message::212] [INFO] "GET /react-app/724.css HTTP/1.1" 200 2020610
+[2026-08-17 21:34:24,586] [django.server::log_message::212] [INFO] "GET /react-app/724.js HTTP/1.1" 200 1187811
+[2026-08-17 21:34:24,586] [django.server::log_message::212] [INFO] "GET /react-app/724.js HTTP/1.1" 200 1187811
+[2026-08-17 21:34:24,588] [django.server::log_message::212] [INFO] "GET /react-app/637.js HTTP/1.1" 200 1592751
+[2026-08-17 21:34:24,588] [django.server::log_message::212] [INFO] "GET /react-app/637.js HTTP/1.1" 200 1592751
+[2026-08-17 21:34:55,048] [django.server::log_message::212] [INFO] "GET /projects/1/data HTTP/1.1" 200 33143
+[2026-08-17 21:34:55,048] [django.server::log_message::212] [INFO] "GET /projects/1/data HTTP/1.1" 200 33143
+[2026-08-17 21:34:55,580] [django.server::log_message::212] [INFO] "GET /static/css/uikit.e398ae7b8534.css HTTP/1.1" 200 3867
+[2026-08-17 21:34:55,580] [django.server::log_message::212] [INFO] "GET /static/css/uikit.e398ae7b8534.css HTTP/1.1" 200 3867
+[2026-08-17 21:34:55,581] [django.server::log_message::212] [INFO] "GET /static/css/main.03e0d1342adf.css HTTP/1.1" 200 15925
+[2026-08-17 21:34:55,581] [django.server::log_message::212] [INFO] "GET /static/css/main.03e0d1342adf.css HTTP/1.1" 200 15925
+[2026-08-17 21:34:56,804] [django.server::log_message::212] [INFO] "GET /react-app/runtime.js?v=df34d5 HTTP/1.1" 200 6144
+[2026-08-17 21:34:56,804] [django.server::log_message::212] [INFO] "GET /react-app/runtime.js?v=df34d5 HTTP/1.1" 200 6144
+[2026-08-17 21:34:56,818] [django.server::log_message::212] [INFO] "GET /react-app/main.css?v=df34d5 HTTP/1.1" 200 97894
+[2026-08-17 21:34:56,818] [django.server::log_message::212] [INFO] "GET /react-app/main.css?v=df34d5 HTTP/1.1" 200 97894
+[2026-08-17 21:34:56,821] [django.server::log_message::212] [INFO] "GET /react-app/vendor.js?v=1 HTTP/1.1" 200 267665
+[2026-08-17 21:34:56,821] [django.server::log_message::212] [INFO] "GET /react-app/vendor.js?v=1 HTTP/1.1" 200 267665
+[2026-08-17 21:34:56,823] [django.server::log_message::212] [INFO] "GET /react-app/main.js?v=df34d5 HTTP/1.1" 200 1226291
+[2026-08-17 21:34:56,823] [django.server::log_message::212] [INFO] "GET /react-app/main.js?v=df34d5 HTTP/1.1" 200 1226291
+[2026-08-17 21:35:03,645] [django.server::log_message::212] [INFO] "GET /static/js/jquery.min.e6c2415c0ace.js HTTP/1.1" 200 87462
+[2026-08-17 21:35:03,645] [django.server::log_message::212] [INFO] "GET /static/js/jquery.min.e6c2415c0ace.js HTTP/1.1" 200 87462
+[2026-08-17 21:35:05,217] [django.server::log_message::212] [INFO] "GET /api/version HTTP/1.1" 200 1031
+[2026-08-17 21:35:05,217] [django.server::log_message::212] [INFO] "GET /api/version HTTP/1.1" 200 1031
+[2026-08-17 21:35:05,218] [django.server::log_message::212] [INFO] "GET /static/icons/logo.svg HTTP/1.1" 200 9254
+[2026-08-17 21:35:05,218] [django.server::log_message::212] [INFO] "GET /static/icons/logo.svg HTTP/1.1" 200 9254
+[2026-08-17 21:35:05,234] [django.server::log_message::212] [INFO] "GET /api/projects/1 HTTP/1.1" 200 2748
+[2026-08-17 21:35:05,234] [django.server::log_message::212] [INFO] "GET /api/projects/1 HTTP/1.1" 200 2748
+[2026-08-17 21:35:05,464] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-SemiBold.ttf HTTP/1.1" 200 40852
+[2026-08-17 21:35:05,464] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-SemiBold.ttf HTTP/1.1" 200 40852
+[2026-08-17 21:35:05,729] [django.server::log_message::212] [INFO] "GET /api/ml?project=1 HTTP/1.1" 200 2
+[2026-08-17 21:35:05,729] [django.server::log_message::212] [INFO] "GET /api/ml?project=1 HTTP/1.1" 200 2
+[2026-08-17 21:35:06,053] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-Regular.ttf HTTP/1.1" 200 40584
+[2026-08-17 21:35:06,053] [django.server::log_message::212] [INFO] "GET /static/fonts/Figtree-Regular.ttf HTTP/1.1" 200 40584
+[2026-08-17 21:35:06,344] [django.server::log_message::212] [INFO] "GET /api/dm/columns?project=1 HTTP/1.1" 200 4257
+[2026-08-17 21:35:06,344] [django.server::log_message::212] [INFO] "GET /api/dm/columns?project=1 HTTP/1.1" 200 4257
+[2026-08-17 21:35:06,837] [django.server::log_message::212] [INFO] "GET /api/dm/project?project=1 HTTP/1.1" 200 2930
+[2026-08-17 21:35:06,837] [django.server::log_message::212] [INFO] "GET /api/dm/project?project=1 HTTP/1.1" 200 2930
+[2026-08-17 21:35:07,561] [django.server::log_message::212] [INFO] "GET /static/images/favicon.8992b8aa4126.ico HTTP/1.1" 200 15406
+[2026-08-17 21:35:07,561] [django.server::log_message::212] [INFO] "GET /static/images/favicon.8992b8aa4126.ico HTTP/1.1" 200 15406
+[2026-08-17 21:35:07,862] [django.server::log_message::212] [INFO] "GET /api/users?project=1 HTTP/1.1" 200 458
+[2026-08-17 21:35:07,862] [django.server::log_message::212] [INFO] "GET /api/users?project=1 HTTP/1.1" 200 458
+[2026-08-17 21:35:07,870] [django.server::log_message::212] [INFO] "GET /api/dm/views?project=1 HTTP/1.1" 200 2
+[2026-08-17 21:35:07,870] [django.server::log_message::212] [INFO] "GET /api/dm/views?project=1 HTTP/1.1" 200 2
+[2026-08-17 21:35:07,879] [django.server::log_message::212] [INFO] "GET /api/dm/actions?project=1 HTTP/1.1" 200 2095
+[2026-08-17 21:35:07,879] [django.server::log_message::212] [INFO] "GET /api/dm/actions?project=1 HTTP/1.1" 200 2095
+[2026-08-17 21:35:08,116] [django.server::log_message::212] [INFO] "GET /sw.js HTTP/1.1" 200 6086
+[2026-08-17 21:35:08,116] [django.server::log_message::212] [INFO] "GET /sw.js HTTP/1.1" 200 6086
+[2026-08-17 21:35:08,185] [django.server::log_message::212] [INFO] "POST /api/dm/views?tabID=0&project=1 HTTP/1.1" 201 973
+[2026-08-17 21:35:08,185] [django.server::log_message::212] [INFO] "POST /api/dm/views?tabID=0&project=1 HTTP/1.1" 201 973
+[2026-08-17 21:35:08,720] [django.server::log_message::212] [INFO] "GET /api/tasks?page=1&page_size=30&view=1&project=1 HTTP/1.1" 200 19041
+[2026-08-17 21:35:08,720] [django.server::log_message::212] [INFO] "GET /api/tasks?page=1&page_size=30&view=1&project=1 HTTP/1.1" 200 19041
+[2026-08-17 21:35:09,213] [django.server::log_message::212] [INFO] "GET /api/tasks?page=1&page_size=30&view=1&project=1 HTTP/1.1" 200 19041
+[2026-08-17 21:35:09,213] [django.server::log_message::212] [INFO] "GET /api/tasks?page=1&page_size=30&view=1&project=1 HTTP/1.1" 200 19041
+[2026-08-17 21:35:09,759] [django.server::log_message::212] [INFO] "GET /api/tasks?page=1&page_size=30&view=1&project=1 HTTP/1.1" 200 19041
+[2026-08-17 21:35:09,759] [django.server::log_message::212] [INFO] "GET /api/tasks?page=1&page_size=30&view=1&project=1 HTTP/1.1" 200 19041
+[2026-08-17 21:35:10,279] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 21:35:10,279] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 21:35:10,285] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000400.jpg HTTP/1.1" 200 810932
+[2026-08-17 21:35:10,286] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000300.jpg HTTP/1.1" 200 849051
+[2026-08-17 21:35:10,286] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000300.jpg HTTP/1.1" 200 849051
+[2026-08-17 21:35:10,285] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000400.jpg HTTP/1.1" 200 810932
+[2026-08-17 21:35:10,287] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000200.jpg HTTP/1.1" 200 839982
+[2026-08-17 21:35:10,287] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000200.jpg HTTP/1.1" 200 839982
+[2026-08-17 21:35:10,289] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000100.jpg HTTP/1.1" 200 776040
+[2026-08-17 21:35:10,289] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000100.jpg HTTP/1.1" 200 776040
+[2026-08-17 21:35:14,670] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000500.jpg HTTP/1.1" 200 848746
+[2026-08-17 21:35:14,670] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000500.jpg HTTP/1.1" 200 848746
+[2026-08-17 21:35:14,939] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000700.jpg HTTP/1.1" 200 830375
+[2026-08-17 21:35:14,939] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000700.jpg HTTP/1.1" 200 830375
+[2026-08-17 21:35:15,474] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000600.jpg HTTP/1.1" 200 813886
+[2026-08-17 21:35:15,474] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000600.jpg HTTP/1.1" 200 813886
+[2026-08-17 21:35:15,477] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000800.jpg HTTP/1.1" 200 786582
+[2026-08-17 21:35:15,477] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000800.jpg HTTP/1.1" 200 786582
+[2026-08-17 21:35:15,478] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000900.jpg HTTP/1.1" 200 817777
+[2026-08-17 21:35:15,478] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000900.jpg HTTP/1.1" 200 817777
+[2026-08-17 21:35:15,479] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001000.jpg HTTP/1.1" 200 793446
+[2026-08-17 21:35:15,479] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001000.jpg HTTP/1.1" 200 793446
+[2026-08-17 21:35:19,101] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001100.jpg HTTP/1.1" 200 781408
+[2026-08-17 21:35:19,101] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001100.jpg HTTP/1.1" 200 781408
+[2026-08-17 21:35:19,380] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001300.jpg HTTP/1.1" 200 790101
+[2026-08-17 21:35:19,380] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001300.jpg HTTP/1.1" 200 790101
+[2026-08-17 21:35:19,381] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001200.jpg HTTP/1.1" 200 808477
+[2026-08-17 21:35:19,381] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001200.jpg HTTP/1.1" 200 808477
+[2026-08-17 21:35:19,909] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001400.jpg HTTP/1.1" 200 822560
+[2026-08-17 21:35:19,909] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001400.jpg HTTP/1.1" 200 822560
+[2026-08-17 21:35:19,917] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001500.jpg HTTP/1.1" 200 831016
+[2026-08-17 21:35:19,917] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001500.jpg HTTP/1.1" 200 831016
+[2026-08-17 21:35:19,919] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001600.jpg HTTP/1.1" 200 807767
+[2026-08-17 21:35:19,919] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001600.jpg HTTP/1.1" 200 807767
+[2026-08-17 21:35:27,263] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001700.jpg HTTP/1.1" 200 829030
+[2026-08-17 21:35:27,263] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001700.jpg HTTP/1.1" 200 829030
+[2026-08-17 21:35:27,557] [django.server::log_message::212] [INFO] "GET /react-app/99.js HTTP/1.1" 200 1910
+[2026-08-17 21:35:27,557] [django.server::log_message::212] [INFO] "GET /react-app/99.js HTTP/1.1" 200 1910
+[2026-08-17 21:35:27,579] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001800.jpg HTTP/1.1" 200 817865
+[2026-08-17 21:35:27,579] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0001800.jpg HTTP/1.1" 200 817865
+[2026-08-17 21:35:27,594] [django.server::log_message::212] [INFO] "GET /api/tasks/1?project=1 HTTP/1.1" 200 2000
+[2026-08-17 21:35:27,594] [django.server::log_message::212] [INFO] "GET /api/tasks/1?project=1 HTTP/1.1" 200 2000
+[2026-08-17 21:35:29,925] [django.server::log_message::212] [INFO] "GET /api/projects/1/label-stream-history?project=1 HTTP/1.1" 200 2
+[2026-08-17 21:35:29,925] [django.server::log_message::212] [INFO] "GET /api/projects/1/label-stream-history?project=1 HTTP/1.1" 200 2
+[2026-08-17 21:35:29,928] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+[2026-08-17 21:35:29,928] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000000.jpg HTTP/1.1" 200 830419
+/storage/users/oauser/mvsa/env-labelstudio/lib64/python3.9/site-packages/rest_framework/pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'labels_manager.models.LabelLink'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+[2026-08-17 21:35:30,227] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:35:30,227] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:35:46,538] [django.server::log_message::212] [INFO] "POST /api/tasks/1/drafts?project=1 HTTP/1.1" 201 901
+[2026-08-17 21:35:46,538] [django.server::log_message::212] [INFO] "POST /api/tasks/1/drafts?project=1 HTTP/1.1" 201 901
+[2026-08-17 21:36:31,771] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1221
+[2026-08-17 21:36:31,771] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1221
+[2026-08-17 21:36:37,754] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 901
+[2026-08-17 21:36:37,754] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 901
+[2026-08-17 21:36:51,524] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 900
+[2026-08-17 21:36:51,524] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 900
+[2026-08-17 21:37:07,885] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1221
+[2026-08-17 21:37:07,885] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1221
+[2026-08-17 21:37:13,928] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1221
+[2026-08-17 21:37:13,928] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1221
+[2026-08-17 21:37:24,215] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 901
+[2026-08-17 21:37:24,215] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 901
+[2026-08-17 21:37:34,744] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1222
+[2026-08-17 21:37:34,744] [django.server::log_message::212] [INFO] "PATCH /api/drafts/1?project=1 HTTP/1.1" 200 1222
+[2026-08-17 21:37:41,819] [django.server::log_message::212] [INFO] "POST /api/tasks/1/annotations?project=1 HTTP/1.1" 201 1698
+[2026-08-17 21:37:41,819] [django.server::log_message::212] [INFO] "POST /api/tasks/1/annotations?project=1 HTTP/1.1" 201 1698
+[2026-08-17 21:37:42,814] [django.server::log_message::212] [INFO] "GET /api/tasks/1?project=1 HTTP/1.1" 200 4282
+[2026-08-17 21:37:42,814] [django.server::log_message::212] [INFO] "GET /api/tasks/1?project=1 HTTP/1.1" 200 4282
+[2026-08-17 21:37:43,621] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:37:43,621] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:37:55,644] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:37:55,644] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:37:55,665] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000100.jpg HTTP/1.1" 200 776040
+[2026-08-17 21:37:55,665] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000100.jpg HTTP/1.1" 200 776040
+[2026-08-17 21:38:16,206] [django.server::log_message::212] [INFO] "GET /api/tasks/2?project=1 HTTP/1.1" 200 2228
+[2026-08-17 21:38:16,206] [django.server::log_message::212] [INFO] "GET /api/tasks/2?project=1 HTTP/1.1" 200 2228
+[2026-08-17 21:38:32,682] [django.server::log_message::212] [INFO] "POST /api/tasks/2/annotations?project=1 HTTP/1.1" 201 1299
+[2026-08-17 21:38:32,682] [django.server::log_message::212] [INFO] "POST /api/tasks/2/annotations?project=1 HTTP/1.1" 201 1299
+[2026-08-17 21:38:33,142] [django.server::log_message::212] [INFO] "GET /api/tasks/2?project=1 HTTP/1.1" 200 4107
+[2026-08-17 21:38:33,142] [django.server::log_message::212] [INFO] "GET /api/tasks/2?project=1 HTTP/1.1" 200 4107
+[2026-08-17 21:38:33,673] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:38:33,673] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:39:02,617] [django.server::log_message::212] [INFO] "PATCH /api/annotations/2?taskID=2&project=1 HTTP/1.1" 200 1620
+[2026-08-17 21:39:02,617] [django.server::log_message::212] [INFO] "PATCH /api/annotations/2?taskID=2&project=1 HTTP/1.1" 200 1620
+[2026-08-17 21:39:03,363] [django.server::log_message::212] [INFO] "GET /api/tasks/2?project=1 HTTP/1.1" 200 4428
+[2026-08-17 21:39:03,363] [django.server::log_message::212] [INFO] "GET /api/tasks/2?project=1 HTTP/1.1" 200 4428
+[2026-08-17 21:39:03,894] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:39:03,894] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:39:06,771] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:39:06,771] [django.server::log_message::212] [INFO] "GET /api/label_links?project=1&expand=label HTTP/1.1" 200 52
+[2026-08-17 21:39:07,005] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000200.jpg HTTP/1.1" 200 839982
+[2026-08-17 21:39:07,005] [django.server::log_message::212] [INFO] "GET /data/local-files/?d=uvh26_review/images/08.00.00-09.00.00_f0000200.jpg HTTP/1.1" 200 839982
+[2026-08-17 21:39:27,651] [django.server::log_message::212] [INFO] "GET /api/tasks/3?project=1 HTTP/1.1" 200 1953
+[2026-08-17 21:39:27,651] [django.server::log_message::212] [INFO] "GET /api/tasks/3?project=1 HTTP/1.1" 200 1953
+[2026-08-17 21:39:49,629] [django.server::log_message::212] [INFO] "POST /api/tasks/3/drafts?project=1 HTTP/1.1" 201 581
+[2026-08-17 21:39:49,629] [django.server::log_message::212] [INFO] "POST /api/tasks/3/drafts?project=1 HTTP/1.1" 201 581

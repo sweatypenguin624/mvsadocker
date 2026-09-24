@@ -1,0 +1,239 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+import time
+from pathlib import Path
+import yaml
+import json
+import csv
+
+SCRIPTS_DIR = Path(__file__).resolve().parent.parent.parent.parent / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.append(str(SCRIPTS_DIR))
+
+from video_utils import VideoStreamReader, probe_video
+from utils import setup_logger, ensure_dir
+from detector import VehicleDetector
+from filters import DetectionFilter
+from tracker import VehicleTracker
+from counter import VehicleCounter
+from output import Annotator
+from goods_crops import GoodsCropManager, GOODS_VEHICLE_NATIVE_CLASSES
+
+def load_config(path):
+    with open(path, 'r') as f:
+        return yaml.safe_load(f)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--video", type=str, required=True)
+    parser.add_argument("--output_dir", type=str, default=None)
+    parser.add_argument("--save_annotated_video", action="store_true")
+    args = parser.parse_args()
+
+    config_path = Path(__file__).resolve().parent.parent.parent / "config" / "vehicle_count_config.yaml"
+    config = load_config(config_path)
+    
+    if args.output_dir:
+        config["output"]["results_dir"] = args.output_dir
+    if args.save_annotated_video:
+        config["output"]["save_annotated_video"] = True
+
+    model_path = config["model"]["yolo_weights"]
+    if not Path(model_path).is_absolute():
+        config["model"]["yolo_weights"] = str(SCRIPTS_DIR.parent / model_path)
+    
+    if "track_buffer" in config.get("tracker", {}):
+        tracker_file = config.get("model", {}).get("tracker", "bytetrack.yaml")
+        base_tracker_type = "botsort" if "botsort" in tracker_file.lower() else "bytetrack"
+        
+        bt_config = {
+            "tracker_type": base_tracker_type,
+            "track_high_thresh": config["tracker"].get("track_high_thresh", 0.5),
+            "track_low_thresh": config["tracker"].get("track_low_thresh", 0.1),
+            "new_track_thresh": config["tracker"].get("new_track_thresh", 0.6),
+            "track_buffer": config["tracker"].get("track_buffer", 30),
+            "match_thresh": config["tracker"].get("match_thresh", 0.8),
+            "fuse_score": config["tracker"].get("fuse_score", True)
+        }
+        if base_tracker_type == "botsort":
+            bt_config["gmc_method"] = "sparseOptFlow"
+            bt_config["proximity_thresh"] = 0.5
+            bt_config["appearance_thresh"] = 0.25
+            bt_config["with_reid"] = config["tracker"].get("with_reid", False)
+            bt_config["model"] = config["tracker"].get("reid_model", "auto")
+            
+        bt_path = Path(config_path).parent / "custom_bytetrack.yaml"
+        with open(bt_path, 'w') as f:
+            yaml.dump(bt_config, f)
+
+    output_dir = Path(config["output"]["results_dir"])
+    ensure_dir(output_dir)
+    
+    setup_logger(output_dir / config["logging"]["filename"], config["logging"]["level"], "uvh_test")
+    import logging
+    logger = logging.getLogger("uvh_test.main")
+
+    video_path = Path(args.video)
+    logger.info(f"Processing video: {video_path}")
+    
+    roi_json_path = Path(config_path).parent / "camera_rois.json"
+    if roi_json_path.exists():
+        with open(roi_json_path, "r") as f:
+            rois_db = json.load(f)
+        vid_basename = video_path.name
+        if vid_basename in rois_db:
+            cam_roi = rois_db[vid_basename]
+            if "counting_line" in cam_roi:
+                config["roi"]["counting_line"] = cam_roi["counting_line"]
+            if "road_polygon" in cam_roi:
+                config["roi"]["road_polygon"] = cam_roi["road_polygon"]
+            logger.info(f"Loaded dynamic ROI for camera: {vid_basename} from camera_rois.json")
+        else:
+            logger.warning(f"No entry found for {vid_basename} in camera_rois.json. Using default config ROI.")
+    
+    detector = VehicleDetector(
+        model_path=config["model"]["yolo_weights"],
+        device=config["model"]["device"],
+        conf_thres=config["model"]["confidence"],
+        imgsz=config["model"]["imgsz"]
+    )
+
+    filt = DetectionFilter(
+        min_area=config["filters"]["min_box_area"],
+        min_width=config["filters"]["min_width"],
+        min_height=config["filters"]["min_height"],
+        class_names=detector.class_names
+    )
+
+    tracker = VehicleTracker(min_track_frames=config["tracker"]["min_track_frames"])
+    
+    counter = VehicleCounter(
+        line_pt1=config["roi"]["counting_line"][0],
+        line_pt2=config["roi"]["counting_line"][1],
+        direction=config["roi"]["count_direction"]
+    )
+    
+    ffprobe_bin = SCRIPTS_DIR.parent / "tools/ffprobe"
+    video_info = probe_video(video_path, ffprobe_bin)
+    width, height, fps = video_info.width, video_info.height, video_info.fps
+    if not fps or fps <= 0: fps = 20.0
+
+    processing_cfg = config.get("processing", {})
+    processing_fps = processing_cfg.get("processing_fps", 15)
+    max_duration_minutes = processing_cfg.get("max_duration_minutes", 0)
+
+    goods_crops_cfg = config.get("goods_crops", {})
+    goods_crop_manager = GoodsCropManager(
+        max_per_track=int(goods_crops_cfg.get("max_per_track", 5)),
+    ) if goods_crops_cfg.get("enabled", False) else None
+
+    annotator = None
+    if config["output"]["save_annotated_video"]:
+        annotator = Annotator(
+            output_path=output_dir / "annotated.mp4",
+            fps=fps, width=width, height=height,
+            debug_mode=config.get("output", {}).get("debug_mode", False),
+            live_stream=config.get("output", {}).get("live_stream", False)
+        )
+
+    total_frames = 0
+    records = []
+
+    with VideoStreamReader(video_path) as reader:
+        read_start = time.time()
+        time_per_frame = 1.0 / processing_fps if processing_fps > 0 else 0
+        next_process_time = 0.0
+
+        for frame_idx, frame in reader.frames(start_frame=0):
+            frame_time = frame_idx / fps
+            if processing_fps > 0 and frame_time < next_process_time - 1e-5:
+                continue
+            
+            next_process_time += time_per_frame
+            total_frames += 1
+
+            tracked_results = detector.model.track(
+                source=frame,
+                persist=True,
+                tracker=str(Path(config_path).parent / "custom_bytetrack.yaml") if "track_buffer" in config.get("tracker", {}) else config["model"]["tracker"],
+                verbose=False,
+                imgsz=config["model"]["imgsz"],
+                device=config["model"]["device"],
+                conf=config["model"]["confidence"]
+            )
+            
+            result = tracked_results[0]
+            filtered_boxes, _ = filt.filter_boxes(result.boxes)
+            
+            if filtered_boxes is not None and len(filtered_boxes) > 0:
+                active_tracks = tracker.update(frame_idx, filtered_boxes)
+            else:
+                active_tracks = []
+                
+            newly_counted = counter.process_tracks(active_tracks, detector.class_names)
+            for nc in newly_counted:
+                nc["frame"] = frame_idx
+                records.append(nc)
+                logger.debug(f"frame={frame_idx} COUNTED track_id={nc['track_id']} class={nc['class']}")
+
+            if goods_crop_manager:
+                for tid, state, box in active_tracks:
+                    stable_class = state.get_stable_class(detector.class_names)
+                    conf = state.conf_history[-1] if state.conf_history else 0.0
+                    goods_crop_manager.consider(tid, stable_class, box, conf, frame_idx, frame)
+
+            if annotator:
+                annotator.draw_line(frame, config["roi"]["counting_line"][0], config["roi"]["counting_line"][1])
+                for tid, state, box in active_tracks:
+                    stable_class = state.get_stable_class(detector.class_names)
+                    conf = state.conf_history[-1] if state.conf_history else 0.0
+                    annotator.draw_track(frame, box, tid, stable_class, conf, state.counted, state_str=state.state.value)
+                y_offset = 30
+                import cv2
+                for cls_name, count in counter.counts_by_class.items():
+                    cv2.putText(frame, f"{cls_name}: {count}", (20, y_offset), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
+                    y_offset += 30
+                annotator.write_frame(frame)
+                
+            if max_duration_minutes > 0 and (total_frames / fps) >= (max_duration_minutes * 60):
+                logger.info(f"HARD STOP at {max_duration_minutes} minutes reached.")
+                break
+
+    if annotator:
+        annotator.close()
+
+    # Written before goods-crop export so tracking results are never lost
+    # even if crop writing fails (e.g. disk/serialization error) -- Layer 2
+    # (scripts/traffic_layer2/) reads this to find Goods-Vehicle-class
+    # tracks and joins them with goods_tracks/ crops written below.
+    tracks_jsonl_path = output_dir / "tracks.jsonl"
+    with open(tracks_jsonl_path, "w") as f:
+        for tid, state in tracker.tracks.items():
+            stable_class = state.get_stable_class(detector.class_names)
+            f.write(json.dumps({
+                "track_id": int(tid),
+                "class": stable_class,
+                "confidence": round(state.mean_confidence, 4),
+                "direction": state.crossing_direction or "indeterminate",
+                "first_frame": state.first_seen_frame,
+                "last_frame": state.last_seen_frame,
+                "frames_seen": len(state.class_history),
+                "counted": state.counted,
+                "has_goods_crops": bool(goods_crop_manager) and stable_class in GOODS_VEHICLE_NATIVE_CLASSES,
+            }) + "\n")
+    logger.info(f"Wrote {tracks_jsonl_path}")
+
+    if goods_crop_manager:
+        try:
+            written = goods_crop_manager.write_all(output_dir, tracker, detector.class_names)
+            logger.info(f"Wrote goods-vehicle crops for {len(written)} track(s) under {output_dir / 'goods_tracks'}")
+        except Exception:
+            logger.exception("Goods-vehicle crop export failed -- tracks.jsonl above is unaffected")
+
+    logger.info("Processing complete. Final Counts:")
+    for cls_name, count in counter.counts_by_class.items():
+        logger.info(f"{cls_name}: {count}")
+
+if __name__ == "__main__":
+    main()

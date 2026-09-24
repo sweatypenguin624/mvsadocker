@@ -1,0 +1,32 @@
+# ByteTrack tuning for MVSA pedestrian counting, overriding Ultralytics'
+# bundled bytetrack.yaml defaults. Referenced from config/config.yaml's
+# model.tracker (resolved to an absolute path in pipeline.py's
+# _build_detector -- see the comment there for why).
+#
+# Only track_buffer is changed from Ultralytics' default (30 -> 60). Root
+# cause: reviewing peds_18_kamaripet_police_station_cam_5_20260728_1208
+# showed several real pedestrian-vs-rider misclassifications traced back to
+# a person's ByteTrack ID being dropped and reassigned during a brief
+# occlusion -- most commonly mounting/dismounting a two-wheeler, which also
+# happens to be the exact moment the rider_filter's bbox-overlap heuristic
+# is least reliable (the body occludes the vehicle from the detector's
+# view). At 20fps, 30 frames = 1.5s of tolerance before a lost track is
+# discarded and any reappearance gets a brand-new ID -- too short to
+# survive a typical 1-2s mount/dismount occlusion. 60 frames = 3s gives
+# ByteTrack enough tolerance to re-associate the person with their original
+# track instead of spawning a short-lived fragment, which both reduces
+# double-counting and gives rider_filter's per-track majority vote (see
+# scripts/rider_filter.py::aggregate_track_rider_status) more frames to
+# average over. Tracker docs warn that a larger buffer raises the risk of
+# incorrectly re-associating an unrelated new detection with an old lost
+# track in a dense scene; 60 was chosen as a moderate increase (not e.g.
+# 150+) to bound that risk while still covering the observed occlusion
+# durations. Re-validate against tracks.csv/tracked.mp4 if applied to a
+# much more crowded camera.
+tracker_type: bytetrack
+track_high_thresh: 0.25
+track_low_thresh: 0.1
+new_track_thresh: 0.25
+track_buffer: 60
+match_thresh: 0.8
+fuse_score: True

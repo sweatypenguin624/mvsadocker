@@ -1,0 +1,64 @@
+{
+    "input_video": "/home/users/oauser/mvsa/Data Corp - Dataset/DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/CVC - 24 hour CVC/CVC 3 - Haliyal Road/Cam 2 - Backup/2026-07-21/20260721_085356_tp00024.mp4",
+    "model": "/storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt",
+    "frames_processed": 34640,
+    "processing_time_sec": 1774.312865972519,
+    "processing_fps": 19.52305067743138,
+    "profiling_sec": {
+        "video_read": 91.17305707931519,
+        "yolo_inference": 779.6019444465637,
+        "filtering_and_logic": 8.035860776901245,
+        "annotation": 895.0712368488312
+    },
+    "filter_stats": {
+        "raw_detections": 40098,
+        "low_conf": 0,
+        "too_small": 309,
+        "invalid_class": 0,
+        "passed_filter": 39789,
+        "tracks_created": 613
+    },
+    "tracks_created": 613,
+    "tracks_confirmed": 587,
+    "tracks_rejected_before_confirmation": 26,
+    "tracks_counted": 175,
+    "duplicate_count_preventions": 0,
+    "count_by_class": {
+        "Two-wheeler": 98,
+        "LCV": 6,
+        "Bus": 25,
+        "Truck": 11,
+        "tempo-traveller": 1,
+        "SUV": 16,
+        "Sedan": 4,
+        "Hatchback": 6,
+        "MUV": 3,
+        "Van": 4,
+        "Three-wheeler": 1
+    },
+    "interval_counts": {
+        "08:00:00 - 08:15:00": {
+            "Two-wheeler": 53,
+            "LCV": 2,
+            "Bus": 7,
+            "Truck": 5,
+            "tempo-traveller": 1,
+            "SUV": 5,
+            "Sedan": 1,
+            "Hatchback": 2,
+            "MUV": 1
+        },
+        "08:15:00 - 08:30:00": {
+            "Two-wheeler": 45,
+            "Bus": 18,
+            "Truck": 6,
+            "Hatchback": 4,
+            "Sedan": 3,
+            "Van": 4,
+            "SUV": 11,
+            "LCV": 4,
+            "MUV": 2,
+            "Three-wheeler": 1
+        }
+    }
+}

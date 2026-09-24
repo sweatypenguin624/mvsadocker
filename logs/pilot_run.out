@@ -1,0 +1,7 @@
+2026-08-14 02:40:55,860 [INFO] batch run starting: 1 video(s) eligible (retry_failed=False, resume=False)
+2026-08-14 02:40:55,861 [INFO] -> peds_10_kle_technological_university_cam_1_20260728_0800 (Data Corp /DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/Peds - 1 Day and 12 hour/PEDS 10 - KLE Technological University/Cam 1/2026-07-28/08.00.00-09.00.00[R][0@0][0].dav)
+2026-08-14 02:40:55,862 [INFO] Already downloaded, skipping: /storage/users/oauser/mvsa/work/downloads/peds_10_kle_technological_university_cam_1_20260728_0800.dav
+2026-08-14 02:40:55,862 [INFO] Already converted, skipping: /storage/users/oauser/mvsa/work/converted/peds_10_kle_technological_university_cam_1_20260728_0800.mp4
+2026-08-14 03:41:29,197 [INFO] <- peds_10_kle_technological_university_cam_1_20260728_0800 done
+2026-08-14 03:41:29,198 [INFO] batch run finished: 1 done, 0 failed this run
+2026-08-14 03:41:29,198 [INFO] Done: 1 succeeded, 0 failed this run. See /storage/users/oauser/mvsa/queue/manifest.csv for full status.

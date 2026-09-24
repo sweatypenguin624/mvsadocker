@@ -1,0 +1,237 @@
+2026-08-17 13:47:42 [WARNING] mvsa: Dependency check: torch version is 2.3.0+cu121, expected 2.1.0+cu118 (the cluster's working environment). If this run is on the research server, verify nothing (e.g. pip installing insightface without --no-deps) upgraded it.
+2026-08-17 13:47:43 [WARNING] mvsa: Dependency check: torchvision version is 0.18.0+cu121, expected 0.16.0+cu118 (the cluster's working environment). If this run is on the research server, verify nothing (e.g. pip installing insightface without --no-deps) upgraded it.
+2026-08-17 13:47:43 [INFO] mvsa: Dependency check: numpy 1.26.1 OK
+2026-08-17 13:47:43 [INFO] mvsa: Starting mode=detect run_name=peds_10_kle_technological_university_cam_3_20260728_0800 video=/storage/users/oauser/mvsa/work/converted/peds_10_kle_technological_university_cam_3_20260728_0800.mp4 (1920x1080, ~89983 frames, 25.0 fps)
+2026-08-17 13:47:45 [INFO] mvsa: Loaded YOLO model yolo11x.pt (device=0, imgsz=1280, conf=0.35, classes=[0, 1, 2, 3, 5, 7], tracker=/storage/users/oauser/mvsa/config/tracking/pedestrian_bytetrack.yaml)
+2026-08-17 13:48:06 [INFO] mvsa: Checkpoint saved at frame 500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:48:26 [INFO] mvsa: Checkpoint saved at frame 1000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:48:47 [INFO] mvsa: Checkpoint saved at frame 1500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:49:07 [INFO] mvsa: Checkpoint saved at frame 2000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:49:07 [INFO] mvsa: Progress: frame 2000/89983, counted=47, elapsed=82.1s
+2026-08-17 13:49:27 [INFO] mvsa: Checkpoint saved at frame 2500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:49:47 [INFO] mvsa: Checkpoint saved at frame 3000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:50:07 [INFO] mvsa: Checkpoint saved at frame 3500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:50:28 [INFO] mvsa: Checkpoint saved at frame 4000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:50:28 [INFO] mvsa: Progress: frame 4000/89983, counted=92, elapsed=162.9s
+2026-08-17 13:50:48 [INFO] mvsa: Checkpoint saved at frame 4500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:51:10 [INFO] mvsa: Checkpoint saved at frame 5000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:51:31 [INFO] mvsa: Checkpoint saved at frame 5500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:51:51 [INFO] mvsa: Checkpoint saved at frame 6000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:51:51 [INFO] mvsa: Progress: frame 6000/89983, counted=219, elapsed=246.3s
+2026-08-17 13:52:11 [INFO] mvsa: Checkpoint saved at frame 6500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:52:32 [INFO] mvsa: Checkpoint saved at frame 7000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:52:53 [INFO] mvsa: Checkpoint saved at frame 7500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:53:14 [INFO] mvsa: Checkpoint saved at frame 8000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:53:14 [INFO] mvsa: Progress: frame 8000/89983, counted=258, elapsed=329.4s
+2026-08-17 13:53:35 [INFO] mvsa: Checkpoint saved at frame 8500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:53:56 [INFO] mvsa: Checkpoint saved at frame 9000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:54:18 [INFO] mvsa: Checkpoint saved at frame 9500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:54:40 [INFO] mvsa: Checkpoint saved at frame 10000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:54:40 [INFO] mvsa: Progress: frame 10000/89983, counted=426, elapsed=414.9s
+2026-08-17 13:55:01 [INFO] mvsa: Checkpoint saved at frame 10500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:55:22 [INFO] mvsa: Checkpoint saved at frame 11000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:55:44 [INFO] mvsa: Checkpoint saved at frame 11500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:56:05 [INFO] mvsa: Checkpoint saved at frame 12000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:56:05 [INFO] mvsa: Progress: frame 12000/89983, counted=492, elapsed=500.4s
+2026-08-17 13:56:27 [INFO] mvsa: Checkpoint saved at frame 12500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:56:49 [INFO] mvsa: Checkpoint saved at frame 13000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:57:11 [INFO] mvsa: Checkpoint saved at frame 13500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:57:32 [INFO] mvsa: Checkpoint saved at frame 14000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:57:32 [INFO] mvsa: Progress: frame 14000/89983, counted=576, elapsed=587.5s
+2026-08-17 13:57:55 [INFO] mvsa: Checkpoint saved at frame 14500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:58:17 [INFO] mvsa: Checkpoint saved at frame 15000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:58:39 [INFO] mvsa: Checkpoint saved at frame 15500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:59:01 [INFO] mvsa: Checkpoint saved at frame 16000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:59:01 [INFO] mvsa: Progress: frame 16000/89983, counted=774, elapsed=676.1s
+2026-08-17 13:59:22 [INFO] mvsa: Checkpoint saved at frame 16500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 13:59:43 [INFO] mvsa: Checkpoint saved at frame 17000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:00:06 [INFO] mvsa: Checkpoint saved at frame 17500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:00:28 [INFO] mvsa: Checkpoint saved at frame 18000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:00:28 [INFO] mvsa: Progress: frame 18000/89983, counted=847, elapsed=763.6s
+2026-08-17 14:00:50 [INFO] mvsa: Checkpoint saved at frame 18500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:01:12 [INFO] mvsa: Checkpoint saved at frame 19000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:01:34 [INFO] mvsa: Checkpoint saved at frame 19500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:01:55 [INFO] mvsa: Checkpoint saved at frame 20000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:01:55 [INFO] mvsa: Progress: frame 20000/89983, counted=917, elapsed=850.5s
+2026-08-17 14:02:18 [INFO] mvsa: Checkpoint saved at frame 20500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:02:40 [INFO] mvsa: Checkpoint saved at frame 21000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:03:02 [INFO] mvsa: Checkpoint saved at frame 21500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:03:23 [INFO] mvsa: Checkpoint saved at frame 22000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:03:23 [INFO] mvsa: Progress: frame 22000/89983, counted=994, elapsed=938.7s
+2026-08-17 14:03:44 [INFO] mvsa: Checkpoint saved at frame 22500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:04:06 [INFO] mvsa: Checkpoint saved at frame 23000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:04:27 [INFO] mvsa: Checkpoint saved at frame 23500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:04:50 [INFO] mvsa: Checkpoint saved at frame 24000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:04:50 [INFO] mvsa: Progress: frame 24000/89983, counted=1109, elapsed=1025.0s
+2026-08-17 14:05:12 [INFO] mvsa: Checkpoint saved at frame 24500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:05:35 [INFO] mvsa: Checkpoint saved at frame 25000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:05:58 [INFO] mvsa: Checkpoint saved at frame 25500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:06:21 [INFO] mvsa: Checkpoint saved at frame 26000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:06:21 [INFO] mvsa: Progress: frame 26000/89983, counted=1295, elapsed=1116.7s
+2026-08-17 14:06:44 [INFO] mvsa: Checkpoint saved at frame 26500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:07:07 [INFO] mvsa: Checkpoint saved at frame 27000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:07:31 [INFO] mvsa: Checkpoint saved at frame 27500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:07:54 [INFO] mvsa: Checkpoint saved at frame 28000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:07:54 [INFO] mvsa: Progress: frame 28000/89983, counted=1397, elapsed=1209.4s
+2026-08-17 14:08:18 [INFO] mvsa: Checkpoint saved at frame 28500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:08:42 [INFO] mvsa: Checkpoint saved at frame 29000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:09:06 [INFO] mvsa: Checkpoint saved at frame 29500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:09:30 [INFO] mvsa: Checkpoint saved at frame 30000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:09:30 [INFO] mvsa: Progress: frame 30000/89983, counted=1557, elapsed=1305.0s
+2026-08-17 14:09:55 [INFO] mvsa: Checkpoint saved at frame 30500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:10:18 [INFO] mvsa: Checkpoint saved at frame 31000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:10:42 [INFO] mvsa: Checkpoint saved at frame 31500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:11:06 [INFO] mvsa: Checkpoint saved at frame 32000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:11:06 [INFO] mvsa: Progress: frame 32000/89983, counted=1727, elapsed=1401.2s
+2026-08-17 14:11:31 [INFO] mvsa: Checkpoint saved at frame 32500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:11:56 [INFO] mvsa: Checkpoint saved at frame 33000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:12:20 [INFO] mvsa: Checkpoint saved at frame 33500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:12:44 [INFO] mvsa: Checkpoint saved at frame 34000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:12:44 [INFO] mvsa: Progress: frame 34000/89983, counted=1945, elapsed=1499.8s
+2026-08-17 14:13:08 [INFO] mvsa: Checkpoint saved at frame 34500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:13:32 [INFO] mvsa: Checkpoint saved at frame 35000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:13:56 [INFO] mvsa: Checkpoint saved at frame 35500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:14:20 [INFO] mvsa: Checkpoint saved at frame 36000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:14:20 [INFO] mvsa: Progress: frame 36000/89983, counted=2035, elapsed=1595.8s
+2026-08-17 14:14:45 [INFO] mvsa: Checkpoint saved at frame 36500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:15:09 [INFO] mvsa: Checkpoint saved at frame 37000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:15:33 [INFO] mvsa: Checkpoint saved at frame 37500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:15:57 [INFO] mvsa: Checkpoint saved at frame 38000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:15:57 [INFO] mvsa: Progress: frame 38000/89983, counted=2152, elapsed=1692.8s
+2026-08-17 14:16:22 [INFO] mvsa: Checkpoint saved at frame 38500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:16:46 [INFO] mvsa: Checkpoint saved at frame 39000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:17:10 [INFO] mvsa: Checkpoint saved at frame 39500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:17:35 [INFO] mvsa: Checkpoint saved at frame 40000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:17:35 [INFO] mvsa: Progress: frame 40000/89983, counted=2253, elapsed=1790.0s
+2026-08-17 14:18:00 [INFO] mvsa: Checkpoint saved at frame 40500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:18:24 [INFO] mvsa: Checkpoint saved at frame 41000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:18:49 [INFO] mvsa: Checkpoint saved at frame 41500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:19:13 [INFO] mvsa: Checkpoint saved at frame 42000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:19:13 [INFO] mvsa: Progress: frame 42000/89983, counted=2389, elapsed=1888.0s
+2026-08-17 14:19:38 [INFO] mvsa: Checkpoint saved at frame 42500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:20:04 [INFO] mvsa: Checkpoint saved at frame 43000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:20:28 [INFO] mvsa: Checkpoint saved at frame 43500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:20:53 [INFO] mvsa: Checkpoint saved at frame 44000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:20:53 [INFO] mvsa: Progress: frame 44000/89983, counted=2486, elapsed=1988.7s
+2026-08-17 14:21:19 [INFO] mvsa: Checkpoint saved at frame 44500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:21:45 [INFO] mvsa: Checkpoint saved at frame 45000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:22:10 [INFO] mvsa: Checkpoint saved at frame 45500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:22:35 [INFO] mvsa: Checkpoint saved at frame 46000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:22:35 [INFO] mvsa: Progress: frame 46000/89983, counted=2600, elapsed=2090.5s
+2026-08-17 14:23:01 [INFO] mvsa: Checkpoint saved at frame 46500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:23:27 [INFO] mvsa: Checkpoint saved at frame 47000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:23:52 [INFO] mvsa: Checkpoint saved at frame 47500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:24:17 [INFO] mvsa: Checkpoint saved at frame 48000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:24:17 [INFO] mvsa: Progress: frame 48000/89983, counted=2715, elapsed=2192.5s
+2026-08-17 14:24:43 [INFO] mvsa: Checkpoint saved at frame 48500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:25:08 [INFO] mvsa: Checkpoint saved at frame 49000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:25:32 [INFO] mvsa: Checkpoint saved at frame 49500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:25:57 [INFO] mvsa: Checkpoint saved at frame 50000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:25:57 [INFO] mvsa: Progress: frame 50000/89983, counted=2820, elapsed=2291.9s
+2026-08-17 14:26:21 [INFO] mvsa: Checkpoint saved at frame 50500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:26:47 [INFO] mvsa: Checkpoint saved at frame 51000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:27:14 [INFO] mvsa: Checkpoint saved at frame 51500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:27:40 [INFO] mvsa: Checkpoint saved at frame 52000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:27:40 [INFO] mvsa: Progress: frame 52000/89983, counted=3035, elapsed=2395.7s
+2026-08-17 14:28:07 [INFO] mvsa: Checkpoint saved at frame 52500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:28:34 [INFO] mvsa: Checkpoint saved at frame 53000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:29:00 [INFO] mvsa: Checkpoint saved at frame 53500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:29:27 [INFO] mvsa: Checkpoint saved at frame 54000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:29:27 [INFO] mvsa: Progress: frame 54000/89983, counted=3201, elapsed=2501.9s
+2026-08-17 14:29:53 [INFO] mvsa: Checkpoint saved at frame 54500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:30:19 [INFO] mvsa: Checkpoint saved at frame 55000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:30:46 [INFO] mvsa: Checkpoint saved at frame 55500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:31:14 [INFO] mvsa: Checkpoint saved at frame 56000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:31:14 [INFO] mvsa: Progress: frame 56000/89983, counted=3373, elapsed=2609.3s
+2026-08-17 14:31:41 [INFO] mvsa: Checkpoint saved at frame 56500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:32:08 [INFO] mvsa: Checkpoint saved at frame 57000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:32:34 [INFO] mvsa: Checkpoint saved at frame 57500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:33:01 [INFO] mvsa: Checkpoint saved at frame 58000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:33:01 [INFO] mvsa: Progress: frame 58000/89983, counted=3567, elapsed=2715.9s
+2026-08-17 14:33:28 [INFO] mvsa: Checkpoint saved at frame 58500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:33:53 [INFO] mvsa: Checkpoint saved at frame 59000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:34:22 [INFO] mvsa: Checkpoint saved at frame 59500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:34:49 [INFO] mvsa: Checkpoint saved at frame 60000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:34:49 [INFO] mvsa: Progress: frame 60000/89983, counted=3727, elapsed=2824.7s
+2026-08-17 14:35:17 [INFO] mvsa: Checkpoint saved at frame 60500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:35:44 [INFO] mvsa: Checkpoint saved at frame 61000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:36:10 [INFO] mvsa: Checkpoint saved at frame 61500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:36:37 [INFO] mvsa: Checkpoint saved at frame 62000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:36:37 [INFO] mvsa: Progress: frame 62000/89983, counted=3871, elapsed=2932.5s
+2026-08-17 14:37:05 [INFO] mvsa: Checkpoint saved at frame 62500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:37:33 [INFO] mvsa: Checkpoint saved at frame 63000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:38:02 [INFO] mvsa: Checkpoint saved at frame 63500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:38:30 [INFO] mvsa: Checkpoint saved at frame 64000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:38:30 [INFO] mvsa: Progress: frame 64000/89983, counted=4077, elapsed=3045.0s
+2026-08-17 14:38:57 [INFO] mvsa: Checkpoint saved at frame 64500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:39:24 [INFO] mvsa: Checkpoint saved at frame 65000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:39:52 [INFO] mvsa: Checkpoint saved at frame 65500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:40:19 [INFO] mvsa: Checkpoint saved at frame 66000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:40:19 [INFO] mvsa: Progress: frame 66000/89983, counted=4182, elapsed=3154.7s
+2026-08-17 14:40:46 [INFO] mvsa: Checkpoint saved at frame 66500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:41:14 [INFO] mvsa: Checkpoint saved at frame 67000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:41:42 [INFO] mvsa: Checkpoint saved at frame 67500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:42:09 [INFO] mvsa: Checkpoint saved at frame 68000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:42:09 [INFO] mvsa: Progress: frame 68000/89983, counted=4296, elapsed=3264.0s
+2026-08-17 14:42:36 [INFO] mvsa: Checkpoint saved at frame 68500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:43:04 [INFO] mvsa: Checkpoint saved at frame 69000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:43:32 [INFO] mvsa: Checkpoint saved at frame 69500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:44:00 [INFO] mvsa: Checkpoint saved at frame 70000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:44:00 [INFO] mvsa: Progress: frame 70000/89983, counted=4466, elapsed=3375.6s
+2026-08-17 14:44:29 [INFO] mvsa: Checkpoint saved at frame 70500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:44:56 [INFO] mvsa: Checkpoint saved at frame 71000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:45:25 [INFO] mvsa: Checkpoint saved at frame 71500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:45:54 [INFO] mvsa: Checkpoint saved at frame 72000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:45:54 [INFO] mvsa: Progress: frame 72000/89983, counted=4686, elapsed=3489.4s
+2026-08-17 14:46:23 [INFO] mvsa: Checkpoint saved at frame 72500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:46:52 [INFO] mvsa: Checkpoint saved at frame 73000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:47:21 [INFO] mvsa: Checkpoint saved at frame 73500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:47:53 [INFO] mvsa: Checkpoint saved at frame 74000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:47:53 [INFO] mvsa: Progress: frame 74000/89983, counted=4975, elapsed=3607.9s
+2026-08-17 14:48:24 [INFO] mvsa: Checkpoint saved at frame 74500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:48:53 [INFO] mvsa: Checkpoint saved at frame 75000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:49:22 [INFO] mvsa: Checkpoint saved at frame 75500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:49:51 [INFO] mvsa: Checkpoint saved at frame 76000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:49:51 [INFO] mvsa: Progress: frame 76000/89983, counted=5197, elapsed=3726.2s
+2026-08-17 14:50:20 [INFO] mvsa: Checkpoint saved at frame 76500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:50:48 [INFO] mvsa: Checkpoint saved at frame 77000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:51:17 [INFO] mvsa: Checkpoint saved at frame 77500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:51:46 [INFO] mvsa: Checkpoint saved at frame 78000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:51:46 [INFO] mvsa: Progress: frame 78000/89983, counted=5417, elapsed=3841.4s
+2026-08-17 14:52:14 [INFO] mvsa: Checkpoint saved at frame 78500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:52:43 [INFO] mvsa: Checkpoint saved at frame 79000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:53:12 [INFO] mvsa: Checkpoint saved at frame 79500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:53:43 [INFO] mvsa: Checkpoint saved at frame 80000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:53:43 [INFO] mvsa: Progress: frame 80000/89983, counted=5651, elapsed=3958.3s
+2026-08-17 14:54:13 [INFO] mvsa: Checkpoint saved at frame 80500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:54:43 [INFO] mvsa: Checkpoint saved at frame 81000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:55:14 [INFO] mvsa: Checkpoint saved at frame 81500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:55:43 [INFO] mvsa: Checkpoint saved at frame 82000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:55:43 [INFO] mvsa: Progress: frame 82000/89983, counted=5871, elapsed=4078.6s
+2026-08-17 14:56:13 [INFO] mvsa: Checkpoint saved at frame 82500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:56:42 [INFO] mvsa: Checkpoint saved at frame 83000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:57:12 [INFO] mvsa: Checkpoint saved at frame 83500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:57:43 [INFO] mvsa: Checkpoint saved at frame 84000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:57:43 [INFO] mvsa: Progress: frame 84000/89983, counted=6076, elapsed=4198.3s
+2026-08-17 14:58:15 [INFO] mvsa: Checkpoint saved at frame 84500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:58:47 [INFO] mvsa: Checkpoint saved at frame 85000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:59:19 [INFO] mvsa: Checkpoint saved at frame 85500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:59:50 [INFO] mvsa: Checkpoint saved at frame 86000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 14:59:50 [INFO] mvsa: Progress: frame 86000/89983, counted=6290, elapsed=4325.0s
+2026-08-17 15:00:22 [INFO] mvsa: Checkpoint saved at frame 86500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:00:54 [INFO] mvsa: Checkpoint saved at frame 87000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:01:26 [INFO] mvsa: Checkpoint saved at frame 87500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:02:00 [INFO] mvsa: Checkpoint saved at frame 88000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:02:00 [INFO] mvsa: Progress: frame 88000/89983, counted=6560, elapsed=4455.5s
+2026-08-17 15:02:32 [INFO] mvsa: Checkpoint saved at frame 88500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:03:03 [INFO] mvsa: Checkpoint saved at frame 89000 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:03:34 [INFO] mvsa: Checkpoint saved at frame 89500 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:04:06 [INFO] mvsa: Checkpoint saved at frame 89982 -> /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/checkpoint.json
+2026-08-17 15:04:06 [INFO] mvsa: Finished mode=detect: 89983 frames processed in 4580.9s, 6789 pedestrians counted
+2026-08-17 15:04:06 [INFO] mvsa: Rider filtering excluded 2770 of 6789 counted tracks from the pedestrian count (excluded statuses: ['rider', 'uncertain'])
+2026-08-17 15:04:06 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/classification_summary.json
+2026-08-17 15:04:06 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/hourly_pedestrian_counts.csv
+2026-08-17 15:04:06 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/tracks.csv
+2026-08-17 15:04:11 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/track_positions.json
+2026-08-17 15:04:11 [INFO] mvsa: Wrote /storage/users/oauser/mvsa/results/peds_10_kle_technological_university_cam_3_20260728_0800/run_summary.json
+{"run_name": "peds_10_kle_technological_university_cam_3_20260728_0800", "mode": "detect", "video_path": "/storage/users/oauser/mvsa/work/converted/peds_10_kle_technological_university_cam_3_20260728_0800.mp4", "video_info": {"width": 1920, "height": 1080, "fps": 25.0, "frame_count": 89983}, "config_fps_used": 25.0, "start_datetime": "2026-07-28 08:00:00", "total_pedestrian_entries": 4019, "total_tracks_observed": 17279, "rider_filtering_enabled": true, "demographics_enabled": false, "movement_direction_enabled": false, "movement_direction_breakdown": null, "elapsed_seconds": 4580.863361120224, "generated_at": "2026-08-17T15:04:11.530542"}

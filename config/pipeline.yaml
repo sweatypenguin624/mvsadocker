@@ -1,0 +1,67 @@
+# Batch/orchestration configuration for the multi-video validation pipeline.
+#
+# This is separate from config/config.yaml, which remains the single source
+# of truth for the per-video detection engine (ROI polygon, YOLO thresholds,
+# demographics, etc. -- see scripts/pipeline.py / scripts/config_loader.py).
+# This file only controls: where candidate videos come from, how many get
+# selected, and where batch-level working/output directories live.
+#
+# All relative paths below are resolved against the MVSA project root (the
+# parent of this config/ directory, normally ~/mvsa).
+
+rclone:
+  binary: "tools/rclone"
+  config: "config/rclone.conf"
+  remote: "googledrive:"
+  shared_with_me: true
+  # Per-attempt timeout for a single-file download.
+  timeout_seconds: 3600
+  max_retries: 3
+  retry_backoff_seconds: 10
+
+drive:
+  # Root folder (inside the shared remote) to search for candidate .dav
+  # files. Every path recorded anywhere downstream (candidates.csv,
+  # manifest.csv, source_manifest.json) is the FULL path from the remote
+  # root, never just a filename -- filenames repeat across many folders.
+  base_path: "Data Corp /DC646KA01 - Traffic & Transport Primary Surveys Hubballi-Dharwad in the state of Karnataka/Peds - 1 Day and 12 hour"
+  # Two conventions seen in this dataset: most cameras export hourly
+  # "HH.MM.SS-HH.MM.SS[R][0@0][0].dav" files; some (e.g. Kamaripet Cam 5)
+  # export a different DVR's "YYYYMMDD_HHMMSS_tpNNNNN.mp4" segments instead.
+  video_extensions: [".dav", ".mp4"]
+
+selection:
+  # Target size of the validation batch (hard requirement: 10-20 videos,
+  # never the full dataset).
+  target_video_count: 15
+  # Priority order (hour-of-day, 24h) used to pick which hourly file to take
+  # per camera first, so the batch favors daytime/peak pedestrian activity
+  # and stays diverse across time-of-day rather than always picking the
+  # first file alphabetically.
+  preferred_hours: [8, 17, 12, 9, 16, 13, 10, 18, 11, 14, 15, 7, 19, 20]
+  # Skip candidates smaller than this (guards against a corrupt/partial
+  # upload masquerading as a valid hour of footage).
+  min_size_mb: 100
+
+tools:
+  ffmpeg: "tools/ffmpeg"
+  ffprobe: "tools/ffprobe"
+
+paths:
+  queue_dir: "queue"
+  work_downloads: "work/downloads"
+  work_converted: "work/converted"
+  work_temporary: "work/temporary"
+  results_dir: "results"
+  logs_dir: "logs"
+
+# Base single-video engine config reused, untouched, for every video in the
+# batch (scripts/pedestrian_counter.py loads this and overrides only
+# video.path/video.fps/video.start_datetime per video).
+engine_config: "config/config.yaml"
+
+processing:
+  save_annotated_video: true
+  # If a video's status is "failed_*" and --retry-failed is passed, resume
+  # from that video's checkpoint.json instead of reprocessing from frame 0.
+  resume_on_retry: true

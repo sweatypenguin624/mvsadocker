@@ -1,0 +1,68 @@
+# Layer 1 broad-class mapping: native detector class name -> broad bucket.
+#
+# This is the ONLY place a native model class name is mapped to a Layer 1
+# bucket (see scripts/traffic_layer1/taxonomy.py). Two sections, one per
+# detector source wired up in scripts/traffic_layer1/detector.py:
+#
+#   uvh26 -- models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt native
+#            classes (models/UVH-26/uvh_classes.txt), used for all
+#            vehicle-shaped classes.
+#   coco  -- stock COCO yolo11x.pt, used ONLY for "person" (Pedestrian) --
+#            deliberately not asked for any other COCO class, since UVH-26
+#            already covers vehicles/cycles and running both models on the
+#            same object would double-detect it.
+#
+# Any native class name present in a model's output but absent from its
+# section below falls back to "Others" (see taxonomy.py::map_class), logged
+# once as a warning rather than per detection.
+#
+# Per the Layer 1 spec: buses are intentionally NOT split into subtypes here
+# (School/BRT/City/Mini/Private) -- that is Layer 2's job, consuming this
+# layer's Bus tracks/crops. Do not add subtype buckets to this file.
+
+# NOTE: keys must match the weights file's own embedded model.names exactly
+# (verified by loading models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLoV11-X.pt
+# directly) -- models/UVH-26/uvh_classes.txt capitalizes "Bicycle" and
+# "Tempo-traveller", but the actual .pt file's names dict has them lowercase
+# ("bicycle", "tempo-traveller"). Mapping is case-sensitive, so this file
+# follows the weights, not the docs, to avoid silently losing those classes
+# to "Others" (see taxonomy.py::ClassMapping.map_class's fallback + the
+# unmapped-class warning it logs).
+uvh26:
+  Hatchback: Car
+  Sedan: Car
+  SUV: Car
+  MUV: Car
+  Van: Car
+  Bus: Bus
+  Mini-bus: Bus
+  Truck: Goods Vehicle
+  LCV: Goods Vehicle
+  tempo-traveller: Goods Vehicle
+  Three-wheeler: Auto
+  Two-wheeler: 2-Wheeler
+  bicycle: Cycle
+  Others: Others
+
+coco:
+  person: Pedestrian
+
+# KNOWN MODEL-LEVEL CONFUSION (2026-08-21, CVC 10 - Savadatti Road footage):
+# UVH-26 sometimes predicts "Three-wheeler" (-> Auto) for small
+# yellow-tarpaulin-covered pickup/mini trucks that are actually Goods
+# Vehicle. This is a raw model classification error, not a mapping problem
+# in this file -- there is no reliable pipeline-side fix (e.g. a tarp-color
+# heuristic would be fragile and misfire on real three-wheelers/other
+# vehicles). Needs new annotated examples of tarpaulin-covered trucks and a
+# fine-tuning pass on UVH-26; tracked as a follow-up, not fixed here.
+
+# Requested Layer 1 buckets with no current detector support at all (no
+# UVH-26 or COCO class is a reasonable stand-in). Kept here, verbatim, so
+# run_summary.json can honestly report them at zero rather than silently
+# omitting them -- see taxonomy.py::coverage_report and vehicle_classes.py's
+# existing PENDING_FINE_TUNE precedent for the same convention.
+pending_model_support:
+  - "Emergency Vehicle"
+  - "Cycle Rickshaw"
+  - "Animal/Hand-drawn Cart"
+  - "Tractor"

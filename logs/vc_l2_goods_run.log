@@ -1,0 +1,179 @@
+2026-08-28 15:32:02 [INFO] uvh_test.main: Processing video: work/converted/tvc5_gokul_rd_cam1_20260716_0900-0945.mp4
+2026-08-28 15:32:02 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.pt
+2026-08-28 15:32:02 [INFO] uvh_test.detector: Loaded 14 classes.
+2026-08-28 15:32:09 [DEBUG] uvh_test.counter: track_id: 3, frame: 69, previous_bottom_center: (1552.5772705078125, 685.6883), current_bottom_center: (1619.295654296875, 636.45917), previous_side: -50.30, current_side: 31.15, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:09 [DEBUG] uvh_test.main: frame=69 COUNTED track_id=3 class=Two-wheeler
+2026-08-28 15:32:19 [DEBUG] uvh_test.counter: track_id: 4, frame: 270, previous_bottom_center: (1275.188232421875, 383.57755), current_bottom_center: (1299.1884765625, 379.3823), previous_side: -17.07, current_side: 2.32, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:19 [DEBUG] uvh_test.main: frame=270 COUNTED track_id=4 class=Two-wheeler
+2026-08-28 15:32:23 [DEBUG] uvh_test.counter: track_id: 5, frame: 350, previous_bottom_center: (1282.267822265625, 388.17334), current_bottom_center: (1305.53857421875, 384.04102), previous_side: -15.63, current_side: 3.21, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:28 [DEBUG] uvh_test.counter: track_id: 12, frame: 445, previous_bottom_center: (1304.383056640625, 395.93457), current_bottom_center: (1329.05126953125, 391.00748), previous_side: -6.30, current_side: 14.07, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:28 [DEBUG] uvh_test.main: frame=445 COUNTED track_id=12 class=SUV
+2026-08-28 15:32:38 [DEBUG] uvh_test.counter: track_id: 13, frame: 652, previous_bottom_center: (1295.956787109375, 390.55817), current_bottom_center: (1316.484619140625, 386.41785), previous_side: -8.08, current_side: 8.90, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:38 [DEBUG] uvh_test.main: frame=652 COUNTED track_id=13 class=Two-wheeler
+2026-08-28 15:32:40 [DEBUG] uvh_test.counter: track_id: 18, frame: 704, previous_bottom_center: (1597.0738525390625, 672.6041), current_bottom_center: (1643.31201171875, 635.9463), previous_side: -10.46, current_side: 47.85, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:41 [DEBUG] uvh_test.counter: track_id: 14, frame: 709, previous_bottom_center: (1316.22265625, 425.87015), current_bottom_center: (1347.97216796875, 417.26965), previous_side: -20.22, current_side: 7.66, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:41 [DEBUG] uvh_test.counter: track_id: 24, frame: 719, previous_bottom_center: (1464.8575439453125, 576.23175), current_bottom_center: (1496.538330078125, 546.55347), previous_side: -29.58, current_side: 13.73, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:41 [DEBUG] uvh_test.main: frame=719 COUNTED track_id=24 class=Sedan
+2026-08-28 15:32:50 [DEBUG] uvh_test.counter: track_id: 41, frame: 884, previous_bottom_center: (1422.931396484375, 502.86862), current_bottom_center: (1447.260009765625, 491.58978), previous_side: -4.23, current_side: 20.58, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:50 [DEBUG] uvh_test.counter: track_id: 42, frame: 884, previous_bottom_center: (1415.88037109375, 505.16382), current_bottom_center: (1444.260498046875, 493.72406), previous_side: -10.70, current_side: 16.97, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:50 [DEBUG] uvh_test.main: frame=884 COUNTED track_id=41 class=Truck
+2026-08-28 15:32:50 [DEBUG] uvh_test.main: frame=884 COUNTED track_id=42 class=Three-wheeler
+2026-08-28 15:32:50 [DEBUG] uvh_test.counter: track_id: 34, frame: 893, previous_bottom_center: (1328.87158203125, 413.32974), current_bottom_center: (1357.548095703125, 406.69385), previous_side: -2.43, current_side: 21.92, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:50 [DEBUG] uvh_test.main: frame=893 COUNTED track_id=34 class=SUV
+2026-08-28 15:32:52 [DEBUG] uvh_test.counter: track_id: 45, frame: 932, previous_bottom_center: (1316.9716796875, 430.35242), current_bottom_center: (1351.740478515625, 421.00986), previous_side: -23.00, current_side: 7.47, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:52 [DEBUG] uvh_test.main: frame=932 COUNTED track_id=45 class=Two-wheeler
+2026-08-28 15:32:54 [DEBUG] uvh_test.counter: track_id: 47, frame: 959, previous_bottom_center: (1277.13134765625, 385.8941), current_bottom_center: (1298.236328125, 381.6158), previous_side: -17.45, current_side: 0.03, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:59 [DEBUG] uvh_test.counter: track_id: 53, frame: 1059, previous_bottom_center: (1509.20654296875, 600.02985), current_bottom_center: (1545.1864013671875, 599.9375), previous_side: -16.91, current_side: 7.60, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:59 [DEBUG] uvh_test.main: frame=1059 COUNTED track_id=53 class=Bus
+2026-08-28 15:32:59 [DEBUG] uvh_test.counter: track_id: 50, frame: 1062, previous_bottom_center: (1606.087890625, 695.74774), current_bottom_center: (1611.28759765625, 663.81805), previous_side: -21.32, current_side: 5.64, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:59 [DEBUG] uvh_test.counter: track_id: 49, frame: 1064, previous_bottom_center: (1590.20947265625, 697.9037), current_bottom_center: (1606.445068359375, 634.2438), previous_side: -33.69, current_side: 24.05, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:32:59 [DEBUG] uvh_test.main: frame=1067 COUNTED track_id=54 class=Bus
+2026-08-28 15:33:03 [DEBUG] uvh_test.counter: track_id: 56, frame: 1146, previous_bottom_center: (1283.6318359375, 393.07532), current_bottom_center: (1307.048095703125, 388.4454), previous_side: -18.30, current_side: 1.00, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:03 [DEBUG] uvh_test.main: frame=1146 COUNTED track_id=56 class=Two-wheeler
+2026-08-28 15:33:05 [DEBUG] uvh_test.counter: track_id: 58, frame: 1173, previous_bottom_center: (1547.8580322265625, 695.72424), current_bottom_center: (1598.303955078125, 623.66534), previous_side: -60.87, current_side: 26.28, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:05 [DEBUG] uvh_test.counter: track_id: 62, frame: 1173, previous_bottom_center: (1547.5347900390625, 599.70605), current_bottom_center: (1517.99658203125, 599.9409), previous_side: 9.37, current_side: -10.87, side_transition: True, crossing_result: True, direction: B_TO_A
+2026-08-28 15:33:05 [DEBUG] uvh_test.main: frame=1173 COUNTED track_id=58 class=Truck
+2026-08-28 15:33:05 [DEBUG] uvh_test.main: frame=1173 COUNTED track_id=62 class=Truck
+2026-08-28 15:33:05 [DEBUG] uvh_test.counter: track_id: 59, frame: 1174, previous_bottom_center: (1550.3770751953125, 647.8382), current_bottom_center: (1600.033935546875, 647.7351), previous_side: -24.02, current_side: 9.79, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:17 [DEBUG] uvh_test.counter: track_id: 77, frame: 1402, previous_bottom_center: (1595.501953125, 705.2467), current_bottom_center: (1639.8829345703125, 660.86194), previous_side: -35.49, current_side: 27.24, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:17 [DEBUG] uvh_test.main: frame=1402 COUNTED track_id=77 class=MUV
+2026-08-28 15:33:17 [DEBUG] uvh_test.counter: track_id: 78, frame: 1412, previous_bottom_center: (1359.045654296875, 455.7538), current_bottom_center: (1398.721435546875, 455.73877), previous_side: -13.06, current_side: 13.91, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:17 [DEBUG] uvh_test.main: frame=1412 COUNTED track_id=78 class=Bus
+2026-08-28 15:33:17 [DEBUG] uvh_test.main: frame=1413 COUNTED track_id=81 class=Bus
+2026-08-28 15:33:17 [DEBUG] uvh_test.counter: track_id: 68, frame: 1416, previous_bottom_center: (1464.041748046875, 551.8167), current_bottom_center: (1499.4644775390625, 551.81635), previous_side: -12.21, current_side: 11.85, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:17 [DEBUG] uvh_test.counter: track_id: 71, frame: 1418, previous_bottom_center: (1418.7762451171875, 503.27145), current_bottom_center: (1451.40380859375, 503.29), previous_side: -7.35, current_side: 14.81, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:17 [DEBUG] uvh_test.main: frame=1418 COUNTED track_id=80 class=Bus
+2026-08-28 15:33:24 [DEBUG] uvh_test.main: frame=1542 COUNTED track_id=85 class=Truck
+2026-08-28 15:33:29 [DEBUG] uvh_test.counter: track_id: 91, frame: 1635, previous_bottom_center: (1591.111328125, 677.1715), current_bottom_center: (1638.625, 647.49304), previous_side: -17.87, current_side: 36.19, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:29 [DEBUG] uvh_test.main: frame=1635 COUNTED track_id=91 class=Two-wheeler
+2026-08-28 15:33:30 [DEBUG] uvh_test.counter: track_id: 84, frame: 1645, previous_bottom_center: (1387.402587890625, 506.29712), current_bottom_center: (1442.375, 481.4695), previous_side: -30.88, current_side: 24.69, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:30 [DEBUG] uvh_test.main: frame=1645 COUNTED track_id=84 class=SUV
+2026-08-28 15:33:37 [DEBUG] uvh_test.counter: track_id: 100, frame: 1780, previous_bottom_center: (1556.76171875, 624.58136), current_bottom_center: (1586.012939453125, 591.7324), previous_side: -2.61, current_side: 41.36, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:37 [DEBUG] uvh_test.main: frame=1780 COUNTED track_id=100 class=Hatchback
+2026-08-28 15:33:42 [DEBUG] uvh_test.counter: track_id: 101, frame: 1878, previous_bottom_center: (1312.724365234375, 423.63675), current_bottom_center: (1340.3681640625, 416.00403), previous_side: -20.96, current_side: 3.42, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:42 [DEBUG] uvh_test.main: frame=1878 COUNTED track_id=101 class=Two-wheeler
+2026-08-28 15:33:45 [DEBUG] uvh_test.counter: track_id: 106, frame: 1920, previous_bottom_center: (1289.9520263671875, 387.30716), current_bottom_center: (1305.6243896484375, 384.47946), previous_side: -9.78, current_side: 2.95, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:45 [DEBUG] uvh_test.main: frame=1920 COUNTED track_id=106 class=MUV
+2026-08-28 15:33:45 [DEBUG] uvh_test.main: frame=1922 COUNTED track_id=114 class=tempo-traveller
+2026-08-28 15:33:50 [DEBUG] uvh_test.counter: track_id: 115, frame: 2011, previous_bottom_center: (1595.866943359375, 717.04376), current_bottom_center: (1636.31884765625, 649.7719), previous_side: -43.89, current_side: 32.95, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:50 [DEBUG] uvh_test.main: frame=2012 COUNTED track_id=118 class=MUV
+2026-08-28 15:33:58 [DEBUG] uvh_test.counter: track_id: 120, frame: 2149, previous_bottom_center: (1365.9560546875, 454.98663), current_bottom_center: (1401.46142578125, 455.05978), previous_side: -7.80, current_side: 16.27, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:58 [DEBUG] uvh_test.main: frame=2149 COUNTED track_id=120 class=Bus
+2026-08-28 15:33:58 [DEBUG] uvh_test.main: frame=2150 COUNTED track_id=123 class=Bus
+2026-08-28 15:33:59 [DEBUG] uvh_test.counter: track_id: 126, frame: 2163, previous_bottom_center: (1383.740234375, 467.02536), current_bottom_center: (1423.360107421875, 455.46756), previous_side: -4.55, current_side: 30.85, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:33:59 [DEBUG] uvh_test.main: frame=2163 COUNTED track_id=126 class=Two-wheeler
+2026-08-28 15:34:03 [DEBUG] uvh_test.counter: track_id: 130, frame: 2242, previous_bottom_center: (1607.5477294921875, 731.6935), current_bottom_center: (1650.4031982421875, 698.7668), previous_side: -46.71, current_side: 6.57, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:34:09 [DEBUG] uvh_test.counter: track_id: 135, frame: 2347, previous_bottom_center: (1340.76123046875, 445.20724), current_bottom_center: (1380.225341796875, 433.7184), previous_side: -17.74, current_side: 17.50, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:34:09 [DEBUG] uvh_test.main: frame=2347 COUNTED track_id=135 class=Truck
+2026-08-28 15:34:14 [DEBUG] uvh_test.counter: track_id: 140, frame: 2423, previous_bottom_center: (1332.2069091796875, 421.77295), current_bottom_center: (1368.303955078125, 413.66565), previous_side: -6.36, current_side: 24.12, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:34:14 [DEBUG] uvh_test.main: frame=2423 COUNTED track_id=140 class=Two-wheeler
+2026-08-28 15:34:40 [DEBUG] uvh_test.counter: track_id: 141, frame: 2864, previous_bottom_center: (1310.982421875, 396.54315), current_bottom_center: (1341.19873046875, 389.75797), previous_side: -2.26, current_side: 23.24, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:34:40 [DEBUG] uvh_test.main: frame=2864 COUNTED track_id=141 class=tempo-traveller
+2026-08-28 15:34:49 [DEBUG] uvh_test.main: frame=2998 COUNTED track_id=149 class=Bus
+2026-08-28 15:34:54 [DEBUG] uvh_test.counter: track_id: 151, frame: 3078, previous_bottom_center: (1298.03857421875, 399.98816), current_bottom_center: (1325.8365478515625, 394.20224), previous_side: -13.59, current_side: 9.54, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:34:54 [DEBUG] uvh_test.main: frame=3078 COUNTED track_id=151 class=Two-wheeler
+2026-08-28 15:34:56 [DEBUG] uvh_test.counter: track_id: 153, frame: 3098, previous_bottom_center: (1345.3597412109375, 428.98166), current_bottom_center: (1367.62255859375, 422.58252), previous_side: -2.71, current_side: 17.11, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:00 [DEBUG] uvh_test.counter: track_id: 159, frame: 3143, previous_bottom_center: (1612.4013671875, 643.3692), current_bottom_center: (1602.84814453125, 683.48486), previous_side: 21.40, current_side: -14.53, side_transition: True, crossing_result: True, direction: B_TO_A
+2026-08-28 15:35:00 [DEBUG] uvh_test.main: frame=3143 COUNTED track_id=159 class=Truck
+2026-08-28 15:35:00 [DEBUG] uvh_test.main: frame=3145 COUNTED track_id=157 class=Truck
+2026-08-28 15:35:00 [DEBUG] uvh_test.main: frame=3147 COUNTED track_id=156 class=Truck
+2026-08-28 15:35:00 [DEBUG] uvh_test.main: frame=3147 COUNTED track_id=158 class=Truck
+2026-08-28 15:35:09 [DEBUG] uvh_test.counter: track_id: 175, frame: 3239, previous_bottom_center: (1422.3702392578125, 548.23865), current_bottom_center: (1457.626953125, 516.833), previous_side: -37.90, current_side: 9.10, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:09 [DEBUG] uvh_test.main: frame=3239 COUNTED track_id=175 class=Bus
+2026-08-28 15:35:09 [DEBUG] uvh_test.main: frame=3242 COUNTED track_id=178 class=Bus
+2026-08-28 15:35:09 [DEBUG] uvh_test.counter: track_id: 176, frame: 3244, previous_bottom_center: (1467.742431640625, 548.22845), current_bottom_center: (1471.1256103515625, 516.8136), previous_side: -7.07, current_side: 18.28, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:09 [DEBUG] uvh_test.main: frame=3244 COUNTED track_id=177 class=Bus
+2026-08-28 15:35:16 [DEBUG] uvh_test.counter: track_id: 185, frame: 3326, previous_bottom_center: (1371.31689453125, 501.13654), current_bottom_center: (1441.658935546875, 499.90814), previous_side: -38.02, current_side: 10.67, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:16 [DEBUG] uvh_test.counter: track_id: 182, frame: 3328, previous_bottom_center: (1411.147705078125, 546.8983), current_bottom_center: (1488.087890625, 547.3302), previous_side: -44.54, current_side: 7.41, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:30 [DEBUG] uvh_test.counter: track_id: 189, frame: 3552, previous_bottom_center: (1278.94189453125, 386.5862), current_bottom_center: (1311.139892578125, 380.70142), previous_side: -16.73, current_side: 9.47, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:30 [DEBUG] uvh_test.main: frame=3552 COUNTED track_id=189 class=Two-wheeler
+2026-08-28 15:35:36 [DEBUG] uvh_test.counter: track_id: 190, frame: 3649, previous_bottom_center: (1286.173583984375, 387.33325), current_bottom_center: (1303.859619140625, 384.4928), previous_side: -12.36, current_side: 1.74, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:36 [DEBUG] uvh_test.main: frame=3649 COUNTED track_id=190 class=bicycle
+2026-08-28 15:35:39 [DEBUG] uvh_test.counter: track_id: 191, frame: 3686, previous_bottom_center: (1333.106201171875, 428.2983), current_bottom_center: (1369.5791015625, 418.6911), previous_side: -10.54, current_side: 21.29, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:53 [DEBUG] uvh_test.counter: track_id: 193, frame: 3904, previous_bottom_center: (1271.6326904296875, 396.0719), current_bottom_center: (1312.5684814453125, 388.2552), previous_side: -28.65, current_side: 4.89, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:35:53 [DEBUG] uvh_test.main: frame=3904 COUNTED track_id=193 class=Two-wheeler
+2026-08-28 15:35:59 [DEBUG] uvh_test.counter: track_id: 194, frame: 3976, previous_bottom_center: (1304.960205078125, 391.3047), current_bottom_center: (1328.072998046875, 386.36874), previous_side: -2.51, current_side: 16.81, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:10 [DEBUG] uvh_test.counter: track_id: 201, frame: 4123, previous_bottom_center: (1326.324462890625, 478.2597), current_bottom_center: (1384.808349609375, 460.86346), previous_side: -51.80, current_side: 0.70, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:10 [DEBUG] uvh_test.main: frame=4123 COUNTED track_id=201 class=Two-wheeler
+2026-08-28 15:36:23 [DEBUG] uvh_test.counter: track_id: 202, frame: 4322, previous_bottom_center: (1333.9146728515625, 414.7929), current_bottom_center: (1371.529541015625, 406.72275), previous_side: -0.08, current_side: 31.40, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:23 [DEBUG] uvh_test.main: frame=4322 COUNTED track_id=202 class=Two-wheeler
+2026-08-28 15:36:38 [DEBUG] uvh_test.counter: track_id: 208, frame: 4460, previous_bottom_center: (1466.794189453125, 546.9224), current_bottom_center: (1509.9818115234375, 547.4662), previous_side: -6.75, current_side: 22.19, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:38 [DEBUG] uvh_test.counter: track_id: 207, frame: 4460, previous_bottom_center: (1416.8692626953125, 500.99835), current_bottom_center: (1456.1768798828125, 499.26538), previous_side: -6.97, current_side: 21.00, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:38 [DEBUG] uvh_test.main: frame=4460 COUNTED track_id=208 class=Truck
+2026-08-28 15:36:38 [DEBUG] uvh_test.counter: track_id: 209, frame: 4463, previous_bottom_center: (1469.154052734375, 548.5544), current_bottom_center: (1505.886474609375, 548.88464), previous_side: -6.35, current_side: 18.37, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:38 [DEBUG] uvh_test.counter: track_id: 206, frame: 4463, previous_bottom_center: (1520.18505859375, 597.5394), current_bottom_center: (1555.927001953125, 597.79816), previous_side: -7.62, current_side: 16.47, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:38 [DEBUG] uvh_test.counter: track_id: 212, frame: 4463, previous_bottom_center: (1410.9251708984375, 503.75366), current_bottom_center: (1450.75634765625, 503.74008), previous_side: -13.03, current_side: 14.04, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:47 [DEBUG] uvh_test.counter: track_id: 213, frame: 4563, previous_bottom_center: (1314.297119140625, 404.50235), current_bottom_center: (1345.415771484375, 397.12128), previous_side: -5.85, current_side: 20.70, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:36:47 [DEBUG] uvh_test.main: frame=4563 COUNTED track_id=213 class=Two-wheeler
+2026-08-28 15:36:54 [DEBUG] uvh_test.counter: track_id: 217, frame: 4680, previous_bottom_center: (1275.1849365234375, 374.46393), current_bottom_center: (1294.585205078125, 370.7373), previous_side: -10.38, current_side: 5.53, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:00 [DEBUG] uvh_test.counter: track_id: 224, frame: 4766, previous_bottom_center: (1639.868408203125, 754.7517), current_bottom_center: (1654.7276611328125, 705.0194), previous_side: -41.67, current_side: 4.92, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:00 [DEBUG] uvh_test.counter: track_id: 225, frame: 4766, previous_bottom_center: (1594.108154296875, 695.7146), current_bottom_center: (1606.501220703125, 658.40784), previous_side: -29.44, current_side: 6.36, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:00 [DEBUG] uvh_test.main: frame=4766 COUNTED track_id=224 class=Three-wheeler
+2026-08-28 15:37:00 [DEBUG] uvh_test.counter: track_id: 221, frame: 4767, previous_bottom_center: (1579.961669921875, 644.7525), current_bottom_center: (1630.835205078125, 611.3364), previous_side: -1.65, current_side: 57.43, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:02 [DEBUG] uvh_test.counter: track_id: 222, frame: 4791, previous_bottom_center: (1312.1593017578125, 405.798), current_bottom_center: (1338.10986328125, 399.49515), previous_side: -8.26, current_side: 14.00, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:02 [DEBUG] uvh_test.main: frame=4791 COUNTED track_id=222 class=Two-wheeler
+2026-08-28 15:37:06 [DEBUG] uvh_test.counter: track_id: 230, frame: 4830, previous_bottom_center: (1623.520751953125, 694.4537), current_bottom_center: (1657.580810546875, 667.3167), previous_side: -8.53, current_side: 34.52, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:10 [DEBUG] uvh_test.counter: track_id: 231, frame: 4890, previous_bottom_center: (1300.7313232421875, 391.08804), current_bottom_center: (1320.7259521484375, 387.19342), previous_side: -5.23, current_side: 11.22, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:17 [DEBUG] uvh_test.counter: track_id: 232, frame: 5022, previous_bottom_center: (1290.3177490234375, 383.56363), current_bottom_center: (1312.225830078125, 379.9988), previous_side: -6.78, current_side: 10.72, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:17 [DEBUG] uvh_test.main: frame=5022 COUNTED track_id=232 class=Two-wheeler
+2026-08-28 15:37:29 [DEBUG] uvh_test.counter: track_id: 234, frame: 5233, previous_bottom_center: (1281.462646484375, 381.48755), current_bottom_center: (1302.930419921875, 378.2436), previous_side: -11.27, current_side: 5.69, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:29 [DEBUG] uvh_test.main: frame=5233 COUNTED track_id=234 class=Two-wheeler
+[h264 @ 0x55a5e4815640] cabac decode of qscale diff failed at 109 12
+[h264 @ 0x55a5e4815640] error while decoding MB 109 12, bytestream 253538
+[h264 @ 0x55a5e4815640] Frame num change from 0 to 1
+[h264 @ 0x55a5e4815640] decode_slice_header error
+[h264 @ 0x55a5e4815640] Frame num change from 0 to 2
+[h264 @ 0x55a5e4815640] decode_slice_header error
+[h264 @ 0x55a5e3c74180] Frame num change from 8 to 9
+[h264 @ 0x55a5e3c74180] decode_slice_header error
+2026-08-28 15:37:35 [DEBUG] uvh_test.counter: track_id: 236, frame: 5333, previous_bottom_center: (1314.92919921875, 399.72192), current_bottom_center: (1351.022216796875, 391.508), previous_side: -1.92, current_side: 28.63, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:53 [DEBUG] uvh_test.counter: track_id: 238, frame: 5631, previous_bottom_center: (1301.02197265625, 387.65573), current_bottom_center: (1325.0628662109375, 383.5411), previous_side: -2.51, current_side: 16.84, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:37:53 [DEBUG] uvh_test.main: frame=5631 COUNTED track_id=238 class=Two-wheeler
+2026-08-28 15:37:56 [DEBUG] uvh_test.counter: track_id: 239, frame: 5679, previous_bottom_center: (1311.7479248046875, 397.71725), current_bottom_center: (1343.7650146484375, 391.6737), previous_side: -2.61, current_side: 23.58, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:01 [DEBUG] uvh_test.counter: track_id: 240, frame: 5750, previous_bottom_center: (1278.7978515625, 384.80972), current_bottom_center: (1304.91064453125, 379.68506), previous_side: -15.52, current_side: 5.98, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:05 [DEBUG] uvh_test.counter: track_id: 241, frame: 5798, previous_bottom_center: (1284.06884765625, 382.5458), current_bottom_center: (1302.358642578125, 378.59753), previous_side: -10.28, current_side: 5.04, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:05 [DEBUG] uvh_test.main: frame=5798 COUNTED track_id=241 class=Two-wheeler
+2026-08-28 15:38:06 [DEBUG] uvh_test.counter: track_id: 243, frame: 5814, previous_bottom_center: (1321.416259765625, 428.3483), current_bottom_center: (1359.301025390625, 418.26898), previous_side: -18.51, current_side: 14.62, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:11 [DEBUG] uvh_test.counter: track_id: 246, frame: 5898, previous_bottom_center: (1344.866455078125, 453.72134), current_bottom_center: (1381.8564453125, 443.19153), previous_side: -21.20, current_side: 11.66, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:22 [DEBUG] uvh_test.counter: track_id: 250, frame: 6067, previous_bottom_center: (1557.743896484375, 659.9979), current_bottom_center: (1639.069091796875, 643.5064), previous_side: -27.93, current_side: 39.42, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:22 [DEBUG] uvh_test.main: frame=6067 COUNTED track_id=250 class=tempo-traveller
+2026-08-28 15:38:22 [DEBUG] uvh_test.counter: track_id: 253, frame: 6068, previous_bottom_center: (1605.66748046875, 695.72455), current_bottom_center: (1642.782470703125, 695.7075), previous_side: -21.59, current_side: 3.64, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:28 [DEBUG] uvh_test.counter: track_id: 256, frame: 6141, previous_bottom_center: (1295.2275390625, 391.54388), current_bottom_center: (1320.3798828125, 386.50293), previous_side: -9.30, current_side: 11.49, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:28 [DEBUG] uvh_test.main: frame=6141 COUNTED track_id=256 class=Two-wheeler
+2026-08-28 15:38:30 [DEBUG] uvh_test.counter: track_id: 258, frame: 6178, previous_bottom_center: (1296.58447265625, 391.40024), current_bottom_center: (1323.684814453125, 386.20984), previous_side: -8.27, current_side: 13.95, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:40 [DEBUG] uvh_test.counter: track_id: 261, frame: 6332, previous_bottom_center: (1334.640380859375, 431.28934), current_bottom_center: (1368.821533203125, 422.0599), previous_side: -11.69, current_side: 18.31, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:40 [DEBUG] uvh_test.main: frame=6332 COUNTED track_id=261 class=Two-wheeler
+2026-08-28 15:38:54 [DEBUG] uvh_test.counter: track_id: 263, frame: 6534, previous_bottom_center: (1312.632568359375, 396.97226), current_bottom_center: (1339.29443359375, 391.9801), previous_side: -1.46, current_side: 20.32, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:38:54 [DEBUG] uvh_test.main: frame=6534 COUNTED track_id=263 class=Two-wheeler
+2026-08-28 15:39:17 [DEBUG] uvh_test.counter: track_id: 265, frame: 6860, previous_bottom_center: (1270.454833984375, 382.61667), current_bottom_center: (1297.1357421875, 377.63254), previous_side: -19.58, current_side: 2.20, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:39:17 [DEBUG] uvh_test.main: frame=6860 COUNTED track_id=265 class=Two-wheeler
+2026-08-28 15:39:28 [DEBUG] uvh_test.counter: track_id: 267, frame: 7028, previous_bottom_center: (1342.474365234375, 429.37537), current_bottom_center: (1375.496337890625, 419.255), previous_side: -4.96, current_side: 24.90, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:39:28 [DEBUG] uvh_test.main: frame=7028 COUNTED track_id=267 class=Two-wheeler
+2026-08-28 15:39:28 [DEBUG] uvh_test.main: frame=7031 COUNTED track_id=268 class=Three-wheeler
+2026-08-28 15:39:29 [DEBUG] uvh_test.counter: track_id: 278, frame: 7052, previous_bottom_center: (1397.8125, 498.03992), current_bottom_center: (1440.885009765625, 479.6816), previous_side: -17.75, current_side: 24.98, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:39:29 [DEBUG] uvh_test.main: frame=7052 COUNTED track_id=278 class=Sedan
+2026-08-28 15:39:30 [DEBUG] uvh_test.main: frame=7058 COUNTED track_id=283 class=Sedan
+2026-08-28 15:39:32 [DEBUG] uvh_test.main: frame=7082 COUNTED track_id=286 class=tempo-traveller
+2026-08-28 15:39:34 [DEBUG] uvh_test.counter: track_id: 288, frame: 7103, previous_bottom_center: (1587.969970703125, 751.58844), current_bottom_center: (1649.411376953125, 704.96063), previous_side: -74.61, current_side: 1.35, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:39:34 [DEBUG] uvh_test.main: frame=7103 COUNTED track_id=288 class=Truck
+2026-08-28 15:39:34 [DEBUG] uvh_test.counter: track_id: 290, frame: 7104, previous_bottom_center: (1591.917236328125, 658.75964), current_bottom_center: (1620.395751953125, 608.3963), previous_side: -3.81, current_side: 52.49, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:39:42 [DEBUG] uvh_test.counter: track_id: 294, frame: 7222, previous_bottom_center: (1270.8271484375, 378.73108), current_bottom_center: (1292.8447265625, 374.7485), previous_side: -16.48, current_side: 1.41, side_transition: True, crossing_result: True, direction: A_TO_B
+2026-08-28 15:39:42 [DEBUG] uvh_test.main: frame=7222 COUNTED track_id=294 class=Two-wheeler
+[h264 @ 0x55a5e42d7680] left block unavailable for requested intra mode
+[h264 @ 0x55a5e42d7680] error while decoding MB 0 18, bytestream 237643
+2026-08-28 15:39:51 [DEBUG] uvh_test.main: frame=7331 COUNTED track_id=295 class=Bus
+2026-08-28 15:40:02 [INFO] uvh_test.main: HARD STOP at 5 minutes reached.
+2026-08-28 15:40:02 [INFO] uvh_test.main: Wrote results/vc_l2_goods_run/tracks.jsonl
+2026-08-28 15:40:03 [INFO] uvh_test.main: Wrote goods-vehicle crops for 34 track(s) under results/vc_l2_goods_run/goods_tracks
+2026-08-28 15:40:03 [INFO] uvh_test.main: Processing complete. Final Counts:
+2026-08-28 15:40:03 [INFO] uvh_test.main: Two-wheeler: 26
+2026-08-28 15:40:03 [INFO] uvh_test.main: SUV: 3
+2026-08-28 15:40:03 [INFO] uvh_test.main: Sedan: 3
+2026-08-28 15:40:03 [INFO] uvh_test.main: Truck: 11
+2026-08-28 15:40:03 [INFO] uvh_test.main: Three-wheeler: 3
+2026-08-28 15:40:03 [INFO] uvh_test.main: Bus: 12
+2026-08-28 15:40:03 [INFO] uvh_test.main: MUV: 3
+2026-08-28 15:40:03 [INFO] uvh_test.main: Hatchback: 1
+2026-08-28 15:40:03 [INFO] uvh_test.main: tempo-traveller: 4
+2026-08-28 15:40:03 [INFO] uvh_test.main: bicycle: 1
+VideoWriter initialized at: /storage/users/oauser/mvsa/results/vc_l2_goods_run/annotated.mp4

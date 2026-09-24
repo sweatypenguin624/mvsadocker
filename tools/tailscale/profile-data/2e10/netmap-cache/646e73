@@ -1,0 +1,1 @@
+{"DNS":{"Routes":{"tail88e3c7.ts.net.":null,"ts.net.":[{"Addr":"199.247.155.53"},{"Addr":"2620:111:8007::53"}]},"Domains":["tail88e3c7.ts.net"],"Proxied":true,"ExitNodeFilteredSet":[".ts.net",".tailscale.net"]}}

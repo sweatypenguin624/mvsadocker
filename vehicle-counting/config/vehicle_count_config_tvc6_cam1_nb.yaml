@@ -1,0 +1,71 @@
+filters:
+  min_box_area: 500
+  min_height: 20
+  min_width: 20
+goods_crops:
+  all_classes: true
+  enabled: false
+  max_per_track: 5
+intervals:
+  duration_minutes: 15
+  enabled: true
+  video_start_time: 09:35:13
+logging:
+  filename: run.log
+  level: INFO
+model:
+  confidence: 0.35
+  device: cuda
+  imgsz: 640
+  tracker: bytetrack.yaml
+  yolo_weights: models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.engine
+ocr:
+  enabled: true
+  frequency_frames: 30
+  max_frames: 500
+  timestamp_roi:
+  - 0
+  - 60
+  - 0
+  - 800
+output:
+  debug_mode: false
+  live_stream: false
+  results_dir: results/vehicle_count_v1
+  save_annotated_video: true
+  video_codec: mp4v
+processing:
+  early_detection_check: true
+  early_detection_frames: 10000
+  early_detection_min_detections: 1
+  max_duration_minutes: 0
+  max_frames: 0
+  processing_fps: 20
+roi:
+  count_direction: BOTH
+  counting_line:
+  - - 1209
+    - 357
+  - - 1894
+    - 655
+  reference_height: 1080
+  reference_width: 1920
+  road_polygon:
+  - - 0
+    - 0
+  - - 1920
+    - 0
+  - - 1920
+    - 1080
+  - - 0
+    - 1080
+tracker:
+  match_thresh: 0.8
+  min_track_frames: 3
+  new_track_thresh: 0.5
+  reid_model: yolo26n-reid.onnx
+  track_buffer: 120
+  with_reid: false
+
+# Set to true to disable both Bus and Truck subclassifiers during a run
+disable_subclassifiers: false

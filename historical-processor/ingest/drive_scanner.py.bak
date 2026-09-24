@@ -1,0 +1,51 @@
+import subprocess
+import json
+
+class DriveScanner:
+    def __init__(self, remote="Gdrive-yogesh,root_folder_id=1fHpvoRMCz0xFK-pWZm_CyW1tTGAQkWmB:", rclone_path="tools/rclone-v1.75.0-linux-amd64/rclone"):
+        self.remote = remote
+        self.rclone_path = rclone_path
+
+    def scan(self, manifest):
+        print(f"Scanning {self.remote} with rclone...")
+        cmd = [self.rclone_path, "--config", "config/rclone.conf", "lsjson", "-R", "--files-only", self.remote]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        
+        if result.returncode != 0:
+            print("Error scanning Drive:")
+            print(result.stderr)
+            return
+
+        try:
+            files = json.loads(result.stdout)
+        except Exception as e:
+            print(f"Failed to parse rclone output: {e}")
+            return
+            
+        print(f"Discovered {len(files)} total files.")
+        
+        added = 0
+        for f in files:
+            path = f.get('Path', '')
+            name = f.get('Name', '')
+            file_id = f.get('ID', path)
+            
+            if not name.endswith('.dav'):
+                continue
+                
+            parts = path.split('/')
+            if len(parts) >= 2:
+                date_folder = parts[-2]
+                date = date_folder
+                start_time = name.replace('.dav', '')
+                
+                manifest.add_or_update(
+                    file_id=file_id,
+                    gdrive_path=path,
+                    filename=name,
+                    date=date,
+                    start_time=start_time
+                )
+                added += 1
+                
+        print(f"Added/Updated {added} .dav files in manifest.")

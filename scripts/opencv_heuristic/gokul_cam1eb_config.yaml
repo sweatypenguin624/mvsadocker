@@ -1,0 +1,11 @@
+mode: single_video
+input_video: work/converted/tvc5_gokul_rd_cam1_20260716_0900-0945.mp4
+output_dir: results/bus_color/gokul_rd_cam1eb_20260716_0900
+camera_name: gokul_rd_cam1_eb
+detector_model: yolo26s.pt
+device: cpu
+# Bumped from the 0.25 default to cut down on auto-rickshaws/small vehicles being
+# accepted as 'bus'.
+detection_confidence: 0.35
+video_start_times:
+  tvc5_gokul_rd_cam1_20260716_0900-0945.mp4: "2026-07-16T09:00:00"

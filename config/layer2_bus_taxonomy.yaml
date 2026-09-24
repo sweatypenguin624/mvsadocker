@@ -1,0 +1,21 @@
+# Bus subclassification taxonomy (BRTC / City-Private / School), analogous
+# to config/layer2_goods_taxonomy.yaml but for Layer 1's "Bus" bucket
+# (UVH-26 native classes Bus, Mini-bus).
+#
+# No visual heuristic (aspect ratio, size) can honestly distinguish these
+# three -- the distinguishing evidence is livery/paint scheme and branding,
+# not geometry. Until real labeled examples exist, the "bus" stage falls
+# back to a uniform-probability placeholder (see
+# layer2_classifiers.py::HeuristicUniformClassifier) that deliberately
+# reports low confidence rather than fabricate a geometry-based guess for a
+# question geometry can't answer -- every bus routes to
+# "Uncertain Bus Type" until stages.bus.weights_path points at a real
+# trained checkpoint.
+subclasses:
+  - "BRTC Bus"
+  - "City/Private Bus"
+  - "School Bus"
+
+uncertain:
+  label: "Uncertain Bus Type"
+  exclude_uncertain_from_total: true

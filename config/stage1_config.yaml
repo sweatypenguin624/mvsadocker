@@ -1,0 +1,72 @@
+detector:
+  weights: models/UVH-26/weights/YOLOv11-X/UVH-26-MV-YOLOv11-X.pt
+  device: '0'
+  imgsz: 1280
+  conf: 0.15
+  iou: 0.55
+  agnostic_nms: true
+  exclude_classes:
+  - person
+  - pedestrian
+  half: true
+  batch_size: 8
+  max_box_area_frac: 0.35
+  min_box_area_frac: 0.00015
+fusion:
+  enabled: true
+  iom_thresh: 0.65
+  max_area_ratio: 8.0
+  min_containment: 0.8
+tracker:
+  tracker_type: botsort
+  track_high_thresh: 0.45
+  track_low_thresh: 0.1
+  new_track_thresh: 0.5
+  track_buffer: 90
+  match_thresh: 0.85
+  fuse_score: true
+  # "none": all cameras here are fixed CCTV, so there is no camera motion
+  # to compensate for. Measured: sparseOptFlow costs ~29x the rest of
+  # tracking combined for zero benefit on a static camera. Only switch to
+  # sparseOptFlow for a camera that genuinely pans, tilts or shakes.
+  gmc_method: none
+  with_reid: false
+identity:
+  enabled: true
+  spatial_enabled: true
+  spatial_iom_thresh: 0.7
+  spatial_min_overlap_frames: 5
+  spatial_min_overlap_ratio: 0.5
+  temporal_enabled: true
+  temporal_max_gap_frames: 45
+  temporal_tolerance_diag_frac: 0.6
+  temporal_tolerance_growth_per_frame: 0.05
+  temporal_tolerance_max_diag_frac: 2.0
+  temporal_min_appearance: 0.8
+  temporal_min_iou_at_gap: 0.15
+  temporal_max_direction_deg: 45.0
+  temporal_max_size_ratio: 2.0
+counting:
+  line: null
+  reference_width: 1920
+  reference_height: 1080
+  fallback_line_y_frac: 0.6
+  min_track_frames: 6
+  min_frames_each_side: 2
+  interval_minutes: 15
+crops:
+  enabled: true
+  max_per_vehicle: 5
+  jpeg_quality: 92
+  pad_frac: 0.08
+  min_box_px: 24
+cameras:
+  peds_10_kle_technological_university__cam_1:
+    counting:
+      line:
+      - - 0.0
+        - 520.0
+      - - 1920.0
+        - 430.0
+      reference_width: 1920
+      reference_height: 1080

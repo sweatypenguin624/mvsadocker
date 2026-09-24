@@ -1,0 +1,131 @@
+# Layer 2 (Goods Vehicle subclassification) pipeline configuration.
+#
+# Consumes one Layer 1 run directory (tracks.jsonl + bus_tracks/track_*/
+# crops -- see scripts/traffic_layer1/layer1_output.py and crops.py; the
+# folder is still named "bus_tracks" for historical reasons but is generic,
+# holding Bus AND Goods Vehicle crops once crops.target_classes includes
+# both -- see config/layer1_config.yaml). Does not re-run detection.
+#
+# Run offline (Mode A) from the project root:
+#   cd ~/mvsa && source env/bin/activate
+#   python scripts/traffic_layer2/classify_goods.py \
+#       --input results/layer1_run1 \
+#       --output results/layer1_run1/layer2
+
+taxonomy_path: "config/layer2_goods_taxonomy.yaml"
+
+# Every classifier stage below shares this shape:
+#   weights_path: optional path to a fine-tuned torchvision checkpoint
+#     (transfer-learned per spec section 18). If null or the file doesn't
+#     exist, falls back to a deterministic geometry heuristic (aspect
+#     ratio / size) -- see layer2_classifiers.py -- clearly a placeholder,
+#     NOT a trained model, until config/goods_dataset/ has been labeled and
+#     scripts/traffic_layer2/train_stage.py has produced a checkpoint.
+#   min_confidence: below this, the stage's prediction is not trusted on
+#     its own (feeds the "Uncertain ..." fallback policy).
+stages:
+  # DISABLED (2026-08-29): retrained on the full 1513-track annotation
+  # pass, but as a binary "is it a 3-wheeler vs. literally anything else"
+  # question its negatives (Two-wheeler, Bus, Car, ...) don't match the
+  # in-distribution data it actually sees at inference time (this
+  # short-circuit only ever runs on Truck/LCV/tempo-traveller-native
+  # tracks, per layer2_pipeline.py's routing) -- val/test F1 dropped to
+  # ~0.55 as a result. The `broad` classifier below solves the same
+  # question properly (trained on in-distribution data, 92.7% test acc)
+  # and makes this short-circuit redundant. Left configured/loadable but
+  # with weights_path cleared rather than deleted, in case a future
+  # narrower-distribution retrain makes it worth reviving.
+  goods_3_wheeler_detector:
+    weights_path: null
+    min_confidence: 0.75
+  broad:
+    # Goods 3 Wheeler / LCV / Heavy Truck / Tractor. Trained 2026-08-29 on
+    # the full annotation pass (183 train / 31 val / 41 test, from
+    # vehicle_dataset_v1/ via scripts/traffic_layer2/train_multiclass.py):
+    # val_acc=1.0 (n=31), test_acc=0.927 (n=41). Confusion concentrated on
+    # Heavy Truck (only 5 test examples) vs Goods 3 Wheeler/LCV -- treat
+    # Heavy Truck predictions with more caution than the other 3 classes
+    # until more Heavy Truck examples are labeled.
+    weights_path: "models/layer2/broad_classifier.pt"
+    min_confidence: 0.55
+  lcv:
+    # Mini LCV / LCV -- still no usable data (1 Mini LCV example total).
+    weights_path: null
+    min_confidence: 0.55
+  heavy_truck:
+    # 2 Axle Truck / 3 Axle Truck / MAV -- still no labeled data at all
+    # (the annotation pass used a deliberately coarser "Truck (unspecified
+    # axle)" label instead, since axle count isn't reliably judgeable from
+    # a single photo -- see tools/goods_review_server/server.py).
+    weights_path: null
+    min_confidence: 0.55
+  bus:
+    # BRTC Bus / City/Private Bus / School Bus. Trained 2026-08-29 (63
+    # train / 13 val / 10 test): val_acc=1.0, test_acc=1.0. Small but a
+    # real, purpose-built dataset (not the earlier n=2 fluke) -- bus
+    # livery/branding is genuinely a strong, learnable visual signal even
+    # at this size. Re-validate as more examples accumulate.
+    weights_path: "models/layer2/bus_classifier.pt"
+    min_confidence: 0.55
+
+bus_taxonomy_path: "config/layer2_bus_taxonomy.yaml"
+
+# Representative-frame selection re-scoring on top of what Layer 1's
+# crops.py already picked (spec section 5) -- Layer 2 re-ranks the frames
+# Layer 1 saved (does not decode video again) preferring the viewpoints
+# axle/config classification actually needs.
+representative_frames:
+  min_frames: 1
+  max_frames: 5
+  # A track with fewer than this many usable crops skips straight to
+  # "Uncertain Heavy Truck" for the heavy-truck branch rather than guessing
+  # off a single frame (spec section 10).
+  min_frames_for_heavy_truck_confidence: 2
+
+# Viewpoint scoring (spec section 10): crops are ranked by estimated
+# usefulness for axle visibility using the crop's aspect ratio (width/height
+# of the saved bbox) as a cheap side/3-quarter-view proxy -- a
+# near-square/tall box reads as front/rear-on, a wide box reads as
+# side/3-quarter. Real pose estimation is out of scope for this first pass
+# (spec section 25: do not over-engineer).
+viewpoint:
+  # aspect_ratio = bbox_width / bbox_height
+  side_view_min_aspect_ratio: 1.6
+  useful_min_aspect_ratio: 1.15
+
+# Tractor-trolley spatial relationship (spec sections 12-13). Best-effort:
+# only the sparse bbox samples Layer 1's crops.py persisted per track are
+# available (not a full per-frame trajectory -- see layer1_models.py's
+# in-memory-only bbox_history), so this is reduced-fidelity by design, not
+# a full re-tracking pass.
+tractor_trolley:
+  # Two tracks are considered spatially linked in a given frame if their
+  # bbox centers are within this many pixels (1920x1080 reference frame).
+  max_link_distance_px: 220
+  # A link must recur across at least this many of the sparse sampled
+  # frames both tracks have in common to count as "persistent" (spec
+  # section 13: a single-frame proximity is not enough).
+  min_persistent_frames: 2
+  # Trolley candidate tracks come from these Layer 1 broad buckets (a
+  # trolley alone isn't a vehicle UVH-26 was trained to name -- "Others" is
+  # the closest bucket for an unpowered trailer).
+  candidate_trolley_buckets: ["Others", "Goods Vehicle"]
+
+dataset:
+  output_dir: "goods_dataset"
+  # Deterministic (not random) split by track_id hash so re-running dataset
+  # export is reproducible and a track's crops never straddle two splits
+  # (spec section 16: split by vehicle track, never by frame).
+  train_fraction: 0.7
+  val_fraction: 0.15
+  # test_fraction is whatever remains (1 - train - val).
+
+review:
+  output_dir: "review"
+  # A stage prediction below this margin between its top-2 classes is
+  # saved for manual review/active-learning (spec section 20), independent
+  # of the per-stage min_confidence gate above.
+  max_top2_margin: 0.15
+
+output:
+  results_dirname: "layer2"

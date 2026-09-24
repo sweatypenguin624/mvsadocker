@@ -1,0 +1,25 @@
+2026-08-30 04:16:28 [INFO] uvh_test.main: Processing video: realrun/test.mp4
+2026-08-30 04:16:28 [INFO] uvh_test.detector: Loading YOLO model from /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.engine
+WARNING ⚠️ Unable to automatically guess model task, assuming 'task=detect'. Explicitly define task for your model, i.e. 'task=detect', 'segment', 'classify', 'pose', 'obb' or 'semantic'.
+Loading /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.engine for TensorRT inference...
+[08/30/2026-04:16:28] [TRT] [I] Loaded engine size: 21 MiB
+[08/30/2026-04:16:28] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +18, now: CPU 0, GPU 18 (MiB)
+[08/30/2026-04:16:28] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +85, now: CPU 0, GPU 103 (MiB)
+Loading /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.engine for TensorRT inference...
+[08/30/2026-04:16:28] [TRT] [I] Loaded engine size: 21 MiB
+[08/30/2026-04:16:28] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +18, now: CPU 0, GPU 18 (MiB)
+[08/30/2026-04:16:28] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +85, now: CPU 0, GPU 103 (MiB)
+Loading /storage/users/oauser/mvsa/models/UVH-26/weights/YOLOv11-S/UVH-26-MV-YOLOv11-S.engine for TensorRT inference...
+[08/30/2026-04:16:28] [TRT] [I] Loaded engine size: 21 MiB
+[08/30/2026-04:16:28] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +18, now: CPU 0, GPU 18 (MiB)
+[08/30/2026-04:16:29] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +85, now: CPU 0, GPU 103 (MiB)
+Traceback (most recent call last):
+  File "/storage/users/oauser/mvsa/vehicle-counting/pipeline/counting/main.py", line 259, in <module>
+    main()
+  File "/storage/users/oauser/mvsa/vehicle-counting/pipeline/counting/main.py", line 95, in main
+    detector = VehicleDetector(
+  File "/storage/users/oauser/mvsa/vehicle-counting/pipeline/counting/detector.py", line 22, in __init__
+    self.model.names = {0: 'Hatchback', 1: 'Sedan', 2: 'SUV', 3: 'MUV', 4: 'Pickup', 5: 'Minidor', 6: 'Three-wheeler', 7: 'Two-wheeler', 8: 'LCV', 9: 'HCV', 10: 'Bus', 11: 'Mini-Bus', 12: 'Van', 13: 'Tractor', 14: 'Multi-axle', 15: 'Ambulance', 16: 'Fire-engine', 17: 'Police-car', 18: 'Army-truck', 19: 'Crane', 20: 'Excavator', 21: 'Bulldozer', 22: 'Road-roller', 23: 'Tractor-trailer', 24: 'Container', 25: 'Tanker'}
+  File "/home/users/oauser/mvsa/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1768, in __setattr__
+    super().__setattr__(name, value)
+AttributeError: can't set attribute

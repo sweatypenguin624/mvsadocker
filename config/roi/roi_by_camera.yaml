@@ -1,0 +1,127 @@
+{
+  "peds_10_kle_technological_university__cam_1": {
+    "polygon": [
+      [
+        153,
+        376
+      ],
+      [
+        340,
+        1074
+      ],
+      [
+        1083,
+        1062
+      ],
+      [
+        401,
+        329
+      ]
+    ],
+    "reference_height": 1080,
+    "reference_width": 1920,
+    "saved_at": "2026-08-17T09:09:52+00:00",
+    "source_image": "config/roi/frames/peds_10_kle_technological_university__cam_1.jpg"
+  },
+  "peds_10_kle_technological_university__cam_2": {
+    "polygon": [
+      [
+        49,
+        380
+      ],
+      [
+        260,
+        1072
+      ],
+      [
+        1448,
+        1062
+      ],
+      [
+        450,
+        305
+      ]
+    ],
+    "reference_height": 1080,
+    "reference_width": 1920,
+    "saved_at": "2026-08-17T09:12:31+00:00",
+    "source_image": "config/roi/frames/peds_10_kle_technological_university__cam_2.jpg"
+  },
+  "peds_10_kle_technological_university__cam_3": {
+    "polygon": [
+      [
+        16,
+        1076
+      ],
+      [
+        1474,
+        1069
+      ],
+      [
+        559,
+        176
+      ],
+      [
+        3,
+        247
+      ]
+    ],
+    "reference_height": 1080,
+    "reference_width": 1920,
+    "saved_at": "2026-08-17T09:15:03+00:00",
+    "source_image": "config/roi/frames/peds_10_kle_technological_university__cam_3.jpg"
+  },
+  "peds_18_kamaripet_police_station__cam_1": {
+    "polygon": [
+      [
+        516,
+        606
+      ],
+      [
+        1521,
+        379
+      ],
+      [
+        1903,
+        515
+      ],
+      [
+        556,
+        1069
+      ]
+    ],
+    "reference_height": 1080,
+    "reference_width": 1920,
+    "saved_at": "2026-08-17T09:20:48+00:00",
+    "source_image": "config/roi/frames/peds_18_kamaripet_police_station__cam_1.jpg"
+  },
+  "peds_18_kamaripet_police_station__cam_5": {
+    "polygon": [
+      [
+        1295,
+        856
+      ],
+      [
+        1526,
+        1130
+      ],
+      [
+        2114,
+        908
+      ],
+      [
+        1881,
+        741
+      ]
+    ],
+    "reference_height": 1296,
+    "reference_width": 2304,
+    "saved_at": "2026-08-15T05:20:38+00:00",
+    "source_image": "config/roi/frames/peds_18_kamaripet_police_station__cam_5.jpg",
+    "movement_axis": {
+      "near_point": [1945, 1088],
+      "far_point": [1463, 730],
+      "_calibration_note": "near_point/far_point define the road axis: near = away from the junction (closer to camera), far = toward the junction (background/distance). Derived two ways for this camera and cross-checked: (1) visually, the road recedes from the shop-front sidewalk in the lower-right foreground up toward a visibly busier junction area in the upper-left background of config/roi/frames/peds_18_kamaripet_police_station__cam_5.jpg; (2) empirically, from the 149 confident-pedestrian tracks in results/peds_18_kamaripet_police_station_cam_5_20260728_1208_accuracyfix2/track_positions.json -- their bottom-center displacement vectors split into two tight opposite-ish clusters (circular concentration r=0.95 each) at -131.5deg and +24.7deg, not a smear, meaning foot traffic through this ROI really does move along one dominant diagonal axis. The two points here are the ROI centroid +-300px along the bisector of those two clusters. Re-derive if the ROI polygon for this camera is ever redrawn."
+    }
+  }
+}

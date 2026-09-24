@@ -1,0 +1,35 @@
+import subprocess
+import os
+
+class Downloader:
+    def __init__(self, rclone_path="tools/rclone-v1.75.0-linux-amd64/rclone", remote="Gdrive-yogesh,root_folder_id=1fHpvoRMCz0xFK-pWZm_CyW1tTGAQkWmB"):
+        self.rclone_path = rclone_path
+        self.remote = remote
+        
+    def download_file(self, gdrive_path: str, local_path: str) -> bool:
+        tmp_path = local_path + ".tmp"
+        os.makedirs(os.path.dirname(local_path), exist_ok=True)
+        
+        print(f"Downloading {gdrive_path} to {local_path} ...")
+        
+        cmd = [
+            self.rclone_path, "--config", "config/rclone.conf",
+            "copyto", f"{self.remote}:{gdrive_path}", tmp_path
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        
+        if result.returncode != 0:
+            print(f"Failed to download {gdrive_path}: {result.stderr}")
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+            return False
+            
+        if not os.path.exists(tmp_path) or os.path.getsize(tmp_path) == 0:
+            print(f"File downloaded but is missing or empty: {gdrive_path}")
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+            return False
+            
+        os.rename(tmp_path, local_path)
+        print(f"Successfully downloaded {local_path}")
+        return True
