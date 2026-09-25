@@ -11,7 +11,7 @@ class Downloader:
         else:
             self.remote = "Gdrive-yogesh,root_folder_id=1fHpvoRMCz0xFK-pWZm_CyW1tTGAQkWmB"
         
-    def download_file(self, gdrive_path: str, local_path: str) -> bool:
+    def download_file(self, gdrive_path: str, local_path: str, timeout: float = None) -> bool:
         if os.path.exists(local_path) and os.path.getsize(local_path) > 0:
             print(f"File already exists locally, skipping download: {local_path}")
             return True
@@ -25,8 +25,14 @@ class Downloader:
             self.rclone_path, "--config", "config/rclone.conf",
             "copyto", f"{self.remote}:{gdrive_path}", tmp_path
         ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            print(f"Download timed out after {timeout}s: {gdrive_path}")
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+            return False
+
         if result.returncode != 0:
             print(f"Failed to download {gdrive_path}: {result.stderr}")
             if os.path.exists(tmp_path):

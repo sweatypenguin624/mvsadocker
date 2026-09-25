@@ -30,3 +30,7 @@ tools/ffprobe
 !.env.example
 *.pem
 *.key
+
+# Batch pipeline state, temp videos and outputs
+pipeline_runs/
+results/

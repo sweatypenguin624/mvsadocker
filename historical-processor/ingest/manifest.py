@@ -27,32 +27,53 @@ class IngestManifest:
                     retry_count INTEGER DEFAULT 0
                 )
             ''')
+            cols = {row[1] for row in cursor.execute("PRAGMA table_info(videos)")}
+            if "camera" not in cols:
+                cursor.execute("ALTER TABLE videos ADD COLUMN camera TEXT")
             conn.commit()
 
-    def add_or_update(self, file_id: str, gdrive_path: str, filename: str, date: str, start_time: str):
+    def add_or_update(self, file_id: str, gdrive_path: str, filename: str, date: str, start_time: str,
+                      camera: str = None):
         with sqlite3.connect(self.db_path, timeout=30.0) as conn:
             cursor = conn.cursor()
             cursor.execute('''
-                INSERT INTO videos (file_id, gdrive_path, filename, date, start_time)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO videos (file_id, gdrive_path, filename, date, start_time, camera)
+                VALUES (?, ?, ?, ?, ?, ?)
                 ON CONFLICT(file_id) DO UPDATE SET
                     gdrive_path = excluded.gdrive_path,
-                    filename = excluded.filename
-            ''', (file_id, gdrive_path, filename, date, start_time))
+                    filename = excluded.filename,
+                    camera = COALESCE(excluded.camera, videos.camera)
+            ''', (file_id, gdrive_path, filename, date, start_time, camera))
             conn.commit()
 
 
-    def get_pending_batch(self, batch_size: int = 5) -> List[Dict[str, Any]]:
+    def get_pending_batch(self, batch_size: int = 5, max_retries: int = 3) -> List[Dict[str, Any]]:
         with sqlite3.connect(self.db_path, timeout=30.0) as conn:
             conn.row_factory = sqlite3.Row
             cursor = conn.cursor()
             cursor.execute('''
                 SELECT * FROM videos
-                WHERE status = 'DISCOVERED' OR (status = 'FAILED' AND retry_count < 3)
-                ORDER BY date ASC, start_time ASC
+                WHERE status = 'DISCOVERED' OR (status = 'FAILED' AND retry_count < ?)
+                ORDER BY (status = 'FAILED') ASC, date ASC, start_time ASC
                 LIMIT ?
-            ''', (batch_size,))
+            ''', (max_retries, batch_size))
             return [dict(row) for row in cursor.fetchall()]
+
+    def count_pending(self, max_retries: int = 3) -> int:
+        with sqlite3.connect(self.db_path, timeout=30.0) as conn:
+            return conn.execute(
+                "SELECT COUNT(*) FROM videos WHERE status = 'DISCOVERED' "
+                "OR (status = 'FAILED' AND retry_count < ?)", (max_retries,)).fetchone()[0]
+
+    def get_all(self) -> List[Dict[str, Any]]:
+        with sqlite3.connect(self.db_path, timeout=30.0) as conn:
+            conn.row_factory = sqlite3.Row
+            return [dict(r) for r in conn.execute("SELECT * FROM videos ORDER BY camera, date, start_time")]
+
+    def reset_retries(self) -> None:
+        with sqlite3.connect(self.db_path, timeout=30.0) as conn:
+            conn.execute("UPDATE videos SET retry_count = 0, status = 'DISCOVERED' WHERE status = 'FAILED'")
+            conn.commit()
 
 
     def update_status(self, file_id: str, status: str, local_path: str = None, error: str = None):

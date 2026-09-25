@@ -66,11 +66,14 @@ def _finish_run(timer, session_dir, camera_name, status, error=None):
     if error:
         timer.meta["error"] = error
     data = timer.to_dict(status)
-    name = f"{timer.meta.get('date', 'nodate')}__{safe_name(Path(timer.meta.get('file', 'unknown')).stem)}"
-    write_report(session_dir / name, data, f"{camera_name} | {timer.meta.get('file')}")
+    camera = timer.meta.get("camera", camera_name)
+    name = (f"{safe_name(camera)}__{timer.meta.get('date', 'nodate')}__"
+            f"{safe_name(Path(timer.meta.get('file', 'unknown')).stem)}")
+    write_report(session_dir / name, data, f"{camera} | {timer.meta.get('file')}")
 
     inf = data["children"].get("inference", {})
     row = {
+        "camera": camera,
         "started_at": data["started_at"],
         "finished_at": data["finished_at"],
         "date": timer.meta.get("date"),
